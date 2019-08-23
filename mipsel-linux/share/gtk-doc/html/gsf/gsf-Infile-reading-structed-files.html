@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Infile reading structed files</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="GSF Reference Manual">
+<link rel="up" href="sources.html" title="Stream Sources">
+<link rel="prev" href="sources.html" title="Stream Sources">
+<link rel="next" href="gsf-Outfile-writing-structed-files.html" title="Outfile writing structed files">
+<meta name="generator" content="GTK-Doc V1.9 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="intro.html" title="Part&#160;I.&#160;GSF: Introduction">
+<link rel="part" href="history.html" title="Part&#160;II.&#160;GSF: History">
+<link rel="part" href="dependencies.html" title="Part&#160;III.&#160;GSF: Dependencies">
+<link rel="part" href="gsf-users.html" title="Part&#160;IV.&#160;Projects using GSF">
+<link rel="part" href="api.html" title="Part&#160;V.&#160;API Reference">
+<link rel="chapter" href="io.html" title="Basic Input/Output">
+<link rel="chapter" href="sources.html" title="Stream Sources">
+<link rel="chapter" href="parsers.html" title="Stream Parsers">
+<link rel="chapter" href="misc.html" title="Miscellaneous">
+<link rel="index" href="gsf-index.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="sources.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="sources.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GSF Reference Manual</th>
+<td><a accesskey="n" href="gsf-Outfile-writing-structed-files.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2579815" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2580048" class="shortcut">Description</a>
+                  &#160;|&#160;
+                  <a href="#id2579984" class="shortcut">Object Hierarchy</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="gsf-Infile-reading-structed-files"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2579815"></a><span class="refentrytitle">Infile reading structed files</span>
+</h2>
+<p>Infile reading structed files</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<a name="GsfInfile"></a><pre class="synopsis">
+
+
+
+                    <a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile-struct">GsfInfile</a>;
+int                 <a class="link" href="gsf-Infile-reading-structed-files.html#gsf-infile-num-children">gsf_infile_num_children</a>             (<a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile">GsfInfile</a> *infile);
+<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>*           <a class="link" href="gsf-Infile-reading-structed-files.html#gsf-infile-child-by-index">gsf_infile_child_by_index</a>           (<a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile">GsfInfile</a> *infile,
+                                                         int i);
+<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>*           <a class="link" href="gsf-Infile-reading-structed-files.html#gsf-infile-child-by-name">gsf_infile_child_by_name</a>            (<a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile">GsfInfile</a> *infile,
+                                                         char const *name);
+<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>*           <a class="link" href="gsf-Infile-reading-structed-files.html#gsf-infile-child-by-vname">gsf_infile_child_by_vname</a>           (<a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile">GsfInfile</a> *infile,
+                                                         char const *name,
+                                                         ...);
+charconst *         <a class="link" href="gsf-Infile-reading-structed-files.html#gsf-infile-name-by-index">gsf_infile_name_by_index</a>            (<a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile">GsfInfile</a> *infile,
+                                                         int i);
+
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2579984"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+
+  GObject
+   +----<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>
+         +----GsfInfile
+               +----<a class="link" href="gsf-MS-OLE2.html#GsfInfileMSOle">GsfInfileMSOle</a>
+               +----<a class="link" href="gsf-Reading-and-Writing-from-local-files-and-directories.html#GsfInfileStdio">GsfInfileStdio</a>
+               +----<a class="link" href="gsf-Zip.html#GsfInfileZip">GsfInfileZip</a>
+               +----<a class="link" href="gsf-blobs.html#GsfStructuredBlob">GsfStructuredBlob</a>
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2580048"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2580063"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2580073"></a><h3>
+<a name="GsfInfile-struct"></a>GsfInfile</h3>
+<a class="indexterm" name="id2580086"></a><pre class="programlisting">typedef struct _GsfInfile GsfInfile;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2580101"></a><h3>
+<a name="gsf-infile-num-children"></a>gsf_infile_num_children ()</h3>
+<a class="indexterm" name="id2580113"></a><pre class="programlisting">int                 gsf_infile_num_children             (<a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile">GsfInfile</a> *infile);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>infile</code></em>&#160;:</span></p></td>
+<td> the structured storage
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> the number of children the storage has, or -1 if the storage can not
+	have children.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2580175"></a><h3>
+<a name="gsf-infile-child-by-index"></a>gsf_infile_child_by_index ()</h3>
+<a class="indexterm" name="id2580188"></a><pre class="programlisting"><a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>*           gsf_infile_child_by_index           (<a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile">GsfInfile</a> *infile,
+                                                         int i);</pre>
+<p>
+TODO : For 2.0 api will change to include a GError.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>infile</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>i</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> a newly created child which must be unrefed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2580270"></a><h3>
+<a name="gsf-infile-child-by-name"></a>gsf_infile_child_by_name ()</h3>
+<a class="indexterm" name="id2580282"></a><pre class="programlisting"><a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>*           gsf_infile_child_by_name            (<a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile">GsfInfile</a> *infile,
+                                                         char const *name);</pre>
+<p>
+TODO : For 2.0 api will change to include a GError.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>infile</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> a newly created child which must be unrefed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2580365"></a><h3>
+<a name="gsf-infile-child-by-vname"></a>gsf_infile_child_by_vname ()</h3>
+<a class="indexterm" name="id2580379"></a><pre class="programlisting"><a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>*           gsf_infile_child_by_vname           (<a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile">GsfInfile</a> *infile,
+                                                         char const *name,
+                                                         ...);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>infile</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em>&#160;:</span></p></td>
+<td> A <code class="literal">null</code> terminated list of names
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em>&#160;:</span></p></td>
+<td> the rest of the names
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> a newly created child which must be unrefed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2580486"></a><h3>
+<a name="gsf-infile-name-by-index"></a>gsf_infile_name_by_index ()</h3>
+<a class="indexterm" name="id2580500"></a><pre class="programlisting">charconst *         gsf_infile_name_by_index            (<a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile">GsfInfile</a> *infile,
+                                                         int i);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>infile</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>i</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> the utf8 encoded name of the <em class="parameter"><code>i</code></em>-th child
+	<span class="emphasis"><em>DO NOT FREE THE STRING.</em></span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2580591"></a><div class="refsect2" lang="en"><a name="id2580592"></a></div>
+<hr>
+<div class="refsect2" lang="en"><a name="id2580593"></a></div>
+</div>
+</div>
+</body>
+</html>

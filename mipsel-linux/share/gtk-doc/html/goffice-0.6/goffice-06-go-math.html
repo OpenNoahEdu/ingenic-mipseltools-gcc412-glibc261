@@ -1,0 +1,661 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-math</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch09.html" title="Mathematical functions">
+<link rel="prev" href="ch09.html" title="Mathematical functions">
+<link rel="next" href="goffice-06-go-complex.html" title="GoComplex">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch09.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch09.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-go-complex.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-math.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-math.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-math"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-math.top_of_page"></a>go-math</span></h2>
+<p>go-math</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-math.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="goffice-06-go-math.html#M-PI:CAPS" title="M_PI">M_PI</a>
+void                <a class="link" href="goffice-06-go-math.html#go-math-init" title="go_math_init ()">go_math_init</a>                        (void);
+void                <a class="link" href="goffice-06-go-math.html#go-continued-fraction" title="go_continued_fraction ()">go_continued_fraction</a>               (double val,
+                                                         int max_denom,
+                                                         int *res_num,
+                                                         int *res_denom);
+void                <a class="link" href="goffice-06-go-math.html#go-stern-brocot" title="go_stern_brocot ()">go_stern_brocot</a>                     (double val,
+                                                         int max_denom,
+                                                         int *res_num,
+                                                         int *res_denom);
+double              <a class="link" href="goffice-06-go-math.html#go-add-epsilon" title="go_add_epsilon ()">go_add_epsilon</a>                      (double x);
+double              <a class="link" href="goffice-06-go-math.html#go-sub-epsilon" title="go_sub_epsilon ()">go_sub_epsilon</a>                      (double x);
+double              <a class="link" href="goffice-06-go-math.html#go-fake-floor" title="go_fake_floor ()">go_fake_floor</a>                       (double x);
+double              <a class="link" href="goffice-06-go-math.html#go-fake-ceil" title="go_fake_ceil ()">go_fake_ceil</a>                        (double x);
+double              <a class="link" href="goffice-06-go-math.html#go-fake-round" title="go_fake_round ()">go_fake_round</a>                       (double x);
+double              <a class="link" href="goffice-06-go-math.html#go-fake-trunc" title="go_fake_trunc ()">go_fake_trunc</a>                       (double x);
+double              <a class="link" href="goffice-06-go-math.html#go-rint" title="go_rint ()">go_rint</a>                             (double x);
+int                 <a class="link" href="goffice-06-go-math.html#go-finite" title="go_finite ()">go_finite</a>                           (double x);
+double              <a class="link" href="goffice-06-go-math.html#go-pow2" title="go_pow2 ()">go_pow2</a>                             (int n);
+double              <a class="link" href="goffice-06-go-math.html#go-pow10" title="go_pow10 ()">go_pow10</a>                            (int n);
+double              <a class="link" href="goffice-06-go-math.html#go-strtod" title="go_strtod ()">go_strtod</a>                           (const char *s,
+                                                         char **end);
+double              <a class="link" href="goffice-06-go-math.html#go-ascii-strtod" title="go_ascii_strtod ()">go_ascii_strtod</a>                     (const char *s,
+                                                         char **end);
+double              <a class="link" href="goffice-06-go-math.html#asinh" title="asinh ()">asinh</a>                               (double x);
+double              <a class="link" href="goffice-06-go-math.html#acosh" title="acosh ()">acosh</a>                               (double x);
+double              <a class="link" href="goffice-06-go-math.html#atanh" title="atanh ()">atanh</a>                               (double x);
+double              <a class="link" href="goffice-06-go-math.html#log1p" title="log1p ()">log1p</a>                               (double x);
+double              <a class="link" href="goffice-06-go-math.html#expm1" title="expm1 ()">expm1</a>                               (double x);
+#define             <a class="link" href="goffice-06-go-math.html#go-finitel" title="go_finitel">go_finitel</a>
+#define             <a class="link" href="goffice-06-go-math.html#isnan" title="isnan">isnan</a>
+#define             <a class="link" href="goffice-06-go-math.html#finite" title="finite">finite</a>
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-math.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-math.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="M-PI:CAPS"></a><h3>M_PI</h3>
+<pre class="programlisting">#define M_PI 3.14159265358979323846
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-math-init"></a><h3>go_math_init ()</h3>
+<pre class="programlisting">void                go_math_init                        (void);</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-continued-fraction"></a><h3>go_continued_fraction ()</h3>
+<pre class="programlisting">void                go_continued_fraction               (double val,
+                                                         int max_denom,
+                                                         int *res_num,
+                                                         int *res_denom);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>max_denom</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>res_num</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>res_denom</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-stern-brocot"></a><h3>go_stern_brocot ()</h3>
+<pre class="programlisting">void                go_stern_brocot                     (double val,
+                                                         int max_denom,
+                                                         int *res_num,
+                                                         int *res_denom);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>max_denom</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>res_num</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>res_denom</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-add-epsilon"></a><h3>go_add_epsilon ()</h3>
+<pre class="programlisting">double              go_add_epsilon                      (double x);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-sub-epsilon"></a><h3>go_sub_epsilon ()</h3>
+<pre class="programlisting">double              go_sub_epsilon                      (double x);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-fake-floor"></a><h3>go_fake_floor ()</h3>
+<pre class="programlisting">double              go_fake_floor                       (double x);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-fake-ceil"></a><h3>go_fake_ceil ()</h3>
+<pre class="programlisting">double              go_fake_ceil                        (double x);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-fake-round"></a><h3>go_fake_round ()</h3>
+<pre class="programlisting">double              go_fake_round                       (double x);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-fake-trunc"></a><h3>go_fake_trunc ()</h3>
+<pre class="programlisting">double              go_fake_trunc                       (double x);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-rint"></a><h3>go_rint ()</h3>
+<pre class="programlisting">double              go_rint                             (double x);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-finite"></a><h3>go_finite ()</h3>
+<pre class="programlisting">int                 go_finite                           (double x);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-pow2"></a><h3>go_pow2 ()</h3>
+<pre class="programlisting">double              go_pow2                             (int n);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-pow10"></a><h3>go_pow10 ()</h3>
+<pre class="programlisting">double              go_pow10                            (int n);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-strtod"></a><h3>go_strtod ()</h3>
+<pre class="programlisting">double              go_strtod                           (const char *s,
+                                                         char **end);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>s</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>end</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-ascii-strtod"></a><h3>go_ascii_strtod ()</h3>
+<pre class="programlisting">double              go_ascii_strtod                     (const char *s,
+                                                         char **end);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>s</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>end</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="asinh"></a><h3>asinh ()</h3>
+<pre class="programlisting">double              asinh                               (double x);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="acosh"></a><h3>acosh ()</h3>
+<pre class="programlisting">double              acosh                               (double x);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="atanh"></a><h3>atanh ()</h3>
+<pre class="programlisting">double              atanh                               (double x);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="log1p"></a><h3>log1p ()</h3>
+<pre class="programlisting">double              log1p                               (double x);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="expm1"></a><h3>expm1 ()</h3>
+<pre class="programlisting">double              expm1                               (double x);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-finitel"></a><h3>go_finitel</h3>
+<pre class="programlisting">#define go_finitel finitel
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="isnan"></a><h3>isnan</h3>
+<pre class="programlisting">#define isnan _isnan
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="finite"></a><h3>finite</h3>
+<pre class="programlisting">#define finite _finite
+</pre>
+<p>
+
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="GOffice_plot_boxes">
+	<information>
+		<name>Charting : Box-Plots/Histograms</name>
+		<name xml:lang="ca">Gràfic: diagrames de caixa/histogrames</name>
+		<name xml:lang="vi">Vẽ đồ thị: Hộp/Biểu đồ tần xuất</name>
+		<description>Box-Plots and Histograms</description>
+		<description xml:lang="ca">Diagrames de caixa i histogrames</description>
+		<description xml:lang="es">Diagramas de cajas e histogramas</description>
+		<description xml:lang="vi">Vẽ hộp và biểu đồ tần xuất</description>
+	</information>
+	<loader type="Gnumeric_Builtin:module">
+		<attribute value="boxplot" name="module_file"/>
+	</loader>
+	<services>
+		<service type="plot_engine" id="GogBoxPlot">
+			<information>
+				<description>Box-plot plotting engine</description>
+				<description xml:lang="ca">Motor traçador de diagrames de caixa</description>
+				<description xml:lang="de">Kastengraph-Engine</description>
+				<description xml:lang="en_CA">Box-plot plotting engine</description>
+				<description xml:lang="en_GB">Box-plot plotting engine</description>
+				<description xml:lang="es">Motor de dibujado del diagrama de cajas</description>
+				<description xml:lang="fr">Moteur de dessin box-plot</description>
+				<description xml:lang="pt_BR">Ferramenta de plotagem de Box-Plot</description>
+				<description xml:lang="vi">Cơ chế vẽ đồ thị hộp</description>
+			</information>
+		</service>
+		<service type="plot_engine" id="GogHistogramPlot">
+			<information>
+				<description>Histograms plotting engine</description>
+				<description xml:lang="ca">Motor de traçador d'histogrames</description>
+				<description xml:lang="es">Histogramas del motor de dibujo</description>
+				<description xml:lang="ru">Модуль отображения гистограмм</description>
+				<description xml:lang="vi">Cơ chế vẽ biểu đồ tần xuất</description>
+			</information>
+		</service>
+		<service type="plot_type" id="boxplot">
+			<file>plot-types.xml</file>
+			<information>
+				<description>Statistics plot types</description>
+				<description xml:lang="ca">Tipus de traçats estadístics</description>
+				<description xml:lang="es">Estadísticas de los tipos de gráficos</description>
+				<description xml:lang="vi">Kiểu đồ thị vẽ thống kê</description>
+				<description xml:lang="zh_HK">統計繪製類型</description>
+				<description xml:lang="zh_TW">統計繪製類型</description>
+			</information>
+		</service>
+	</services>
+</plugin>

@@ -1,0 +1,1815 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogRenderer</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch03.html" title="Utilities">
+<link rel="prev" href="ch03.html" title="Utilities">
+<link rel="next" href="goffice-06-gog-control-foocanvas.html" title="GogControlFooCanvas">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch03.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-gog-control-foocanvas.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-gog-renderer.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-gog-renderer.description" class="shortcut">Description</a>
+                 | 
+                <a href="#goffice-06-gog-renderer.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-gog-renderer"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-gog-renderer.top_of_page"></a>GogRenderer</span></h2>
+<p>GogRenderer — Rendering engine</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-gog-renderer.synopsis"></a><h2>Synopsis</h2>
+<a name="GdkPixbuf"></a><pre class="synopsis">
+                    <a class="link" href="goffice-06-gog-renderer.html#GdkPixbuf-struct" title="GdkPixbuf">GdkPixbuf</a>;
+enum                <a class="link" href="goffice-06-gog-renderer.html#GtkAnchorType" title="enum GtkAnchorType">GtkAnchorType</a>;
+#define             <a class="link" href="goffice-06-gog-renderer.html#GOG-RENDERER-CAIRO-WITH-SVG:CAPS" title="GOG_RENDERER_CAIRO_WITH_SVG">GOG_RENDERER_CAIRO_WITH_SVG</a>
+#define             <a class="link" href="goffice-06-gog-renderer.html#GOG-RENDERER-CAIRO-WITH-PDF:CAPS" title="GOG_RENDERER_CAIRO_WITH_PDF">GOG_RENDERER_CAIRO_WITH_PDF</a>
+#define             <a class="link" href="goffice-06-gog-renderer.html#GOG-RENDERER-CAIRO-WITH-PS:CAPS" title="GOG_RENDERER_CAIRO_WITH_PS">GOG_RENDERER_CAIRO_WITH_PS</a>
+#define             <a class="link" href="goffice-06-gog-renderer.html#GOG-RENDERER-HAIRLINE-WIDTH-PTS:CAPS" title="GOG_RENDERER_HAIRLINE_WIDTH_PTS">GOG_RENDERER_HAIRLINE_WIDTH_PTS</a>
+#define             <a class="link" href="goffice-06-gog-renderer.html#GOG-RENDERER-GRIP-SIZE:CAPS" title="GOG_RENDERER_GRIP_SIZE">GOG_RENDERER_GRIP_SIZE</a>
+#define             <a class="link" href="goffice-06-gog-renderer.html#GOG-RENDERER-TYPE:CAPS" title="GOG_RENDERER_TYPE">GOG_RENDERER_TYPE</a>
+#define             <a class="link" href="goffice-06-gog-renderer.html#GOG-RENDERER:CAPS" title="GOG_RENDERER()">GOG_RENDERER</a>                        (o)
+#define             <a class="link" href="goffice-06-gog-renderer.html#IS-GOG-RENDERER:CAPS" title="IS_GOG_RENDERER()">IS_GOG_RENDERER</a>                     (o)
+#define             <a class="link" href="goffice-06-gog-renderer.html#GOG-RENDERER-GET-CLASS:CAPS" title="GOG_RENDERER_GET_CLASS()">GOG_RENDERER_GET_CLASS</a>              (o)
+GType               <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-get-type" title="gog_renderer_get_type ()">gog_renderer_get_type</a>               (void);
+double              <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-line-size" title="gog_renderer_line_size ()">gog_renderer_line_size</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> const *r,
+                                                         double width);
+double              <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-pt2r-x" title="gog_renderer_pt2r_x ()">gog_renderer_pt2r_x</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> const *r,
+                                                         double d);
+double              <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-pt2r-y" title="gog_renderer_pt2r_y ()">gog_renderer_pt2r_y</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> const *r,
+                                                         double d);
+double              <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-pt2r" title="gog_renderer_pt2r ()">gog_renderer_pt2r</a>                   (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> const *r,
+                                                         double d);
+double              <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-get-hairline-width-pts" title="gog_renderer_get_hairline_width_pts ()">gog_renderer_get_hairline_width_pts</a> (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> const *rend);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-stroke-serie" title="gog_renderer_stroke_serie ()">gog_renderer_stroke_serie</a>           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *path);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-fill-serie" title="gog_renderer_fill_serie ()">gog_renderer_fill_serie</a>             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *path,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *close_path);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-draw-shape" title="gog_renderer_draw_shape ()">gog_renderer_draw_shape</a>             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *path);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-stroke-shape" title="gog_renderer_stroke_shape ()">gog_renderer_stroke_shape</a>           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *path);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-fill-shape" title="gog_renderer_fill_shape ()">gog_renderer_fill_shape</a>             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *path);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-draw-circle" title="gog_renderer_draw_circle ()">gog_renderer_draw_circle</a>            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         double x,
+                                                         double y,
+                                                         double r);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-stroke-circle" title="gog_renderer_stroke_circle ()">gog_renderer_stroke_circle</a>          (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         double x,
+                                                         double y,
+                                                         double r);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-fill-circle" title="gog_renderer_fill_circle ()">gog_renderer_fill_circle</a>            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         double x,
+                                                         double y,
+                                                         double r);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-draw-rectangle" title="gog_renderer_draw_rectangle ()">gog_renderer_draw_rectangle</a>         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *rect);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-stroke-rectangle" title="gog_renderer_stroke_rectangle ()">gog_renderer_stroke_rectangle</a>       (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *rect);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-fill-rectangle" title="gog_renderer_fill_rectangle ()">gog_renderer_fill_rectangle</a>         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *rect);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-draw-grip" title="gog_renderer_draw_grip ()">gog_renderer_draw_grip</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         double x,
+                                                         double y);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-draw-selection-rectangle" title="gog_renderer_draw_selection_rectangle ()">gog_renderer_draw_selection_rectangle</a>
+                                                        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *rectangle);
+#define             <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-in-grip" title="gog_renderer_in_grip()">gog_renderer_in_grip</a>                (x,y,grip_x,grip_y)
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-draw-marker" title="gog_renderer_draw_marker ()">gog_renderer_draw_marker</a>            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         double x,
+                                                         double y);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-draw-text" title="gog_renderer_draw_text ()">gog_renderer_draw_text</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         char const *text,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *pos,
+                                                         <a class="link" href="goffice-06-gog-renderer.html#GtkAnchorType" title="enum GtkAnchorType">GtkAnchorType</a> anchor,
+                                                         gboolean use_markup);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-get-text-OBR" title="gog_renderer_get_text_OBR ()">gog_renderer_get_text_OBR</a>           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         char const *text,
+                                                         gboolean use_markup,
+                                                         <a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR">GOGeometryOBR</a> *obr);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-get-text-AABR" title="gog_renderer_get_text_AABR ()">gog_renderer_get_text_AABR</a>          (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         char const *text,
+                                                         gboolean use_markup,
+                                                         <a class="link" href="goffice-06-go-geometry.html#GOGeometryAABR" title="GOGeometryAABR">GOGeometryAABR</a> *aabr);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-push-style" title="gog_renderer_push_style ()">gog_renderer_push_style</a>             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *style);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-pop-style" title="gog_renderer_pop_style ()">gog_renderer_pop_style</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-push-clip" title="gog_renderer_push_clip ()">gog_renderer_push_clip</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *path);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-push-clip-rectangle" title="gog_renderer_push_clip_rectangle ()">gog_renderer_push_clip_rectangle</a>    (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         double x,
+                                                         double y,
+                                                         double w,
+                                                         double h);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-pop-clip" title="gog_renderer_pop_clip ()">gog_renderer_pop_clip</a>               (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend);
+gboolean            <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-update" title="gog_renderer_update ()">gog_renderer_update</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         double w,
+                                                         double h);
+cairo_surface_t *   <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-get-cairo-surface" title="gog_renderer_get_cairo_surface ()">gog_renderer_get_cairo_surface</a>      (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer);
+<a class="link" href="goffice-06-gog-renderer.html#GdkPixbuf">GdkPixbuf</a> *         <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-get-pixbuf" title="gog_renderer_get_pixbuf ()">gog_renderer_get_pixbuf</a>             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-request-update" title="gog_renderer_request_update ()">gog_renderer_request_update</a>         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer);
+gboolean            <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-render-to-cairo" title="gog_renderer_render_to_cairo ()">gog_renderer_render_to_cairo</a>        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         cairo_t *cairo,
+                                                         double width,
+                                                         double height);
+gboolean            <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-export-image" title="gog_renderer_export_image ()">gog_renderer_export_image</a>           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         GOImageFormat format,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/gsf/gsf-Output-to-unstructured-files.html#GsfOutput"
+>GsfOutput</a> *output,
+                                                         double x_dpi,
+                                                         double y_dpi);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *       <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-new" title="gog_renderer_new ()">gog_renderer_new</a>                    (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-draw-sharp-path" title="gog_renderer_draw_sharp_path ()">gog_renderer_draw_sharp_path</a>        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         ArtVpath *path);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-draw-sharp-polygon" title="gog_renderer_draw_sharp_polygon ()">gog_renderer_draw_sharp_polygon</a>     (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         ArtVpath *path,
+                                                         gboolean narrow);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-draw-path" title="gog_renderer_draw_path ()">gog_renderer_draw_path</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         ArtVpath const *path);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-draw-polygon" title="gog_renderer_draw_polygon ()">gog_renderer_draw_polygon</a>           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         ArtVpath const *path,
+                                                         gboolean narrow);
+void                <a class="link" href="goffice-06-gog-renderer.html#gog-renderer-draw-bezier-path" title="gog_renderer_draw_bezier_path ()">gog_renderer_draw_bezier_path</a>       (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         ArtBpath const *path);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-renderer.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GdkPixbuf
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-renderer.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-renderer.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GdkPixbuf-struct"></a><h3>GdkPixbuf</h3>
+<pre class="programlisting">typedef struct _GdkPixbuf GdkPixbuf;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GtkAnchorType"></a><h3>enum GtkAnchorType</h3>
+<pre class="programlisting">typedef enum
+{
+  GTK_ANCHOR_CENTER,
+  GTK_ANCHOR_NORTH,
+  GTK_ANCHOR_NORTH_WEST,
+  GTK_ANCHOR_NORTH_EAST,
+  GTK_ANCHOR_SOUTH,
+  GTK_ANCHOR_SOUTH_WEST,
+  GTK_ANCHOR_SOUTH_EAST,
+  GTK_ANCHOR_WEST,
+  GTK_ANCHOR_EAST,
+  GTK_ANCHOR_N		= GTK_ANCHOR_NORTH,
+  GTK_ANCHOR_NW		= GTK_ANCHOR_NORTH_WEST,
+  GTK_ANCHOR_NE		= GTK_ANCHOR_NORTH_EAST,
+  GTK_ANCHOR_S		= GTK_ANCHOR_SOUTH,
+  GTK_ANCHOR_SW		= GTK_ANCHOR_SOUTH_WEST,
+  GTK_ANCHOR_SE		= GTK_ANCHOR_SOUTH_EAST,
+  GTK_ANCHOR_W		= GTK_ANCHOR_WEST,
+  GTK_ANCHOR_E		= GTK_ANCHOR_EAST
+} GtkAnchorType;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-RENDERER-CAIRO-WITH-SVG:CAPS"></a><h3>GOG_RENDERER_CAIRO_WITH_SVG</h3>
+<pre class="programlisting">#define GOG_RENDERER_CAIRO_WITH_SVG
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-RENDERER-CAIRO-WITH-PDF:CAPS"></a><h3>GOG_RENDERER_CAIRO_WITH_PDF</h3>
+<pre class="programlisting">#define GOG_RENDERER_CAIRO_WITH_PDF
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-RENDERER-CAIRO-WITH-PS:CAPS"></a><h3>GOG_RENDERER_CAIRO_WITH_PS</h3>
+<pre class="programlisting">#define GOG_RENDERER_CAIRO_WITH_PS
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-RENDERER-HAIRLINE-WIDTH-PTS:CAPS"></a><h3>GOG_RENDERER_HAIRLINE_WIDTH_PTS</h3>
+<pre class="programlisting">#define GOG_RENDERER_HAIRLINE_WIDTH_PTS	0.5
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-RENDERER-GRIP-SIZE:CAPS"></a><h3>GOG_RENDERER_GRIP_SIZE</h3>
+<pre class="programlisting">#define GOG_RENDERER_GRIP_SIZE	4
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-RENDERER-TYPE:CAPS"></a><h3>GOG_RENDERER_TYPE</h3>
+<pre class="programlisting">#define GOG_RENDERER_TYPE	  (gog_renderer_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-RENDERER:CAPS"></a><h3>GOG_RENDERER()</h3>
+<pre class="programlisting">#define GOG_RENDERER(o)           (G_TYPE_CHECK_INSTANCE_CAST((o), GOG_RENDERER_TYPE, GogRenderer))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-RENDERER:CAPS"></a><h3>IS_GOG_RENDERER()</h3>
+<pre class="programlisting">#define IS_GOG_RENDERER(o)        (G_TYPE_CHECK_INSTANCE_TYPE((o), GOG_RENDERER_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-RENDERER-GET-CLASS:CAPS"></a><h3>GOG_RENDERER_GET_CLASS()</h3>
+<pre class="programlisting">#define GOG_RENDERER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS((o), GOG_RENDERER_TYPE, GogRendererClass))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-get-type"></a><h3>gog_renderer_get_type ()</h3>
+<pre class="programlisting">GType               gog_renderer_get_type               (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-line-size"></a><h3>gog_renderer_line_size ()</h3>
+<pre class="programlisting">double              gog_renderer_line_size              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> const *r,
+                                                         double width);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-pt2r-x"></a><h3>gog_renderer_pt2r_x ()</h3>
+<pre class="programlisting">double              gog_renderer_pt2r_x                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> const *r,
+                                                         double d);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>d</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-pt2r-y"></a><h3>gog_renderer_pt2r_y ()</h3>
+<pre class="programlisting">double              gog_renderer_pt2r_y                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> const *r,
+                                                         double d);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>d</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-pt2r"></a><h3>gog_renderer_pt2r ()</h3>
+<pre class="programlisting">double              gog_renderer_pt2r                   (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> const *r,
+                                                         double d);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>d</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-get-hairline-width-pts"></a><h3>gog_renderer_get_hairline_width_pts ()</h3>
+<pre class="programlisting">double              gog_renderer_get_hairline_width_pts (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> const *rend);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the hairline width in pts.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-stroke-serie"></a><h3>gog_renderer_stroke_serie ()</h3>
+<pre class="programlisting">void                gog_renderer_stroke_serie           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *path);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>renderer</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-fill-serie"></a><h3>gog_renderer_fill_serie ()</h3>
+<pre class="programlisting">void                gog_renderer_fill_serie             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *path,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *close_path);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>renderer</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>close_path</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-draw-shape"></a><h3>gog_renderer_draw_shape ()</h3>
+<pre class="programlisting">void                gog_renderer_draw_shape             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *path);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>renderer</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-stroke-shape"></a><h3>gog_renderer_stroke_shape ()</h3>
+<pre class="programlisting">void                gog_renderer_stroke_shape           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *path);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>renderer</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-fill-shape"></a><h3>gog_renderer_fill_shape ()</h3>
+<pre class="programlisting">void                gog_renderer_fill_shape             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *path);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>renderer</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-draw-circle"></a><h3>gog_renderer_draw_circle ()</h3>
+<pre class="programlisting">void                gog_renderer_draw_circle            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         double x,
+                                                         double y,
+                                                         double r);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-stroke-circle"></a><h3>gog_renderer_stroke_circle ()</h3>
+<pre class="programlisting">void                gog_renderer_stroke_circle          (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         double x,
+                                                         double y,
+                                                         double r);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-fill-circle"></a><h3>gog_renderer_fill_circle ()</h3>
+<pre class="programlisting">void                gog_renderer_fill_circle            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         double x,
+                                                         double y,
+                                                         double r);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-draw-rectangle"></a><h3>gog_renderer_draw_rectangle ()</h3>
+<pre class="programlisting">void                gog_renderer_draw_rectangle         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *rect);</pre>
+<p>
+A utility routine to build a closed rectangle vpath.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rect</code></em> :</span></p></td>
+<td> position and extent of rectangle
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-stroke-rectangle"></a><h3>gog_renderer_stroke_rectangle ()</h3>
+<pre class="programlisting">void                gog_renderer_stroke_rectangle       (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *rect);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rect</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-fill-rectangle"></a><h3>gog_renderer_fill_rectangle ()</h3>
+<pre class="programlisting">void                gog_renderer_fill_rectangle         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *rect);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rect</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-draw-grip"></a><h3>gog_renderer_draw_grip ()</h3>
+<pre class="programlisting">void                gog_renderer_draw_grip              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         double x,
+                                                         double y);</pre>
+<p>
+Draw a grip, used for moving/resizing of objects.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>renderer</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td> x position of grip
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td> y position of grip
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-draw-selection-rectangle"></a><h3>gog_renderer_draw_selection_rectangle ()</h3>
+<pre class="programlisting">void                gog_renderer_draw_selection_rectangle
+                                                        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *rectangle);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>renderer</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rectangle</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-in-grip"></a><h3>gog_renderer_in_grip()</h3>
+<pre class="programlisting">#define             gog_renderer_in_grip(x,y,grip_x,grip_y)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>grip_x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>grip_y</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-draw-marker"></a><h3>gog_renderer_draw_marker ()</h3>
+<pre class="programlisting">void                gog_renderer_draw_marker            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         double x,
+                                                         double y);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td> X-coordinate
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td> Y-coordinate
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-draw-text"></a><h3>gog_renderer_draw_text ()</h3>
+<pre class="programlisting">void                gog_renderer_draw_text              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         char const *text,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *pos,
+                                                         <a class="link" href="goffice-06-gog-renderer.html#GtkAnchorType" title="enum GtkAnchorType">GtkAnchorType</a> anchor,
+                                                         gboolean use_markup);</pre>
+<p>
+Have <em class="parameter"><code>rend</code></em> draw <em class="parameter"><code>text</code></em> in the at <em class="parameter"><code>pos</code></em>.{x,y} anchored by the <em class="parameter"><code>anchor</code></em> corner.
+If <em class="parameter"><code>pos.w</code></em> or <em class="parameter"><code>pos.h</code></em> are &gt;= 0 then clip the results to less than that size.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td> the string to draw
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pos</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+><span class="type">GogViewAllocation</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>anchor</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-gog-renderer.html#GtkAnchorType" title="enum GtkAnchorType"><span class="type">GtkAnchorType</span></a> how to draw relative to <em class="parameter"><code>pos</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>use_markup</code></em> :</span></p></td>
+<td> wether to use pango markup
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-get-text-OBR"></a><h3>gog_renderer_get_text_OBR ()</h3>
+<pre class="programlisting">void                gog_renderer_get_text_OBR           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         char const *text,
+                                                         gboolean use_markup,
+                                                         <a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR">GOGeometryOBR</a> *obr);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td> the string to draw
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>use_markup</code></em> :</span></p></td>
+<td> wether to use pango markup
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obr</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR"><span class="type">GOGeometryOBR</span></a> to store the Object Bounding Rectangle of <em class="parameter"><code>text</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-get-text-AABR"></a><h3>gog_renderer_get_text_AABR ()</h3>
+<pre class="programlisting">void                gog_renderer_get_text_AABR          (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         char const *text,
+                                                         gboolean use_markup,
+                                                         <a class="link" href="goffice-06-go-geometry.html#GOGeometryAABR" title="GOGeometryAABR">GOGeometryAABR</a> *aabr);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td> the string to draw
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>use_markup</code></em> :</span></p></td>
+<td> wether to use pango markup
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>aabr</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-go-geometry.html#GOGeometryAABR" title="GOGeometryAABR"><span class="type">GOGeometryAABR</span></a> to store the Axis Aligned Bounding Rectangle of <em class="parameter"><code>text</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-push-style"></a><h3>gog_renderer_push_style ()</h3>
+<pre class="programlisting">void                gog_renderer_push_style             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *style);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-pop-style"></a><h3>gog_renderer_pop_style ()</h3>
+<pre class="programlisting">void                gog_renderer_pop_style              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-push-clip"></a><h3>gog_renderer_push_clip ()</h3>
+<pre class="programlisting">void                gog_renderer_push_clip              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *path);</pre>
+<p>
+Defines the current clipping region.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath"><span class="type">GOPath</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-push-clip-rectangle"></a><h3>gog_renderer_push_clip_rectangle ()</h3>
+<pre class="programlisting">void                gog_renderer_push_clip_rectangle    (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         double x,
+                                                         double y,
+                                                         double w,
+                                                         double h);</pre>
+<p>
+Defines a rectangular clipping region. For efficient screen rendering, 
+this function takes care to round the coordinates.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td> left coordinate
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td> top coordinate
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>w</code></em> :</span></p></td>
+<td> width of clipping rectangle
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>h</code></em> :</span></p></td>
+<td> height of clipping rectangle
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-pop-clip"></a><h3>gog_renderer_pop_clip ()</h3>
+<pre class="programlisting">void                gog_renderer_pop_clip               (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend);</pre>
+<p>
+End the current clipping.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-update"></a><h3>gog_renderer_update ()</h3>
+<pre class="programlisting">gboolean            gog_renderer_update                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         double w,
+                                                         double h);</pre>
+<p>
+Requests a renderer update, only useful for pixbuf based renderer.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>renderer</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>w</code></em> :</span></p></td>
+<td> requested width
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>h</code></em> :</span></p></td>
+<td> requested height
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <code class="literal">TRUE</code> if a redraw is necessary.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-get-cairo-surface"></a><h3>gog_renderer_get_cairo_surface ()</h3>
+<pre class="programlisting">cairo_surface_t *   gog_renderer_get_cairo_surface      (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>renderer</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-get-pixbuf"></a><h3>gog_renderer_get_pixbuf ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-gog-renderer.html#GdkPixbuf">GdkPixbuf</a> *         gog_renderer_get_pixbuf             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>renderer</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> current pixbuf buffer from a renderer that can render into a pixbuf.
+	or <code class="literal">NULL</code> on error.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-request-update"></a><h3>gog_renderer_request_update ()</h3>
+<pre class="programlisting">void                gog_renderer_request_update         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>renderer</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-render-to-cairo"></a><h3>gog_renderer_render_to_cairo ()</h3>
+<pre class="programlisting">gboolean            gog_renderer_render_to_cairo        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         cairo_t *cairo,
+                                                         double width,
+                                                         double height);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>renderer</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cairo</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-export-image"></a><h3>gog_renderer_export_image ()</h3>
+<pre class="programlisting">gboolean            gog_renderer_export_image           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *renderer,
+                                                         GOImageFormat format,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/gsf/gsf-Output-to-unstructured-files.html#GsfOutput"
+>GsfOutput</a> *output,
+                                                         double x_dpi,
+                                                         double y_dpi);</pre>
+<p>
+Exports an image of <em class="parameter"><code>graph</code></em> in given <em class="parameter"><code>format</code></em>, writing results in a <a
+href="/local/gnome/test/share/gtk-doc/html/gsf/gsf-Output-to-unstructured-files.html#GsfOutput"
+><span class="type">GsfOutput</span></a> stream.
+If export format type is a bitmap one, it computes image size with x_dpi, y_dpi and 
+<em class="parameter"><code>graph</code></em> size (see <a class="link" href="goffice-06-gog-graph.html#gog-graph-get-size" title="gog_graph_get_size ()"><code class="function">gog_graph_get_size()</code></a>).</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>renderer</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>format</code></em> :</span></p></td>
+<td> image format for export
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/gsf/gsf-Output-to-unstructured-files.html#GsfOutput"
+><span class="type">GsfOutput</span></a> stream
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x_dpi</code></em> :</span></p></td>
+<td> x resolution of exported graph
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y_dpi</code></em> :</span></p></td>
+<td> y resolution of exported graph
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <code class="literal">TRUE</code> if export succeed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-new"></a><h3>gog_renderer_new ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *       gog_renderer_new                    (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>graph</code></em> :</span></p></td>
+<td> graph model
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>  a new <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a> which can render into a pixbuf, and sets <em class="parameter"><code>graph</code></em>
+	as its model.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-draw-sharp-path"></a><h3>gog_renderer_draw_sharp_path ()</h3>
+<pre class="programlisting">void                gog_renderer_draw_sharp_path        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         ArtVpath *path);</pre>
+<p>
+Draws <em class="parameter"><code>path</code></em> using the outline elements of the current style,
+trying to make line with sharp edge.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td> <span class="type">ArtVpath</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-draw-sharp-polygon"></a><h3>gog_renderer_draw_sharp_polygon ()</h3>
+<pre class="programlisting">void                gog_renderer_draw_sharp_polygon     (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         ArtVpath *path,
+                                                         gboolean narrow);</pre>
+<p>
+Draws <em class="parameter"><code>path</code></em> and fills it with the fill elements of the current style,
+trying to draw line with sharp edge.
+If <em class="parameter"><code>narrow</code></em> is false it alos outlines it using the outline elements.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td> <span class="type">ArtVpath</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>narrow</code></em> :</span></p></td>
+<td> if TRUE skip any outline the current style specifies.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-draw-path"></a><h3>gog_renderer_draw_path ()</h3>
+<pre class="programlisting">void                gog_renderer_draw_path              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         ArtVpath const *path);</pre>
+<p>
+Draws <em class="parameter"><code>path</code></em> using the outline elements of the current style.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td> <span class="type">ArtVpath</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-draw-polygon"></a><h3>gog_renderer_draw_polygon ()</h3>
+<pre class="programlisting">void                gog_renderer_draw_polygon           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         ArtVpath const *path,
+                                                         gboolean narrow);</pre>
+<p>
+Draws <em class="parameter"><code>path</code></em> and fills it with the fill elements of the current style.
+If <em class="parameter"><code>narrow</code></em> is false it alos outlines it using the outline elements.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td> <span class="type">ArtVpath</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>narrow</code></em> :</span></p></td>
+<td> if TRUE skip any outline the current style specifies.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-renderer-draw-bezier-path"></a><h3>gog_renderer_draw_bezier_path ()</h3>
+<pre class="programlisting">void                gog_renderer_draw_bezier_path       (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         ArtBpath const *path);</pre>
+<p>
+Draws <em class="parameter"><code>path</code></em> using the outline elements of the current style.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+><span class="type">GogRenderer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td> <span class="type">ArtBpath</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

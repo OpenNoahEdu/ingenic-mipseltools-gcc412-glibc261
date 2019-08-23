@@ -1,0 +1,2263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>gnome-print</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="GNOME Print Reference Manual">
+<link rel="up" href="libgnomeprintunsorted.html" title="Part&#160;II.&#160;API Reference">
+<link rel="prev" href="libgnomeprint-gnome-print-paper.html" title="gnome-print-paper">
+<link rel="next" href="libgnomeprint-Pango-Integration.html" title="Pango Integration">
+<meta name="generator" content="GTK-Doc V1.8 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="libgnomeprint.html" title="Part&#160;I.&#160;GNOME Print Overview">
+<link rel="part" href="libgnomeprintunsorted.html" title="Part&#160;II.&#160;API Reference">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libgnomeprint-gnome-print-paper.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="libgnomeprintunsorted.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GNOME Print Reference Manual</th>
+<td><a accesskey="n" href="libgnomeprint-Pango-Integration.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2987240" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2988739" class="shortcut">Description</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="libgnomeprint-gnome-print"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2987240"></a><span class="refentrytitle">gnome-print</span>
+</h2>
+<p>gnome-print</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<pre class="synopsis">
+
+
+
+enum                <a href="libgnomeprint-gnome-print.html#GnomePrintReturnCode">GnomePrintReturnCode</a>;
+                    <a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a>;
+<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a>*  <a href="libgnomeprint-gnome-print.html#gnome-print-context-new">gnome_print_context_new</a>             (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-context-close">gnome_print_context_close</a>           (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-newpath">gnome_print_newpath</a>                 (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-moveto">gnome_print_moveto</a>                  (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-lineto">gnome_print_lineto</a>                  (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-curveto">gnome_print_curveto</a>                 (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x1,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y1,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x2,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y2,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x3,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y3);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-closepath">gnome_print_closepath</a>               (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-strokepath">gnome_print_strokepath</a>              (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-bpath">gnome_print_bpath</a>                   (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const ArtBpath *bpath,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a> append);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-vpath">gnome_print_vpath</a>                   (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const ArtVpath *vpath,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a> append);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-arcto">gnome_print_arcto</a>                   (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> radius,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> angle1,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> angle2,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> direction);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-setrgbcolor">gnome_print_setrgbcolor</a>             (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> r,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> g,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> b);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-setopacity">gnome_print_setopacity</a>              (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> opacity);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-setlinewidth">gnome_print_setlinewidth</a>            (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> width);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-setmiterlimit">gnome_print_setmiterlimit</a>           (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> limit);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-setlinejoin">gnome_print_setlinejoin</a>             (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> jointype);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-setlinecap">gnome_print_setlinecap</a>              (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> captype);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-setdash">gnome_print_setdash</a>                 (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> n_values,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> *values,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> offset);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-setfont">gnome_print_setfont</a>                 (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const <a href="libgnomeprint-gnome-font.html#GnomeFont">GnomeFont</a> *font);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-clip">gnome_print_clip</a>                    (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-eoclip">gnome_print_eoclip</a>                  (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-concat">gnome_print_concat</a>                  (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> *matrix);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-scale">gnome_print_scale</a>                   (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> sx,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> sy);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-rotate">gnome_print_rotate</a>                  (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> theta);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-translate">gnome_print_translate</a>               (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-gsave">gnome_print_gsave</a>                   (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-grestore">gnome_print_grestore</a>                (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-fill">gnome_print_fill</a>                    (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-eofill">gnome_print_eofill</a>                  (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-stroke">gnome_print_stroke</a>                  (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-show">gnome_print_show</a>                    (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *text);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-show-sized">gnome_print_show_sized</a>              (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *text,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> bytes);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-glyphlist">gnome_print_glyphlist</a>               (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a href="libgnomeprint-gnome-glyphlist.html#GnomeGlyphList">GnomeGlyphList</a> *glyphlist);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-grayimage">gnome_print_grayimage</a>               (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *data,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> width,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> height,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> rowstride);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-rgbimage">gnome_print_rgbimage</a>                (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *data,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> width,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> height,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> rowstride);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-rgbaimage">gnome_print_rgbaimage</a>               (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *data,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> width,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> height,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> rowstride);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-beginpage">gnome_print_beginpage</a>               (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *name);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-showpage">gnome_print_showpage</a>                (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-line-stroked">gnome_print_line_stroked</a>            (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x0,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y0,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x1,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y1);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-rect-stroked">gnome_print_rect_stroked</a>            (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> width,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> height);
+<a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                <a href="libgnomeprint-gnome-print.html#gnome-print-rect-filled">gnome_print_rect_filled</a>             (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> width,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> height);
+
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2988739"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2988753"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2988764"></a><h3>
+<a name="GnomePrintReturnCode"></a>enum GnomePrintReturnCode</h3>
+<a class="indexterm" name="id2988777"></a><pre class="programlisting">typedef enum {
+	GNOME_PRINT_OK = 0,
+	GNOME_PRINT_ERROR_UNKNOWN        = -1,
+	GNOME_PRINT_ERROR_BADVALUE       = -2,
+	GNOME_PRINT_ERROR_NOCURRENTPOINT = -3,
+	GNOME_PRINT_ERROR_NOCURRENTPATH  = -4,
+	GNOME_PRINT_ERROR_TEXTCORRUPT    = -5,
+	GNOME_PRINT_ERROR_BADCONTEXT     = -6,
+	GNOME_PRINT_ERROR_NOPAGE         = -7,
+	GNOME_PRINT_ERROR_NOMATCH        = -8
+} GnomePrintReturnCode;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2988798"></a><h3>
+<a name="GnomePrintContext"></a>GnomePrintContext</h3>
+<a class="indexterm" name="id2988811"></a><pre class="programlisting">typedef struct _GnomePrintContext GnomePrintContext;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2988826"></a><h3>
+<a name="gnome-print-context-new"></a>gnome_print_context_new ()</h3>
+<a class="indexterm" name="id2988839"></a><pre class="programlisting"><a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a>*  gnome_print_context_new             (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config);</pre>
+<p>
+Create new printing context from config. You have to have set
+all the options/settings beforehand, as changing the config of
+an existing context has undefined results.
+</p>
+<p>
+Also, if creating the context by hand, it completely ignores layout and
+orientation value. If you need those, use GnomePrintJob. The
+later also can create output context for you, so in most cases
+you may want to ignore gnome_print_context_new at all.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>config</code></em>&#160;:</span></td>
+<td> GnomePrintConfig object to query print settings from
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> The new GnomePrintContext or NULL on error
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2988912"></a><h3>
+<a name="gnome-print-context-close"></a>gnome_print_context_close ()</h3>
+<a class="indexterm" name="id2988926"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_context_close           (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);</pre>
+<p>
+Informs given <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a> that application has finished print
+job. From that point on, <em class="parameter"><code>pc</code></em> has to be considered illegal pointer,
+and any further printing operation with it may kill application.
+Some printing contexts may not start printing before context is
+closed.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2989022"></a><h3>
+<a name="gnome-print-newpath"></a>gnome_print_newpath ()</h3>
+<a class="indexterm" name="id2989035"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_newpath                 (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);</pre>
+<p>
+Resets currentpath to empty path. As currentpoint is defined as
+the last point of open path segment, is also erases currentpoint.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2989114"></a><h3>
+<a name="gnome-print-moveto"></a>gnome_print_moveto ()</h3>
+<a class="indexterm" name="id2989127"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_moveto                  (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y);</pre>
+<p>
+Starts new subpath in currentpath with coordinates <em class="parameter"><code>x</code></em>,<em class="parameter"><code>y</code></em>.
+Moves currentpoint to <em class="parameter"><code>x</code></em>,<em class="parameter"><code>y</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>x</code></em>&#160;:</span></td>
+<td> X position in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>y</code></em>&#160;:</span></td>
+<td> Y position in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2989270"></a><h3>
+<a name="gnome-print-lineto"></a>gnome_print_lineto ()</h3>
+<a class="indexterm" name="id2989283"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_lineto                  (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y);</pre>
+<p>
+Adds new straight line segment from currentpoint to <em class="parameter"><code>x</code></em>,<em class="parameter"><code>y</code></em> to currentpath.
+Moves currentpoint to <em class="parameter"><code>x</code></em>,<em class="parameter"><code>y</code></em>.
+If currentpoint is not defined, returns <span class="type">GNOME_PRINT_ERROR_NOCURRENTPOINT</span>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>x</code></em>&#160;:</span></td>
+<td> X position in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>y</code></em>&#160;:</span></td>
+<td> Y position in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2989439"></a><h3>
+<a name="gnome-print-curveto"></a>gnome_print_curveto ()</h3>
+<a class="indexterm" name="id2989452"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_curveto                 (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x1,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y1,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x2,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y2,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x3,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y3);</pre>
+<p>
+Adds new cubig bezier segment with control points <em class="parameter"><code>x1</code></em>,<em class="parameter"><code>y1</code></em> and
+<em class="parameter"><code>x2</code></em>,<em class="parameter"><code>y2</code></em> and endpoint <em class="parameter"><code>x3</code></em>,<em class="parameter"><code>y3</code></em> to currentpath.
+Moves currentpoint to <em class="parameter"><code>x3</code></em>,<em class="parameter"><code>y3</code></em>.
+If currentpoint is not defined, returns <span class="type">GNOME_PRINT_ERROR_NOCURRENTPOINT</span>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>x1</code></em>&#160;:</span></td>
+<td> X position of first control point in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>y1</code></em>&#160;:</span></td>
+<td> Y position of first control point in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>x2</code></em>&#160;:</span></td>
+<td> X position of second control point in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>y2</code></em>&#160;:</span></td>
+<td> Y position of second control point in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>x3</code></em>&#160;:</span></td>
+<td> X position of endpoint in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>y3</code></em>&#160;:</span></td>
+<td> Y position of endpoint in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2989720"></a><h3>
+<a name="gnome-print-closepath"></a>gnome_print_closepath ()</h3>
+<a class="indexterm" name="id2989732"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_closepath               (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);</pre>
+<p>
+Closes the last segment of currentpath, optionally drawing straight
+line segment from its endpoint to starting point.
+Erases currentpoint.
+If currentpath is empty, returns <span class="type">GNOME_PRINT_ERROR_NOCURRENTPATH</span>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2989823"></a><h3>
+<a name="gnome-print-strokepath"></a>gnome_print_strokepath ()</h3>
+<a class="indexterm" name="id2989837"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_strokepath              (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);</pre>
+<p>
+Converts currentpath to new path, that is identical to area painted
+by <a href="libgnomeprint-gnome-print.html#gnome-print-stroke"><span class="type">gnome_print_stroke</span></a> function, using currentpath. I.e. strokepath
+followed by fill giver result identical to stroke.
+If currentpath is empty, returns <span class="type">GNOME_PRINT_ERROR_NOCURRENTPATH</span>.
+Stroked path is always closed, so currentpoint is erased.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2989936"></a><h3>
+<a name="gnome-print-bpath"></a>gnome_print_bpath ()</h3>
+<a class="indexterm" name="id2989949"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_bpath                   (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const ArtBpath *bpath,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a> append);</pre>
+<p>
+Adds all <em class="parameter"><code>bpath</code></em> segments up to <span class="type">ART_END</span> to currentpath. If <em class="parameter"><code>append</code></em>
+is false, currentpath is cleared first, otherwise segments are
+appended to existing path.
+This is identical to adding all segments by hand, so the final state
+of currentpoint depends on segments processed.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>bpath</code></em>&#160;:</span></td>
+<td> Array of <span class="type">ArtBpath</span> segments
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>append</code></em>&#160;:</span></td>
+<td> Whether to append to currentpath
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2990103"></a><h3>
+<a name="gnome-print-vpath"></a>gnome_print_vpath ()</h3>
+<a class="indexterm" name="id2990117"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_vpath                   (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const ArtVpath *vpath,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a> append);</pre>
+<p>
+Adds all <em class="parameter"><code>vpath</code></em> line segments up to <span class="type">ART_END</span> to currentpath. If <em class="parameter"><code>append</code></em>
+is false, currentpath is cleared first, otherwise segments are
+appended to existing path.
+This is identical to adding all segments by hand, so the final state
+of currentpoint depends on segments processed.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>vpath</code></em>&#160;:</span></td>
+<td> Array of <span class="type">ArtVpath</span> segments
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>append</code></em>&#160;:</span></td>
+<td> Whether to append to currentpath
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2990269"></a><h3>
+<a name="gnome-print-arcto"></a>gnome_print_arcto ()</h3>
+<a class="indexterm" name="id2990282"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_arcto                   (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> radius,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> angle1,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> angle2,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> direction);</pre>
+<p>
+Adds an arc with control points <em class="parameter"><code>x</code></em> and <em class="parameter"><code>y</code></em> with a radius <em class="parameter"><code>radius</code></em> and from
+<em class="parameter"><code>angle1</code></em> to <em class="parameter"><code>andgle2</code></em> in degrees. <em class="parameter"><code>direction</code></em> 1 is clockwise 0 counterclockwise</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <span class="type">GnomePrintContextx</span>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>x</code></em>&#160;:</span></td>
+<td> X position of control point in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>y</code></em>&#160;:</span></td>
+<td> Y position of control point in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>radius</code></em>&#160;:</span></td>
+<td> the radius of the arc
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>angle1</code></em>&#160;:</span></td>
+<td> start angle in degrees
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>angle2</code></em>&#160;:</span></td>
+<td> end angle in degrees
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>direction</code></em>&#160;:</span></td>
+<td> direction of movement, 0 counterclockwise 1 clockwise
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> GNOME_PRINT_OK or postive value on success, a negative value otherwise
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2990520"></a><h3>
+<a name="gnome-print-setrgbcolor"></a>gnome_print_setrgbcolor ()</h3>
+<a class="indexterm" name="id2990534"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_setrgbcolor             (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> r,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> g,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> b);</pre>
+<p>
+Sets color in graphic state to RGB triplet. This does not imply anything
+about which colorspace is used internally.
+Channel values are clamped to 0.0 - 1.0 region, 0.0 meaning minimum.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>r</code></em>&#160;:</span></td>
+<td> Red channel value
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>g</code></em>&#160;:</span></td>
+<td> Green channel value
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>b</code></em>&#160;:</span></td>
+<td> Blue channel value
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2990680"></a><h3>
+<a name="gnome-print-setopacity"></a>gnome_print_setopacity ()</h3>
+<a class="indexterm" name="id2990692"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_setopacity              (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> opacity);</pre>
+<p>
+Sets painting opacity in graphic state to given value.
+Value is clamped to 0.0 - 1.0 region, 0.0 meaning full transparency and
+1.0 completely opaque paint.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>opacity</code></em>&#160;:</span></td>
+<td> Opacity value
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2990794"></a><h3>
+<a name="gnome-print-setlinewidth"></a>gnome_print_setlinewidth ()</h3>
+<a class="indexterm" name="id2990807"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_setlinewidth            (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> width);</pre>
+<p>
+Sets line width in graphic state to given value.
+Value is given in user coordinates, so effective line width depends on
+CTM at the moment of <a href="libgnomeprint-gnome-print.html#gnome-print-stroke"><span class="type">gnome_print_stroke</span></a> or <a href="libgnomeprint-gnome-print.html#gnome-print-strokepath"><span class="type">gnome_print_strokepath</span></a>.
+Line width is always uniform in all directions, regardless of stretch
+factor of CTM.
+Default line width is 1.0 in user coordinates.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>width</code></em>&#160;:</span></td>
+<td> Line width in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2990928"></a><h3>
+<a name="gnome-print-setmiterlimit"></a>gnome_print_setmiterlimit ()</h3>
+<a class="indexterm" name="id2990942"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_setmiterlimit           (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> limit);</pre>
+<p>
+Sets minimum angle between two lines, in which case miter join is
+used. For smaller angles, join is beveled.
+Default miter limit is 4 degrees.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>limit</code></em>&#160;:</span></td>
+<td> Miter limit in degrees
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2991042"></a><h3>
+<a name="gnome-print-setlinejoin"></a>gnome_print_setlinejoin ()</h3>
+<a class="indexterm" name="id2991055"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_setlinejoin             (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> jointype);</pre>
+<p>
+Sets join type for non-colinear line segments.
+0 - miter
+1 - round
+2 - bevel
+Default join type is miter.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>jointype</code></em>&#160;:</span></td>
+<td> Integer indicating join type
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2991156"></a><h3>
+<a name="gnome-print-setlinecap"></a>gnome_print_setlinecap ()</h3>
+<a class="indexterm" name="id2991170"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_setlinecap              (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> captype);</pre>
+<p>
+Sets cap type for line endpoints.
+0 - butt
+1 - round
+2 - square
+Default cap type is butt.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>captype</code></em>&#160;:</span></td>
+<td> Integer indicating cap type
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2991270"></a><h3>
+<a name="gnome-print-setdash"></a>gnome_print_setdash ()</h3>
+<a class="indexterm" name="id2991284"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_setdash                 (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> n_values,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> *values,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> offset);</pre>
+<p>
+Sets line dashing to given pattern. If n_dash is odd, the result is,
+as if actual number of segments is 2 times bigger, and 2 copies
+of dash arrays concatenated.
+If n_values is 0, line is set solid.
+Dash segment lengths are given in user coordinates, so the actual
+dash lengths depend on CTM at the time of <a href="libgnomeprint-gnome-print.html#gnome-print-stroke"><span class="type">gnome_print_stroke</span></a> or
+<a href="libgnomeprint-gnome-print.html#gnome-print-strokepath"><span class="type">gnome_print_strokepath</span></a>. Dashing is always uniform in all directions,
+regardless of the stretching factor of CTM.
+Default is solid line.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>n_values</code></em>&#160;:</span></td>
+<td> Number of dash segment lengths
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>values</code></em>&#160;:</span></td>
+<td> Array of dash segment lengths
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>offset</code></em>&#160;:</span></td>
+<td> Line starting offset in dash
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2991451"></a><h3>
+<a name="gnome-print-setfont"></a>gnome_print_setfont ()</h3>
+<a class="indexterm" name="id2991464"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_setfont                 (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const <a href="libgnomeprint-gnome-font.html#GnomeFont">GnomeFont</a> *font);</pre>
+<p>
+Sets font in graphic state. Font is referenced by gnome print,
+so caller may discard it immediately afterwards.
+Default font is system dependent.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>font</code></em>&#160;:</span></td>
+<td> <a href="libgnomeprint-gnome-font.html#GnomeFont"><span class="type">GnomeFont</span></a> to use for text
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2991573"></a><h3>
+<a name="gnome-print-clip"></a>gnome_print_clip ()</h3>
+<a class="indexterm" name="id2991586"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_clip                    (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);</pre>
+<p>
+Defines drawing region as inside area of currentpath. If path is
+self-intersecting or consists of several overlapping subpaths,
+nonzero rule is used to define the inside orea of path.
+All open subpaths of currentpath are closed.
+If currentpath is empty, <span class="type">GNOME_PRINT_ERROR_NOCURRENTPATH</span> is
+returned.
+Currentpath is emptied by this function.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2991679"></a><h3>
+<a name="gnome-print-eoclip"></a>gnome_print_eoclip ()</h3>
+<a class="indexterm" name="id2991692"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_eoclip                  (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);</pre>
+<p>
+Defines drawing region as inside area of currentpath. If path is
+self-intersecting or consists of several overlapping subpaths,
+even-odd rule is used to define the inside area of path.
+All open subpaths of currentpath are closed.
+If currentpath is empty, <span class="type">GNOME_PRINT_ERROR_NOCURRENTPATH</span> is
+returned.
+Currentpath is emptied by this function.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2991783"></a><h3>
+<a name="gnome-print-concat"></a>gnome_print_concat ()</h3>
+<a class="indexterm" name="id2991797"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_concat                  (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> *matrix);</pre>
+<p>
+Appends <em class="parameter"><code>matrix</code></em> to current transformation matrix (CTM). The resulting
+transformation from user coordinates to page coordinates is, as
+if coordinates would first be transformed by <em class="parameter"><code>matrix</code></em>, and the
+results by CTM.
+Matrix is given in column order, i.e.
+X' = X * m[0] + Y * m[2] + m[4]
+Y' = X * m[1] + Y * m[3] + m[5]</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>matrix</code></em>&#160;:</span></td>
+<td> 3x2 affine transformation matrix
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2991913"></a><h3>
+<a name="gnome-print-scale"></a>gnome_print_scale ()</h3>
+<a class="indexterm" name="id2991926"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_scale                   (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> sx,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> sy);</pre>
+<p>
+Scales user coordinate system by given X and Y values.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>sx</code></em>&#160;:</span></td>
+<td> X scale
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>sy</code></em>&#160;:</span></td>
+<td> Y scale
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2992047"></a><h3>
+<a name="gnome-print-rotate"></a>gnome_print_rotate ()</h3>
+<a class="indexterm" name="id2992060"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_rotate                  (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> theta);</pre>
+<p>
+Rotates user coordinate system theta degrees counterclockwise.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>theta</code></em>&#160;:</span></td>
+<td> Angle in degrees
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2992160"></a><h3>
+<a name="gnome-print-translate"></a>gnome_print_translate ()</h3>
+<a class="indexterm" name="id2992173"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_translate               (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y);</pre>
+<p>
+Move the starting point of user coordinate system to given point.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>x</code></em>&#160;:</span></td>
+<td> New starting X
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>y</code></em>&#160;:</span></td>
+<td> New starting Y
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2992294"></a><h3>
+<a name="gnome-print-gsave"></a>gnome_print_gsave ()</h3>
+<a class="indexterm" name="id2992308"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_gsave                   (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);</pre>
+<p>
+Saves current graphic state (transformation, color, line properties, font)
+into stack (push). Values itself remain unchanged.
+You can later restore saved values, using <a href="libgnomeprint-gnome-print.html#gnome-print-grestore"><span class="type">gnome_print_grestore</span></a>, but not
+over page boundaries. Graphic state stack has to be cleared for each
+<a href="libgnomeprint-gnome-print.html#gnome-print-showpage"><span class="type">gnome_print_showpage</span></a>, i.e. the number of <a href="libgnomeprint-gnome-print.html#gnome-print-gsave"><span class="type">gnome_print_gsave</span></a> has to
+match the number of <a href="libgnomeprint-gnome-print.html#gnome-print-grestore"><span class="type">gnome_print_grestore</span></a> for each page.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2992424"></a><h3>
+<a name="gnome-print-grestore"></a>gnome_print_grestore ()</h3>
+<a class="indexterm" name="id2992437"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_grestore                (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);</pre>
+<p>
+Retrieves last saved graphic state from stack (pop). Stack has to be
+at least the size of one.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2992516"></a><h3>
+<a name="gnome-print-fill"></a>gnome_print_fill ()</h3>
+<a class="indexterm" name="id2992529"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_fill                    (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);</pre>
+<p>
+Fills the inside area of currentpath, using current graphic state.
+If path is self-intersecting or consists of several overlapping subpaths,
+nonzero rule is used to define the inside area of path.
+All open subpaths of currentpath are closed.
+If currentpath is empty, <span class="type">GNOME_PRINT_ERROR_NOCURRENTPATH</span> is
+returned.
+Currentpath is emptied by this function.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2992621"></a><h3>
+<a name="gnome-print-eofill"></a>gnome_print_eofill ()</h3>
+<a class="indexterm" name="id2992634"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_eofill                  (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);</pre>
+<p>
+Fills the inside area of currentpath, using current graphic state.
+If path is self-intersecting or consists of several overlapping subpaths,
+even-odd rule is used to define the inside area of path.
+All open subpaths of currentpath are closed.
+If currentpath is empty, <span class="type">GNOME_PRINT_ERROR_NOCURRENTPATH</span> is
+returned.
+Currentpath is emptied by this function.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2992725"></a><h3>
+<a name="gnome-print-stroke"></a>gnome_print_stroke ()</h3>
+<a class="indexterm" name="id2992739"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_stroke                  (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);</pre>
+<p>
+Strokes currentpath, i.e. draws line along it, with style, defined
+by current graphic state values.
+If currentpath is empty, <span class="type">GNOME_PRINT_ERROR_NOCURRENTPATH</span> is
+returned.
+Currentpath is emptied by this function.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2992828"></a><h3>
+<a name="gnome-print-show"></a>gnome_print_show ()</h3>
+<a class="indexterm" name="id2992841"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_show                    (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *text);</pre>
+<p>
+Draws UTF-8 text at currentpoint, using current font from graphic
+state.
+Input text is validated, and <span class="type">GNOME_PRINT_ERROR_BADVALUE</span> returned,
+if it is not valid UTF-8.
+Both currentpath and currentpoint are erased.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>text</code></em>&#160;:</span></td>
+<td> Null-terminated UTF-8 string
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2992954"></a><h3>
+<a name="gnome-print-show-sized"></a>gnome_print_show_sized ()</h3>
+<a class="indexterm" name="id2992966"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_show_sized              (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *text,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> bytes);</pre>
+<p>
+Draws UTF-8 text at currentpoint, using current font from graphic
+state.
+Input text is validated, and <span class="type">GNOME_PRINT_ERROR_BADVALUE</span> returned,
+if it is not valid UTF-8.
+Both currentpath and currentpoint are erased.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>text</code></em>&#160;:</span></td>
+<td> UTF-8 text string
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>bytes</code></em>&#160;:</span></td>
+<td> Number of bytes to use from string
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2993100"></a><h3>
+<a name="gnome-print-glyphlist"></a>gnome_print_glyphlist ()</h3>
+<a class="indexterm" name="id2993112"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_glyphlist               (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a href="libgnomeprint-gnome-glyphlist.html#GnomeGlyphList">GnomeGlyphList</a> *glyphlist);</pre>
+<p>
+Draws text, using <a href="libgnomeprint-gnome-glyphlist.html#GnomeGlyphList"><span class="type">GnomeGlyphList</span></a> rich text format.
+Glyphlist is rendered in user coordinates, starting from
+currentpoint.
+Both currentpath and currentpoint are erased.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>glyphlist</code></em>&#160;:</span></td>
+<td> <a href="libgnomeprint-gnome-glyphlist.html#GnomeGlyphList"><span class="type">GnomeGlyphList</span></a> text object
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2993231"></a><h3>
+<a name="gnome-print-grayimage"></a>gnome_print_grayimage ()</h3>
+<a class="indexterm" name="id2993244"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_grayimage               (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *data,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> width,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> height,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> rowstride);</pre>
+<p>
+Draws grayscale image into unit square (0,0 - 1,1) in current coordinate
+system.
+Image buffer has to be 1 byte per pixel, with value 255 marking
+white and 0 black.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>data</code></em>&#160;:</span></td>
+<td> Pointer to image pixel buffer
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>width</code></em>&#160;:</span></td>
+<td> Image buffer width
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>height</code></em>&#160;:</span></td>
+<td> Image buffer height
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>rowstride</code></em>&#160;:</span></td>
+<td> Image buffer rowstride
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2993411"></a><h3>
+<a name="gnome-print-rgbimage"></a>gnome_print_rgbimage ()</h3>
+<a class="indexterm" name="id2993424"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_rgbimage                (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *data,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> width,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> height,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> rowstride);</pre>
+<p>
+Draws RGB color image into unit square (0,0 - 1,1) in current coordinate
+system.
+Image buffer has to be 3 bytes per pixel, order RGB, with value 255 marking
+maximum and 0 minimum value.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>data</code></em>&#160;:</span></td>
+<td> Pointer to image pixel buffer
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>width</code></em>&#160;:</span></td>
+<td> Image buffer width
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>height</code></em>&#160;:</span></td>
+<td> Image buffer height
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>rowstride</code></em>&#160;:</span></td>
+<td> Image buffer rowstride
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2993592"></a><h3>
+<a name="gnome-print-rgbaimage"></a>gnome_print_rgbaimage ()</h3>
+<a class="indexterm" name="id2993605"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_rgbaimage               (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *data,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> width,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> height,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> rowstride);</pre>
+<p>
+Draws RGB color image with transparency channel image into unit square
+(0,0 - 1,1) in current coordinate system.
+Image buffer has to be 4 bytes per pixel, order RGBA, with value 255 marking
+maximum and 0 minimum value. Alpha value 255 means full opacity, 0 full
+transparency.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>data</code></em>&#160;:</span></td>
+<td> Pointer to image pixel buffer
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>width</code></em>&#160;:</span></td>
+<td> Image buffer width
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>height</code></em>&#160;:</span></td>
+<td> Image buffer height
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>rowstride</code></em>&#160;:</span></td>
+<td> Image buffer rowstride
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2993775"></a><h3>
+<a name="gnome-print-beginpage"></a>gnome_print_beginpage ()</h3>
+<a class="indexterm" name="id2993788"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_beginpage               (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *name);</pre>
+<p>
+Starts new output page with <em class="parameter"><code>name</code></em>. Naming is used for interactive
+contexts like <a
+href="../libgnomeprintui/libgnomeprintui-gnome-print-preview.html#GnomePrintPreview"
+><span class="type">GnomePrintPreview</span></a> and Document Structuring Convention
+conformant PostScript output.
+This function has to be called before any drawing methods and immediately
+after each <a href="libgnomeprint-gnome-print.html#gnome-print-showpage"><span class="type">gnome_print_showpage</span></a> albeit the last one. It also resets
+graphic state values (transformation, color, line properties, font),
+so one has to define these again at the beginning of each page.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>name</code></em>&#160;:</span></td>
+<td> Name of the page, NULL if you just want to use the page number of the page
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2993919"></a><h3>
+<a name="gnome-print-showpage"></a>gnome_print_showpage ()</h3>
+<a class="indexterm" name="id2993932"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_showpage                (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc);</pre>
+<p>
+Finishes rendering of current page, and marks it as shown. All subsequent
+drawing methods will fail, until new page is started with <span class="type">gnome_print_newpage</span>.
+Printing contexts may process drawing methods differently - some do
+rendering immediately (like <a
+href="../libgnomeprintui/libgnomeprintui-gnome-print-preview.html#GnomePrintPreview"
+><span class="type">GnomePrintPreview</span></a>), some accumulate all
+operators to internal stack, and only after <a href="libgnomeprint-gnome-print.html#gnome-print-showpage"><span class="type">gnome_print_showpage</span></a> is
+any output produced.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error
+code on failure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2994042"></a><h3>
+<a name="gnome-print-line-stroked"></a>gnome_print_line_stroked ()</h3>
+<a class="indexterm" name="id2994055"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_line_stroked            (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x0,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y0,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x1,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y1);</pre>
+<p>
+A convenience function to draw a line.  Uses 
+<a href="libgnomeprint-gnome-print.html#gnome-print-stroke"><span class="type">gnome_print_stroke</span></a> to do the actual work.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>x0</code></em>&#160;:</span></td>
+<td> X position of start point in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>y0</code></em>&#160;:</span></td>
+<td> Y position of start point in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>x1</code></em>&#160;:</span></td>
+<td> X position of end point in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>y1</code></em>&#160;:</span></td>
+<td> Y position of end point in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error code
+         on failure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2994231"></a><h3>
+<a name="gnome-print-rect-stroked"></a>gnome_print_rect_stroked ()</h3>
+<a class="indexterm" name="id2994244"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_rect_stroked            (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> width,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> height);</pre>
+<p>
+A convenience function to draw a rectangle. Uses 
+<a href="libgnomeprint-gnome-print.html#gnome-print-stroke"><span class="type">gnome_print_stroke</span></a> to do the actual work.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>x</code></em>&#160;:</span></td>
+<td> X position of origin of rectangle in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>y</code></em>&#160;:</span></td>
+<td> Y position of origin of rectangle in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>width</code></em>&#160;:</span></td>
+<td> Width of the rectangle
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>height</code></em>&#160;:</span></td>
+<td> Height of the rectange
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error code
+         on failure. 
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2994419"></a><h3>
+<a name="gnome-print-rect-filled"></a>gnome_print_rect_filled ()</h3>
+<a class="indexterm" name="id2994432"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a>                gnome_print_rect_filled             (<a href="libgnomeprint-gnome-print.html#GnomePrintContext">GnomePrintContext</a> *pc,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> width,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> height);</pre>
+<p>
+A convenience function to draw a filled rectangle. Uses 
+<a href="libgnomeprint-gnome-print.html#gnome-print-stroke"><span class="type">gnome_print_stroke</span></a> to do the actual work.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pc</code></em>&#160;:</span></td>
+<td> A <a href="libgnomeprint-gnome-print.html#GnomePrintContext"><span class="type">GnomePrintContext</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>x</code></em>&#160;:</span></td>
+<td> X position of origin of rectangle in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>y</code></em>&#160;:</span></td>
+<td> Y position of origin of rectangle in user coordinates
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>width</code></em>&#160;:</span></td>
+<td> Width of the rectangle
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>height</code></em>&#160;:</span></td>
+<td> Height of the rectange
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <span class="type">GNOME_PRINT_OK</span> or positive value on success, negative error code
+         on failure. 
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</body>
+</html>

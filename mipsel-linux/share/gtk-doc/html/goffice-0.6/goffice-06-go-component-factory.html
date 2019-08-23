@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-component-factory</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch12.html" title="Components">
+<link rel="prev" href="ch12.html" title="Components">
+<link rel="next" href="GOComponent.html" title="GOComponent">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch12.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch12.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="GOComponent.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-component-factory.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-component-factory.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-component-factory"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-component-factory.top_of_page"></a>go-component-factory</span></h2>
+<p>go-component-factory</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-component-factory.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+enum                <a class="link" href="goffice-06-go-component-factory.html#GOMimePriority" title="enum GOMimePriority">GOMimePriority</a>;
+GSList *            <a class="link" href="goffice-06-go-component-factory.html#go-components-get-mime-types" title="go_components_get_mime_types ()">go_components_get_mime_types</a>        (void);
+<a class="link" href="goffice-06-go-component-factory.html#GOMimePriority" title="enum GOMimePriority">GOMimePriority</a>      <a class="link" href="goffice-06-go-component-factory.html#go-components-get-priority" title="go_components_get_priority ()">go_components_get_priority</a>          (char const *mime_type);
+gboolean            <a class="link" href="goffice-06-go-component-factory.html#go-components-support-clipboard" title="go_components_support_clipboard ()">go_components_support_clipboard</a>     (char const *mime_type);
+void                <a class="link" href="goffice-06-go-component-factory.html#go-components-add-mime-type" title="go_components_add_mime_type ()">go_components_add_mime_type</a>         (char *mime,
+                                                         <a class="link" href="goffice-06-go-component-factory.html#GOMimePriority" title="enum GOMimePriority">GOMimePriority</a> priority,
+                                                         char const *service_id);
+void                <a class="link" href="goffice-06-go-component-factory.html#go-components-set-mime-suffix" title="go_components_set_mime_suffix ()">go_components_set_mime_suffix</a>       (char const *mime,
+                                                         char const *suffix);
+char const *        <a class="link" href="goffice-06-go-component-factory.html#go-components-get-mime-suffix" title="go_components_get_mime_suffix ()">go_components_get_mime_suffix</a>       (char const *mime);
+void                <a class="link" href="goffice-06-go-component-factory.html#goc-plugin-services-init" title="goc_plugin_services_init ()">goc_plugin_services_init</a>            (void);
+void                <a class="link" href="goffice-06-go-component-factory.html#goc-plugin-services-shutdown" title="goc_plugin_services_shutdown ()">goc_plugin_services_shutdown</a>        (void);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-component-factory.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-component-factory.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOMimePriority"></a><h3>enum GOMimePriority</h3>
+<pre class="programlisting">typedef enum
+{
+	GO_MIME_PRIORITY_INVALID = -1,
+	GO_MIME_PRIORITY_DISPLAY,
+	GO_MIME_PRIORITY_PRINT,
+	GO_MIME_PRIORITY_PARTIAL,
+	GO_MIME_PRIORITY_FULL,
+	GO_MIME_PRIORITY_NATIVE,
+} GOMimePriority;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-components-get-mime-types"></a><h3>go_components_get_mime_types ()</h3>
+<pre class="programlisting">GSList *            go_components_get_mime_types        (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-components-get-priority"></a><h3>go_components_get_priority ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-component-factory.html#GOMimePriority" title="enum GOMimePriority">GOMimePriority</a>      go_components_get_priority          (char const *mime_type);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mime_type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-components-support-clipboard"></a><h3>go_components_support_clipboard ()</h3>
+<pre class="programlisting">gboolean            go_components_support_clipboard     (char const *mime_type);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mime_type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-components-add-mime-type"></a><h3>go_components_add_mime_type ()</h3>
+<pre class="programlisting">void                go_components_add_mime_type         (char *mime,
+                                                         <a class="link" href="goffice-06-go-component-factory.html#GOMimePriority" title="enum GOMimePriority">GOMimePriority</a> priority,
+                                                         char const *service_id);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mime</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>priority</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service_id</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-components-set-mime-suffix"></a><h3>go_components_set_mime_suffix ()</h3>
+<pre class="programlisting">void                go_components_set_mime_suffix       (char const *mime,
+                                                         char const *suffix);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mime</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>suffix</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-components-get-mime-suffix"></a><h3>go_components_get_mime_suffix ()</h3>
+<pre class="programlisting">char const *        go_components_get_mime_suffix       (char const *mime);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mime</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="goc-plugin-services-init"></a><h3>goc_plugin_services_init ()</h3>
+<pre class="programlisting">void                goc_plugin_services_init            (void);</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="goc-plugin-services-shutdown"></a><h3>goc_plugin_services_shutdown ()</h3>
+<pre class="programlisting">void                goc_plugin_services_shutdown        (void);</pre>
+<p>
+
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

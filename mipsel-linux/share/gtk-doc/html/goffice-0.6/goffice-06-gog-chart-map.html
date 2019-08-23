@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogChartMap</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch03.html" title="Utilities">
+<link rel="prev" href="goffice-06-gog-theme.html" title="GogTheme">
+<link rel="next" href="pt02.html" title="Part II. Widgets">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-gog-theme.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="pt02.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-gog-chart-map.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-gog-chart-map.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-gog-chart-map"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-gog-chart-map.top_of_page"></a>GogChartMap</span></h2>
+<p>GogChartMap — 2D data to canvas coordinate conversion</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-gog-chart-map.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="goffice-06-gog-chart-map.html#GogChartMapPolarData" title="GogChartMapPolarData">GogChartMapPolarData</a>;
+                    <a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a>;
+<a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a> *       <a class="link" href="goffice-06-gog-chart-map.html#gog-chart-map-new" title="gog_chart_map_new ()">gog_chart_map_new</a>                   (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> *chart,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *area,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis0,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis1,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis2,
+                                                         gboolean fill_area);
+void                <a class="link" href="goffice-06-gog-chart-map.html#gog-chart-map-2D-to-view" title="gog_chart_map_2D_to_view ()">gog_chart_map_2D_to_view</a>            (<a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a> *map,
+                                                         double x,
+                                                         double y,
+                                                         double *u,
+                                                         double *v);
+<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *        <a class="link" href="goffice-06-gog-chart-map.html#gog-chart-map-get-axis-map" title="gog_chart_map_get_axis_map ()">gog_chart_map_get_axis_map</a>          (<a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a> *map,
+                                                         unsigned int index);
+gboolean            <a class="link" href="goffice-06-gog-chart-map.html#gog-chart-map-is-valid" title="gog_chart_map_is_valid ()">gog_chart_map_is_valid</a>              (<a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a> *map);
+void                <a class="link" href="goffice-06-gog-chart-map.html#gog-chart-map-free" title="gog_chart_map_free ()">gog_chart_map_free</a>                  (<a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a> *map);
+<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *            <a class="link" href="goffice-06-gog-chart-map.html#gog-chart-map-make-path" title="gog_chart_map_make_path ()">gog_chart_map_make_path</a>             (<a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a> *map,
+                                                         double const *x,
+                                                         double const *y,
+                                                         int n_points,
+                                                         <a class="link" href="goffice-06-go-line.html#GOLineInterpolation" title="enum GOLineInterpolation">GOLineInterpolation</a> interpolation);
+<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *            <a class="link" href="goffice-06-gog-chart-map.html#gog-chart-map-make-close-path" title="gog_chart_map_make_close_path ()">gog_chart_map_make_close_path</a>       (<a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a> *map,
+                                                         double const *x,
+                                                         double const *y,
+                                                         int n_points,
+                                                         <a class="link" href="goffice-06-gog-series.html#GogSeriesFillType" title="enum GogSeriesFillType">GogSeriesFillType</a> fill_type);
+<a class="link" href="goffice-06-gog-chart-map.html#GogChartMapPolarData" title="GogChartMapPolarData">GogChartMapPolarData</a> * <a class="link" href="goffice-06-gog-chart-map.html#gog-chart-map-get-polar-parms" title="gog_chart_map_get_polar_parms ()">gog_chart_map_get_polar_parms</a>    (<a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a> *map);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-chart-map.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-chart-map.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GogChartMapPolarData"></a><h3>GogChartMapPolarData</h3>
+<pre class="programlisting">typedef struct {
+	double cx, cy;
+	double rx, ry;
+	double th0, th1;
+} GogChartMapPolarData;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogChartMap"></a><h3>GogChartMap</h3>
+<pre class="programlisting">typedef struct _GogChartMap GogChartMap;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-map-new"></a><h3>gog_chart_map_new ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a> *       gog_chart_map_new                   (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> *chart,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *area,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis0,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis1,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis2,
+                                                         gboolean fill_area);</pre>
+<p>
+Creates a new <a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap"><span class="type">GogChartMap</span></a>, used for conversion from data space 
+to canvas space.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chart</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+><span class="type">GogChart</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>area</code></em> :</span></p></td>
+<td> area allocated to chart
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis0</code></em> :</span></p></td>
+<td> 1st dimension axis
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis1</code></em> :</span></p></td>
+<td> 2nd dimension axis
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis2</code></em> :</span></p></td>
+<td> 3rd dimension axis
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fill_area</code></em> :</span></p></td>
+<td> does chart fill allocated area
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+><span class="type">GogChart</span></a> object. 
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-map-2D-to-view"></a><h3>gog_chart_map_2D_to_view ()</h3>
+<pre class="programlisting">void                gog_chart_map_2D_to_view            (<a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a> *map,
+                                                         double x,
+                                                         double y,
+                                                         double *u,
+                                                         double *v);</pre>
+<p>
+Converts a 2D coordinate from data space to canvas space.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap"><span class="type">GogChartMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td> data x value
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td> data y value
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>u</code></em> :</span></p></td>
+<td> placeholder for x converted value
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>v</code></em> :</span></p></td>
+<td> placeholder for y converted value
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-map-get-axis-map"></a><h3>gog_chart_map_get_axis_map ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *        gog_chart_map_get_axis_map          (<a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a> *map,
+                                                         unsigned int index);</pre>
+<p>
+Convenience function which returns one of the associated axis_map.
+</p>
+<p>
+Valid values are in range [0..2].</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap"><span class="type">GogChartMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>index</code></em> :</span></p></td>
+<td> axis index
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap"><span class="type">GogAxisMap</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-map-is-valid"></a><h3>gog_chart_map_is_valid ()</h3>
+<pre class="programlisting">gboolean            gog_chart_map_is_valid              (<a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a> *map);</pre>
+<p>
+Tests if <em class="parameter"><code>map</code></em> was correctly initializied, i.e. if all associated axis_map
+are valid (see <a class="link" href="goffice-06-gog-axis.html#gog-axis-map-is-valid" title="gog_axis_map_is_valid ()"><code class="function">gog_axis_map_is_valid()</code></a> ).
+</p>
+<p>
+given 
+to gog_chart_map_new.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap"><span class="type">GogChartMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <code class="literal">TRUE</code> if <em class="parameter"><code>map</code></em> is valid.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-map-free"></a><h3>gog_chart_map_free ()</h3>
+<pre class="programlisting">void                gog_chart_map_free                  (<a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a> *map);</pre>
+<p>
+Frees <em class="parameter"><code>map</code></em> object.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap"><span class="type">GogChartMap</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-map-make-path"></a><h3>gog_chart_map_make_path ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *            gog_chart_map_make_path             (<a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a> *map,
+                                                         double const *x,
+                                                         double const *y,
+                                                         int n_points,
+                                                         <a class="link" href="goffice-06-go-line.html#GOLineInterpolation" title="enum GOLineInterpolation">GOLineInterpolation</a> interpolation);</pre>
+<p>
+Creates a new GOPath using <em class="parameter"><code>x</code></em> and <em class="parameter"><code>y</code></em> data, each valid point being connected with respect to <em class="parameter"><code>interpolation</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap"><span class="type">GogChartMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td> x data
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td> y data
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_points</code></em> :</span></p></td>
+<td> number of points
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>interpolation</code></em> :</span></p></td>
+<td> interpolation type
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-map-make-close-path"></a><h3>gog_chart_map_make_close_path ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *            gog_chart_map_make_close_path       (<a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a> *map,
+                                                         double const *x,
+                                                         double const *y,
+                                                         int n_points,
+                                                         <a class="link" href="goffice-06-gog-series.html#GogSeriesFillType" title="enum GogSeriesFillType">GogSeriesFillType</a> fill_type);</pre>
+<p>
+Creates a new GOPath using <em class="parameter"><code>x</code></em> and <em class="parameter"><code>y</code></em> data, with respect to <em class="parameter"><code>fill_type</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap"><span class="type">GogChartMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td> x data
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td> y data
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_points</code></em> :</span></p></td>
+<td> number of points
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fill_type</code></em> :</span></p></td>
+<td> fill type
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-map-get-polar-parms"></a><h3>gog_chart_map_get_polar_parms ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-gog-chart-map.html#GogChartMapPolarData" title="GogChartMapPolarData">GogChartMapPolarData</a> * gog_chart_map_get_polar_parms    (<a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap">GogChartMap</a> *map);</pre>
+<p>
+Convenience function for retrieving data related to polar plot layout.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-chart-map.html#GogChartMap" title="GogChartMap"><span class="type">GogChartMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-chart-map.html#GogChartMapPolarData" title="GogChartMapPolarData"><span class="type">GogChartMapPolarData</span></a> struct.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

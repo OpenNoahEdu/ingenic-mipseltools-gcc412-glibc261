@@ -1,0 +1,559 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GOComboBox</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch04.html" title="Base widgets">
+<link rel="prev" href="ch04.html" title="Base widgets">
+<link rel="next" href="goffice-06-go-combo-pixmaps.html" title="go-combo-pixmaps">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch04.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch04.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-go-combo-pixmaps.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GOComboBox.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#GOComboBox.description" class="shortcut">Description</a>
+                 | 
+                <a href="#GOComboBox.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                 | 
+                <a href="#GOComboBox.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                 | 
+                <a href="#GOComboBox.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="GOComboBox"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GOComboBox.top_of_page"></a>GOComboBox</span></h2>
+<p>GOComboBox</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GOComboBox.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="GOComboBox.html#GO-COMBO-BOX-TYPE:CAPS" title="GO_COMBO_BOX_TYPE">GO_COMBO_BOX_TYPE</a>
+#define             <a class="link" href="GOComboBox.html#GO-COMBO-BOX:CAPS" title="GO_COMBO_BOX()">GO_COMBO_BOX</a>                        (o)
+#define             <a class="link" href="GOComboBox.html#IS-GO-COMBO-BOX:CAPS" title="IS_GO_COMBO_BOX()">IS_GO_COMBO_BOX</a>                     (o)
+#define             <a class="link" href="GOComboBox.html#GO-COMBO-BOX-CLASS:CAPS" title="GO_COMBO_BOX_CLASS()">GO_COMBO_BOX_CLASS</a>                  (k)
+                    <a class="link" href="GOComboBox.html#GOComboBoxPrivate" title="GOComboBoxPrivate">GOComboBoxPrivate</a>;
+                    <a class="link" href="GOComboBox.html#GOComboBox-struct" title="GOComboBox">GOComboBox</a>;
+GType               <a class="link" href="GOComboBox.html#go-combo-box-get-type" title="go_combo_box_get_type ()">go_combo_box_get_type</a>               (void);
+void                <a class="link" href="GOComboBox.html#go-combo-box-set-tooltip" title="go_combo_box_set_tooltip ()">go_combo_box_set_tooltip</a>            (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo,
+                                                         void *tips,
+                                                         char const *text,
+                                                         char const *priv_text);
+void                <a class="link" href="GOComboBox.html#go-combo-box-set-relief" title="go_combo_box_set_relief ()">go_combo_box_set_relief</a>             (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo,
+                                                         GtkReliefStyle relief);
+void                <a class="link" href="GOComboBox.html#go-combo-box-set-title" title="go_combo_box_set_title ()">go_combo_box_set_title</a>              (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo,
+                                                         char const *title);
+char const *        <a class="link" href="GOComboBox.html#go-combo-box-get-title" title="go_combo_box_get_title ()">go_combo_box_get_title</a>              (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo);
+void                <a class="link" href="GOComboBox.html#go-combo-box-set-tearable" title="go_combo_box_set_tearable ()">go_combo_box_set_tearable</a>           (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo,
+                                                         gboolean tearable);
+void                <a class="link" href="GOComboBox.html#go-combo-box-construct" title="go_combo_box_construct ()">go_combo_box_construct</a>              (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo,
+                                                         GtkWidget *display_widget,
+                                                         GtkWidget *popdown_container,
+                                                         GtkWidget *popdown_focus);
+void                <a class="link" href="GOComboBox.html#go-combo-box-get-pos" title="go_combo_box_get_pos ()">go_combo_box_get_pos</a>                (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo,
+                                                         int *x,
+                                                         int *y);
+void                <a class="link" href="GOComboBox.html#go-combo-box-popup-hide" title="go_combo_box_popup_hide ()">go_combo_box_popup_hide</a>             (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo);
+void                <a class="link" href="GOComboBox.html#go-combo-box-popup-display" title="go_combo_box_popup_display ()">go_combo_box_popup_display</a>          (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo);
+void                <a class="link" href="GOComboBox.html#go-combo-box-set-display" title="go_combo_box_set_display ()">go_combo_box_set_display</a>            (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo,
+                                                         GtkWidget *display_widget);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOComboBox.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkObject
+               +----GtkWidget
+                     +----GtkContainer
+                           +----GtkBox
+                                 +----GtkHBox
+                                       +----GOComboBox
+                                             +----<a class="link" href="goffice-06-go-combo-pixmaps.html#GOComboPixmaps">GOComboPixmaps</a>
+                                             +----<a class="link" href="goffice-06-go-combo-color.html#GOComboColor">GOComboColor</a>
+                                             +----<a class="link" href="goffice-06-go-combo-text.html#GoComboText">GoComboText</a>
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOComboBox.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GOComboBox implements
+ AtkImplementorIface and  GtkBuildable.</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOComboBox.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="GOComboBox.html#GOComboBox-pop-down-done" title='The "pop-down-done" signal'>pop-down-done</a>"                                  : Run Last
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOComboBox.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOComboBox.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GO-COMBO-BOX-TYPE:CAPS"></a><h3>GO_COMBO_BOX_TYPE</h3>
+<pre class="programlisting">#define GO_COMBO_BOX_TYPE	(go_combo_box_get_type())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-COMBO-BOX:CAPS"></a><h3>GO_COMBO_BOX()</h3>
+<pre class="programlisting">#define GO_COMBO_BOX(o)		G_TYPE_CHECK_INSTANCE_CAST ((o), GO_COMBO_BOX_TYPE, GOComboBox)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-COMBO-BOX:CAPS"></a><h3>IS_GO_COMBO_BOX()</h3>
+<pre class="programlisting">#define IS_GO_COMBO_BOX(o)	G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_COMBO_BOX_TYPE)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-COMBO-BOX-CLASS:CAPS"></a><h3>GO_COMBO_BOX_CLASS()</h3>
+<pre class="programlisting">#define GO_COMBO_BOX_CLASS(k)	G_TYPE_CHECK_CLASS_CAST ((k), GO_COMBO_BOX_TYPE, GOComboBoxClass)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>k</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOComboBoxPrivate"></a><h3>GOComboBoxPrivate</h3>
+<pre class="programlisting">typedef struct _GOComboBoxPrivate GOComboBoxPrivate;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOComboBox-struct"></a><h3>GOComboBox</h3>
+<pre class="programlisting">typedef struct _GOComboBox GOComboBox;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-box-get-type"></a><h3>go_combo_box_get_type ()</h3>
+<pre class="programlisting">GType               go_combo_box_get_type               (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-box-set-tooltip"></a><h3>go_combo_box_set_tooltip ()</h3>
+<pre class="programlisting">void                go_combo_box_set_tooltip            (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo,
+                                                         void *tips,
+                                                         char const *text,
+                                                         char const *priv_text);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>combo</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tips</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>priv_text</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-box-set-relief"></a><h3>go_combo_box_set_relief ()</h3>
+<pre class="programlisting">void                go_combo_box_set_relief             (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo,
+                                                         GtkReliefStyle relief);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>combo</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>relief</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-box-set-title"></a><h3>go_combo_box_set_title ()</h3>
+<pre class="programlisting">void                go_combo_box_set_title              (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo,
+                                                         char const *title);</pre>
+<p>
+Set a title to display over the tearoff window.
+</p>
+<p>
+FIXME:
+</p>
+<p>
+This should really change the title even when the popup is already torn off.
+I guess the tearoff window could attach a listener to title change or
+something. But I don't think we need the functionality, so I didn't bother
+to investigate.
+</p>
+<p>
+MW: Just make it a property.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>combo</code></em> :</span></p></td>
+<td> Combo box
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>title</code></em> :</span></p></td>
+<td> Title
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-box-get-title"></a><h3>go_combo_box_get_title ()</h3>
+<pre class="programlisting">char const *        go_combo_box_get_title              (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>combo</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-box-set-tearable"></a><h3>go_combo_box_set_tearable ()</h3>
+<pre class="programlisting">void                go_combo_box_set_tearable           (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo,
+                                                         gboolean tearable);</pre>
+<p>
+controls whether the combo box's pop up widget can be torn off.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>combo</code></em> :</span></p></td>
+<td> Combo box
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tearable</code></em> :</span></p></td>
+<td> whether to allow the <em class="parameter"><code>combo</code></em> to be tearable
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-box-construct"></a><h3>go_combo_box_construct ()</h3>
+<pre class="programlisting">void                go_combo_box_construct              (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo,
+                                                         GtkWidget *display_widget,
+                                                         GtkWidget *popdown_container,
+                                                         GtkWidget *popdown_focus);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>combo</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>display_widget</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>popdown_container</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>popdown_focus</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-box-get-pos"></a><h3>go_combo_box_get_pos ()</h3>
+<pre class="programlisting">void                go_combo_box_get_pos                (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo,
+                                                         int *x,
+                                                         int *y);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>combo</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-box-popup-hide"></a><h3>go_combo_box_popup_hide ()</h3>
+<pre class="programlisting">void                go_combo_box_popup_hide             (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo);</pre>
+<p>
+Hides popup, but not when it is torn off.
+This is the external interface - for subclasses and apps which expect a
+regular combo which doesn't do tearoffs.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>combo</code></em> :</span></p></td>
+<td> a <a class="link" href="GOComboBox.html" title="GOComboBox"><span class="type">GOComboBox</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-box-popup-display"></a><h3>go_combo_box_popup_display ()</h3>
+<pre class="programlisting">void                go_combo_box_popup_display          (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>combo</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-box-set-display"></a><h3>go_combo_box_set_display ()</h3>
+<pre class="programlisting">void                go_combo_box_set_display            (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *combo,
+                                                         GtkWidget *display_widget);</pre>
+<p>
+Sets the displayed widget for the <em class="parameter"><code>combo_box</code></em> to be <em class="parameter"><code>display_widget</code></em></p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>combo</code></em> :</span></p></td>
+<td> the <a class="link" href="GOComboBox.html" title="GOComboBox"><span class="type">GOComboBox</span></a> to modify
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>display_widget</code></em> :</span></p></td>
+<td> The widget to be displayed
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOComboBox.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOComboBox-pop-down-done"></a><h3>The <code class="literal">"pop-down-done"</code> signal</h3>
+<pre class="programlisting">gboolean            user_function                      (<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a> *gocombobox,
+                                                        GObject    *arg1,
+                                                        gpointer    user_data)       : Run Last</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gocombobox</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

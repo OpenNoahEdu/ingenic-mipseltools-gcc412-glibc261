@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Goffice Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="next" href="pt01.html" title="Part I. Graphs">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="book" lang="en">
+<div class="titlepage">
+<div>
+<div><table class="navigation" id="top" width="100%" cellpadding="2" cellspacing="0"><tr><th valign="middle"><p class="title">Goffice Reference Manual</p></th></tr></table></div>
+<div><p class="releaseinfo">For goffice 0.6.4
+</p></div>
+</div>
+<hr>
+</div>
+<div class="toc"><dl>
+<dt><span class="part"><a href="pt01.html">I. Graphs</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="ch01.html">Objects</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-graph.html">GogGraph</a></span><span class="refpurpose"> — A collection of charts</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-chart.html">GogChart</a></span><span class="refpurpose"> — A set of axes and a collection of plots</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-legend.html">GogLegend</a></span><span class="refpurpose"> — Chart legend</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-grid.html">GogGrid</a></span><span class="refpurpose"> — Chart backplane</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-axis.html">GogAxis</a></span><span class="refpurpose"> — Master axes</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-axis-line.html">GogAxisLine</a></span><span class="refpurpose"> — Slave axes</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-grid-line.html">GogGridLine</a></span><span class="refpurpose"> — Grid lines</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-error-bar.html">GogErrorBar</a></span><span class="refpurpose"> — Error bars</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-label.html">GogLabel</a></span><span class="refpurpose"> — Titles &amp; axis labels</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-series-lines.html">GogSeriesLines</a></span><span class="refpurpose"> — Droplines</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch02.html">Abstract Base Classes</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GogObject.html">GogObject</a></span><span class="refpurpose"> — Base class for all objects of graph model</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GogStyledObject.html">GogStyledObject</a></span><span class="refpurpose"> — Base class for all styled objects of graph model</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GogOutlinedView.html">GogOutlinedView</a></span><span class="refpurpose"> — Base class for all objects displayed in a frame</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-plot.html">GogPlot</a></span><span class="refpurpose"> — Base class for plots</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-series.html">GogSeries</a></span><span class="refpurpose"> — Base class for series</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-trend-line.html">GogTrendLine</a></span><span class="refpurpose"> — Base class for smoothed and regression curves</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GogSmoothedCurve.html">GogSmoothedCurve</a></span><span class="refpurpose"> — Base class for smoothed curves</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GogRegCurve.html">GogRegCurve</a></span><span class="refpurpose"> — Base class for regression curves</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GogView.html">GogView</a></span><span class="refpurpose"> — Base class for object views</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GogDataAllocator.html">GogDataAllocator</a></span><span class="refpurpose"> — A data allocation interface</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GogDataset.html">GogDataset</a></span><span class="refpurpose"> — A data set interface</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch03.html">Utilities</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-renderer.html">GogRenderer</a></span><span class="refpurpose"> — Rendering engine</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-control-foocanvas.html">GogControlFooCanvas</a></span><span class="refpurpose"> — Graph in a foocanvas item</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-guru.html">GogGuru</a></span><span class="refpurpose"> — Graph creation guru and property editor</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-plot-engine.html">GogPlotEngine</a></span><span class="refpurpose"> — Plot and regression curve plugin management</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-style.html">GogStyle</a></span><span class="refpurpose"> — Style of graph objects</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-theme.html">GogTheme</a></span><span class="refpurpose"> — Graph theme management</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-chart-map.html">GogChartMap</a></span><span class="refpurpose"> — 2D data to canvas coordinate conversion</span>
+</dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="part"><a href="pt02.html">II. Widgets</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="ch04.html">Base widgets</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GOComboBox.html">GOComboBox</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-combo-pixmaps.html">go-combo-pixmaps</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GOOptionMenu.html">GOOptionMenu</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GOPalette.html">GoPalette</a></span><span class="refpurpose"> — Palette widget for GoSelector</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GOSelector.html">GoSelector</a></span><span class="refpurpose"> — Generic property editor with a dropdown palette</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch05.html">Selectors</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-combo-color.html">go-combo-color</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-combo-text.html">go-combo-text</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-charmap-sel.html">go-charmap-sel</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-font-sel.html">go-font-sel</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-format-sel.html">go-format-sel</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-locale-sel.html">go-locale-sel</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-rotation-sel.html">go-rotation-sel</a></span><span class="refpurpose"></span>
+</dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="part"><a href="pt03.html">III. Utilities</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="ch06.html">Graphic object properties</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-color.html">go-color</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-font.html">GoFont</a></span><span class="refpurpose"> — Fonts</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-gradient.html">go-gradient</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-line.html">go-line</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-marker.html">go-marker</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-pattern.html">go-pattern</a></span><span class="refpurpose"></span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch07.html">Rendering utilities</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-cairo.html">go-cairo</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-path.html">GoPath</a></span><span class="refpurpose"> — Path handling</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-geometry.html">go-geometry</a></span><span class="refpurpose"></span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch08.html">Data</a></span></dt>
+<dd><dl><dt>
+<span class="refentrytitle"><a href="goffice-06-go-data.html">go-data</a></span><span class="refpurpose"></span>
+</dt></dl></dd>
+<dt><span class="chapter"><a href="ch09.html">Mathematical functions</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-math.html">go-math</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-complex.html">GoComplex</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-fft.html">GoFft</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-regression.html">Regressions</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-units.html">go-units</a></span><span class="refpurpose"></span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch10.html">File utilities</a></span></dt>
+<dd><dl><dt>
+<span class="refentrytitle"><a href="goffice-06-go-file.html">GoFile</a></span><span class="refpurpose"></span>
+</dt></dl></dd>
+<dt><span class="chapter"><a href="ch11.html">Application</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-cmd-context.html">go-cmd-context</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-doc-control.html">go-doc-control</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-doc.html">go-doc</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-plugin.html">go-plugin</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GOPluginLoader.html">GOPluginLoader</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-plugin-loader-module.html">go-plugin-loader-module</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-plugin-service.html">go-plugin-service</a></span><span class="refpurpose"></span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch12.html">Components</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-component-factory.html">go-component-factory</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GOComponent.html">GOComponent</a></span><span class="refpurpose"></span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch13.html">Miscellaneous</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-format.html">go-format</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-glib-extras.html">go-glib-extras</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-go-libxml-extras.html">go-libxml-extras</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GOUndoUnary.html">GoUndo</a></span><span class="refpurpose"></span>
+</dt>
+</dl></dd>
+</dl></dd>
+</dl></div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

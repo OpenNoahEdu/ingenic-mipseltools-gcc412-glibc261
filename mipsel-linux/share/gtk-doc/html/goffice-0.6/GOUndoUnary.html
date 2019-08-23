@@ -1,0 +1,699 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GoUndo</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch13.html" title="Miscellaneous">
+<link rel="prev" href="goffice-06-go-libxml-extras.html" title="go-libxml-extras">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-libxml-extras.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch13.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td> </td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GOUndoUnary.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#GOUndoUnary.description" class="shortcut">Description</a>
+                 | 
+                <a href="#GOUndoUnary.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="GOUndoUnary"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GOUndoUnary.top_of_page"></a>GoUndo</span></h2>
+<p>GoUndo</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GOUndoUnary.synopsis"></a><h2>Synopsis</h2>
+<a name="GOUndo"></a><a name="GOUndoGroup"></a><a name="GOUndoBinary"></a><pre class="synopsis">
+#define             <a class="link" href="GOUndoUnary.html#GO-UNDO-TYPE:CAPS" title="GO_UNDO_TYPE">GO_UNDO_TYPE</a>
+#define             <a class="link" href="GOUndoUnary.html#GO-UNDO:CAPS" title="GO_UNDO()">GO_UNDO</a>                             (o)
+#define             <a class="link" href="GOUndoUnary.html#IS-GO-UNDO:CAPS" title="IS_GO_UNDO()">IS_GO_UNDO</a>                          (o)
+GType               <a class="link" href="GOUndoUnary.html#go-undo-get-type" title="go_undo_get_type ()">go_undo_get_type</a>                    (void);
+                    <a class="link" href="GOUndoUnary.html#GOUndo-struct" title="GOUndo">GOUndo</a>;
+void                <a class="link" href="GOUndoUnary.html#go-undo-undo" title="go_undo_undo ()">go_undo_undo</a>                        (<a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a> *u);
+void                <a class="link" href="GOUndoUnary.html#go-undo-undo-with-data" title="go_undo_undo_with_data ()">go_undo_undo_with_data</a>              (<a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a> *u,
+                                                         gpointer data);
+<a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a> *            <a class="link" href="GOUndoUnary.html#go-undo-combine" title="go_undo_combine ()">go_undo_combine</a>                     (<a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a> *a,
+                                                         <a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a> *b);
+#define             <a class="link" href="GOUndoUnary.html#GO-UNDO-GROUP-TYPE:CAPS" title="GO_UNDO_GROUP_TYPE">GO_UNDO_GROUP_TYPE</a>
+#define             <a class="link" href="GOUndoUnary.html#GO-UNDO-GROUP:CAPS" title="GO_UNDO_GROUP()">GO_UNDO_GROUP</a>                       (o)
+#define             <a class="link" href="GOUndoUnary.html#IS-GO-UNDO-GROUP:CAPS" title="IS_GO_UNDO_GROUP()">IS_GO_UNDO_GROUP</a>                    (o)
+GType               <a class="link" href="GOUndoUnary.html#go-undo-group-get-type" title="go_undo_group_get_type ()">go_undo_group_get_type</a>              (void);
+                    <a class="link" href="GOUndoUnary.html#GOUndoGroup-struct" title="GOUndoGroup">GOUndoGroup</a>;
+<a class="link" href="GOUndoUnary.html#GOUndoGroup">GOUndoGroup</a> *       <a class="link" href="GOUndoUnary.html#go-undo-group-new" title="go_undo_group_new ()">go_undo_group_new</a>                   (void);
+void                <a class="link" href="GOUndoUnary.html#go-undo-group-add" title="go_undo_group_add ()">go_undo_group_add</a>                   (<a class="link" href="GOUndoUnary.html#GOUndoGroup">GOUndoGroup</a> *g,
+                                                         <a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a> *u);
+#define             <a class="link" href="GOUndoUnary.html#GO-UNDO-BINARY-TYPE:CAPS" title="GO_UNDO_BINARY_TYPE">GO_UNDO_BINARY_TYPE</a>
+#define             <a class="link" href="GOUndoUnary.html#GO-UNDO-BINARY:CAPS" title="GO_UNDO_BINARY()">GO_UNDO_BINARY</a>                      (o)
+#define             <a class="link" href="GOUndoUnary.html#IS-GO-UNDO-BINARY:CAPS" title="IS_GO_UNDO_BINARY()">IS_GO_UNDO_BINARY</a>                   (o)
+GType               <a class="link" href="GOUndoUnary.html#go-undo-binary-get-type" title="go_undo_binary_get_type ()">go_undo_binary_get_type</a>             (void);
+void                (<a class="link" href="GOUndoUnary.html#GOUndoBinaryFunc" title="GOUndoBinaryFunc ()">*GOUndoBinaryFunc</a>)                 (gpointer a,
+                                                         gpointer b,
+                                                         gpointer data);
+                    <a class="link" href="GOUndoUnary.html#GOUndoBinary-struct" title="GOUndoBinary">GOUndoBinary</a>;
+<a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a> *            <a class="link" href="GOUndoUnary.html#go-undo-binary-new" title="go_undo_binary_new ()">go_undo_binary_new</a>                  (gpointer a,
+                                                         gpointer b,
+                                                         <a class="link" href="GOUndoUnary.html#GOUndoBinaryFunc" title="GOUndoBinaryFunc ()">GOUndoBinaryFunc</a> undo,
+                                                         GFreeFunc fa,
+                                                         GFreeFunc fb);
+#define             <a class="link" href="GOUndoUnary.html#GO-UNDO-UNARY-TYPE:CAPS" title="GO_UNDO_UNARY_TYPE">GO_UNDO_UNARY_TYPE</a>
+#define             <a class="link" href="GOUndoUnary.html#GO-UNDO-UNARY:CAPS" title="GO_UNDO_UNARY()">GO_UNDO_UNARY</a>                       (o)
+#define             <a class="link" href="GOUndoUnary.html#IS-GO-UNDO-UNARY:CAPS" title="IS_GO_UNDO_UNARY()">IS_GO_UNDO_UNARY</a>                    (o)
+GType               <a class="link" href="GOUndoUnary.html#go-undo-unary-get-type" title="go_undo_unary_get_type ()">go_undo_unary_get_type</a>              (void);
+void                (<a class="link" href="GOUndoUnary.html#GOUndoUnaryFunc" title="GOUndoUnaryFunc ()">*GOUndoUnaryFunc</a>)                  (gpointer a,
+                                                         gpointer data);
+                    <a class="link" href="GOUndoUnary.html#GOUndoUnary-struct" title="GOUndoUnary">GOUndoUnary</a>;
+<a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a> *            <a class="link" href="GOUndoUnary.html#go-undo-unary-new" title="go_undo_unary_new ()">go_undo_unary_new</a>                   (gpointer a,
+                                                         <a class="link" href="GOUndoUnary.html#GOUndoUnaryFunc" title="GOUndoUnaryFunc ()">GOUndoUnaryFunc</a> undo,
+                                                         GFreeFunc fa);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOUndoUnary.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GOUndo
+         +----<a class="link" href="GOUndoUnary.html#GOUndoGroup">GOUndoGroup</a>
+         +----<a class="link" href="GOUndoUnary.html#GOUndoBinary">GOUndoBinary</a>
+         +----<a class="link" href="GOUndoUnary.html" title="GoUndo">GOUndoUnary</a>
+</pre>
+<pre class="synopsis">
+  GObject
+   +----<a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a>
+         +----GOUndoGroup
+</pre>
+<pre class="synopsis">
+  GObject
+   +----<a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a>
+         +----GOUndoBinary
+</pre>
+<pre class="synopsis">
+  GObject
+   +----<a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a>
+         +----GOUndoUnary
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOUndoUnary.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOUndoUnary.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GO-UNDO-TYPE:CAPS"></a><h3>GO_UNDO_TYPE</h3>
+<pre class="programlisting">#define GO_UNDO_TYPE	    (go_undo_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-UNDO:CAPS"></a><h3>GO_UNDO()</h3>
+<pre class="programlisting">#define GO_UNDO(o)	    (G_TYPE_CHECK_INSTANCE_CAST ((o), GO_UNDO_TYPE, GOUndo))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-UNDO:CAPS"></a><h3>IS_GO_UNDO()</h3>
+<pre class="programlisting">#define IS_GO_UNDO(o)	    (G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_UNDO_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-undo-get-type"></a><h3>go_undo_get_type ()</h3>
+<pre class="programlisting">GType               go_undo_get_type                    (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOUndo-struct"></a><h3>GOUndo</h3>
+<pre class="programlisting">typedef struct _GOUndo GOUndo;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-undo-undo"></a><h3>go_undo_undo ()</h3>
+<pre class="programlisting">void                go_undo_undo                        (<a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a> *u);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>u</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-undo-undo-with-data"></a><h3>go_undo_undo_with_data ()</h3>
+<pre class="programlisting">void                go_undo_undo_with_data              (<a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a> *u,
+                                                         gpointer data);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>u</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-undo-combine"></a><h3>go_undo_combine ()</h3>
+<pre class="programlisting"><a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a> *            go_undo_combine                     (<a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a> *a,
+                                                         <a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a> *b);</pre>
+<p>
+Combines two undo operations and returns the combination.  This function
+takes ownership of the argument references and gives ownership of the
+result to the caller.  Either argument may be NULL in which case the
+other is returned.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td> optional first undo operation
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td> optional last undo operation
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-UNDO-GROUP-TYPE:CAPS"></a><h3>GO_UNDO_GROUP_TYPE</h3>
+<pre class="programlisting">#define GO_UNDO_GROUP_TYPE  (go_undo_group_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-UNDO-GROUP:CAPS"></a><h3>GO_UNDO_GROUP()</h3>
+<pre class="programlisting">#define GO_UNDO_GROUP(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), GO_UNDO_GROUP_TYPE, GOUndoGroup))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-UNDO-GROUP:CAPS"></a><h3>IS_GO_UNDO_GROUP()</h3>
+<pre class="programlisting">#define IS_GO_UNDO_GROUP(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_UNDO_GROUP_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-undo-group-get-type"></a><h3>go_undo_group_get_type ()</h3>
+<pre class="programlisting">GType               go_undo_group_get_type              (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOUndoGroup-struct"></a><h3>GOUndoGroup</h3>
+<pre class="programlisting">typedef struct _GOUndoGroup GOUndoGroup;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-undo-group-new"></a><h3>go_undo_group_new ()</h3>
+<pre class="programlisting"><a class="link" href="GOUndoUnary.html#GOUndoGroup">GOUndoGroup</a> *       go_undo_group_new                   (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-undo-group-add"></a><h3>go_undo_group_add ()</h3>
+<pre class="programlisting">void                go_undo_group_add                   (<a class="link" href="GOUndoUnary.html#GOUndoGroup">GOUndoGroup</a> *g,
+                                                         <a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a> *u);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>g</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>u</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-UNDO-BINARY-TYPE:CAPS"></a><h3>GO_UNDO_BINARY_TYPE</h3>
+<pre class="programlisting">#define GO_UNDO_BINARY_TYPE  (go_undo_binary_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-UNDO-BINARY:CAPS"></a><h3>GO_UNDO_BINARY()</h3>
+<pre class="programlisting">#define GO_UNDO_BINARY(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), GO_UNDO_BINARY_TYPE, GOUndoBinary))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-UNDO-BINARY:CAPS"></a><h3>IS_GO_UNDO_BINARY()</h3>
+<pre class="programlisting">#define IS_GO_UNDO_BINARY(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_UNDO_BINARY_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-undo-binary-get-type"></a><h3>go_undo_binary_get_type ()</h3>
+<pre class="programlisting">GType               go_undo_binary_get_type             (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOUndoBinaryFunc"></a><h3>GOUndoBinaryFunc ()</h3>
+<pre class="programlisting">void                (*GOUndoBinaryFunc)                 (gpointer a,
+                                                         gpointer b,
+                                                         gpointer data);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOUndoBinary-struct"></a><h3>GOUndoBinary</h3>
+<pre class="programlisting">typedef struct _GOUndoBinary GOUndoBinary;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-undo-binary-new"></a><h3>go_undo_binary_new ()</h3>
+<pre class="programlisting"><a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a> *            go_undo_binary_new                  (gpointer a,
+                                                         gpointer b,
+                                                         <a class="link" href="GOUndoUnary.html#GOUndoBinaryFunc" title="GOUndoBinaryFunc ()">GOUndoBinaryFunc</a> undo,
+                                                         GFreeFunc fa,
+                                                         GFreeFunc fb);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>undo</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fa</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fb</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-UNDO-UNARY-TYPE:CAPS"></a><h3>GO_UNDO_UNARY_TYPE</h3>
+<pre class="programlisting">#define GO_UNDO_UNARY_TYPE  (go_undo_unary_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-UNDO-UNARY:CAPS"></a><h3>GO_UNDO_UNARY()</h3>
+<pre class="programlisting">#define GO_UNDO_UNARY(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), GO_UNDO_UNARY_TYPE, GOUndoUnary))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-UNDO-UNARY:CAPS"></a><h3>IS_GO_UNDO_UNARY()</h3>
+<pre class="programlisting">#define IS_GO_UNDO_UNARY(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_UNDO_UNARY_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-undo-unary-get-type"></a><h3>go_undo_unary_get_type ()</h3>
+<pre class="programlisting">GType               go_undo_unary_get_type              (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOUndoUnaryFunc"></a><h3>GOUndoUnaryFunc ()</h3>
+<pre class="programlisting">void                (*GOUndoUnaryFunc)                  (gpointer a,
+                                                         gpointer data);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOUndoUnary-struct"></a><h3>GOUndoUnary</h3>
+<pre class="programlisting">typedef struct _GOUndoUnary GOUndoUnary;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-undo-unary-new"></a><h3>go_undo_unary_new ()</h3>
+<pre class="programlisting"><a class="link" href="GOUndoUnary.html#GOUndo">GOUndo</a> *            go_undo_unary_new                   (gpointer a,
+                                                         <a class="link" href="GOUndoUnary.html#GOUndoUnaryFunc" title="GOUndoUnaryFunc ()">GOUndoUnaryFunc</a> undo,
+                                                         GFreeFunc fa);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>undo</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fa</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

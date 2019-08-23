@@ -1,0 +1,12 @@
+prefix=/opt/mipseltools/mipsel-linux
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libwps-stream-0.1
+Description: A library for reading Microsoft Works word processor documents
+Version: 0.1.2
+Requires: libwpd-0.8
+Libs: -L${libdir} -lwps-stream-0.1
+Cflags: -I${includedir}/libwps-0.1
+

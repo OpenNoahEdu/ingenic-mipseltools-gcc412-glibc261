@@ -1,0 +1,13 @@
+prefix=/opt/mipseltools-gcc412-glibc261/mipsel-linux
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: Xfont
+Description: X font Library
+Version: 1.3.3
+Requires: xproto fontsproto
+Requires.private: fontenc freetype2
+Cflags: -I${includedir}
+Libs: -L${libdir} -lXfont
+Libs.private: -lz -lm

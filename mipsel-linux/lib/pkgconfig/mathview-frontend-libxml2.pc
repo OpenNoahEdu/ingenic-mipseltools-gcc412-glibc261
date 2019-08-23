@@ -1,0 +1,15 @@
+# This is a comment
+prefix=/opt/mipseltools/mipsel-linux
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+
+Name: MathView
+Description: MathML rendering engine (libxml2 frontend)
+Version: 0.8.0
+Requires: glib-2.0 libxml-2.0 mathview-core
+Libs: -L/opt/mipseltools-gcc412-glibc261/mipsel-linux/lib -lxml2   -L${libdir} -lmathview_frontend_libxml2
+Cflags: -I/opt/mipseltools-gcc412-glibc261/mipsel-linux/include/libxml2   -I${includedir}/gtkmathview -DGMV_ENABLE_BOXML=1  -DGMV_HAVE_EXT_HASH_MAP=1
+

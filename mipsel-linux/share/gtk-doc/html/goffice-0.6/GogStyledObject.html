@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogStyledObject</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch02.html" title="Abstract Base Classes">
+<link rel="prev" href="GogObject.html" title="GogObject">
+<link rel="next" href="GogOutlinedView.html" title="GogOutlinedView">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="GogObject.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="GogOutlinedView.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GogStyledObject.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#GogStyledObject.description" class="shortcut">Description</a>
+                 | 
+                <a href="#GogStyledObject.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                 | 
+                <a href="#GogStyledObject.properties" class="shortcut">Properties</a>
+                 | 
+                <a href="#GogStyledObject.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="GogStyledObject"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GogStyledObject.top_of_page"></a>GogStyledObject</span></h2>
+<p>GogStyledObject — Base class for all styled objects of graph model</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GogStyledObject.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="GogStyledObject.html#GogStyledObject-struct" title="GogStyledObject">GogStyledObject</a>;
+#define             <a class="link" href="GogStyledObject.html#GOG-STYLED-OBJECT-TYPE:CAPS" title="GOG_STYLED_OBJECT_TYPE">GOG_STYLED_OBJECT_TYPE</a>
+#define             <a class="link" href="GogStyledObject.html#GOG-STYLED-OBJECT:CAPS" title="GOG_STYLED_OBJECT()">GOG_STYLED_OBJECT</a>                   (o)
+#define             <a class="link" href="GogStyledObject.html#IS-GOG-STYLED-OBJECT:CAPS" title="IS_GOG_STYLED_OBJECT()">IS_GOG_STYLED_OBJECT</a>                (o)
+#define             <a class="link" href="GogStyledObject.html#GOG-STYLED-OBJECT-GET-CLASS:CAPS" title="GOG_STYLED_OBJECT_GET_CLASS()">GOG_STYLED_OBJECT_GET_CLASS</a>         (o)
+GType               <a class="link" href="GogStyledObject.html#gog-styled-object-get-type" title="gog_styled_object_get_type ()">gog_styled_object_get_type</a>          (void);
+gboolean            <a class="link" href="GogStyledObject.html#gog-styled-object-set-style" title="gog_styled_object_set_style ()">gog_styled_object_set_style</a>         (<a class="link" href="GogStyledObject.html" title="GogStyledObject">GogStyledObject</a> *gso,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style);
+<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *          <a class="link" href="GogStyledObject.html#gog-styled-object-get-style" title="gog_styled_object_get_style ()">gog_styled_object_get_style</a>         (<a class="link" href="GogStyledObject.html" title="GogStyledObject">GogStyledObject</a> *gso);
+<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *          <a class="link" href="GogStyledObject.html#gog-styled-object-get-auto-style" title="gog_styled_object_get_auto_style ()">gog_styled_object_get_auto_style</a>    (<a class="link" href="GogStyledObject.html" title="GogStyledObject">GogStyledObject</a> *gso);
+void                <a class="link" href="GogStyledObject.html#gog-styled-object-style-changed" title="gog_styled_object_style_changed ()">gog_styled_object_style_changed</a>     (<a class="link" href="GogStyledObject.html" title="GogStyledObject">GogStyledObject</a> *gso);
+void                <a class="link" href="GogStyledObject.html#gog-styled-object-apply-theme" title="gog_styled_object_apply_theme ()">gog_styled_object_apply_theme</a>       (<a class="link" href="GogStyledObject.html" title="GogStyledObject">GogStyledObject</a> *gso,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogStyledObject.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----<a class="link" href="GogObject.html" title="GogObject">GogObject</a>
+         +----GogStyledObject
+               +----<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxisLine.html#GogAxisBase"
+>GogAxisBase</a>
+               +----<a class="link" href="goffice-06-gog-trend-line.html#GogTrendLine">GogTrendLine</a>
+               +----<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGridLine.html"
+>GogGridLine</a>
+               +----<a class="link" href="GogOutlinedView.html#GogOutlinedObject">GogOutlinedObject</a>
+               +----<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html#GogSeriesElement"
+>GogSeriesElement</a>
+               +----<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a>
+               +----<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeriesLines.html"
+>GogSeriesLines</a>
+               +----<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGrid.html"
+>GogGrid</a>
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogStyledObject.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="GogStyledObject.html#GogStyledObject--style" title='The "style" property'>style</a>"                    <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a>*             : Read / Write
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogStyledObject.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="GogStyledObject.html#GogStyledObject-style-changed" title='The "style-changed" signal'>style-changed</a>"                                  : Run Last
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogStyledObject.description"></a><h2>Description</h2>
+<p>
+GogStyledObject provides a base class derived from GogObject, which adds style
+functionnalities used for drawing object on graph canvas.
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogStyledObject.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GogStyledObject-struct"></a><h3>GogStyledObject</h3>
+<pre class="programlisting">typedef struct _GogStyledObject GogStyledObject;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-STYLED-OBJECT-TYPE:CAPS"></a><h3>GOG_STYLED_OBJECT_TYPE</h3>
+<pre class="programlisting">#define GOG_STYLED_OBJECT_TYPE	(gog_styled_object_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-STYLED-OBJECT:CAPS"></a><h3>GOG_STYLED_OBJECT()</h3>
+<pre class="programlisting">#define GOG_STYLED_OBJECT(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GOG_STYLED_OBJECT_TYPE, GogStyledObject))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-STYLED-OBJECT:CAPS"></a><h3>IS_GOG_STYLED_OBJECT()</h3>
+<pre class="programlisting">#define IS_GOG_STYLED_OBJECT(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GOG_STYLED_OBJECT_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-STYLED-OBJECT-GET-CLASS:CAPS"></a><h3>GOG_STYLED_OBJECT_GET_CLASS()</h3>
+<pre class="programlisting">#define GOG_STYLED_OBJECT_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GOG_STYLED_OBJECT_TYPE, GogStyledObjectClass))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-styled-object-get-type"></a><h3>gog_styled_object_get_type ()</h3>
+<pre class="programlisting">GType               gog_styled_object_get_type          (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-styled-object-set-style"></a><h3>gog_styled_object_set_style ()</h3>
+<pre class="programlisting">gboolean            gog_styled_object_set_style         (<a class="link" href="GogStyledObject.html" title="GogStyledObject">GogStyledObject</a> *gso,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style);</pre>
+<p>
+Sets a new style for <em class="parameter"><code>gso</code></em>, and emits "style-changed" signal. This function
+does not take ownership of <em class="parameter"><code>style</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gso</code></em> :</span></p></td>
+<td> a <a class="link" href="GogStyledObject.html" title="GogStyledObject"><span class="type">GogStyledObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-style.html#GogStyle"><span class="type">GogStyle</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <code class="literal">TRUE</code> if new style may lead to change of object size, which
+happens when changing font size for example. 
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-styled-object-get-style"></a><h3>gog_styled_object_get_style ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *          gog_styled_object_get_style         (<a class="link" href="GogStyledObject.html" title="GogStyledObject">GogStyledObject</a> *gso);</pre>
+<p>
+Simply an accessor function that returns <em class="parameter"><code>gso-&gt;style</code></em>, without referencing it.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gso</code></em> :</span></p></td>
+<td> a <a class="link" href="GogStyledObject.html" title="GogStyledObject"><span class="type">GogStyledObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the styled object's <a class="link" href="goffice-06-gog-style.html#GogStyle"><span class="type">GogStyle</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-styled-object-get-auto-style"></a><h3>gog_styled_object_get_auto_style ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *          gog_styled_object_get_auto_style    (<a class="link" href="GogStyledObject.html" title="GogStyledObject">GogStyledObject</a> *gso);</pre>
+<p>
+This function returns a new style that is initialized with the auto values for <em class="parameter"><code>gso</code></em>.
+Caller is responsible for the result.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gso</code></em> :</span></p></td>
+<td> a <a class="link" href="GogStyledObject.html" title="GogStyledObject"><span class="type">GogStyledObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new <a class="link" href="goffice-06-gog-style.html#GogStyle"><span class="type">GogStyle</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-styled-object-style-changed"></a><h3>gog_styled_object_style_changed ()</h3>
+<pre class="programlisting">void                gog_styled_object_style_changed     (<a class="link" href="GogStyledObject.html" title="GogStyledObject">GogStyledObject</a> *gso);</pre>
+<p>
+Emits the "style-changed" signal.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>gso</code></em> :</span></p></td>
+<td> a <a class="link" href="GogStyledObject.html" title="GogStyledObject"><span class="type">GogStyledObject</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-styled-object-apply-theme"></a><h3>gog_styled_object_apply_theme ()</h3>
+<pre class="programlisting">void                gog_styled_object_apply_theme       (<a class="link" href="GogStyledObject.html" title="GogStyledObject">GogStyledObject</a> *gso,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style);</pre>
+<p>
+Apply theme of <em class="parameter"><code>gso</code></em>'s parent graph to <em class="parameter"><code>style</code></em>, i.e. properties with 
+auto flag set to <code class="literal">TRUE</code> are changed to default theme value.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gso</code></em> :</span></p></td>
+<td> a <a class="link" href="GogStyledObject.html" title="GogStyledObject"><span class="type">GogStyledObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-style.html#GogStyle"><span class="type">GogStyle</span></a> that will be themed
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogStyledObject.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" lang="en">
+<a name="GogStyledObject--style"></a><h3>The <code class="literal">"style"</code> property</h3>
+<pre class="programlisting">  "style"                    <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a>*             : Read / Write</pre>
+<p>A pointer to the GogStyle object.</p>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogStyledObject.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" lang="en">
+<a name="GogStyledObject-style-changed"></a><h3>The <code class="literal">"style-changed"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="GogStyledObject.html" title="GogStyledObject">GogStyledObject</a> *gogstyledobject,
+                                                        GObject         *arg1,
+                                                        gpointer         user_data)            : Run Last</pre>
+<p>
+
+</p>
+
+@: 
+@:</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

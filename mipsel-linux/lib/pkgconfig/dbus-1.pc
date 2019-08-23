@@ -1,0 +1,15 @@
+prefix=/opt/mipseltools-gcc412-glibc261/mipsel-linux
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+system_bus_default_address=unix:path=/opt/mipseltools-gcc412-glibc261/mipsel-linux/var/run/dbus/system_bus_socket
+sysconfdir=/opt/mipseltools-gcc412-glibc261/mipsel-linux/etc
+session_bus_services_dir=/opt/mipseltools-gcc412-glibc261/mipsel-linux/share/dbus-1/services
+daemondir=/opt/mipseltools-gcc412-glibc261/mipsel-linux/bin
+
+Name: dbus
+Description: Free desktop message bus
+Version: 1.2.1
+Libs: -L${libdir} -ldbus-1  
+Cflags: -I${includedir}/dbus-1.0 -I${libdir}/dbus-1.0/include
+

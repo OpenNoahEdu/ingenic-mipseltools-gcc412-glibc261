@@ -1,0 +1,1294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-color</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch06.html" title="Graphic object properties">
+<link rel="prev" href="ch06.html" title="Graphic object properties">
+<link rel="next" href="goffice-06-go-font.html" title="GoFont">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch06.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-go-font.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-color.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-color.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-color"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-color.top_of_page"></a>go-color</span></h2>
+<p>go-color</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-color.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="goffice-06-go-color.html#GONamedColor" title="GONamedColor">GONamedColor</a>;
+#define             <a class="link" href="goffice-06-go-color.html#GDK-TO-UINT:CAPS" title="GDK_TO_UINT()">GDK_TO_UINT</a>                         (c)
+#define             <a class="link" href="goffice-06-go-color.html#RGB-TO-UINT:CAPS" title="RGB_TO_UINT()">RGB_TO_UINT</a>                         (r,g,b)
+#define             <a class="link" href="goffice-06-go-color.html#RGB-TO-RGBA:CAPS" title="RGB_TO_RGBA()">RGB_TO_RGBA</a>                         (x,a)
+#define             <a class="link" href="goffice-06-go-color.html#RGB-WHITE:CAPS" title="RGB_WHITE">RGB_WHITE</a>
+#define             <a class="link" href="goffice-06-go-color.html#RGB-BLACK:CAPS" title="RGB_BLACK">RGB_BLACK</a>
+#define             <a class="link" href="goffice-06-go-color.html#RGB-RED:CAPS" title="RGB_RED">RGB_RED</a>
+#define             <a class="link" href="goffice-06-go-color.html#RGB-GREEN:CAPS" title="RGB_GREEN">RGB_GREEN</a>
+#define             <a class="link" href="goffice-06-go-color.html#RGB-BLUE:CAPS" title="RGB_BLUE">RGB_BLUE</a>
+#define             <a class="link" href="goffice-06-go-color.html#RGB-YELLOW:CAPS" title="RGB_YELLOW">RGB_YELLOW</a>
+#define             <a class="link" href="goffice-06-go-color.html#RGB-VIOLET:CAPS" title="RGB_VIOLET">RGB_VIOLET</a>
+#define             <a class="link" href="goffice-06-go-color.html#RGB-CYAN:CAPS" title="RGB_CYAN">RGB_CYAN</a>
+#define             <a class="link" href="goffice-06-go-color.html#RGB-GREY:CAPS" title="RGB_GREY()">RGB_GREY</a>                            (x)
+#define             <a class="link" href="goffice-06-go-color.html#RGBA-TO-UINT:CAPS" title="RGBA_TO_UINT()">RGBA_TO_UINT</a>                        (r,g,b,a)
+#define             <a class="link" href="goffice-06-go-color.html#RGBA-WHITE:CAPS" title="RGBA_WHITE">RGBA_WHITE</a>
+#define             <a class="link" href="goffice-06-go-color.html#RGBA-BLACK:CAPS" title="RGBA_BLACK">RGBA_BLACK</a>
+#define             <a class="link" href="goffice-06-go-color.html#RGBA-RED:CAPS" title="RGBA_RED">RGBA_RED</a>
+#define             <a class="link" href="goffice-06-go-color.html#RGBA-GREEN:CAPS" title="RGBA_GREEN">RGBA_GREEN</a>
+#define             <a class="link" href="goffice-06-go-color.html#RGBA-BLUE:CAPS" title="RGBA_BLUE">RGBA_BLUE</a>
+#define             <a class="link" href="goffice-06-go-color.html#RGBA-YELLOW:CAPS" title="RGBA_YELLOW">RGBA_YELLOW</a>
+#define             <a class="link" href="goffice-06-go-color.html#RGBA-VIOLET:CAPS" title="RGBA_VIOLET">RGBA_VIOLET</a>
+#define             <a class="link" href="goffice-06-go-color.html#RGBA-CYAN:CAPS" title="RGBA_CYAN">RGBA_CYAN</a>
+#define             <a class="link" href="goffice-06-go-color.html#RGBA-GREY:CAPS" title="RGBA_GREY()">RGBA_GREY</a>                           (x)
+#define             <a class="link" href="goffice-06-go-color.html#UINT-RGBA-R:CAPS" title="UINT_RGBA_R()">UINT_RGBA_R</a>                         (x)
+#define             <a class="link" href="goffice-06-go-color.html#UINT-RGBA-G:CAPS" title="UINT_RGBA_G()">UINT_RGBA_G</a>                         (x)
+#define             <a class="link" href="goffice-06-go-color.html#UINT-RGBA-B:CAPS" title="UINT_RGBA_B()">UINT_RGBA_B</a>                         (x)
+#define             <a class="link" href="goffice-06-go-color.html#UINT-RGBA-A:CAPS" title="UINT_RGBA_A()">UINT_RGBA_A</a>                         (x)
+#define             <a class="link" href="goffice-06-go-color.html#UINT-RGBA-CHANGE-R:CAPS" title="UINT_RGBA_CHANGE_R()">UINT_RGBA_CHANGE_R</a>                  (x, r)
+#define             <a class="link" href="goffice-06-go-color.html#UINT-RGBA-CHANGE-G:CAPS" title="UINT_RGBA_CHANGE_G()">UINT_RGBA_CHANGE_G</a>                  (x, g)
+#define             <a class="link" href="goffice-06-go-color.html#UINT-RGBA-CHANGE-B:CAPS" title="UINT_RGBA_CHANGE_B()">UINT_RGBA_CHANGE_B</a>                  (x, b)
+#define             <a class="link" href="goffice-06-go-color.html#UINT-RGBA-CHANGE-A:CAPS" title="UINT_RGBA_CHANGE_A()">UINT_RGBA_CHANGE_A</a>                  (x, a)
+#define             <a class="link" href="goffice-06-go-color.html#UINT-TO-RGB:CAPS" title="UINT_TO_RGB()">UINT_TO_RGB</a>                         (u,r,g,b)
+#define             <a class="link" href="goffice-06-go-color.html#UINT-TO-RGBA:CAPS" title="UINT_TO_RGBA()">UINT_TO_RGBA</a>                        (u,r,g,b,a)
+#define             <a class="link" href="goffice-06-go-color.html#MONO-INTERPOLATE:CAPS" title="MONO_INTERPOLATE()">MONO_INTERPOLATE</a>                    (v1, v2, t)
+#define             <a class="link" href="goffice-06-go-color.html#UINT-INTERPOLATE:CAPS" title="UINT_INTERPOLATE()">UINT_INTERPOLATE</a>                    (c1, c2, t)
+#define             <a class="link" href="goffice-06-go-color.html#PIXEL-RGB:CAPS" title="PIXEL_RGB()">PIXEL_RGB</a>                           (p, r, g, b)
+#define             <a class="link" href="goffice-06-go-color.html#PIXEL-RGBA:CAPS" title="PIXEL_RGBA()">PIXEL_RGBA</a>                          (p, r, g, b, a)
+#define             <a class="link" href="goffice-06-go-color.html#PIXEL-RGB-UINT:CAPS" title="PIXEL_RGB_UINT()">PIXEL_RGB_UINT</a>                      (p, i)
+#define             <a class="link" href="goffice-06-go-color.html#PIXEL-RGBA-UINT:CAPS" title="PIXEL_RGBA_UINT()">PIXEL_RGBA_UINT</a>                     (p, i)
+#define             <a class="link" href="goffice-06-go-color.html#PIXEL-BLACK:CAPS" title="PIXEL_BLACK()">PIXEL_BLACK</a>                         (p)
+#define             <a class="link" href="goffice-06-go-color.html#PIXEL-WHITE:CAPS" title="PIXEL_WHITE()">PIXEL_WHITE</a>                         (p)
+#define             <a class="link" href="goffice-06-go-color.html#PIXEL-GREY:CAPS" title="PIXEL_GREY()">PIXEL_GREY</a>                          (p,g)
+#define             <a class="link" href="goffice-06-go-color.html#PIXEL-GREYA:CAPS" title="PIXEL_GREYA()">PIXEL_GREYA</a>                         (p,g,a)
+#define             <a class="link" href="goffice-06-go-color.html#DOUBLE-RGBA-R:CAPS" title="DOUBLE_RGBA_R()">DOUBLE_RGBA_R</a>                       (x)
+#define             <a class="link" href="goffice-06-go-color.html#DOUBLE-RGBA-G:CAPS" title="DOUBLE_RGBA_G()">DOUBLE_RGBA_G</a>                       (x)
+#define             <a class="link" href="goffice-06-go-color.html#DOUBLE-RGBA-B:CAPS" title="DOUBLE_RGBA_B()">DOUBLE_RGBA_B</a>                       (x)
+#define             <a class="link" href="goffice-06-go-color.html#DOUBLE-RGBA-A:CAPS" title="DOUBLE_RGBA_A()">DOUBLE_RGBA_A</a>                       (x)
+#define             <a class="link" href="goffice-06-go-color.html#GO-COLOR-TO-CAIRO:CAPS" title="GO_COLOR_TO_CAIRO()">GO_COLOR_TO_CAIRO</a>                   (x)
+void                <a class="link" href="goffice-06-go-color.html#go-color-to-artpix" title="go_color_to_artpix ()">go_color_to_artpix</a>                  (ArtPixMaxDepth *res,
+                                                         GOColor rgba);
+void                <a class="link" href="goffice-06-go-color.html#go-color-render-svp" title="go_color_render_svp ()">go_color_render_svp</a>                 (GOColor color,
+                                                         ArtSVP const *svp,
+                                                         int x0,
+                                                         int y0,
+                                                         int x1,
+                                                         int y1,
+                                                         art_u8 *buf,
+                                                         int rowstride);
+gboolean            <a class="link" href="goffice-06-go-color.html#go-color-from-str" title="go_color_from_str ()">go_color_from_str</a>                   (char const *str,
+                                                         GOColor *res);
+gchar *             <a class="link" href="goffice-06-go-color.html#go-color-as-str" title="go_color_as_str ()">go_color_as_str</a>                     (GOColor color);
+PangoAttribute *    <a class="link" href="goffice-06-go-color.html#go-color-to-pango" title="go_color_to_pango ()">go_color_to_pango</a>                   (GOColor color,
+                                                         gboolean is_fore);
+GdkColor *          <a class="link" href="goffice-06-go-color.html#go-color-to-gdk" title="go_color_to_gdk ()">go_color_to_gdk</a>                     (GOColor color,
+                                                         GdkColor *res);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-color.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-color.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GONamedColor"></a><h3>GONamedColor</h3>
+<pre class="programlisting">typedef struct {
+	GOColor		 color;
+	char const 	*name;	/* english name - eg. "white" */
+} GONamedColor;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GDK-TO-UINT:CAPS"></a><h3>GDK_TO_UINT()</h3>
+<pre class="programlisting">#define GDK_TO_UINT(c)	RGBA_TO_UINT(((c).red&gt;&gt;8), ((c).green&gt;&gt;8), ((c).blue&gt;&gt;8), 0xff)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>c</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGB-TO-UINT:CAPS"></a><h3>RGB_TO_UINT()</h3>
+<pre class="programlisting">#define RGB_TO_UINT(r,g,b)	((((guint)(r))&lt;&lt;16)|(((guint)(g))&lt;&lt;8)|((guint)(b)))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>g</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGB-TO-RGBA:CAPS"></a><h3>RGB_TO_RGBA()</h3>
+<pre class="programlisting">#define RGB_TO_RGBA(x,a)	(((x) &lt;&lt; 8) | ((((guint)a) &amp; 0xff)))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGB-WHITE:CAPS"></a><h3>RGB_WHITE</h3>
+<pre class="programlisting">#define RGB_WHITE   RGB_TO_UINT(0xff, 0xff, 0xff)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGB-BLACK:CAPS"></a><h3>RGB_BLACK</h3>
+<pre class="programlisting">#define RGB_BLACK   RGB_TO_UINT(0x00, 0x00, 0x00)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGB-RED:CAPS"></a><h3>RGB_RED</h3>
+<pre class="programlisting">#define RGB_RED     RGB_TO_UINT(0xff, 0x00, 0x00)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGB-GREEN:CAPS"></a><h3>RGB_GREEN</h3>
+<pre class="programlisting">#define RGB_GREEN   RGB_TO_UINT(0x00, 0xff, 0x00)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGB-BLUE:CAPS"></a><h3>RGB_BLUE</h3>
+<pre class="programlisting">#define RGB_BLUE    RGB_TO_UINT(0x00, 0x00, 0xff)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGB-YELLOW:CAPS"></a><h3>RGB_YELLOW</h3>
+<pre class="programlisting">#define RGB_YELLOW  RGB_TO_UINT(0xff, 0xff, 0x00)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGB-VIOLET:CAPS"></a><h3>RGB_VIOLET</h3>
+<pre class="programlisting">#define RGB_VIOLET  RGB_TO_UINT(0xff, 0x00, 0xff)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGB-CYAN:CAPS"></a><h3>RGB_CYAN</h3>
+<pre class="programlisting">#define RGB_CYAN    RGB_TO_UINT(0x00, 0xff, 0xff)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGB-GREY:CAPS"></a><h3>RGB_GREY()</h3>
+<pre class="programlisting">#define RGB_GREY(x) RGB_TO_UINT(x,x,x)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGBA-TO-UINT:CAPS"></a><h3>RGBA_TO_UINT()</h3>
+<pre class="programlisting">#define RGBA_TO_UINT(r,g,b,a)	((((guint)(r))&lt;&lt;24)|(((guint)(g))&lt;&lt;16)|(((guint)(b))&lt;&lt;8)|(guint)(a))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>g</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGBA-WHITE:CAPS"></a><h3>RGBA_WHITE</h3>
+<pre class="programlisting">#define RGBA_WHITE  RGB_TO_RGBA(RGB_WHITE, 0xff)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGBA-BLACK:CAPS"></a><h3>RGBA_BLACK</h3>
+<pre class="programlisting">#define RGBA_BLACK  RGB_TO_RGBA(RGB_BLACK, 0xff)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGBA-RED:CAPS"></a><h3>RGBA_RED</h3>
+<pre class="programlisting">#define RGBA_RED    RGB_TO_RGBA(RGB_RED, 0xff)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGBA-GREEN:CAPS"></a><h3>RGBA_GREEN</h3>
+<pre class="programlisting">#define RGBA_GREEN  RGB_TO_RGBA(RGB_GREEN, 0xff)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGBA-BLUE:CAPS"></a><h3>RGBA_BLUE</h3>
+<pre class="programlisting">#define RGBA_BLUE   RGB_TO_RGBA(RGB_BLUE, 0xff)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGBA-YELLOW:CAPS"></a><h3>RGBA_YELLOW</h3>
+<pre class="programlisting">#define RGBA_YELLOW RGB_TO_RGBA(RGB_YELLOW, 0xff)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGBA-VIOLET:CAPS"></a><h3>RGBA_VIOLET</h3>
+<pre class="programlisting">#define RGBA_VIOLET RGB_TO_RGBA(RGB_VIOLET, 0xff)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGBA-CYAN:CAPS"></a><h3>RGBA_CYAN</h3>
+<pre class="programlisting">#define RGBA_CYAN   RGB_TO_RGBA(RGB_CYAN, 0xff)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RGBA-GREY:CAPS"></a><h3>RGBA_GREY()</h3>
+<pre class="programlisting">#define RGBA_GREY(x) RGB_TO_RGBA(RGB_GREY(x), 0xff)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="UINT-RGBA-R:CAPS"></a><h3>UINT_RGBA_R()</h3>
+<pre class="programlisting">#define UINT_RGBA_R(x) (((guint)(x))&gt;&gt;24)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="UINT-RGBA-G:CAPS"></a><h3>UINT_RGBA_G()</h3>
+<pre class="programlisting">#define UINT_RGBA_G(x) ((((guint)(x))&gt;&gt;16)&amp;0xff)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="UINT-RGBA-B:CAPS"></a><h3>UINT_RGBA_B()</h3>
+<pre class="programlisting">#define UINT_RGBA_B(x) ((((guint)(x))&gt;&gt;8)&amp;0xff)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="UINT-RGBA-A:CAPS"></a><h3>UINT_RGBA_A()</h3>
+<pre class="programlisting">#define UINT_RGBA_A(x) (((guint)(x))&amp;0xff)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="UINT-RGBA-CHANGE-R:CAPS"></a><h3>UINT_RGBA_CHANGE_R()</h3>
+<pre class="programlisting">#define UINT_RGBA_CHANGE_R(x, r) (((x)&amp;(~(0xff&lt;&lt;24)))|(((r)&amp;0xff)&lt;&lt;24))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="UINT-RGBA-CHANGE-G:CAPS"></a><h3>UINT_RGBA_CHANGE_G()</h3>
+<pre class="programlisting">#define UINT_RGBA_CHANGE_G(x, g) (((x)&amp;(~(0xff&lt;&lt;16)))|(((g)&amp;0xff)&lt;&lt;16))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>g</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="UINT-RGBA-CHANGE-B:CAPS"></a><h3>UINT_RGBA_CHANGE_B()</h3>
+<pre class="programlisting">#define UINT_RGBA_CHANGE_B(x, b) (((x)&amp;(~(0xff&lt;&lt;8)))|(((b)&amp;0xff)&lt;&lt;8))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="UINT-RGBA-CHANGE-A:CAPS"></a><h3>UINT_RGBA_CHANGE_A()</h3>
+<pre class="programlisting">#define UINT_RGBA_CHANGE_A(x, a) (((x)&amp;(~0xff))|((a)&amp;0xff))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="UINT-TO-RGB:CAPS"></a><h3>UINT_TO_RGB()</h3>
+<pre class="programlisting">#define             UINT_TO_RGB(u,r,g,b)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>u</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>g</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="UINT-TO-RGBA:CAPS"></a><h3>UINT_TO_RGBA()</h3>
+<pre class="programlisting">#define             UINT_TO_RGBA(u,r,g,b,a)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>u</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>g</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="MONO-INTERPOLATE:CAPS"></a><h3>MONO_INTERPOLATE()</h3>
+<pre class="programlisting">#define MONO_INTERPOLATE(v1, v2, t) ((gint)go_rint((v2)*(t)+(v1)*(1-(t))))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>v1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>v2</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>t</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="UINT-INTERPOLATE:CAPS"></a><h3>UINT_INTERPOLATE()</h3>
+<pre class="programlisting">#define             UINT_INTERPOLATE(c1, c2, t)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>c1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>c2</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>t</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PIXEL-RGB:CAPS"></a><h3>PIXEL_RGB()</h3>
+<pre class="programlisting">#define             PIXEL_RGB(p, r, g, b)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>p</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>g</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PIXEL-RGBA:CAPS"></a><h3>PIXEL_RGBA()</h3>
+<pre class="programlisting">#define             PIXEL_RGBA(p, r, g, b, a)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>p</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>g</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PIXEL-RGB-UINT:CAPS"></a><h3>PIXEL_RGB_UINT()</h3>
+<pre class="programlisting">#define             PIXEL_RGB_UINT(p, i)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>p</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>i</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PIXEL-RGBA-UINT:CAPS"></a><h3>PIXEL_RGBA_UINT()</h3>
+<pre class="programlisting">#define             PIXEL_RGBA_UINT(p, i)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>p</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>i</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PIXEL-BLACK:CAPS"></a><h3>PIXEL_BLACK()</h3>
+<pre class="programlisting">#define PIXEL_BLACK(p) PIXEL_RGB(p,0,0,0)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>p</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PIXEL-WHITE:CAPS"></a><h3>PIXEL_WHITE()</h3>
+<pre class="programlisting">#define PIXEL_WHITE(p) PIXEL_RGB(p,0xff,0xff,0xff)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>p</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PIXEL-GREY:CAPS"></a><h3>PIXEL_GREY()</h3>
+<pre class="programlisting">#define PIXEL_GREY(p,g) PIXEL_RGB(p,g,g,g)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>p</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>g</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PIXEL-GREYA:CAPS"></a><h3>PIXEL_GREYA()</h3>
+<pre class="programlisting">#define PIXEL_GREYA(p,g,a) PIXEL_RGBA(p,g,g,g,a)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>p</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>g</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="DOUBLE-RGBA-R:CAPS"></a><h3>DOUBLE_RGBA_R()</h3>
+<pre class="programlisting">#define DOUBLE_RGBA_R(x) (double)UINT_RGBA_R(x)/255.0
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="DOUBLE-RGBA-G:CAPS"></a><h3>DOUBLE_RGBA_G()</h3>
+<pre class="programlisting">#define DOUBLE_RGBA_G(x) (double)UINT_RGBA_G(x)/255.0
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="DOUBLE-RGBA-B:CAPS"></a><h3>DOUBLE_RGBA_B()</h3>
+<pre class="programlisting">#define DOUBLE_RGBA_B(x) (double)UINT_RGBA_B(x)/255.0
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="DOUBLE-RGBA-A:CAPS"></a><h3>DOUBLE_RGBA_A()</h3>
+<pre class="programlisting">#define DOUBLE_RGBA_A(x) (double)UINT_RGBA_A(x)/255.0
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-COLOR-TO-CAIRO:CAPS"></a><h3>GO_COLOR_TO_CAIRO()</h3>
+<pre class="programlisting">#define GO_COLOR_TO_CAIRO(x) DOUBLE_RGBA_R(x),DOUBLE_RGBA_G(x),DOUBLE_RGBA_B(x),DOUBLE_RGBA_A(x)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-color-to-artpix"></a><h3>go_color_to_artpix ()</h3>
+<pre class="programlisting">void                go_color_to_artpix                  (ArtPixMaxDepth *res,
+                                                         GOColor rgba);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>res</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rgba</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-color-render-svp"></a><h3>go_color_render_svp ()</h3>
+<pre class="programlisting">void                go_color_render_svp                 (GOColor color,
+                                                         ArtSVP const *svp,
+                                                         int x0,
+                                                         int y0,
+                                                         int x1,
+                                                         int y1,
+                                                         art_u8 *buf,
+                                                         int rowstride);</pre>
+<p>
+Renders the shape specified with <em class="parameter"><code>svp</code></em> over the <em class="parameter"><code>buf</code></em> RGB buffer.
+<em class="parameter"><code>x1</code></em> - <em class="parameter"><code>x0</code></em> specifies the width, and <em class="parameter"><code>y1</code></em> - <em class="parameter"><code>y0</code></em> specifies the height,
+of the rectangle rendered. The new pixels are stored starting at
+the first byte of <em class="parameter"><code>buf</code></em>. Thus, the <em class="parameter"><code>x0</code></em> and <em class="parameter"><code>y0</code></em> parameters specify
+an offset within <em class="parameter"><code>svp</code></em>, and may be tweaked as a way of doing
+integer-pixel translations without fiddling with <em class="parameter"><code>svp</code></em> itself.
+</p>
+<p>
+The <em class="parameter"><code>color</code></em> argument specifies the color for the rendering. Pixels of
+entirely 0 winding number are left untouched. Pixels of entirely
+1 winding number have the color <em class="parameter"><code>color</code></em> composited over them (ie,
+are replaced by the red, green, blue components of <em class="parameter"><code>color</code></em> if the alpha
+component is 0xff). Pixels of intermediate coverage are linearly
+interpolated.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
+<td> Color in 0xRRGGBBAA format.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>svp</code></em> :</span></p></td>
+<td> The source sorted vector path.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x0</code></em> :</span></p></td>
+<td> Left coordinate of destination rectangle.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y0</code></em> :</span></p></td>
+<td> Top coordinate of destination rectangle.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x1</code></em> :</span></p></td>
+<td> Right coordinate of destination rectangle.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y1</code></em> :</span></p></td>
+<td> Bottom coordinate of destination rectangle.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>buf</code></em> :</span></p></td>
+<td> Destination RGB buffer.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rowstride</code></em> :</span></p></td>
+<td> Rowstride of <em class="parameter"><code>buf</code></em> buffer.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-color-from-str"></a><h3>go_color_from_str ()</h3>
+<pre class="programlisting">gboolean            go_color_from_str                   (char const *str,
+                                                         GOColor *res);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>res</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if <em class="parameter"><code>str</code></em> can be parsed as a color of the form R:G:B:A and the
+	result is stored in <em class="parameter"><code>res</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-color-as-str"></a><h3>go_color_as_str ()</h3>
+<pre class="programlisting">gchar *             go_color_as_str                     (GOColor color);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-color-to-pango"></a><h3>go_color_to_pango ()</h3>
+<pre class="programlisting">PangoAttribute *    go_color_to_pango                   (GOColor color,
+                                                         gboolean is_fore);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>is_fore</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-color-to-gdk"></a><h3>go_color_to_gdk ()</h3>
+<pre class="programlisting">GdkColor *          go_color_to_gdk                     (GOColor color,
+                                                         GdkColor *res);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>res</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

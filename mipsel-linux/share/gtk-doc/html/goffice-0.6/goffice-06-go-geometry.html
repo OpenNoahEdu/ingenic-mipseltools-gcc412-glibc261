@@ -1,0 +1,545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-geometry</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch07.html" title="Rendering utilities">
+<link rel="prev" href="goffice-06-go-path.html" title="GoPath">
+<link rel="next" href="ch08.html" title="Data">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-path.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch07.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="ch08.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-geometry.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-geometry.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-geometry"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-geometry.top_of_page"></a>go-geometry</span></h2>
+<p>go-geometry</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-geometry.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="goffice-06-go-geometry.html#GO-GEOMETRY-ANGLE-TOLERANCE:CAPS" title="GO_GEOMETRY_ANGLE_TOLERANCE">GO_GEOMETRY_ANGLE_TOLERANCE</a>
+enum                <a class="link" href="goffice-06-go-geometry.html#GOGeometrySide" title="enum GOGeometrySide">GOGeometrySide</a>;
+enum                <a class="link" href="goffice-06-go-geometry.html#GODirection" title="enum GODirection">GODirection</a>;
+enum                <a class="link" href="goffice-06-go-geometry.html#GOGeometryRotationType" title="enum GOGeometryRotationType">GOGeometryRotationType</a>;
+                    <a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR">GOGeometryOBR</a>;
+#define             <a class="link" href="goffice-06-go-geometry.html#GOGeometryAABR" title="GOGeometryAABR">GOGeometryAABR</a>
+void                <a class="link" href="goffice-06-go-geometry.html#go-geometry-cartesian-to-polar" title="go_geometry_cartesian_to_polar ()">go_geometry_cartesian_to_polar</a>      (double x,
+                                                         double y,
+                                                         double *rho,
+                                                         double *theta);
+double              <a class="link" href="goffice-06-go-geometry.html#go-geometry-point-to-segment" title="go_geometry_point_to_segment ()">go_geometry_point_to_segment</a>        (double xp,
+                                                         double yp,
+                                                         double xs,
+                                                         double ys,
+                                                         double w,
+                                                         double h);
+void                <a class="link" href="goffice-06-go-geometry.html#go-geometry-AABR-add" title="go_geometry_AABR_add ()">go_geometry_AABR_add</a>                (<a class="link" href="goffice-06-go-geometry.html#GOGeometryAABR" title="GOGeometryAABR">GOGeometryAABR</a> *aabr0,
+                                                         <a class="link" href="goffice-06-go-geometry.html#GOGeometryAABR" title="GOGeometryAABR">GOGeometryAABR</a> const *aabr1);
+void                <a class="link" href="goffice-06-go-geometry.html#go-geometry-OBR-to-AABR" title="go_geometry_OBR_to_AABR ()">go_geometry_OBR_to_AABR</a>             (<a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR">GOGeometryOBR</a> const *obr,
+                                                         <a class="link" href="goffice-06-go-geometry.html#GOGeometryAABR" title="GOGeometryAABR">GOGeometryAABR</a> *aabr);
+gboolean            <a class="link" href="goffice-06-go-geometry.html#go-geometry-test-OBR-overlap" title="go_geometry_test_OBR_overlap ()">go_geometry_test_OBR_overlap</a>        (<a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR">GOGeometryOBR</a> const *obr0,
+                                                         <a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR">GOGeometryOBR</a> const *obr1);
+<a class="link" href="goffice-06-go-geometry.html#GOGeometryRotationType" title="enum GOGeometryRotationType">GOGeometryRotationType</a>  <a class="link" href="goffice-06-go-geometry.html#go-geometry-get-rotation-type" title="go_geometry_get_rotation_type ()">go_geometry_get_rotation_type</a>   (double alpha);
+<a class="link" href="goffice-06-go-geometry.html#GOGeometrySide" title="enum GOGeometrySide">GOGeometrySide</a>      <a class="link" href="goffice-06-go-geometry.html#go-geometry-calc-label-anchor" title="go_geometry_calc_label_anchor ()">go_geometry_calc_label_anchor</a>       (<a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR">GOGeometryOBR</a> *obr,
+                                                         double alpha);
+<a class="link" href="goffice-06-go-geometry.html#GOGeometrySide" title="enum GOGeometrySide">GOGeometrySide</a>      <a class="link" href="goffice-06-go-geometry.html#go-geometry-calc-label-position" title="go_geometry_calc_label_position ()">go_geometry_calc_label_position</a>     (<a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR">GOGeometryOBR</a> *obr,
+                                                         double alpha,
+                                                         double offset,
+                                                         <a class="link" href="goffice-06-go-geometry.html#GOGeometrySide" title="enum GOGeometrySide">GOGeometrySide</a> side,
+                                                         <a class="link" href="goffice-06-go-geometry.html#GOGeometrySide" title="enum GOGeometrySide">GOGeometrySide</a> anchor);
+#define             <a class="link" href="goffice-06-go-geometry.html#GO-DIRECTION-TYPE:CAPS" title="GO_DIRECTION_TYPE">GO_DIRECTION_TYPE</a>
+GType               <a class="link" href="goffice-06-go-geometry.html#go-direction-get-type" title="go_direction_get_type ()">go_direction_get_type</a>               (void);
+gboolean            <a class="link" href="goffice-06-go-geometry.html#go-direction-is-horizontal" title="go_direction_is_horizontal ()">go_direction_is_horizontal</a>          (<a class="link" href="goffice-06-go-geometry.html#GODirection" title="enum GODirection">GODirection</a> d);
+gboolean            <a class="link" href="goffice-06-go-geometry.html#go-direction-is-forward" title="go_direction_is_forward ()">go_direction_is_forward</a>             (<a class="link" href="goffice-06-go-geometry.html#GODirection" title="enum GODirection">GODirection</a> d);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-geometry.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-geometry.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GO-GEOMETRY-ANGLE-TOLERANCE:CAPS"></a><h3>GO_GEOMETRY_ANGLE_TOLERANCE</h3>
+<pre class="programlisting">#define GO_GEOMETRY_ANGLE_TOLERANCE 1E-3
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOGeometrySide"></a><h3>enum GOGeometrySide</h3>
+<pre class="programlisting">typedef enum {
+	GO_SIDE_LEFT		= 1 &lt;&lt; 0,
+	GO_SIDE_RIGHT		= 1 &lt;&lt; 1,
+	GO_SIDE_LEFT_RIGHT	= 3 &lt;&lt; 0,
+	GO_SIDE_TOP		= 1 &lt;&lt; 2,
+	GO_SIDE_BOTTOM		= 1 &lt;&lt; 3,
+	GO_SIDE_TOP_BOTTOM	= 3 &lt;&lt; 2,
+	GO_SIDE_AUTO		= 15
+} GOGeometrySide;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GODirection"></a><h3>enum GODirection</h3>
+<pre class="programlisting">typedef enum {
+	GO_DIRECTION_UP    = 0,	
+	GO_DIRECTION_DOWN  = 1,
+	GO_DIRECTION_LEFT  = 2,
+	GO_DIRECTION_RIGHT = 3,
+	GO_DIRECTION_NONE  = 4
+} GODirection;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOGeometryRotationType"></a><h3>enum GOGeometryRotationType</h3>
+<pre class="programlisting">typedef enum {
+	GO_ROTATE_NONE = 0,
+	GO_ROTATE_COUNTERCLOCKWISE = 1,
+	GO_ROTATE_UPSIDEDOWN = 2,
+	GO_ROTATE_CLOCKWISE = 3,	
+	GO_ROTATE_FREE = 4
+} GOGeometryRotationType;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOGeometryOBR"></a><h3>GOGeometryOBR</h3>
+<pre class="programlisting">typedef struct {
+        double x,y;     /* Center */
+        double w,h;     /* Edges */
+        double alpha;   /* Angle from x axis to w edge, in radians */
+} GOGeometryOBR;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOGeometryAABR"></a><h3>GOGeometryAABR</h3>
+<pre class="programlisting">#define GOGeometryAABR GogViewAllocation /* x, y: top left corner */
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-geometry-cartesian-to-polar"></a><h3>go_geometry_cartesian_to_polar ()</h3>
+<pre class="programlisting">void                go_geometry_cartesian_to_polar      (double x,
+                                                         double y,
+                                                         double *rho,
+                                                         double *theta);</pre>
+<p>
+Converts cartesion coordinates to polar coordinates.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td> cartesian coordinate
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td> cartesian coordinate
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rho</code></em> :</span></p></td>
+<td> polar coordinate
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theta</code></em> :</span></p></td>
+<td> polar coordinate
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-geometry-point-to-segment"></a><h3>go_geometry_point_to_segment ()</h3>
+<pre class="programlisting">double              go_geometry_point_to_segment        (double xp,
+                                                         double yp,
+                                                         double xs,
+                                                         double ys,
+                                                         double w,
+                                                         double h);</pre>
+<p>
+Computes the distance between a point and a segment.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>xp</code></em> :</span></p></td>
+<td> point coordinate
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>yp</code></em> :</span></p></td>
+<td> point coordinate
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>xs</code></em> :</span></p></td>
+<td> segment start coordinate
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ys</code></em> :</span></p></td>
+<td> segment start coordinate
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>w</code></em> :</span></p></td>
+<td> extent of segment 
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>h</code></em> :</span></p></td>
+<td> extent of segment
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-geometry-AABR-add"></a><h3>go_geometry_AABR_add ()</h3>
+<pre class="programlisting">void                go_geometry_AABR_add                (<a class="link" href="goffice-06-go-geometry.html#GOGeometryAABR" title="GOGeometryAABR">GOGeometryAABR</a> *aabr0,
+                                                         <a class="link" href="goffice-06-go-geometry.html#GOGeometryAABR" title="GOGeometryAABR">GOGeometryAABR</a> const *aabr1);</pre>
+<p>
+Computes the Axis Aligned Bounding Rectangle of aabr0 and aabr1,
+and stores result in aabr0.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>aabr0</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-geometry.html#GOGeometryAABR" title="GOGeometryAABR"><span class="type">GOGeometryAABR</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>aabr1</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-geometry.html#GOGeometryAABR" title="GOGeometryAABR"><span class="type">GOGeometryAABR</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-geometry-OBR-to-AABR"></a><h3>go_geometry_OBR_to_AABR ()</h3>
+<pre class="programlisting">void                go_geometry_OBR_to_AABR             (<a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR">GOGeometryOBR</a> const *obr,
+                                                         <a class="link" href="goffice-06-go-geometry.html#GOGeometryAABR" title="GOGeometryAABR">GOGeometryAABR</a> *aabr);</pre>
+<p>
+Stores Axis Aligned Bouding Rectangle of <em class="parameter"><code>obr</code></em> in <em class="parameter"><code>aabr</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obr</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR"><span class="type">GOGeometryOBR</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>aabr</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-geometry.html#GOGeometryAABR" title="GOGeometryAABR"><span class="type">GOGeometryAABR</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-geometry-test-OBR-overlap"></a><h3>go_geometry_test_OBR_overlap ()</h3>
+<pre class="programlisting">gboolean            go_geometry_test_OBR_overlap        (<a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR">GOGeometryOBR</a> const *obr0,
+                                                         <a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR">GOGeometryOBR</a> const *obr1);</pre>
+<p>
+Overlap test of Oriented Bounding Rectangles by the separating axis method.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obr0</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR"><span class="type">GOGeometryOBR</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obr1</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR"><span class="type">GOGeometryOBR</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <code class="literal">TRUE</code> if OOBRs overlap
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-geometry-get-rotation-type"></a><h3>go_geometry_get_rotation_type ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-geometry.html#GOGeometryRotationType" title="enum GOGeometryRotationType">GOGeometryRotationType</a>  go_geometry_get_rotation_type   (double alpha);</pre>
+<p>
+Calculates rotation type for handling of special angles (alpha = n * pi / 2)</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alpha</code></em> :</span></p></td>
+<td> angle in radians
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-geometry.html#GOGeometryRotationType" title="enum GOGeometryRotationType"><span class="type">GOGeometryRotationType</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-geometry-calc-label-anchor"></a><h3>go_geometry_calc_label_anchor ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-geometry.html#GOGeometrySide" title="enum GOGeometrySide">GOGeometrySide</a>      go_geometry_calc_label_anchor       (<a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR">GOGeometryOBR</a> *obr,
+                                                         double alpha);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obr</code></em> :</span></p></td>
+<td> bounding rectangle of label
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alpha</code></em> :</span></p></td>
+<td> angle of axis
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> computed label anchor, to be used by go_geometry_calc_label_position.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-geometry-calc-label-position"></a><h3>go_geometry_calc_label_position ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-geometry.html#GOGeometrySide" title="enum GOGeometrySide">GOGeometrySide</a>      go_geometry_calc_label_position     (<a class="link" href="goffice-06-go-geometry.html#GOGeometryOBR" title="GOGeometryOBR">GOGeometryOBR</a> *obr,
+                                                         double alpha,
+                                                         double offset,
+                                                         <a class="link" href="goffice-06-go-geometry.html#GOGeometrySide" title="enum GOGeometrySide">GOGeometrySide</a> side,
+                                                         <a class="link" href="goffice-06-go-geometry.html#GOGeometrySide" title="enum GOGeometrySide">GOGeometrySide</a> anchor);</pre>
+<p>
+Convenience routine that computes position of a label relative to an axis.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obr</code></em> :</span></p></td>
+<td> bounding rectangle of label
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alpha</code></em> :</span></p></td>
+<td> angle of axis
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>offset</code></em> :</span></p></td>
+<td> minimum distance between label and axis
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>side</code></em> :</span></p></td>
+<td> side of label with respect to axis
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>anchor</code></em> :</span></p></td>
+<td> where to anchor the label
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the computed anchor if <em class="parameter"><code>anchor</code></em> == GO_SIDE_AUTO, or <em class="parameter"><code>anchor</code></em> value. 
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-DIRECTION-TYPE:CAPS"></a><h3>GO_DIRECTION_TYPE</h3>
+<pre class="programlisting">#define  GO_DIRECTION_TYPE (go_direction_get_type())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-direction-get-type"></a><h3>go_direction_get_type ()</h3>
+<pre class="programlisting">GType               go_direction_get_type               (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-direction-is-horizontal"></a><h3>go_direction_is_horizontal ()</h3>
+<pre class="programlisting">gboolean            go_direction_is_horizontal          (<a class="link" href="goffice-06-go-geometry.html#GODirection" title="enum GODirection">GODirection</a> d);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>d</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-go-geometry.html#GODirection" title="enum GODirection"><span class="type">GODirection</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE for GO_DIRECTION_LEFT and GO_DIRECTION_RIGHT.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-direction-is-forward"></a><h3>go_direction_is_forward ()</h3>
+<pre class="programlisting">gboolean            go_direction_is_forward             (<a class="link" href="goffice-06-go-geometry.html#GODirection" title="enum GODirection">GODirection</a> d);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>d</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-go-geometry.html#GODirection" title="enum GODirection"><span class="type">GODirection</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE for GO_DIRECTION_DOWN or GO_DIRECTION_RIGHT.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

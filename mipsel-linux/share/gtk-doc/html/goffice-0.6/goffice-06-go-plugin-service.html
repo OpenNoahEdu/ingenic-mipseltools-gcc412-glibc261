@@ -1,0 +1,1066 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-plugin-service</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch11.html" title="Application">
+<link rel="prev" href="goffice-06-go-plugin-loader-module.html" title="go-plugin-loader-module">
+<link rel="next" href="ch12.html" title="Components">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-plugin-loader-module.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch11.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="ch12.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-plugin-service.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-plugin-service.description" class="shortcut">Description</a>
+                 | 
+                <a href="#goffice-06-go-plugin-service.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-plugin-service"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-plugin-service.top_of_page"></a>go-plugin-service</span></h2>
+<p>go-plugin-service</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-plugin-service.synopsis"></a><h2>Synopsis</h2>
+<a name="PluginServiceGeneral"></a><a name="PluginServiceFileOpener"></a><a name="PluginServiceFileSaver"></a><a name="PluginServicePluginLoader"></a><a name="PluginServiceGObjectLoader"></a><a name="PluginServiceSimple"></a><pre class="synopsis">
+#define             <a class="link" href="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-TYPE:CAPS" title="GO_PLUGIN_SERVICE_TYPE">GO_PLUGIN_SERVICE_TYPE</a>
+#define             <a class="link" href="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE:CAPS" title="GO_PLUGIN_SERVICE()">GO_PLUGIN_SERVICE</a>                   (o)
+#define             <a class="link" href="goffice-06-go-plugin-service.html#IS-GO-PLUGIN-SERVICE:CAPS" title="IS_GO_PLUGIN_SERVICE()">IS_GO_PLUGIN_SERVICE</a>                (o)
+GType               <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-get-type" title="plugin_service_get_type ()">plugin_service_get_type</a>             (void);
+#define             <a class="link" href="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-GENERAL-TYPE:CAPS" title="GO_PLUGIN_SERVICE_GENERAL_TYPE">GO_PLUGIN_SERVICE_GENERAL_TYPE</a>
+#define             <a class="link" href="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-GENERAL:CAPS" title="GO_PLUGIN_SERVICE_GENERAL()">GO_PLUGIN_SERVICE_GENERAL</a>           (o)
+#define             <a class="link" href="goffice-06-go-plugin-service.html#IS-GO-PLUGIN-SERVICE-GENERAL:CAPS" title="IS_GO_PLUGIN_SERVICE_GENERAL()">IS_GO_PLUGIN_SERVICE_GENERAL</a>        (o)
+GType               <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-general-get-type" title="plugin_service_general_get_type ()">plugin_service_general_get_type</a>     (void);
+                    <a class="link" href="goffice-06-go-plugin-service.html#PluginServiceGeneral-struct" title="PluginServiceGeneral">PluginServiceGeneral</a>;
+                    <a class="link" href="goffice-06-go-plugin-service.html#PluginServiceGeneralCallbacks" title="PluginServiceGeneralCallbacks">PluginServiceGeneralCallbacks</a>;
+#define             <a class="link" href="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-FILE-OPENER-TYPE:CAPS" title="GO_PLUGIN_SERVICE_FILE_OPENER_TYPE">GO_PLUGIN_SERVICE_FILE_OPENER_TYPE</a>
+#define             <a class="link" href="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-FILE-OPENER:CAPS" title="GO_PLUGIN_SERVICE_FILE_OPENER()">GO_PLUGIN_SERVICE_FILE_OPENER</a>       (o)
+#define             <a class="link" href="goffice-06-go-plugin-service.html#IS-GO-PLUGIN-SERVICE-FILE-OPENER:CAPS" title="IS_GO_PLUGIN_SERVICE_FILE_OPENER()">IS_GO_PLUGIN_SERVICE_FILE_OPENER</a>    (o)
+GType               <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-file-opener-get-type" title="plugin_service_file_opener_get_type ()">plugin_service_file_opener_get_type</a> (void);
+                    <a class="link" href="goffice-06-go-plugin-service.html#PluginServiceFileOpener-struct" title="PluginServiceFileOpener">PluginServiceFileOpener</a>;
+                    <a class="link" href="goffice-06-go-plugin-service.html#PluginServiceFileOpenerCallbacks" title="PluginServiceFileOpenerCallbacks">PluginServiceFileOpenerCallbacks</a>;
+#define             <a class="link" href="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-FILE-SAVER-TYPE:CAPS" title="GO_PLUGIN_SERVICE_FILE_SAVER_TYPE">GO_PLUGIN_SERVICE_FILE_SAVER_TYPE</a>
+#define             <a class="link" href="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-FILE-SAVER:CAPS" title="GO_PLUGIN_SERVICE_FILE_SAVER()">GO_PLUGIN_SERVICE_FILE_SAVER</a>        (o)
+#define             <a class="link" href="goffice-06-go-plugin-service.html#IS-GO-PLUGIN-SERVICE-FILE-SAVER:CAPS" title="IS_GO_PLUGIN_SERVICE_FILE_SAVER()">IS_GO_PLUGIN_SERVICE_FILE_SAVER</a>     (o)
+GType               <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-file-saver-get-type" title="plugin_service_file_saver_get_type ()">plugin_service_file_saver_get_type</a>  (void);
+                    <a class="link" href="goffice-06-go-plugin-service.html#PluginServiceFileSaver-struct" title="PluginServiceFileSaver">PluginServiceFileSaver</a>;
+                    <a class="link" href="goffice-06-go-plugin-service.html#PluginServiceFileSaverCallbacks" title="PluginServiceFileSaverCallbacks">PluginServiceFileSaverCallbacks</a>;
+#define             <a class="link" href="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-PLUGIN-LOADER-TYPE:CAPS" title="GO_PLUGIN_SERVICE_PLUGIN_LOADER_TYPE">GO_PLUGIN_SERVICE_PLUGIN_LOADER_TYPE</a>
+#define             <a class="link" href="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-PLUGIN-LOADER:CAPS" title="GO_PLUGIN_SERVICE_PLUGIN_LOADER()">GO_PLUGIN_SERVICE_PLUGIN_LOADER</a>     (o)
+#define             <a class="link" href="goffice-06-go-plugin-service.html#IS-GO-PLUGIN-SERVICE-PLUGIN-LOADER:CAPS" title="IS_GO_PLUGIN_SERVICE_PLUGIN_LOADER()">IS_GO_PLUGIN_SERVICE_PLUGIN_LOADER</a>  (o)
+GType               <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-plugin-loader-get-type" title="plugin_service_plugin_loader_get_type ()">plugin_service_plugin_loader_get_type</a>
+                                                        (void);
+                    <a class="link" href="goffice-06-go-plugin-service.html#PluginServicePluginLoader-struct" title="PluginServicePluginLoader">PluginServicePluginLoader</a>;
+                    <a class="link" href="goffice-06-go-plugin-service.html#PluginServicePluginLoaderCallbacks" title="PluginServicePluginLoaderCallbacks">PluginServicePluginLoaderCallbacks</a>;
+GType               <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-plugin-loader-generate-type" title="plugin_service_plugin_loader_generate_type ()">plugin_service_plugin_loader_generate_type</a>
+                                                        (GOPluginService *service,
+                                                         ErrorInfo **ret_error);
+#define             <a class="link" href="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-GOBJECT-LOADER-TYPE:CAPS" title="GO_PLUGIN_SERVICE_GOBJECT_LOADER_TYPE">GO_PLUGIN_SERVICE_GOBJECT_LOADER_TYPE</a>
+#define             <a class="link" href="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-GOBJECT-LOADER:CAPS" title="GO_PLUGIN_SERVICE_GOBJECT_LOADER()">GO_PLUGIN_SERVICE_GOBJECT_LOADER</a>    (o)
+#define             <a class="link" href="goffice-06-go-plugin-service.html#IS-GO-PLUGIN-SERVICE-GOBJECT-LOADER:CAPS" title="IS_GO_PLUGIN_SERVICE_GOBJECT_LOADER()">IS_GO_PLUGIN_SERVICE_GOBJECT_LOADER</a> (o)
+GType               <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-gobject-loader-get-type" title="plugin_service_gobject_loader_get_type ()">plugin_service_gobject_loader_get_type</a>
+                                                        (void);
+                    <a class="link" href="goffice-06-go-plugin-service.html#PluginServiceGObjectLoader-struct" title="PluginServiceGObjectLoader">PluginServiceGObjectLoader</a>;
+#define             <a class="link" href="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-SIMPLE-TYPE:CAPS" title="GO_PLUGIN_SERVICE_SIMPLE_TYPE">GO_PLUGIN_SERVICE_SIMPLE_TYPE</a>
+#define             <a class="link" href="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-SIMPLE:CAPS" title="GO_PLUGIN_SERVICE_SIMPLE()">GO_PLUGIN_SERVICE_SIMPLE</a>            (o)
+#define             <a class="link" href="goffice-06-go-plugin-service.html#IS-GO-PLUGIN-SERVICE-SIMPLE:CAPS" title="IS_GO_PLUGIN_SERVICE_SIMPLE()">IS_GO_PLUGIN_SERVICE_SIMPLE</a>         (o)
+GType               <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-simple-get-type" title="plugin_service_simple_get_type ()">plugin_service_simple_get_type</a>      (void);
+                    <a class="link" href="goffice-06-go-plugin-service.html#PluginServiceSimple-struct" title="PluginServiceSimple">PluginServiceSimple</a>;
+GOPluginService *   <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-new" title="plugin_service_new ()">plugin_service_new</a>                  (GOPlugin *plugin,
+                                                         xmlNode *tree,
+                                                         ErrorInfo **ret_error);
+char const     *    <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-get-id" title="plugin_service_get_id ()">plugin_service_get_id</a>               (const GOPluginService *service);
+char const     *    <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-get-description" title="plugin_service_get_description ()">plugin_service_get_description</a>      (GOPluginService *service);
+GOPlugin *          <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-get-plugin" title="plugin_service_get_plugin ()">plugin_service_get_plugin</a>           (GOPluginService *service);
+gpointer            <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-get-cbs" title="plugin_service_get_cbs ()">plugin_service_get_cbs</a>              (GOPluginService *service);
+void                <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-activate" title="plugin_service_activate ()">plugin_service_activate</a>             (GOPluginService *service,
+                                                         ErrorInfo **ret_error);
+void                <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-deactivate" title="plugin_service_deactivate ()">plugin_service_deactivate</a>           (GOPluginService *service,
+                                                         ErrorInfo **ret_error);
+void                <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-load" title="plugin_service_load ()">plugin_service_load</a>                 (GOPluginService *service,
+                                                         ErrorInfo **ret_error);
+void                <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-unload" title="plugin_service_unload ()">plugin_service_unload</a>               (GOPluginService *service,
+                                                         ErrorInfo **ret_error);
+GType               (<a class="link" href="goffice-06-go-plugin-service.html#GOPluginServiceCreate" title="GOPluginServiceCreate ()">*GOPluginServiceCreate</a>)            (void);
+void                <a class="link" href="goffice-06-go-plugin-service.html#plugin-services-init" title="plugin_services_init ()">plugin_services_init</a>                (void);
+void                <a class="link" href="goffice-06-go-plugin-service.html#plugin-services-shutdown" title="plugin_services_shutdown ()">plugin_services_shutdown</a>            (void);
+void                <a class="link" href="goffice-06-go-plugin-service.html#plugin-service-define" title="plugin_service_define ()">plugin_service_define</a>               (char const *type_str,
+                                                         <a class="link" href="goffice-06-go-plugin-service.html#GOPluginServiceCreate" title="GOPluginServiceCreate ()">GOPluginServiceCreate</a> ctor);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-plugin-service.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GOPluginService
+         +----PluginServiceGeneral
+</pre>
+<pre class="synopsis">
+  GObject
+   +----GOPluginService
+         +----PluginServiceFileOpener
+</pre>
+<pre class="synopsis">
+  GObject
+   +----GOPluginService
+         +----PluginServiceFileSaver
+</pre>
+<pre class="synopsis">
+  GObject
+   +----GOPluginService
+         +----PluginServicePluginLoader
+</pre>
+<pre class="synopsis">
+  GObject
+   +----GOPluginService
+         +----<a class="link" href="goffice-06-go-plugin-service.html#PluginServiceSimple">PluginServiceSimple</a>
+               +----PluginServiceGObjectLoader
+</pre>
+<pre class="synopsis">
+  GObject
+   +----GOPluginService
+         +----PluginServiceSimple
+               +----<a class="link" href="goffice-06-go-plugin-service.html#PluginServiceGObjectLoader">PluginServiceGObjectLoader</a>
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-plugin-service.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-plugin-service.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-SERVICE-TYPE:CAPS"></a><h3>GO_PLUGIN_SERVICE_TYPE</h3>
+<pre class="programlisting">#define GO_PLUGIN_SERVICE_TYPE         (plugin_service_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-SERVICE:CAPS"></a><h3>GO_PLUGIN_SERVICE()</h3>
+<pre class="programlisting">#define GO_PLUGIN_SERVICE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GO_PLUGIN_SERVICE_TYPE, GOPluginService))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-PLUGIN-SERVICE:CAPS"></a><h3>IS_GO_PLUGIN_SERVICE()</h3>
+<pre class="programlisting">#define IS_GO_PLUGIN_SERVICE(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_PLUGIN_SERVICE_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-get-type"></a><h3>plugin_service_get_type ()</h3>
+<pre class="programlisting">GType               plugin_service_get_type             (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-SERVICE-GENERAL-TYPE:CAPS"></a><h3>GO_PLUGIN_SERVICE_GENERAL_TYPE</h3>
+<pre class="programlisting">#define GO_PLUGIN_SERVICE_GENERAL_TYPE  (plugin_service_general_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-SERVICE-GENERAL:CAPS"></a><h3>GO_PLUGIN_SERVICE_GENERAL()</h3>
+<pre class="programlisting">#define GO_PLUGIN_SERVICE_GENERAL(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), GO_PLUGIN_SERVICE_GENERAL_TYPE, PluginServiceGeneral))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-PLUGIN-SERVICE-GENERAL:CAPS"></a><h3>IS_GO_PLUGIN_SERVICE_GENERAL()</h3>
+<pre class="programlisting">#define IS_GO_PLUGIN_SERVICE_GENERAL(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_PLUGIN_SERVICE_GENERAL_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-general-get-type"></a><h3>plugin_service_general_get_type ()</h3>
+<pre class="programlisting">GType               plugin_service_general_get_type     (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PluginServiceGeneral-struct"></a><h3>PluginServiceGeneral</h3>
+<pre class="programlisting">typedef struct _PluginServiceGeneral PluginServiceGeneral;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PluginServiceGeneralCallbacks"></a><h3>PluginServiceGeneralCallbacks</h3>
+<pre class="programlisting">typedef struct {
+	void (*plugin_func_init) (GOPluginService *service, ErrorInfo **ret_error);
+	void (*plugin_func_cleanup) (GOPluginService *service, ErrorInfo **ret_error);
+} PluginServiceGeneralCallbacks;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-SERVICE-FILE-OPENER-TYPE:CAPS"></a><h3>GO_PLUGIN_SERVICE_FILE_OPENER_TYPE</h3>
+<pre class="programlisting">#define GO_PLUGIN_SERVICE_FILE_OPENER_TYPE  (plugin_service_file_opener_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-SERVICE-FILE-OPENER:CAPS"></a><h3>GO_PLUGIN_SERVICE_FILE_OPENER()</h3>
+<pre class="programlisting">#define GO_PLUGIN_SERVICE_FILE_OPENER(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), GO_PLUGIN_SERVICE_FILE_OPENER_TYPE, PluginServiceFileOpener))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-PLUGIN-SERVICE-FILE-OPENER:CAPS"></a><h3>IS_GO_PLUGIN_SERVICE_FILE_OPENER()</h3>
+<pre class="programlisting">#define IS_GO_PLUGIN_SERVICE_FILE_OPENER(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_PLUGIN_SERVICE_FILE_OPENER_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-file-opener-get-type"></a><h3>plugin_service_file_opener_get_type ()</h3>
+<pre class="programlisting">GType               plugin_service_file_opener_get_type (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PluginServiceFileOpener-struct"></a><h3>PluginServiceFileOpener</h3>
+<pre class="programlisting">typedef struct _PluginServiceFileOpener PluginServiceFileOpener;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PluginServiceFileOpenerCallbacks"></a><h3>PluginServiceFileOpenerCallbacks</h3>
+<pre class="programlisting">typedef struct {
+	/* plugin_func_file_probe may be NULL */
+	gboolean (*plugin_func_file_probe) (
+	         GOFileOpener const *fo, GOPluginService *service,
+	         GsfInput *input, FileProbeLevel pl);
+	void     (*plugin_func_file_open) (
+	         GOFileOpener const *fo, GOPluginService *service,
+	         IOContext *io_context, gpointer fixme_workbook_view,
+		 GsfInput *input);
+} PluginServiceFileOpenerCallbacks;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-SERVICE-FILE-SAVER-TYPE:CAPS"></a><h3>GO_PLUGIN_SERVICE_FILE_SAVER_TYPE</h3>
+<pre class="programlisting">#define GO_PLUGIN_SERVICE_FILE_SAVER_TYPE  (plugin_service_file_saver_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-SERVICE-FILE-SAVER:CAPS"></a><h3>GO_PLUGIN_SERVICE_FILE_SAVER()</h3>
+<pre class="programlisting">#define GO_PLUGIN_SERVICE_FILE_SAVER(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), GO_PLUGIN_SERVICE_FILE_SAVER_TYPE, PluginServiceFileSaver))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-PLUGIN-SERVICE-FILE-SAVER:CAPS"></a><h3>IS_GO_PLUGIN_SERVICE_FILE_SAVER()</h3>
+<pre class="programlisting">#define IS_GO_PLUGIN_SERVICE_FILE_SAVER(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_PLUGIN_SERVICE_FILE_SAVER_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-file-saver-get-type"></a><h3>plugin_service_file_saver_get_type ()</h3>
+<pre class="programlisting">GType               plugin_service_file_saver_get_type  (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PluginServiceFileSaver-struct"></a><h3>PluginServiceFileSaver</h3>
+<pre class="programlisting">typedef struct _PluginServiceFileSaver PluginServiceFileSaver;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PluginServiceFileSaverCallbacks"></a><h3>PluginServiceFileSaverCallbacks</h3>
+<pre class="programlisting">typedef struct {
+	void  (*plugin_func_file_save) (
+	      GOFileSaver const *fs, GOPluginService *service,
+	      IOContext *io_context, gconstpointer fixme_workbook_view,
+	      GsfOutput *output);
+} PluginServiceFileSaverCallbacks;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-SERVICE-PLUGIN-LOADER-TYPE:CAPS"></a><h3>GO_PLUGIN_SERVICE_PLUGIN_LOADER_TYPE</h3>
+<pre class="programlisting">#define GO_PLUGIN_SERVICE_PLUGIN_LOADER_TYPE  (plugin_service_plugin_loader_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-SERVICE-PLUGIN-LOADER:CAPS"></a><h3>GO_PLUGIN_SERVICE_PLUGIN_LOADER()</h3>
+<pre class="programlisting">#define GO_PLUGIN_SERVICE_PLUGIN_LOADER(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), GO_PLUGIN_SERVICE_PLUGIN_LOADER_TYPE, PluginServicePluginLoader))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-PLUGIN-SERVICE-PLUGIN-LOADER:CAPS"></a><h3>IS_GO_PLUGIN_SERVICE_PLUGIN_LOADER()</h3>
+<pre class="programlisting">#define IS_GO_PLUGIN_SERVICE_PLUGIN_LOADER(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_PLUGIN_SERVICE_PLUGIN_LOADER_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-plugin-loader-get-type"></a><h3>plugin_service_plugin_loader_get_type ()</h3>
+<pre class="programlisting">GType               plugin_service_plugin_loader_get_type
+                                                        (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PluginServicePluginLoader-struct"></a><h3>PluginServicePluginLoader</h3>
+<pre class="programlisting">typedef struct _PluginServicePluginLoader PluginServicePluginLoader;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PluginServicePluginLoaderCallbacks"></a><h3>PluginServicePluginLoaderCallbacks</h3>
+<pre class="programlisting">typedef struct {
+	GType (*plugin_func_get_loader_type) (
+	      GOPluginService *service, ErrorInfo **ret_error);
+} PluginServicePluginLoaderCallbacks;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-plugin-loader-generate-type"></a><h3>plugin_service_plugin_loader_generate_type ()</h3>
+<pre class="programlisting">GType               plugin_service_plugin_loader_generate_type
+                                                        (GOPluginService *service,
+                                                         ErrorInfo **ret_error);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret_error</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-SERVICE-GOBJECT-LOADER-TYPE:CAPS"></a><h3>GO_PLUGIN_SERVICE_GOBJECT_LOADER_TYPE</h3>
+<pre class="programlisting">#define GO_PLUGIN_SERVICE_GOBJECT_LOADER_TYPE  (plugin_service_gobject_loader_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-SERVICE-GOBJECT-LOADER:CAPS"></a><h3>GO_PLUGIN_SERVICE_GOBJECT_LOADER()</h3>
+<pre class="programlisting">#define GO_PLUGIN_SERVICE_GOBJECT_LOADER(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), GO_PLUGIN_SERVICE_GOBJECT_LOADER_TYPE, PluginServiceGObjectLoader))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-PLUGIN-SERVICE-GOBJECT-LOADER:CAPS"></a><h3>IS_GO_PLUGIN_SERVICE_GOBJECT_LOADER()</h3>
+<pre class="programlisting">#define IS_GO_PLUGIN_SERVICE_GOBJECT_LOADER(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_PLUGIN_SERVICE_GOBJECT_LOADER_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-gobject-loader-get-type"></a><h3>plugin_service_gobject_loader_get_type ()</h3>
+<pre class="programlisting">GType               plugin_service_gobject_loader_get_type
+                                                        (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PluginServiceGObjectLoader-struct"></a><h3>PluginServiceGObjectLoader</h3>
+<pre class="programlisting">typedef struct _PluginServiceGObjectLoader PluginServiceGObjectLoader;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-SERVICE-SIMPLE-TYPE:CAPS"></a><h3>GO_PLUGIN_SERVICE_SIMPLE_TYPE</h3>
+<pre class="programlisting">#define GO_PLUGIN_SERVICE_SIMPLE_TYPE  (plugin_service_simple_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-SERVICE-SIMPLE:CAPS"></a><h3>GO_PLUGIN_SERVICE_SIMPLE()</h3>
+<pre class="programlisting">#define GO_PLUGIN_SERVICE_SIMPLE(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), GO_PLUGIN_SERVICE_SIMPLE_TYPE, PluginServiceSimple))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-PLUGIN-SERVICE-SIMPLE:CAPS"></a><h3>IS_GO_PLUGIN_SERVICE_SIMPLE()</h3>
+<pre class="programlisting">#define IS_GO_PLUGIN_SERVICE_SIMPLE(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_PLUGIN_SERVICE_SIMPLE_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-simple-get-type"></a><h3>plugin_service_simple_get_type ()</h3>
+<pre class="programlisting">GType               plugin_service_simple_get_type      (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="PluginServiceSimple-struct"></a><h3>PluginServiceSimple</h3>
+<pre class="programlisting">typedef struct _PluginServiceSimple PluginServiceSimple;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-new"></a><h3>plugin_service_new ()</h3>
+<pre class="programlisting">GOPluginService *   plugin_service_new                  (GOPlugin *plugin,
+                                                         xmlNode *tree,
+                                                         ErrorInfo **ret_error);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tree</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret_error</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-get-id"></a><h3>plugin_service_get_id ()</h3>
+<pre class="programlisting">char const     *    plugin_service_get_id               (const GOPluginService *service);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-get-description"></a><h3>plugin_service_get_description ()</h3>
+<pre class="programlisting">char const     *    plugin_service_get_description      (GOPluginService *service);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-get-plugin"></a><h3>plugin_service_get_plugin ()</h3>
+<pre class="programlisting">GOPlugin *          plugin_service_get_plugin           (GOPluginService *service);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-get-cbs"></a><h3>plugin_service_get_cbs ()</h3>
+<pre class="programlisting">gpointer            plugin_service_get_cbs              (GOPluginService *service);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-activate"></a><h3>plugin_service_activate ()</h3>
+<pre class="programlisting">void                plugin_service_activate             (GOPluginService *service,
+                                                         ErrorInfo **ret_error);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret_error</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-deactivate"></a><h3>plugin_service_deactivate ()</h3>
+<pre class="programlisting">void                plugin_service_deactivate           (GOPluginService *service,
+                                                         ErrorInfo **ret_error);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret_error</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-load"></a><h3>plugin_service_load ()</h3>
+<pre class="programlisting">void                plugin_service_load                 (GOPluginService *service,
+                                                         ErrorInfo **ret_error);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret_error</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-unload"></a><h3>plugin_service_unload ()</h3>
+<pre class="programlisting">void                plugin_service_unload               (GOPluginService *service,
+                                                         ErrorInfo **ret_error);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret_error</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOPluginServiceCreate"></a><h3>GOPluginServiceCreate ()</h3>
+<pre class="programlisting">GType               (*GOPluginServiceCreate)            (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-services-init"></a><h3>plugin_services_init ()</h3>
+<pre class="programlisting">void                plugin_services_init                (void);</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-services-shutdown"></a><h3>plugin_services_shutdown ()</h3>
+<pre class="programlisting">void                plugin_services_shutdown            (void);</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="plugin-service-define"></a><h3>plugin_service_define ()</h3>
+<pre class="programlisting">void                plugin_service_define               (char const *type_str,
+                                                         <a class="link" href="goffice-06-go-plugin-service.html#GOPluginServiceCreate" title="GOPluginServiceCreate ()">GOPluginServiceCreate</a> ctor);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type_str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ctor</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

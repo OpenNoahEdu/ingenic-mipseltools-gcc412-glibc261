@@ -1,0 +1,721 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>MS OLE2</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="GSF Reference Manual">
+<link rel="up" href="parsers.html" title="Stream Parsers">
+<link rel="prev" href="gsf-Compression.html" title="Compression">
+<link rel="next" href="gsf-metadata.html" title="metadata">
+<meta name="generator" content="GTK-Doc V1.9 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="intro.html" title="Part&#160;I.&#160;GSF: Introduction">
+<link rel="part" href="history.html" title="Part&#160;II.&#160;GSF: History">
+<link rel="part" href="dependencies.html" title="Part&#160;III.&#160;GSF: Dependencies">
+<link rel="part" href="gsf-users.html" title="Part&#160;IV.&#160;Projects using GSF">
+<link rel="part" href="api.html" title="Part&#160;V.&#160;API Reference">
+<link rel="chapter" href="io.html" title="Basic Input/Output">
+<link rel="chapter" href="sources.html" title="Stream Sources">
+<link rel="chapter" href="parsers.html" title="Stream Parsers">
+<link rel="chapter" href="misc.html" title="Miscellaneous">
+<link rel="index" href="gsf-index.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gsf-Compression.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="parsers.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GSF Reference Manual</th>
+<td><a accesskey="n" href="gsf-metadata.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2612468" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2613088" class="shortcut">Description</a>
+                  &#160;|&#160;
+                  <a href="#id2613022" class="shortcut">Object Hierarchy</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="gsf-MS-OLE2"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2612468"></a><span class="refentrytitle">MS OLE2</span>
+</h2>
+<p>MS OLE2</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<a name="GsfInfileMSOle"></a><a name="GsfOutfileMSOle"></a><pre class="synopsis">
+
+
+
+                    <a class="link" href="gsf-MS-OLE2.html#GsfInfileMSOle-struct">GsfInfileMSOle</a>;
+<a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile">GsfInfile</a>*          <a class="link" href="gsf-MS-OLE2.html#gsf-infile-msole-new">gsf_infile_msole_new</a>                (<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a> *source,
+                                                         GError **err);
+gboolean            <a class="link" href="gsf-MS-OLE2.html#gsf-infile-msole-get-class-id">gsf_infile_msole_get_class_id</a>       (<a class="link" href="gsf-MS-OLE2.html#GsfInfileMSOle">GsfInfileMSOle</a> const *ole,
+                                                         guint8 *res);
+                    <a class="link" href="gsf-MS-OLE2.html#GsfOutfileMSOle-struct">GsfOutfileMSOle</a>;
+<a class="link" href="gsf-Outfile-writing-structed-files.html#GsfOutfile">GsfOutfile</a>*         <a class="link" href="gsf-MS-OLE2.html#gsf-outfile-msole-new">gsf_outfile_msole_new</a>               (<a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput">GsfOutput</a> *sink);
+<a class="link" href="gsf-Outfile-writing-structed-files.html#GsfOutfile">GsfOutfile</a>*         <a class="link" href="gsf-MS-OLE2.html#gsf-outfile-msole-new-full">gsf_outfile_msole_new_full</a>          (<a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput">GsfOutput</a> *sink,
+                                                         guint bb_size,
+                                                         guint sb_size);
+gboolean            <a class="link" href="gsf-MS-OLE2.html#gsf-outfile-msole-set-class-id">gsf_outfile_msole_set_class_id</a>      (<a class="link" href="gsf-MS-OLE2.html#GsfOutfileMSOle">GsfOutfileMSOle</a> *ole,
+                                                         guint8 const *clsid);
+GError*             <a class="link" href="gsf-MS-OLE2.html#gsf-msole-metadata-read">gsf_msole_metadata_read</a>             (<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a> *in,
+                                                         <a class="link" href="gsf-metadata.html#GsfDocMetaData">GsfDocMetaData</a> *accum);
+gboolean            <a class="link" href="gsf-MS-OLE2.html#gsf-msole-metadata-write">gsf_msole_metadata_write</a>            (<a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput">GsfOutput</a> *out,
+                                                         <a class="link" href="gsf-metadata.html#GsfDocMetaData">GsfDocMetaData</a> const *meta_data,
+                                                         gboolean doc_not_component);
+GIConv              <a class="link" href="gsf-MS-OLE2.html#gsf-msole-iconv-open-codepages-for-export">gsf_msole_iconv_open_codepages_for_export</a>
+                                                        (int codepage_to,
+                                                         char const *from);
+GIConv              <a class="link" href="gsf-MS-OLE2.html#gsf-msole-iconv-open-codepage-for-import">gsf_msole_iconv_open_codepage_for_import</a>
+                                                        (char const *to,
+                                                         int codepage);
+GIConv              <a class="link" href="gsf-MS-OLE2.html#gsf-msole-iconv-open-for-export">gsf_msole_iconv_open_for_export</a>     (void);
+GIConv              <a class="link" href="gsf-MS-OLE2.html#gsf-msole-iconv-open-codepage-for-export">gsf_msole_iconv_open_codepage_for_export</a>
+                                                        (int codepage_to);
+GIConv              <a class="link" href="gsf-MS-OLE2.html#gsf-msole-iconv-open-for-import">gsf_msole_iconv_open_for_import</a>     (int codepage);
+int                 <a class="link" href="gsf-MS-OLE2.html#gsf-msole-iconv-win-codepage">gsf_msole_iconv_win_codepage</a>        (void);
+guint               <a class="link" href="gsf-MS-OLE2.html#gsf-msole-codepage-to-lid">gsf_msole_codepage_to_lid</a>           (int codepage);
+int                 <a class="link" href="gsf-MS-OLE2.html#gsf-msole-lid-to-codepage">gsf_msole_lid_to_codepage</a>           (guint lid);
+gchar*              <a class="link" href="gsf-MS-OLE2.html#gsf-msole-lid-to-codepage-str">gsf_msole_lid_to_codepage_str</a>       (guint lid);
+guint               <a class="link" href="gsf-MS-OLE2.html#gsf-msole-lid-for-language">gsf_msole_lid_for_language</a>          (char const *lang);
+charconst *         <a class="link" href="gsf-MS-OLE2.html#gsf-msole-language-for-lid">gsf_msole_language_for_lid</a>          (guint lid);
+GByteArray*         <a class="link" href="gsf-MS-OLE2.html#gsf-msole-inflate">gsf_msole_inflate</a>                   (<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a> *input,
+                                                         <a class="link" href="gsf-utils.html#gsf-off-t">gsf_off_t</a> offset);
+
+
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2613022"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+
+  GObject
+   +----<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>
+         +----<a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile">GsfInfile</a>
+               +----GsfInfileMSOle
+</pre>
+<pre class="synopsis">
+
+  GObject
+   +----<a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput">GsfOutput</a>
+         +----<a class="link" href="gsf-Outfile-writing-structed-files.html#GsfOutfile">GsfOutfile</a>
+               +----GsfOutfileMSOle
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2613088"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2613103"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2613113"></a><h3>
+<a name="GsfInfileMSOle-struct"></a>GsfInfileMSOle</h3>
+<a class="indexterm" name="id2613126"></a><pre class="programlisting">typedef struct _GsfInfileMSOle GsfInfileMSOle;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2613142"></a><h3>
+<a name="gsf-infile-msole-new"></a>gsf_infile_msole_new ()</h3>
+<a class="indexterm" name="id2613154"></a><pre class="programlisting"><a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile">GsfInfile</a>*          gsf_infile_msole_new                (<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a> *source,
+                                                         GError **err);</pre>
+<p>
+Opens the root directory of an MS OLE file.
+</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>This adds a reference to <em class="parameter"><code>source</code></em>.</div>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> the new ole file handler
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2613245"></a><h3>
+<a name="gsf-infile-msole-get-class-id"></a>gsf_infile_msole_get_class_id ()</h3>
+<a class="indexterm" name="id2613259"></a><pre class="programlisting">gboolean            gsf_infile_msole_get_class_id       (<a class="link" href="gsf-MS-OLE2.html#GsfInfileMSOle">GsfInfileMSOle</a> const *ole,
+                                                         guint8 *res);</pre>
+<p>
+Retrieves the 16 byte indentifier (often a GUID in MS Windows apps)
+stored within the directory associated with <em class="parameter"><code>ole</code></em> and stores it in <em class="parameter"><code>res</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ole</code></em>&#160;:</span></p></td>
+<td> a <a class="link" href="gsf-MS-OLE2.html#GsfInfileMSOle"><span class="type">GsfInfileMSOle</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>res</code></em>&#160;:</span></p></td>
+<td> 16 byte identifier (often a GUID in MS Windows apps)
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> TRUE on success
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2613362"></a><h3>
+<a name="GsfOutfileMSOle-struct"></a>GsfOutfileMSOle</h3>
+<a class="indexterm" name="id2613376"></a><pre class="programlisting">typedef struct _GsfOutfileMSOle GsfOutfileMSOle;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2613392"></a><h3>
+<a name="gsf-outfile-msole-new"></a>gsf_outfile_msole_new ()</h3>
+<a class="indexterm" name="id2613405"></a><pre class="programlisting"><a class="link" href="gsf-Outfile-writing-structed-files.html#GsfOutfile">GsfOutfile</a>*         gsf_outfile_msole_new               (<a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput">GsfOutput</a> *sink);</pre>
+<p>
+Creates the root directory of an MS OLE file and manages the addition of
+children.
+</p>
+<p>
+</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>This adds a reference to <em class="parameter"><code>sink</code></em>.</div>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sink</code></em>&#160;:</span></p></td>
+<td> a <a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput"><span class="type">GsfOutput</span></a> to hold the OLE2 file
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> the new ole file handler.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2613486"></a><h3>
+<a name="gsf-outfile-msole-new-full"></a>gsf_outfile_msole_new_full ()</h3>
+<a class="indexterm" name="id2613500"></a><pre class="programlisting"><a class="link" href="gsf-Outfile-writing-structed-files.html#GsfOutfile">GsfOutfile</a>*         gsf_outfile_msole_new_full          (<a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput">GsfOutput</a> *sink,
+                                                         guint bb_size,
+                                                         guint sb_size);</pre>
+<p>
+Creates the root directory of an MS OLE file and manages the addition of
+children.
+</p>
+<p>
+</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>This adds a reference to <em class="parameter"><code>sink</code></em>.</div>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sink</code></em>&#160;:</span></p></td>
+<td> a <a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput"><span class="type">GsfOutput</span></a> to hold the OLE2 file.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bb_size</code></em>&#160;:</span></p></td>
+<td> size of large blocks.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sb_size</code></em>&#160;:</span></p></td>
+<td> size of small blocks.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> the new ole file handler.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2613625"></a><h3>
+<a name="gsf-outfile-msole-set-class-id"></a>gsf_outfile_msole_set_class_id ()</h3>
+<a class="indexterm" name="id2613638"></a><pre class="programlisting">gboolean            gsf_outfile_msole_set_class_id      (<a class="link" href="gsf-MS-OLE2.html#GsfOutfileMSOle">GsfOutfileMSOle</a> *ole,
+                                                         guint8 const *clsid);</pre>
+<p>
+Write <em class="parameter"><code>clsid</code></em> to the directory associated with <em class="parameter"><code>ole</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ole</code></em>&#160;:</span></p></td>
+<td> a <a class="link" href="gsf-MS-OLE2.html#GsfOutfileMSOle"><span class="type">GsfOutfileMSOle</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>clsid</code></em>&#160;:</span></p></td>
+<td> 16 byte identifier (often a GUID in MS Windows apps)
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> TRUE on success.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2613741"></a><h3>
+<a name="gsf-msole-metadata-read"></a>gsf_msole_metadata_read ()</h3>
+<a class="indexterm" name="id2613755"></a><pre class="programlisting">GError*             gsf_msole_metadata_read             (<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a> *in,
+                                                         <a class="link" href="gsf-metadata.html#GsfDocMetaData">GsfDocMetaData</a> *accum);</pre>
+<p>
+Read a stream formated as a set of MS OLE properties from <em class="parameter"><code>in</code></em> and store the
+results in <em class="parameter"><code>accum</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>in</code></em>&#160;:</span></p></td>
+<td> <a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput"><span class="type">GsfInput</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>accum</code></em>&#160;:</span></p></td>
+<td> <a class="link" href="gsf-metadata.html#GsfDocMetaData"><span class="type">GsfDocMetaData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> GError which the caller must free on error.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2613866"></a><h3>
+<a name="gsf-msole-metadata-write"></a>gsf_msole_metadata_write ()</h3>
+<a class="indexterm" name="id2613878"></a><pre class="programlisting">gboolean            gsf_msole_metadata_write            (<a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput">GsfOutput</a> *out,
+                                                         <a class="link" href="gsf-metadata.html#GsfDocMetaData">GsfDocMetaData</a> const *meta_data,
+                                                         gboolean doc_not_component);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out</code></em>&#160;:</span></p></td>
+<td> <a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput"><span class="type">GsfOutput</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>meta_data</code></em>&#160;:</span></p></td>
+<td> <a class="link" href="gsf-metadata.html#GsfDocMetaData"><span class="type">GsfDocMetaData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>doc_not_component</code></em>&#160;:</span></p></td>
+<td> a kludge to differentiate DocumentSummary from Summary
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> <code class="literal">TRUE</code> on success;
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2614009"></a><h3>
+<a name="gsf-msole-iconv-open-codepages-for-export"></a>gsf_msole_iconv_open_codepages_for_export ()</h3>
+<a class="indexterm" name="id2614024"></a><pre class="programlisting">GIConv              gsf_msole_iconv_open_codepages_for_export
+                                                        (int codepage_to,
+                                                         char const *from);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>codepage_to</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>from</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> an iconv converter to go from utf8 -&gt; to our best guess at a useful
+	windows codepage.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2614107"></a><h3>
+<a name="gsf-msole-iconv-open-codepage-for-import"></a>gsf_msole_iconv_open_codepage_for_import ()</h3>
+<a class="indexterm" name="id2614121"></a><pre class="programlisting">GIConv              gsf_msole_iconv_open_codepage_for_import
+                                                        (char const *to,
+                                                         int codepage);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>to</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>codepage</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> an iconv converter for <em class="parameter"><code>codepage</code></em> -&gt; utf8.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2614209"></a><h3>
+<a name="gsf-msole-iconv-open-for-export"></a>gsf_msole_iconv_open_for_export ()</h3>
+<a class="indexterm" name="id2614222"></a><pre class="programlisting">GIConv              gsf_msole_iconv_open_for_export     (void);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> an iconv convert to go from utf8 -&gt; to our best guess at a useful
+	windows codepage.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2614263"></a><h3>
+<a name="gsf-msole-iconv-open-codepage-for-export"></a>gsf_msole_iconv_open_codepage_for_export ()</h3>
+<a class="indexterm" name="id2614277"></a><pre class="programlisting">GIConv              gsf_msole_iconv_open_codepage_for_export
+                                                        (int codepage_to);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>codepage_to</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> an iconv converter to go from utf8 -&gt; to our best guess at a useful
+	windows codepage.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2614339"></a><h3>
+<a name="gsf-msole-iconv-open-for-import"></a>gsf_msole_iconv_open_for_import ()</h3>
+<a class="indexterm" name="id2614352"></a><pre class="programlisting">GIConv              gsf_msole_iconv_open_for_import     (int codepage);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>codepage</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> an iconv converter for single byte encodings <em class="parameter"><code>codepage</code></em> -&gt; utf8.
+	Attempt to handle the semantics of a specification for multibyte encodings
+	since this is only supposed to be used for single bytes.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2614420"></a><h3>
+<a name="gsf-msole-iconv-win-codepage"></a>gsf_msole_iconv_win_codepage ()</h3>
+<a class="indexterm" name="id2614434"></a><pre class="programlisting">int                 gsf_msole_iconv_win_codepage        (void);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> our best guess at the applicable windows code page based on an
+	environment variable or the current locale.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2614475"></a><h3>
+<a name="gsf-msole-codepage-to-lid"></a>gsf_msole_codepage_to_lid ()</h3>
+<a class="indexterm" name="id2614488"></a><pre class="programlisting">guint               gsf_msole_codepage_to_lid           (int codepage);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>codepage</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2614544"></a><h3>
+<a name="gsf-msole-lid-to-codepage"></a>gsf_msole_lid_to_codepage ()</h3>
+<a class="indexterm" name="id2614558"></a><pre class="programlisting">int                 gsf_msole_lid_to_codepage           (guint lid);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lid</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> our best guess at the codepage for the given language id
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2614617"></a><h3>
+<a name="gsf-msole-lid-to-codepage-str"></a>gsf_msole_lid_to_codepage_str ()</h3>
+<a class="indexterm" name="id2614631"></a><pre class="programlisting">gchar*              gsf_msole_lid_to_codepage_str       (guint lid);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lid</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> the Iconv codepage string for the given LID.
+	Return value must be <code class="function">g_free()</code>'d
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2614702"></a><h3>
+<a name="gsf-msole-lid-for-language"></a>gsf_msole_lid_for_language ()</h3>
+<a class="indexterm" name="id2614716"></a><pre class="programlisting">guint               gsf_msole_lid_for_language          (char const *lang);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lang</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> the LID (Language Identifier) for the input language.
+	If lang is <code class="literal">null</code>, return 0x0400 ("-none-"), and not 0x0000 ("no proofing")
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2614788"></a><h3>
+<a name="gsf-msole-language-for-lid"></a>gsf_msole_language_for_lid ()</h3>
+<a class="indexterm" name="id2614802"></a><pre class="programlisting">charconst *         gsf_msole_language_for_lid          (guint lid);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lid</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> the xx_YY style string (can be just xx or xxx) for the given LID.
+	Return value must not be freed. If the LID is not found, is set to
+	0x0400, or is set to 0x0000, will return "-none-"
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2614864"></a><h3>
+<a name="gsf-msole-inflate"></a>gsf_msole_inflate ()</h3>
+<a class="indexterm" name="id2614877"></a><pre class="programlisting">GByteArray*         gsf_msole_inflate                   (<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a> *input,
+                                                         <a class="link" href="gsf-utils.html#gsf-off-t">gsf_off_t</a> offset);</pre>
+<p>
+Decompresses an LZ compressed stream.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input</code></em>&#160;:</span></p></td>
+<td> stream to read from
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>offset</code></em>&#160;:</span></p></td>
+<td> offset into it for start byte of compresse stream
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> A GByteArray that the caller is responsible for freeing
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2614962"></a><div class="refsect2" lang="en"><a name="id2614963"></a></div>
+<hr>
+<div class="refsect2" lang="en"><a name="id2614964"></a></div>
+</div>
+</div>
+</body>
+</html>

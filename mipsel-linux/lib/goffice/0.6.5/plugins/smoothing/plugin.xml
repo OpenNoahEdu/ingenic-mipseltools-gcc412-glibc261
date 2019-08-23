@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="GOffice_smoothing">
+	<information>
+		<name>Smoothed curves</name>
+		<name xml:lang="ca">Corbes suaus</name>
+		<name xml:lang="es">Curvas suavizadas</name>
+		<name xml:lang="vi">Đường cong mịn</name>
+		<description>Smoothed curves</description>
+		<description xml:lang="ca">Corbes suaus</description>
+		<description xml:lang="es">Curvas suavizadas</description>
+		<description xml:lang="vi">Đường cong mịn</description>
+	</information>
+	<loader type="Gnumeric_Builtin:module">
+		<attribute value="smoothing" name="module_file"/>
+	</loader>
+	<services>
+		<service type="trendline_engine" id="GogMovingAvg">
+			<information>
+				<description>Moving average smoothing engine</description>
+				<description xml:lang="ca">Motor de suavitzat del desplaçament mitjà</description>
+				<description xml:lang="es">Moviendo la media del motor de suavizado</description>
+				<description xml:lang="vi">Cơ chế làm mịn trung bình động</description>
+			</information>
+		</service>
+		<service type="trendline_engine" id="GogExpSmooth">
+			<information>
+				<description>exponential smoothing engine</description>
+				<description xml:lang="ca">motor de suavitat exponencial</description>
+				<description xml:lang="es">motor de suavizado exponencial</description>
+				<description xml:lang="lt">eksponentinio glotninimo sistema</description>
+				<description xml:lang="vi">cơ chế lam mịn theo mũ</description>
+			</information>
+		</service>
+		<service type="trendline_type" id="smoothing">
+			<file>types.xml</file>
+			<information>
+				<description>Smoothed curves types</description>
+				<description xml:lang="ca">Tipus de corbes suaus</description>
+				<description xml:lang="es">Tipos de curvas suavizadas</description>
+				<description xml:lang="vi">Kiểu đường cong mịn</description>
+			</information>
+		</service>
+	</services>
+</plugin>

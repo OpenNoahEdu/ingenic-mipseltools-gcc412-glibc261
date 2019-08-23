@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GOPluginLoader</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch11.html" title="Application">
+<link rel="prev" href="goffice-06-go-plugin.html" title="go-plugin">
+<link rel="next" href="goffice-06-go-plugin-loader-module.html" title="go-plugin-loader-module">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-plugin.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch11.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-go-plugin-loader-module.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GOPluginLoader.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#GOPluginLoader.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="GOPluginLoader"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GOPluginLoader.top_of_page"></a>GOPluginLoader</span></h2>
+<p>GOPluginLoader</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GOPluginLoader.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="GOPluginLoader.html#GO-PLUGIN-LOADER-TYPE:CAPS" title="GO_PLUGIN_LOADER_TYPE">GO_PLUGIN_LOADER_TYPE</a>
+#define             <a class="link" href="GOPluginLoader.html#GO-PLUGIN-LOADER:CAPS" title="GO_PLUGIN_LOADER()">GO_PLUGIN_LOADER</a>                    (o)
+#define             <a class="link" href="GOPluginLoader.html#IS-GO-PLUGIN-LOADER:CAPS" title="IS_GO_PLUGIN_LOADER()">IS_GO_PLUGIN_LOADER</a>                 (o)
+#define             <a class="link" href="GOPluginLoader.html#GO-PLUGIN-LOADER-CLASS:CAPS" title="GO_PLUGIN_LOADER_CLASS()">GO_PLUGIN_LOADER_CLASS</a>              (k)
+#define             <a class="link" href="GOPluginLoader.html#IS-GO-PLUGIN-LOADER-CLASS:CAPS" title="IS_GO_PLUGIN_LOADER_CLASS()">IS_GO_PLUGIN_LOADER_CLASS</a>           (k)
+GType               <a class="link" href="GOPluginLoader.html#go-plugin-loader-get-type" title="go_plugin_loader_get_type ()">go_plugin_loader_get_type</a>           (void);
+void                <a class="link" href="GOPluginLoader.html#go-plugin-loader-set-attributes" title="go_plugin_loader_set_attributes ()">go_plugin_loader_set_attributes</a>     (<a class="link" href="GOPluginLoader.html" title="GOPluginLoader">GOPluginLoader</a> *l,
+                                                         GHashTable *attrs,
+                                                         ErrorInfo **err);
+GOPlugin *          <a class="link" href="GOPluginLoader.html#go-plugin-loader-get-plugin" title="go_plugin_loader_get_plugin ()">go_plugin_loader_get_plugin</a>         (<a class="link" href="GOPluginLoader.html" title="GOPluginLoader">GOPluginLoader</a> *l);
+void                <a class="link" href="GOPluginLoader.html#go-plugin-loader-set-plugin" title="go_plugin_loader_set_plugin ()">go_plugin_loader_set_plugin</a>         (<a class="link" href="GOPluginLoader.html" title="GOPluginLoader">GOPluginLoader</a> *l,
+                                                         GOPlugin *p);
+void                <a class="link" href="GOPluginLoader.html#go-plugin-loader-load-base" title="go_plugin_loader_load_base ()">go_plugin_loader_load_base</a>          (<a class="link" href="GOPluginLoader.html" title="GOPluginLoader">GOPluginLoader</a> *l,
+                                                         ErrorInfo **err);
+void                <a class="link" href="GOPluginLoader.html#go-plugin-loader-unload-base" title="go_plugin_loader_unload_base ()">go_plugin_loader_unload_base</a>        (<a class="link" href="GOPluginLoader.html" title="GOPluginLoader">GOPluginLoader</a> *l,
+                                                         ErrorInfo **err);
+void                <a class="link" href="GOPluginLoader.html#go-plugin-loader-load-service" title="go_plugin_loader_load_service ()">go_plugin_loader_load_service</a>       (<a class="link" href="GOPluginLoader.html" title="GOPluginLoader">GOPluginLoader</a> *l,
+                                                         GOPluginService *s,
+                                                         ErrorInfo **err);
+void                <a class="link" href="GOPluginLoader.html#go-plugin-loader-unload-service" title="go_plugin_loader_unload_service ()">go_plugin_loader_unload_service</a>     (<a class="link" href="GOPluginLoader.html" title="GOPluginLoader">GOPluginLoader</a> *l,
+                                                         GOPluginService *s,
+                                                         ErrorInfo **err);
+gboolean            <a class="link" href="GOPluginLoader.html#go-plugin-loader-is-base-loaded" title="go_plugin_loader_is_base_loaded ()">go_plugin_loader_is_base_loaded</a>     (<a class="link" href="GOPluginLoader.html" title="GOPluginLoader">GOPluginLoader</a> *l);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOPluginLoader.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOPluginLoader.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-LOADER-TYPE:CAPS"></a><h3>GO_PLUGIN_LOADER_TYPE</h3>
+<pre class="programlisting">#define GO_PLUGIN_LOADER_TYPE		(go_plugin_loader_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-LOADER:CAPS"></a><h3>GO_PLUGIN_LOADER()</h3>
+<pre class="programlisting">#define GO_PLUGIN_LOADER(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GO_PLUGIN_LOADER_TYPE, GOPluginLoader))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-PLUGIN-LOADER:CAPS"></a><h3>IS_GO_PLUGIN_LOADER()</h3>
+<pre class="programlisting">#define IS_GO_PLUGIN_LOADER(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_PLUGIN_LOADER_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-LOADER-CLASS:CAPS"></a><h3>GO_PLUGIN_LOADER_CLASS()</h3>
+<pre class="programlisting">#define GO_PLUGIN_LOADER_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST ((k), GO_PLUGIN_LOADER_TYPE, GOPluginLoaderClass))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>k</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-PLUGIN-LOADER-CLASS:CAPS"></a><h3>IS_GO_PLUGIN_LOADER_CLASS()</h3>
+<pre class="programlisting">#define IS_GO_PLUGIN_LOADER_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), GO_PLUGIN_LOADER_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>k</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-loader-get-type"></a><h3>go_plugin_loader_get_type ()</h3>
+<pre class="programlisting">GType               go_plugin_loader_get_type           (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-loader-set-attributes"></a><h3>go_plugin_loader_set_attributes ()</h3>
+<pre class="programlisting">void                go_plugin_loader_set_attributes     (<a class="link" href="GOPluginLoader.html" title="GOPluginLoader">GOPluginLoader</a> *l,
+                                                         GHashTable *attrs,
+                                                         ErrorInfo **err);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>attrs</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-loader-get-plugin"></a><h3>go_plugin_loader_get_plugin ()</h3>
+<pre class="programlisting">GOPlugin *          go_plugin_loader_get_plugin         (<a class="link" href="GOPluginLoader.html" title="GOPluginLoader">GOPluginLoader</a> *l);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-loader-set-plugin"></a><h3>go_plugin_loader_set_plugin ()</h3>
+<pre class="programlisting">void                go_plugin_loader_set_plugin         (<a class="link" href="GOPluginLoader.html" title="GOPluginLoader">GOPluginLoader</a> *l,
+                                                         GOPlugin *p);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>p</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-loader-load-base"></a><h3>go_plugin_loader_load_base ()</h3>
+<pre class="programlisting">void                go_plugin_loader_load_base          (<a class="link" href="GOPluginLoader.html" title="GOPluginLoader">GOPluginLoader</a> *l,
+                                                         ErrorInfo **err);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-loader-unload-base"></a><h3>go_plugin_loader_unload_base ()</h3>
+<pre class="programlisting">void                go_plugin_loader_unload_base        (<a class="link" href="GOPluginLoader.html" title="GOPluginLoader">GOPluginLoader</a> *l,
+                                                         ErrorInfo **err);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-loader-load-service"></a><h3>go_plugin_loader_load_service ()</h3>
+<pre class="programlisting">void                go_plugin_loader_load_service       (<a class="link" href="GOPluginLoader.html" title="GOPluginLoader">GOPluginLoader</a> *l,
+                                                         GOPluginService *s,
+                                                         ErrorInfo **err);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>s</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-loader-unload-service"></a><h3>go_plugin_loader_unload_service ()</h3>
+<pre class="programlisting">void                go_plugin_loader_unload_service     (<a class="link" href="GOPluginLoader.html" title="GOPluginLoader">GOPluginLoader</a> *l,
+                                                         GOPluginService *s,
+                                                         ErrorInfo **err);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>s</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-loader-is-base-loaded"></a><h3>go_plugin_loader_is_base_loaded ()</h3>
+<pre class="programlisting">gboolean            go_plugin_loader_is_base_loaded     (<a class="link" href="GOPluginLoader.html" title="GOPluginLoader">GOPluginLoader</a> *l);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>l</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

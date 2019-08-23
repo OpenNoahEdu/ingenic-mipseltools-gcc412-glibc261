@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> <!-- -*- SGML -*- -->
+
+<deviceinfo version="0.2">
+  <device>
+
+    <!-- These are raw scancodes produced by the atkbd driver -->
+    <match key="@input.originating_device:info.linux.driver" string="atkbd">
+      <match key="/org/freedesktop/Hal/devices/computer:system.hardware.vendor" prefix="Hewlett-Packard">
+        <append key="input.keymap.data" type="strlist">e001:fn_esc</append>   <!-- FnEsc -->
+        <append key="input.keymap.data" type="strlist">e009:battery</append>  <!-- FnF8 (battery) -->
+        <append key="input.keymap.data" type="strlist">e00a:screenlock</append> <!-- FnF6 (lock) -->
+        <append key="input.keymap.data" type="strlist">e00b:camera</append>     <!-- camera -->
+        <append key="input.keymap.data" type="strlist">e00c:media</append>      <!-- music -->
+        <append key="input.keymap.data" type="strlist">e00e:dvd</append>      <!-- dvd -->
+        <append key="input.keymap.data" type="strlist">e031:help</append>     <!-- FnF1 (help) -->
+        <append key="input.keymap.data" type="strlist">e033:f21</append>      <!-- FIXME: Auto brightness -->
+        <append key="input.keymap.data" type="strlist">e057:wlan</append>     <!-- Wlan -->
+        <append key="info.capabilities" type="strlist">input.keymap</append>
+	<match key="/org/freedesktop/Hal/devices/computer:system.hardware.product" contains_ncase="Pavilion">
+          <!-- Home and entertainment machines -->
+          <append key="input.keymap.data" type="strlist">e008:player</append> <!-- FIXME: quick play -->
+          <append key="input.keymap.data" type="strlist">e058:f22</append>    <!-- touchpad off -->
+          <append key="input.keymap.data" type="strlist">e059:f23</append>    <!-- touchpad on  -->
+        </match>
+	<match key="/org/freedesktop/Hal/devices/computer:system.hardware.product" contains_ncase="Compaq">
+          <!-- Business and enterprise machines -->
+          <append key="input.keymap.data" type="strlist">e008:presentation</append>   <!-- Presentation -->
+          <append key="input.keymap.data" type="strlist">e059:info</append>   <!-- I key -->
+        </match>
+        <match key="/org/freedesktop/Hal/devices/computer:system.hardware.product" contains="6730s">
+          <!-- HP Compaq 6730s -->
+          <append key="input.keymap.data" type="strlist">e012:brightnessdown</append>	<!-- FnF7 (brightness down) -->
+          <append key="input.keymap.data" type="strlist">e017:brightnessup</append>	<!-- FnF8 (brightness up) -->
+        </match>
+	<match key="/org/freedesktop/Hal/devices/computer:system.hardware.product" contains="2510p">
+          <!-- The 2510p seems to be unique in having a touchpad disable button despite being an enterprise model -->
+          <remove key="input.keymap.data" type="strlist">e059:info</remove>
+          <append key="input.keymap.data" type="strlist">e058:f22</append>    <!-- touchpad off -->
+          <append key="input.keymap.data" type="strlist">e059:f23</append>    <!-- touchpad on  -->
+	</match>
+      </match>
+    </match>
+  </device>
+</deviceinfo>
+

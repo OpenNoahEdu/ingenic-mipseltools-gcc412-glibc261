@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="GOffice_reg_logfit">
+	<information>
+		<name>Regression curve : logfit</name>
+		<name xml:lang="ca">Corba de regressió: logfit</name>
+		<name xml:lang="es">Curva de regresión: ajustado logarítmico</name>
+		<name xml:lang="fr">Courbe de régression : ajustement logarithmique</name>
+		<name xml:lang="vi">Đường cong hồi quy: vừa lôga</name>
+		<description>Logarithmic fitting curves</description>
+		<description xml:lang="ca">Corbes de correspondència logarítmica</description>
+		<description xml:lang="es">Curvas de ajustado logarítmico</description>
+		<description xml:lang="fr">Courbe d'ajustement logarithmique</description>
+		<description xml:lang="vi">Đường cong vừa lôga</description>
+	</information>
+	<loader type="Gnumeric_Builtin:module">
+		<attribute value="logfit" name="module_file"/>
+	</loader>
+	<services>
+		<service type="trendline_engine" id="GogLogFitCurve">
+			<information>
+				<description>Logarithmic fitting curve engine</description>
+				<description xml:lang="ca">Motor de corbes de correspondència logarítmica</description>
+				<description xml:lang="es">Motor de curvas de ajustado logarítmico</description>
+				<description xml:lang="fr">Moteur de courbe d'ajustement logarithmique</description>
+				<description xml:lang="vi">Cơ chế đường cong vừa lôga</description>
+			</information>
+		</service>
+		<service type="trendline_type" id="logfit">
+			<file>reg-types.xml</file>
+			<information>
+				<description>Logarithmic fitting curves types</description>
+				<description xml:lang="ca">Tipus de corbes de correspondència logarítmica</description>
+				<description xml:lang="es">Tipos de curvas de ajustado logarítmico</description>
+				<description xml:lang="fr">Types de courbes d'ajustement logarithmique</description>
+				<description xml:lang="vi">Kiểu đường cong vừa lôga</description>
+			</information>
+		</service>
+	</services>
+</plugin>

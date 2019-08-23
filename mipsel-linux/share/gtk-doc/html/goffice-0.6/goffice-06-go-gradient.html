@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-gradient</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch06.html" title="Graphic object properties">
+<link rel="prev" href="goffice-06-go-font.html" title="GoFont">
+<link rel="next" href="goffice-06-go-line.html" title="go-line">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-font.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-go-line.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-gradient.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-gradient.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-gradient"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-gradient.top_of_page"></a>go-gradient</span></h2>
+<p>go-gradient</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-gradient.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+enum                <a class="link" href="goffice-06-go-gradient.html#GOGradientDirection" title="enum GOGradientDirection">GOGradientDirection</a>;
+<a class="link" href="goffice-06-go-gradient.html#GOGradientDirection" title="enum GOGradientDirection">GOGradientDirection</a>  <a class="link" href="goffice-06-go-gradient.html#go-gradient-dir-from-str" title="go_gradient_dir_from_str ()">go_gradient_dir_from_str</a>           (const gchar *name);
+const gchar *       <a class="link" href="goffice-06-go-gradient.html#go-gradient-dir-as-str" title="go_gradient_dir_as_str ()">go_gradient_dir_as_str</a>              (<a class="link" href="goffice-06-go-gradient.html#GOGradientDirection" title="enum GOGradientDirection">GOGradientDirection</a> dir);
+void                <a class="link" href="goffice-06-go-gradient.html#go-gradient-setup" title="go_gradient_setup ()">go_gradient_setup</a>                   (ArtGradientLinear *gradient,
+                                                         <a class="link" href="goffice-06-go-gradient.html#GOGradientDirection" title="enum GOGradientDirection">GOGradientDirection</a> dir,
+                                                         GOColor col0,
+                                                         GOColor col1,
+                                                         double x0,
+                                                         double y0,
+                                                         double x1,
+                                                         double y1,
+                                                         ArtGradientStop *stops);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-gradient.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-gradient.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOGradientDirection"></a><h3>enum GOGradientDirection</h3>
+<pre class="programlisting">typedef enum {
+	GO_GRADIENT_N_TO_S,
+	GO_GRADIENT_S_TO_N,
+	GO_GRADIENT_N_TO_S_MIRRORED,
+	GO_GRADIENT_S_TO_N_MIRRORED,
+	GO_GRADIENT_W_TO_E,
+	GO_GRADIENT_E_TO_W,
+	GO_GRADIENT_W_TO_E_MIRRORED,
+	GO_GRADIENT_E_TO_W_MIRRORED,
+	GO_GRADIENT_NW_TO_SE,
+	GO_GRADIENT_SE_TO_NW,
+	GO_GRADIENT_NW_TO_SE_MIRRORED,
+	GO_GRADIENT_SE_TO_NW_MIRRORED,
+	GO_GRADIENT_NE_TO_SW,
+	GO_GRADIENT_SW_TO_NE,
+	GO_GRADIENT_SW_TO_NE_MIRRORED,
+	GO_GRADIENT_NE_TO_SW_MIRRORED,
+	GO_GRADIENT_MAX
+} GOGradientDirection;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-gradient-dir-from-str"></a><h3>go_gradient_dir_from_str ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-gradient.html#GOGradientDirection" title="enum GOGradientDirection">GOGradientDirection</a>  go_gradient_dir_from_str           (const gchar *name);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-gradient-dir-as-str"></a><h3>go_gradient_dir_as_str ()</h3>
+<pre class="programlisting">const gchar *       go_gradient_dir_as_str              (<a class="link" href="goffice-06-go-gradient.html#GOGradientDirection" title="enum GOGradientDirection">GOGradientDirection</a> dir);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dir</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-gradient-setup"></a><h3>go_gradient_setup ()</h3>
+<pre class="programlisting">void                go_gradient_setup                   (ArtGradientLinear *gradient,
+                                                         <a class="link" href="goffice-06-go-gradient.html#GOGradientDirection" title="enum GOGradientDirection">GOGradientDirection</a> dir,
+                                                         GOColor col0,
+                                                         GOColor col1,
+                                                         double x0,
+                                                         double y0,
+                                                         double x1,
+                                                         double y1,
+                                                         ArtGradientStop *stops);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gradient</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dir</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>col0</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>col1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x0</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y0</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stops</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

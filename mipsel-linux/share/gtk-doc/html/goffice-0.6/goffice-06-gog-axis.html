@@ -1,0 +1,1369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogAxis</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch01.html" title="Objects">
+<link rel="prev" href="goffice-06-gog-grid.html" title="GogGrid">
+<link rel="next" href="goffice-06-gog-axis-line.html" title="GogAxisLine">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-gog-grid.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-gog-axis-line.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-gog-axis.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-gog-axis.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-gog-axis"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-gog-axis.top_of_page"></a>GogAxis</span></h2>
+<p>GogAxis — Master axes</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-gog-axis.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+enum                <a class="link" href="goffice-06-gog-axis.html#GogAxisPolarUnit" title="enum GogAxisPolarUnit">GogAxisPolarUnit</a>;
+enum                <a class="link" href="goffice-06-gog-axis.html#GogAxisElemType" title="enum GogAxisElemType">GogAxisElemType</a>;
+                    <a class="link" href="goffice-06-gog-axis.html#GogAxisTick" title="GogAxisTick">GogAxisTick</a>;
+                    <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a>;
+<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a>*         <a class="link" href="goffice-06-gog-axis.html#gog-axis-map-new" title="gog_axis_map_new ()">gog_axis_map_new</a>                    (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         double offset,
+                                                         double length);
+double              <a class="link" href="goffice-06-gog-axis.html#gog-axis-map" title="gog_axis_map ()">gog_axis_map</a>                        (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map,
+                                                         double value);
+double              <a class="link" href="goffice-06-gog-axis.html#gog-axis-map-to-view" title="gog_axis_map_to_view ()">gog_axis_map_to_view</a>                (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map,
+                                                         double value);
+double              <a class="link" href="goffice-06-gog-axis.html#gog-axis-map-from-view" title="gog_axis_map_from_view ()">gog_axis_map_from_view</a>              (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map,
+                                                         double value);
+gboolean            <a class="link" href="goffice-06-gog-axis.html#gog-axis-map-finite" title="gog_axis_map_finite ()">gog_axis_map_finite</a>                 (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map,
+                                                         double value);
+double              <a class="link" href="goffice-06-gog-axis.html#gog-axis-map-get-baseline" title="gog_axis_map_get_baseline ()">gog_axis_map_get_baseline</a>           (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map);
+void                <a class="link" href="goffice-06-gog-axis.html#gog-axis-map-get-extents" title="gog_axis_map_get_extents ()">gog_axis_map_get_extents</a>            (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map,
+                                                         double *start,
+                                                         double *stop);
+void                <a class="link" href="goffice-06-gog-axis.html#gog-axis-map-get-bounds" title="gog_axis_map_get_bounds ()">gog_axis_map_get_bounds</a>             (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map,
+                                                         double *minimum,
+                                                         double *maximum);
+void                <a class="link" href="goffice-06-gog-axis.html#gog-axis-map-free" title="gog_axis_map_free ()">gog_axis_map_free</a>                   (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map);
+gboolean            <a class="link" href="goffice-06-gog-axis.html#gog-axis-map-is-valid" title="gog_axis_map_is_valid ()">gog_axis_map_is_valid</a>               (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map);
+gboolean            <a class="link" href="goffice-06-gog-axis.html#gog-axis-map-is-inverted" title="gog_axis_map_is_inverted ()">gog_axis_map_is_inverted</a>            (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map);
+#define             <a class="link" href="goffice-06-gog-axis.html#GOG-AXIS-TYPE:CAPS" title="GOG_AXIS_TYPE">GOG_AXIS_TYPE</a>
+#define             <a class="link" href="goffice-06-gog-axis.html#GOG-AXIS:CAPS" title="GOG_AXIS()">GOG_AXIS</a>                            (o)
+#define             <a class="link" href="goffice-06-gog-axis.html#IS-GOG-AXIS:CAPS" title="IS_GOG_AXIS()">IS_GOG_AXIS</a>                         (o)
+GType               <a class="link" href="goffice-06-gog-axis.html#gog-axis-get-type" title="gog_axis_get_type ()">gog_axis_get_type</a>                   (void);
+GogAxisType         <a class="link" href="goffice-06-gog-axis.html#gog-axis-get-atype" title="gog_axis_get_atype ()">gog_axis_get_atype</a>                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> const *axis);
+gboolean            <a class="link" href="goffice-06-gog-axis.html#gog-axis-is-center-on-ticks" title="gog_axis_is_center_on_ticks ()">gog_axis_is_center_on_ticks</a>         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> const *axis);
+gboolean            <a class="link" href="goffice-06-gog-axis.html#gog-axis-is-discrete" title="gog_axis_is_discrete ()">gog_axis_is_discrete</a>                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> const *axis);
+gboolean            <a class="link" href="goffice-06-gog-axis.html#gog-axis-is-inverted" title="gog_axis_is_inverted ()">gog_axis_is_inverted</a>                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> const *axis);
+gboolean            <a class="link" href="goffice-06-gog-axis.html#gog-axis-get-bounds" title="gog_axis_get_bounds ()">gog_axis_get_bounds</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> const *axis,
+                                                         double *minima,
+                                                         double *maxima);
+void                <a class="link" href="goffice-06-gog-axis.html#gog-axis-set-bounds" title="gog_axis_set_bounds ()">gog_axis_set_bounds</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         double minimum,
+                                                         double maximum);
+void                <a class="link" href="goffice-06-gog-axis.html#gog-axis-set-extents" title="gog_axis_set_extents ()">gog_axis_set_extents</a>                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         double start,
+                                                         double stop);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          <a class="link" href="goffice-06-gog-axis.html#gog-axis-get-format" title="gog_axis_get_format ()">gog_axis_get_format</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> const *axis);
+gboolean            <a class="link" href="goffice-06-gog-axis.html#gog-axis-set-format" title="gog_axis_set_format ()">gog_axis_set_format</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *fmt);
+unsigned            <a class="link" href="goffice-06-gog-axis.html#gog-axis-get-ticks" title="gog_axis_get_ticks ()">gog_axis_get_ticks</a>                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         <a class="link" href="goffice-06-gog-axis.html#GogAxisTick" title="GogAxisTick">GogAxisTick</a> **ticks);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *            <a class="link" href="goffice-06-gog-axis.html#gog-axis-get-labels" title="gog_axis_get_labels ()">gog_axis_get_labels</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> const *axis,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> **plot_that_labeled_axis);
+double              <a class="link" href="goffice-06-gog-axis.html#gog-axis-get-entry" title="gog_axis_get_entry ()">gog_axis_get_entry</a>                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> const *axis,
+                                                         <a class="link" href="goffice-06-gog-axis.html#GogAxisElemType" title="enum GogAxisElemType">GogAxisElemType</a> i,
+                                                         gboolean *user_defined);
+void                <a class="link" href="goffice-06-gog-axis.html#gog-axis-add-contributor" title="gog_axis_add_contributor ()">gog_axis_add_contributor</a>            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> *contrib);
+void                <a class="link" href="goffice-06-gog-axis.html#gog-axis-del-contributor" title="gog_axis_del_contributor ()">gog_axis_del_contributor</a>            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> *contrib);
+GSList const *      <a class="link" href="goffice-06-gog-axis.html#gog-axis-contributors" title="gog_axis_contributors ()">gog_axis_contributors</a>               (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis);
+void                <a class="link" href="goffice-06-gog-axis.html#gog-axis-clear-contributors" title="gog_axis_clear_contributors ()">gog_axis_clear_contributors</a>         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis);
+void                <a class="link" href="goffice-06-gog-axis.html#gog-axis-bound-changed" title="gog_axis_bound_changed ()">gog_axis_bound_changed</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> *contrib);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGridLine.html"
+>GogGridLine</a> *       <a class="link" href="goffice-06-gog-axis.html#gog-axis-get-grid-line" title="gog_axis_get_grid_line ()">gog_axis_get_grid_line</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         gboolean major);
+void                <a class="link" href="goffice-06-gog-axis.html#gog-axis-set-polar-unit" title="gog_axis_set_polar_unit ()">gog_axis_set_polar_unit</a>             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         <a class="link" href="goffice-06-gog-axis.html#GogAxisPolarUnit" title="enum GogAxisPolarUnit">GogAxisPolarUnit</a> unit);
+<a class="link" href="goffice-06-gog-axis.html#GogAxisPolarUnit" title="enum GogAxisPolarUnit">GogAxisPolarUnit</a>    <a class="link" href="goffice-06-gog-axis.html#gog-axis-get-polar-unit" title="gog_axis_get_polar_unit ()">gog_axis_get_polar_unit</a>             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis);
+double              <a class="link" href="goffice-06-gog-axis.html#gog-axis-get-polar-perimeter" title="gog_axis_get_polar_perimeter ()">gog_axis_get_polar_perimeter</a>        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis);
+double              <a class="link" href="goffice-06-gog-axis.html#gog-axis-get-circular-rotation" title="gog_axis_get_circular_rotation ()">gog_axis_get_circular_rotation</a>      (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-axis.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-axis.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GogAxisPolarUnit"></a><h3>enum GogAxisPolarUnit</h3>
+<pre class="programlisting">typedef enum {
+	GOG_AXIS_POLAR_UNIT_DEGREES,
+	GOG_AXIS_POLAR_UNIT_RADIANS,
+	GOG_AXIS_POLAR_UNIT_GRADS,
+	GOG_AXIS_POLAR_UNIT_MAX
+} GogAxisPolarUnit;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogAxisElemType"></a><h3>enum GogAxisElemType</h3>
+<pre class="programlisting">typedef enum {
+	GOG_AXIS_ELEM_MIN = 0,
+	GOG_AXIS_ELEM_MAX,
+	GOG_AXIS_ELEM_MAJOR_TICK,
+	GOG_AXIS_ELEM_MINOR_TICK,
+	GOG_AXIS_ELEM_CROSS_POINT,
+	GOG_AXIS_ELEM_MAX_ENTRY
+} GogAxisElemType;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogAxisTick"></a><h3>GogAxisTick</h3>
+<pre class="programlisting">typedef struct {
+	double		 position;
+	GogAxisTickTypes	 type;
+	char 		*label;
+} GogAxisTick;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogAxisMap"></a><h3>GogAxisMap</h3>
+<pre class="programlisting">typedef struct _GogAxisMap GogAxisMap;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-map-new"></a><h3>gog_axis_map_new ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a>*         gog_axis_map_new                    (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         double offset,
+                                                         double length);</pre>
+<p>
+Creates a <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap"><span class="type">GogAxisMap</span></a> for data mapping to plot window.
+offset and length are optional parameters to be used with 
+gog_axis_map_to_view in order to translates data coordinates 
+into canvas space.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>offset</code></em> :</span></p></td>
+<td> start of plot area.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>length</code></em> :</span></p></td>
+<td> length of plot area.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a newly allocated <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap"><span class="type">GogAxisMap</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-map"></a><h3>gog_axis_map ()</h3>
+<pre class="programlisting">double              gog_axis_map                        (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map,
+                                                         double value);</pre>
+<p>
+Converts <em class="parameter"><code>value</code></em> to plot coordinates. A value in [0,1.0] range means a data 
+within axis bounds.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap"><span class="type">GogAxisMap</span></a>
+value : value to map to plot space.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> mapped value.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-map-to-view"></a><h3>gog_axis_map_to_view ()</h3>
+<pre class="programlisting">double              gog_axis_map_to_view                (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map,
+                                                         double value);</pre>
+<p>
+Converts value from data space to canvas space, using
+offset and length parameters given to gog_axis_map_new.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap"><span class="type">GogAxisMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> value to map to canvas space
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a value in canvas coordinates
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-map-from-view"></a><h3>gog_axis_map_from_view ()</h3>
+<pre class="programlisting">double              gog_axis_map_from_view              (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map,
+                                                         double value);</pre>
+<p>
+Converts value from canvas space to data space.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap"><span class="type">GogAxisMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> value to unmap from canvas space.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> value in data coordinates
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-map-finite"></a><h3>gog_axis_map_finite ()</h3>
+<pre class="programlisting">gboolean            gog_axis_map_finite                 (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map,
+                                                         double value);</pre>
+<p>
+Tests wether <em class="parameter"><code>value</code></em> is valid for the given <em class="parameter"><code>map</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap"><span class="type">GogAxisMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> value to test
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <code class="literal">TRUE</code> if value means something
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-map-get-baseline"></a><h3>gog_axis_map_get_baseline ()</h3>
+<pre class="programlisting">double              gog_axis_map_get_baseline           (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map);</pre>
+<p>
+Gets the baseline for <em class="parameter"><code>map</code></em>, in view coordinates,
+clipped to offset and offset+length, where offset and length
+are the parameters of gog_axis_map_new.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap"><span class="type">GogAxisMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-map-get-extents"></a><h3>gog_axis_map_get_extents ()</h3>
+<pre class="programlisting">void                gog_axis_map_get_extents            (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map,
+                                                         double *start,
+                                                         double *stop);</pre>
+<p>
+Gets start and stop for the given axis map in data coordinates. If
+axis is not inverted, start = minimum and stop = maximum. If axis is invalid, 
+it'll return arbitrary bounds. For example, an non inverted invalid X axis 
+will have start set to 0.0 and stop set to 1.0.
+</p>
+<p>
+minimum or maximum can be NULL.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap"><span class="type">GogAxisMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>start</code></em> :</span></p></td>
+<td> start for this axis
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stop</code></em> :</span></p></td>
+<td> stop for this axis
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-map-get-bounds"></a><h3>gog_axis_map_get_bounds ()</h3>
+<pre class="programlisting">void                gog_axis_map_get_bounds             (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map,
+                                                         double *minimum,
+                                                         double *maximum);</pre>
+<p>
+Gets bounds for the given axis map in data coordinates. If axis is invalid, 
+it'll return arbitrary bounds. For example, for an invalid x axis, minimum = 0.0
+and maximum = 1.0. 
+</p>
+<p>
+minimum or maximum can be NULL.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap"><span class="type">GogAxisMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>minimum</code></em> :</span></p></td>
+<td> minimum for this axis
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>maximum</code></em> :</span></p></td>
+<td> maximum for this axis
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-map-free"></a><h3>gog_axis_map_free ()</h3>
+<pre class="programlisting">void                gog_axis_map_free                   (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map);</pre>
+<p>
+Frees <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap"><span class="type">GogAxisMap</span></a> object.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap"><span class="type">GogAxisMap</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-map-is-valid"></a><h3>gog_axis_map_is_valid ()</h3>
+<pre class="programlisting">gboolean            gog_axis_map_is_valid               (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map);</pre>
+<p>
+Tests if <em class="parameter"><code>map</code></em> was correctly initialized, i.e. if bounds are
+valid.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap"><span class="type">GogAxisMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <code class="literal">TRUE</code> if map is valid
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-map-is-inverted"></a><h3>gog_axis_map_is_inverted ()</h3>
+<pre class="programlisting">gboolean            gog_axis_map_is_inverted            (<a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *map);</pre>
+<p>
+Accessor to the axis is_inverted property.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap"><span class="type">GogAxisMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-AXIS-TYPE:CAPS"></a><h3>GOG_AXIS_TYPE</h3>
+<pre class="programlisting">#define GOG_AXIS_TYPE	(gog_axis_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-AXIS:CAPS"></a><h3>GOG_AXIS()</h3>
+<pre class="programlisting">#define GOG_AXIS(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GOG_AXIS_TYPE, GogAxis))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-AXIS:CAPS"></a><h3>IS_GOG_AXIS()</h3>
+<pre class="programlisting">#define IS_GOG_AXIS(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GOG_AXIS_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-get-type"></a><h3>gog_axis_get_type ()</h3>
+<pre class="programlisting">GType               gog_axis_get_type                   (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-get-atype"></a><h3>gog_axis_get_atype ()</h3>
+<pre class="programlisting">GogAxisType         gog_axis_get_atype                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> const *axis);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-is-center-on-ticks"></a><h3>gog_axis_is_center_on_ticks ()</h3>
+<pre class="programlisting">gboolean            gog_axis_is_center_on_ticks         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> const *axis);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if labels are centered on ticks when <em class="parameter"><code>axis</code></em> is discrete
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-is-discrete"></a><h3>gog_axis_is_discrete ()</h3>
+<pre class="programlisting">gboolean            gog_axis_is_discrete                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> const *axis);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if <em class="parameter"><code>axis</code></em> enumerates a set of discrete items, rather than a
+	continuous value
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-is-inverted"></a><h3>gog_axis_is_inverted ()</h3>
+<pre class="programlisting">gboolean            gog_axis_is_inverted                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> const *axis);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if <em class="parameter"><code>axis</code></em> is inverted.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-get-bounds"></a><h3>gog_axis_get_bounds ()</h3>
+<pre class="programlisting">gboolean            gog_axis_get_bounds                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> const *axis,
+                                                         double *minima,
+                                                         double *maxima);</pre>
+<p>
+return TRUE if the bounds stored in <em class="parameter"><code>minima</code></em> and <em class="parameter"><code>maxima</code></em> are sane</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>minima</code></em> :</span></p></td>
+<td> result
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>maxima</code></em> :</span></p></td>
+<td> result
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-set-bounds"></a><h3>gog_axis_set_bounds ()</h3>
+<pre class="programlisting">void                gog_axis_set_bounds                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         double minimum,
+                                                         double maximum);</pre>
+<p>
+Sets axis bounds. If minimum or maximum are not finite values, corresponding
+bound remains unchanged.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>minimum</code></em> :</span></p></td>
+<td> axis low bound
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>maximum</code></em> :</span></p></td>
+<td> axis high bound
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-set-extents"></a><h3>gog_axis_set_extents ()</h3>
+<pre class="programlisting">void                gog_axis_set_extents                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         double start,
+                                                         double stop);</pre>
+<p>
+Set axis exents. It's a convenience function that sets axis bounds taking 
+into account invert flag.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>start</code></em> :</span></p></td>
+<td> axis start bound
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stop</code></em> :</span></p></td>
+<td> axis stop bound
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-get-format"></a><h3>gog_axis_get_format ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          gog_axis_get_format                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> const *axis);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td>#GogAxis
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the format assigned to <em class="parameter"><code>axis</code></em> but does not add a reference.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-set-format"></a><h3>gog_axis_set_format ()</h3>
+<pre class="programlisting">gboolean            gog_axis_set_format                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *fmt);</pre>
+<p>
+Absorbs a reference to <em class="parameter"><code>fmt</code></em>, and accepts NULL.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+><span class="type">GOFormat</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if things changed
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-get-ticks"></a><h3>gog_axis_get_ticks ()</h3>
+<pre class="programlisting">unsigned            gog_axis_get_ticks                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         <a class="link" href="goffice-06-gog-axis.html#GogAxisTick" title="GogAxisTick">GogAxisTick</a> **ticks);</pre>
+<p>
+An accessor to <em class="parameter"><code>axis-&gt;ticks</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ticks</code></em> :</span></p></td>
+<td> an array of <a class="link" href="goffice-06-gog-axis.html#GogAxisTick" title="GogAxisTick"><span class="type">GogAxisTick</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> number of ticks
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-get-labels"></a><h3>gog_axis_get_labels ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *            gog_axis_get_labels                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> const *axis,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> **plot_that_labeled_axis);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot_that_labeled_axis</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+><span class="type">GogPlot</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the possibly NULL <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+><span class="type">GOData</span></a> used as a label for this axis
+along with the plot that it was associated with
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-get-entry"></a><h3>gog_axis_get_entry ()</h3>
+<pre class="programlisting">double              gog_axis_get_entry                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> const *axis,
+                                                         <a class="link" href="goffice-06-gog-axis.html#GogAxisElemType" title="enum GogAxisElemType">GogAxisElemType</a> i,
+                                                         gboolean *user_defined);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>i</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_defined</code></em> :</span></p></td>
+<td> an optionally NULL pointr to gboolean
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the value of axis element <em class="parameter"><code>i</code></em> and sets <em class="parameter"><code>user_defined</code></em> or
+	NaN on error
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-add-contributor"></a><h3>gog_axis_add_contributor ()</h3>
+<pre class="programlisting">void                gog_axis_add_contributor            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> *contrib);</pre>
+<p>
+Register <em class="parameter"><code>contrib</code></em> as taking part in the negotiation of <em class="parameter"><code>axis</code></em>'s bounds.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>contrib</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a> (can we relax this to use an interface ?)
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-del-contributor"></a><h3>gog_axis_del_contributor ()</h3>
+<pre class="programlisting">void                gog_axis_del_contributor            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> *contrib);</pre>
+<p>
+<em class="parameter"><code>contrib</code></em> no longer takes part in the negotiation of <em class="parameter"><code>axis</code></em>'s bounds.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>contrib</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a> (can we relax this to use an interface ?)
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-contributors"></a><h3>gog_axis_contributors ()</h3>
+<pre class="programlisting">GSList const *      gog_axis_contributors               (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-clear-contributors"></a><h3>gog_axis_clear_contributors ()</h3>
+<pre class="programlisting">void                gog_axis_clear_contributors         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-bound-changed"></a><h3>gog_axis_bound_changed ()</h3>
+<pre class="programlisting">void                gog_axis_bound_changed              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> *contrib);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>contrib</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-get-grid-line"></a><h3>gog_axis_get_grid_line ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGridLine.html"
+>GogGridLine</a> *       gog_axis_get_grid_line              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         gboolean major);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>major</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-set-polar-unit"></a><h3>gog_axis_set_polar_unit ()</h3>
+<pre class="programlisting">void                gog_axis_set_polar_unit             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis,
+                                                         <a class="link" href="goffice-06-gog-axis.html#GogAxisPolarUnit" title="enum GogAxisPolarUnit">GogAxisPolarUnit</a> unit);</pre>
+<p>
+Sets unit of a circular axis. See <a class="link" href="goffice-06-gog-axis.html#GogAxisPolarUnit" title="enum GogAxisPolarUnit"><span class="type">GogAxisPolarUnit</span></a> for valid
+values.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>unit</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-gog-axis.html#GogAxisPolarUnit" title="enum GogAxisPolarUnit"><span class="type">GogAxisPolarUnit</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-get-polar-unit"></a><h3>gog_axis_get_polar_unit ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-gog-axis.html#GogAxisPolarUnit" title="enum GogAxisPolarUnit">GogAxisPolarUnit</a>    gog_axis_get_polar_unit             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> unit of <em class="parameter"><code>axis</code></em> if it's a circular axis of a polar
+	axis set, -1 otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-get-polar-perimeter"></a><h3>gog_axis_get_polar_perimeter ()</h3>
+<pre class="programlisting">double              gog_axis_get_polar_perimeter        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-get-circular-rotation"></a><h3>gog_axis_get_circular_rotation ()</h3>
+<pre class="programlisting">double              gog_axis_get_circular_rotation      (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> rotation of a circular <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

@@ -1,0 +1,806 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogSeries</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch02.html" title="Abstract Base Classes">
+<link rel="prev" href="goffice-06-gog-plot.html" title="GogPlot">
+<link rel="next" href="goffice-06-gog-trend-line.html" title="GogTrendLine">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-gog-plot.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-gog-trend-line.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-gog-series.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-gog-series.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-gog-series"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-gog-series.top_of_page"></a>GogSeries</span></h2>
+<p>GogSeries — Base class for series</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-gog-series.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+enum                <a class="link" href="goffice-06-gog-series.html#GogSeriesFillType" title="enum GogSeriesFillType">GogSeriesFillType</a>;
+#define             <a class="link" href="goffice-06-gog-series.html#GOG-SERIES-ELEMENT-TYPE:CAPS" title="GOG_SERIES_ELEMENT_TYPE">GOG_SERIES_ELEMENT_TYPE</a>
+#define             <a class="link" href="goffice-06-gog-series.html#GOG-SERIES-ELEMENT:CAPS" title="GOG_SERIES_ELEMENT()">GOG_SERIES_ELEMENT</a>                  (o)
+#define             <a class="link" href="goffice-06-gog-series.html#IS-GOG-SERIES-ELEMENT:CAPS" title="IS_GOG_SERIES_ELEMENT()">IS_GOG_SERIES_ELEMENT</a>               (o)
+GType               <a class="link" href="goffice-06-gog-series.html#gog-series-element-get-type" title="gog_series_element_get_type ()">gog_series_element_get_type</a>         (void);
+#define             <a class="link" href="goffice-06-gog-series.html#GOG-SERIES-TYPE:CAPS" title="GOG_SERIES_TYPE">GOG_SERIES_TYPE</a>
+#define             <a class="link" href="goffice-06-gog-series.html#GOG-SERIES:CAPS" title="GOG_SERIES()">GOG_SERIES</a>                          (o)
+#define             <a class="link" href="goffice-06-gog-series.html#IS-GOG-SERIES:CAPS" title="IS_GOG_SERIES()">IS_GOG_SERIES</a>                       (o)
+GType               <a class="link" href="goffice-06-gog-series.html#gog-series-get-type" title="gog_series_get_type ()">gog_series_get_type</a>                 (void);
+gboolean            <a class="link" href="goffice-06-gog-series.html#gog-series-is-valid" title="gog_series_is_valid ()">gog_series_is_valid</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series);
+gboolean            <a class="link" href="goffice-06-gog-series.html#gog-series-has-legend" title="gog_series_has_legend ()">gog_series_has_legend</a>               (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataScalar.html"
+>GODataScalar</a> *      <a class="link" href="goffice-06-gog-series.html#gog-series-get-name" title="gog_series_get_name ()">gog_series_get_name</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *           <a class="link" href="goffice-06-gog-series.html#gog-series-get-plot" title="gog_series_get_plot ()">gog_series_get_plot</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series);
+void                <a class="link" href="goffice-06-gog-series.html#gog-series-set-name" title="gog_series_set_name ()">gog_series_set_name</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> *series,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataScalar.html"
+>GODataScalar</a> *name_src,
+                                                         GError **err);
+void                <a class="link" href="goffice-06-gog-series.html#gog-series-set-dim" title="gog_series_set_dim ()">gog_series_set_dim</a>                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> *series,
+                                                         int dim_i,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *val,
+                                                         GError **err);
+void                <a class="link" href="goffice-06-gog-series.html#gog-series-set-index" title="gog_series_set_index ()">gog_series_set_index</a>                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> *series,
+                                                         int ind,
+                                                         gboolean is_manual);
+unsigned            <a class="link" href="goffice-06-gog-series.html#gog-series-num-elements" title="gog_series_num_elements ()">gog_series_num_elements</a>             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series);
+GList const  	 *    <a class="link" href="goffice-06-gog-series.html#gog-series-get-overrides" title="gog_series_get_overrides ()">gog_series_get_overrides</a>            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series);
+unsigned            <a class="link" href="goffice-06-gog-series.html#gog-series-get-xy-data" title="gog_series_get_xy_data ()">gog_series_get_xy_data</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series,
+                                                         double const **x,
+                                                         double const **y);
+unsigned            <a class="link" href="goffice-06-gog-series.html#gog-series-get-xyz-data" title="gog_series_get_xyz_data ()">gog_series_get_xyz_data</a>             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series,
+                                                         double const **x,
+                                                         double const **y,
+                                                         double const **z);
+<a class="link" href="goffice-06-gog-series.html#GogSeriesFillType" title="enum GogSeriesFillType">GogSeriesFillType</a>   <a class="link" href="goffice-06-gog-series.html#gog-series-get-fill-type" title="gog_series_get_fill_type ()">gog_series_get_fill_type</a>            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series);
+void                <a class="link" href="goffice-06-gog-series.html#gog-series-set-fill-type" title="gog_series_set_fill_type ()">gog_series_set_fill_type</a>            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> *series,
+                                                         <a class="link" href="goffice-06-gog-series.html#GogSeriesFillType" title="enum GogSeriesFillType">GogSeriesFillType</a> fill_type);
+void                <a class="link" href="goffice-06-gog-series.html#gog-series-populate-fill-type-combo" title="gog_series_populate_fill_type_combo ()">gog_series_populate_fill_type_combo</a> (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series,
+                                                         GtkComboBox *combo);
+<a class="link" href="goffice-06-gog-series.html#GogSeriesFillType" title="enum GogSeriesFillType">GogSeriesFillType</a>   <a class="link" href="goffice-06-gog-series.html#gog-series-get-fill-type-from-combo" title="gog_series_get_fill_type_from_combo ()">gog_series_get_fill_type_from_combo</a> (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series,
+                                                         GtkComboBox *combo);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-series.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-series.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GogSeriesFillType"></a><h3>enum GogSeriesFillType</h3>
+<pre class="programlisting">typedef enum {
+	GOG_SERIES_FILL_TYPE_Y_ORIGIN,
+	GOG_SERIES_FILL_TYPE_X_ORIGIN,
+	GOG_SERIES_FILL_TYPE_BOTTOM,
+	GOG_SERIES_FILL_TYPE_LEFT,
+	GOG_SERIES_FILL_TYPE_TOP,
+	GOG_SERIES_FILL_TYPE_RIGHT,
+	GOG_SERIES_FILL_TYPE_ORIGIN,
+	GOG_SERIES_FILL_TYPE_CENTER,
+	GOG_SERIES_FILL_TYPE_EDGE,
+	GOG_SERIES_FILL_TYPE_SELF,
+	GOG_SERIES_FILL_TYPE_NEXT,
+	GOG_SERIES_FILL_TYPE_INVALID
+} GogSeriesFillType;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-SERIES-ELEMENT-TYPE:CAPS"></a><h3>GOG_SERIES_ELEMENT_TYPE</h3>
+<pre class="programlisting">#define GOG_SERIES_ELEMENT_TYPE	(gog_series_element_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-SERIES-ELEMENT:CAPS"></a><h3>GOG_SERIES_ELEMENT()</h3>
+<pre class="programlisting">#define GOG_SERIES_ELEMENT(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GOG_SERIES_ELEMENT_TYPE, GogSeriesElement))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-SERIES-ELEMENT:CAPS"></a><h3>IS_GOG_SERIES_ELEMENT()</h3>
+<pre class="programlisting">#define IS_GOG_SERIES_ELEMENT(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GOG_SERIES_ELEMENT_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-element-get-type"></a><h3>gog_series_element_get_type ()</h3>
+<pre class="programlisting">GType               gog_series_element_get_type         (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-SERIES-TYPE:CAPS"></a><h3>GOG_SERIES_TYPE</h3>
+<pre class="programlisting">#define GOG_SERIES_TYPE		(gog_series_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-SERIES:CAPS"></a><h3>GOG_SERIES()</h3>
+<pre class="programlisting">#define GOG_SERIES(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GOG_SERIES_TYPE, GogSeries))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-SERIES:CAPS"></a><h3>IS_GOG_SERIES()</h3>
+<pre class="programlisting">#define IS_GOG_SERIES(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GOG_SERIES_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-get-type"></a><h3>gog_series_get_type ()</h3>
+<pre class="programlisting">GType               gog_series_get_type                 (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-is-valid"></a><h3>gog_series_is_valid ()</h3>
+<pre class="programlisting">gboolean            gog_series_is_valid                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>series</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+><span class="type">GogSeries</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the current cached validity.  Does not recheck
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-has-legend"></a><h3>gog_series_has_legend ()</h3>
+<pre class="programlisting">gboolean            gog_series_has_legend               (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>series</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+><span class="type">GogSeries</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if the series has a visible legend entry
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-get-name"></a><h3>gog_series_get_name ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataScalar.html"
+>GODataScalar</a> *      gog_series_get_name                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series);</pre>
+<p>
+Gets the _source_ of the name associated with the series.
+NOTE : this is _NOT_ the actual name.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>series</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+><span class="type">GogSeries</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataScalar.html"
+><span class="type">GODataScalar</span></a>, without added reference.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-get-plot"></a><h3>gog_series_get_plot ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *           gog_series_get_plot                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>series</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+><span class="type">GogSeries</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the possibly NULL plot that contains this series.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-set-name"></a><h3>gog_series_set_name ()</h3>
+<pre class="programlisting">void                gog_series_set_name                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> *series,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataScalar.html"
+>GODataScalar</a> *name_src,
+                                                         GError **err);</pre>
+<p>
+Absorbs a ref to <em class="parameter"><code>name_src</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>series</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+><span class="type">GogSeries</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name_src</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataScalar.html"
+><span class="type">GODataScalar</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td> a <span class="type">Gerror</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-set-dim"></a><h3>gog_series_set_dim ()</h3>
+<pre class="programlisting">void                gog_series_set_dim                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> *series,
+                                                         int dim_i,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *val,
+                                                         GError **err);</pre>
+<p>
+Absorbs a ref to <em class="parameter"><code>val</code></em></p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>series</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+><span class="type">GogSeries</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dim_i</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+><span class="type">GOData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td> optional <span class="type">Gerror</span> pointer
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-set-index"></a><h3>gog_series_set_index ()</h3>
+<pre class="programlisting">void                gog_series_set_index                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> *series,
+                                                         int ind,
+                                                         gboolean is_manual);</pre>
+<p>
+If <em class="parameter"><code>index</code></em> &gt;= 0 attempt to assign the new index.  Auto
+indicies (<em class="parameter"><code>is_manual</code></em> == FALSE) will not override the current
+index if it is manual.  An <em class="parameter"><code>index</code></em> &lt; 0, will reset the index to
+automatic and potentially queue a revaluation of the parent
+chart's cardinality.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>series</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+><span class="type">GogSeries</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ind</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>is_manual</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-num-elements"></a><h3>gog_series_num_elements ()</h3>
+<pre class="programlisting">unsigned            gog_series_num_elements             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>series</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+><span class="type">GogSeries</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the number of elements in the series
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-get-overrides"></a><h3>gog_series_get_overrides ()</h3>
+<pre class="programlisting">GList const  	 *    gog_series_get_overrides            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>series</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-get-xy-data"></a><h3>gog_series_get_xy_data ()</h3>
+<pre class="programlisting">unsigned            gog_series_get_xy_data              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series,
+                                                         double const **x,
+                                                         double const **y);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>series</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-get-xyz-data"></a><h3>gog_series_get_xyz_data ()</h3>
+<pre class="programlisting">unsigned            gog_series_get_xyz_data             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series,
+                                                         double const **x,
+                                                         double const **y,
+                                                         double const **z);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>series</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>z</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-get-fill-type"></a><h3>gog_series_get_fill_type ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-gog-series.html#GogSeriesFillType" title="enum GogSeriesFillType">GogSeriesFillType</a>   gog_series_get_fill_type            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>series</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-set-fill-type"></a><h3>gog_series_set_fill_type ()</h3>
+<pre class="programlisting">void                gog_series_set_fill_type            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> *series,
+                                                         <a class="link" href="goffice-06-gog-series.html#GogSeriesFillType" title="enum GogSeriesFillType">GogSeriesFillType</a> fill_type);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>series</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fill_type</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-populate-fill-type-combo"></a><h3>gog_series_populate_fill_type_combo ()</h3>
+<pre class="programlisting">void                gog_series_populate_fill_type_combo (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series,
+                                                         GtkComboBox *combo);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>series</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>combo</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-get-fill-type-from-combo"></a><h3>gog_series_get_fill_type_from_combo ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-gog-series.html#GogSeriesFillType" title="enum GogSeriesFillType">GogSeriesFillType</a>   gog_series_get_fill_type_from_combo (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> const *series,
+                                                         GtkComboBox *combo);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>series</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>combo</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

@@ -1,0 +1,580 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-units</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch09.html" title="Mathematical functions">
+<link rel="prev" href="goffice-06-go-regression.html" title="Regressions">
+<link rel="next" href="ch10.html" title="File utilities">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-regression.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch09.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="ch10.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-units.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-units.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-units"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-units.top_of_page"></a>go-units</span></h2>
+<p>go-units</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-units.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="goffice-06-go-units.html#PT-PER-IN:CAPS" title="PT_PER_IN">PT_PER_IN</a>
+#define             <a class="link" href="goffice-06-go-units.html#CM-PER-IN:CAPS" title="CM_PER_IN">CM_PER_IN</a>
+#define             <a class="link" href="goffice-06-go-units.html#EMU-PER-IN:CAPS" title="EMU_PER_IN">EMU_PER_IN</a>
+#define             <a class="link" href="goffice-06-go-units.html#UN-PER-IN:CAPS" title="UN_PER_IN">UN_PER_IN</a>
+#define             <a class="link" href="goffice-06-go-units.html#UN-PER-EMU:CAPS" title="UN_PER_EMU">UN_PER_EMU</a>
+#define             <a class="link" href="goffice-06-go-units.html#UN-PER-PT:CAPS" title="UN_PER_PT">UN_PER_PT</a>
+#define             <a class="link" href="goffice-06-go-units.html#UN-PER-CM:CAPS" title="UN_PER_CM">UN_PER_CM</a>
+#define             <a class="link" href="goffice-06-go-units.html#GO-IN-TO-UN:CAPS" title="GO_IN_TO_UN()">GO_IN_TO_UN</a>                         (inch)
+#define             <a class="link" href="goffice-06-go-units.html#GO-IN-TO-PT:CAPS" title="GO_IN_TO_PT()">GO_IN_TO_PT</a>                         (inch)
+#define             <a class="link" href="goffice-06-go-units.html#GO-IN-TO-CM:CAPS" title="GO_IN_TO_CM()">GO_IN_TO_CM</a>                         (inch)
+#define             <a class="link" href="goffice-06-go-units.html#GO-IN-TO-EMU:CAPS" title="GO_IN_TO_EMU()">GO_IN_TO_EMU</a>                        (inch)
+#define             <a class="link" href="goffice-06-go-units.html#GO-UN-TO-IN:CAPS" title="GO_UN_TO_IN()">GO_UN_TO_IN</a>                         (unit)
+#define             <a class="link" href="goffice-06-go-units.html#GO-UN-TO-PT:CAPS" title="GO_UN_TO_PT()">GO_UN_TO_PT</a>                         (unit)
+#define             <a class="link" href="goffice-06-go-units.html#GO-UN-TO-CM:CAPS" title="GO_UN_TO_CM()">GO_UN_TO_CM</a>                         (unit)
+#define             <a class="link" href="goffice-06-go-units.html#GO-UN-TO-EMU:CAPS" title="GO_UN_TO_EMU()">GO_UN_TO_EMU</a>                        (unit)
+#define             <a class="link" href="goffice-06-go-units.html#GO-PT-TO-UN:CAPS" title="GO_PT_TO_UN()">GO_PT_TO_UN</a>                         (pt)
+#define             <a class="link" href="goffice-06-go-units.html#GO-PT-TO-IN:CAPS" title="GO_PT_TO_IN()">GO_PT_TO_IN</a>                         (pt)
+#define             <a class="link" href="goffice-06-go-units.html#GO-PT-TO-CM:CAPS" title="GO_PT_TO_CM()">GO_PT_TO_CM</a>                         (pt)
+#define             <a class="link" href="goffice-06-go-units.html#GO-PT-TO-EMU:CAPS" title="GO_PT_TO_EMU()">GO_PT_TO_EMU</a>                        (pt)
+#define             <a class="link" href="goffice-06-go-units.html#GO-CM-TO-UN:CAPS" title="GO_CM_TO_UN()">GO_CM_TO_UN</a>                         (cm)
+#define             <a class="link" href="goffice-06-go-units.html#GO-CM-TO-IN:CAPS" title="GO_CM_TO_IN()">GO_CM_TO_IN</a>                         (cm)
+#define             <a class="link" href="goffice-06-go-units.html#GO-CM-TO-PT:CAPS" title="GO_CM_TO_PT()">GO_CM_TO_PT</a>                         (cm)
+#define             <a class="link" href="goffice-06-go-units.html#GO-CM-TO-EMU:CAPS" title="GO_CM_TO_EMU()">GO_CM_TO_EMU</a>                        (cm)
+#define             <a class="link" href="goffice-06-go-units.html#GO-EMU-TO-UN:CAPS" title="GO_EMU_TO_UN()">GO_EMU_TO_UN</a>                        (emu)
+#define             <a class="link" href="goffice-06-go-units.html#GO-EMU-TO-IN:CAPS" title="GO_EMU_TO_IN()">GO_EMU_TO_IN</a>                        (emu)
+#define             <a class="link" href="goffice-06-go-units.html#GO-EMU-TO-PT:CAPS" title="GO_EMU_TO_PT()">GO_EMU_TO_PT</a>                        (emu)
+#define             <a class="link" href="goffice-06-go-units.html#GO-EMU-TO-CM:CAPS" title="GO_EMU_TO_CM()">GO_EMU_TO_CM</a>                        (emu)
+typedef             <a class="link" href="goffice-06-go-units.html#GODistance" title="GODistance">GODistance</a>;
+                    <a class="link" href="goffice-06-go-units.html#GOPoint" title="GOPoint">GOPoint</a>;
+                    <a class="link" href="goffice-06-go-units.html#GORect" title="GORect">GORect</a>;
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-units.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-units.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="PT-PER-IN:CAPS"></a><h3>PT_PER_IN</h3>
+<pre class="programlisting">#define PT_PER_IN 72
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="CM-PER-IN:CAPS"></a><h3>CM_PER_IN</h3>
+<pre class="programlisting">#define CM_PER_IN 254
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="EMU-PER-IN:CAPS"></a><h3>EMU_PER_IN</h3>
+<pre class="programlisting">#define EMU_PER_IN 914400
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="UN-PER-IN:CAPS"></a><h3>UN_PER_IN</h3>
+<pre class="programlisting">#define UN_PER_IN 228600000
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="UN-PER-EMU:CAPS"></a><h3>UN_PER_EMU</h3>
+<pre class="programlisting">#define UN_PER_EMU (UN_PER_IN/EMU_PER_IN)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="UN-PER-PT:CAPS"></a><h3>UN_PER_PT</h3>
+<pre class="programlisting">#define UN_PER_PT (UN_PER_IN/PT_PER_IN)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="UN-PER-CM:CAPS"></a><h3>UN_PER_CM</h3>
+<pre class="programlisting">#define UN_PER_CM (UN_PER_IN/CM_PER_IN)
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-IN-TO-UN:CAPS"></a><h3>GO_IN_TO_UN()</h3>
+<pre class="programlisting">#define GO_IN_TO_UN(inch)	((inch)*UN_PER_IN)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>inch</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-IN-TO-PT:CAPS"></a><h3>GO_IN_TO_PT()</h3>
+<pre class="programlisting">#define GO_IN_TO_PT(inch)	((inch)*PT_PER_IN)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>inch</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-IN-TO-CM:CAPS"></a><h3>GO_IN_TO_CM()</h3>
+<pre class="programlisting">#define GO_IN_TO_CM(inch)	((inch)*CM_PER_IN/100)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>inch</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-IN-TO-EMU:CAPS"></a><h3>GO_IN_TO_EMU()</h3>
+<pre class="programlisting">#define GO_IN_TO_EMU(inch)	((inch)*EMU_PER_IN)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>inch</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-UN-TO-IN:CAPS"></a><h3>GO_UN_TO_IN()</h3>
+<pre class="programlisting">#define GO_UN_TO_IN(unit)	((unit)/UN_PER_IN)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>unit</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-UN-TO-PT:CAPS"></a><h3>GO_UN_TO_PT()</h3>
+<pre class="programlisting">#define GO_UN_TO_PT(unit)	((unit)/UN_PER_PT)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>unit</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-UN-TO-CM:CAPS"></a><h3>GO_UN_TO_CM()</h3>
+<pre class="programlisting">#define GO_UN_TO_CM(unit)	((unit)/UN_PER_CM/100)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>unit</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-UN-TO-EMU:CAPS"></a><h3>GO_UN_TO_EMU()</h3>
+<pre class="programlisting">#define GO_UN_TO_EMU(unit)	((unit)/UN_PER_EMU)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>unit</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PT-TO-UN:CAPS"></a><h3>GO_PT_TO_UN()</h3>
+<pre class="programlisting">#define GO_PT_TO_UN(pt)		((pt)* UN_PER_PT)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>pt</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PT-TO-IN:CAPS"></a><h3>GO_PT_TO_IN()</h3>
+<pre class="programlisting">#define GO_PT_TO_IN(pt)		((pt)           /PT_PER_IN)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>pt</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PT-TO-CM:CAPS"></a><h3>GO_PT_TO_CM()</h3>
+<pre class="programlisting">#define GO_PT_TO_CM(pt)		((pt)* CM_PER_IN/PT_PER_IN/100)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>pt</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PT-TO-EMU:CAPS"></a><h3>GO_PT_TO_EMU()</h3>
+<pre class="programlisting">#define GO_PT_TO_EMU(pt)	((pt)*EMU_PER_IN/PT_PER_IN)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>pt</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-CM-TO-UN:CAPS"></a><h3>GO_CM_TO_UN()</h3>
+<pre class="programlisting">#define GO_CM_TO_UN(cm)		((cm)*100*UN_PER_CM)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>cm</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-CM-TO-IN:CAPS"></a><h3>GO_CM_TO_IN()</h3>
+<pre class="programlisting">#define GO_CM_TO_IN(cm)		((cm)*100          /CM_PER_IN)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>cm</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-CM-TO-PT:CAPS"></a><h3>GO_CM_TO_PT()</h3>
+<pre class="programlisting">#define GO_CM_TO_PT(cm)		((cm)*100*PT_PER_IN/CM_PER_IN)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>cm</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-CM-TO-EMU:CAPS"></a><h3>GO_CM_TO_EMU()</h3>
+<pre class="programlisting">#define GO_CM_TO_EMU(cm)	((cm)*100*PT_PER_IN/EMU_PER_IN)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>cm</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-EMU-TO-UN:CAPS"></a><h3>GO_EMU_TO_UN()</h3>
+<pre class="programlisting">#define GO_EMU_TO_UN(emu)	((emu)*UN_PER_EMU)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>emu</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-EMU-TO-IN:CAPS"></a><h3>GO_EMU_TO_IN()</h3>
+<pre class="programlisting">#define GO_EMU_TO_IN(emu)	((emu)          /EMU_PER_IN)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>emu</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-EMU-TO-PT:CAPS"></a><h3>GO_EMU_TO_PT()</h3>
+<pre class="programlisting">#define GO_EMU_TO_PT(emu)	((emu)*PT_PER_IN/EMU_PER_IN)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>emu</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-EMU-TO-CM:CAPS"></a><h3>GO_EMU_TO_CM()</h3>
+<pre class="programlisting">#define GO_EMU_TO_CM(emu)	((emu)*CM_PER_IN/EMU_PER_IN/100)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>emu</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GODistance"></a><h3>GODistance</h3>
+<pre class="programlisting">typedef gint64 GODistance;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOPoint"></a><h3>GOPoint</h3>
+<pre class="programlisting">typedef struct {
+	GODistance x;
+	GODistance y;
+} GOPoint;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GORect"></a><h3>GORect</h3>
+<pre class="programlisting">typedef struct {
+	GODistance top;
+	GODistance left;
+	GODistance bottom;
+	GODistance right;
+} GORect;
+</pre>
+<p>
+
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

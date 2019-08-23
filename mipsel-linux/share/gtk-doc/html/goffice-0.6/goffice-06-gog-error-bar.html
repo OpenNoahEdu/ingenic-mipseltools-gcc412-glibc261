@@ -1,0 +1,484 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogErrorBar</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch01.html" title="Objects">
+<link rel="prev" href="goffice-06-gog-grid-line.html" title="GogGridLine">
+<link rel="next" href="goffice-06-gog-label.html" title="GogLabel">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-gog-grid-line.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-gog-label.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-gog-error-bar.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-gog-error-bar.description" class="shortcut">Description</a>
+                 | 
+                <a href="#goffice-06-gog-error-bar.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                 | 
+                <a href="#goffice-06-gog-error-bar.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-gog-error-bar"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-gog-error-bar.top_of_page"></a>GogErrorBar</span></h2>
+<p>GogErrorBar — Error bars</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-gog-error-bar.synopsis"></a><h2>Synopsis</h2>
+<a name="GogErrorBar"></a><pre class="synopsis">
+enum                <a class="link" href="goffice-06-gog-error-bar.html#GogErrorBarType" title="enum GogErrorBarType">GogErrorBarType</a>;
+enum                <a class="link" href="goffice-06-gog-error-bar.html#GogErrorBarDisplay" title="enum GogErrorBarDisplay">GogErrorBarDisplay</a>;
+                    <a class="link" href="goffice-06-gog-error-bar.html#GogErrorBar-struct" title="GogErrorBar">GogErrorBar</a>;
+#define             <a class="link" href="goffice-06-gog-error-bar.html#GOG-ERROR-BAR-TYPE:CAPS" title="GOG_ERROR_BAR_TYPE">GOG_ERROR_BAR_TYPE</a>
+#define             <a class="link" href="goffice-06-gog-error-bar.html#GOG-ERROR-BAR:CAPS" title="GOG_ERROR_BAR()">GOG_ERROR_BAR</a>                       (o)
+#define             <a class="link" href="goffice-06-gog-error-bar.html#IS-GOG-ERROR-BAR:CAPS" title="IS_GOG_ERROR_BAR()">IS_GOG_ERROR_BAR</a>                    (o)
+GType               <a class="link" href="goffice-06-gog-error-bar.html#gog-error-bar-get-type" title="gog_error_bar_get_type ()">gog_error_bar_get_type</a>              (void);
+<a class="link" href="goffice-06-gog-error-bar.html#GogErrorBar">GogErrorBar</a> *       <a class="link" href="goffice-06-gog-error-bar.html#gog-error-bar-dup" title="gog_error_bar_dup ()">gog_error_bar_dup</a>                   (<a class="link" href="goffice-06-gog-error-bar.html#GogErrorBar">GogErrorBar</a> const *bar);
+gpointer            <a class="link" href="goffice-06-gog-error-bar.html#gog-error-bar-prefs" title="gog_error_bar_prefs ()">gog_error_bar_prefs</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> *series,
+                                                         char const *property,
+                                                         gboolean horizontal,
+                                                         <a class="link" href="GogDataAllocator.html" title="GogDataAllocator">GogDataAllocator</a> *dalloc,
+                                                         GOCmdContext *cc);
+gboolean            <a class="link" href="goffice-06-gog-error-bar.html#gog-error-bar-get-bounds" title="gog_error_bar_get_bounds ()">gog_error_bar_get_bounds</a>            (const <a class="link" href="goffice-06-gog-error-bar.html#GogErrorBar">GogErrorBar</a> *bar,
+                                                         int index,
+                                                         double *min,
+                                                         double *max);
+void                <a class="link" href="goffice-06-gog-error-bar.html#gog-error-bar-get-minmax" title="gog_error_bar_get_minmax ()">gog_error_bar_get_minmax</a>            (const <a class="link" href="goffice-06-gog-error-bar.html#GogErrorBar">GogErrorBar</a> *bar,
+                                                         double *min,
+                                                         double *max);
+void                <a class="link" href="goffice-06-gog-error-bar.html#gog-error-bar-render" title="gog_error_bar_render ()">gog_error_bar_render</a>                (const <a class="link" href="goffice-06-gog-error-bar.html#GogErrorBar">GogErrorBar</a> *bar,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *x_map,
+                                                         <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *y_map,
+                                                         double x,
+                                                         double y,
+                                                         double minus,
+                                                         double plus,
+                                                         gboolean horizontal);
+gboolean            <a class="link" href="goffice-06-gog-error-bar.html#gog-error-bar-is-visible" title="gog_error_bar_is_visible ()">gog_error_bar_is_visible</a>            (<a class="link" href="goffice-06-gog-error-bar.html#GogErrorBar">GogErrorBar</a> *bar);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-error-bar.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GogErrorBar
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-error-bar.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GogErrorBar implements
+ <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPersist.html"
+>GogPersist</a>.</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-error-bar.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-error-bar.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GogErrorBarType"></a><h3>enum GogErrorBarType</h3>
+<pre class="programlisting">typedef enum {
+	GOG_ERROR_BAR_TYPE_NONE,
+	GOG_ERROR_BAR_TYPE_ABSOLUTE,
+	GOG_ERROR_BAR_TYPE_RELATIVE,
+	GOG_ERROR_BAR_TYPE_PERCENT
+} GogErrorBarType;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogErrorBarDisplay"></a><h3>enum GogErrorBarDisplay</h3>
+<pre class="programlisting">typedef enum {
+	GOG_ERROR_BAR_DISPLAY_NONE,
+	GOG_ERROR_BAR_DISPLAY_POSITIVE,
+	GOG_ERROR_BAR_DISPLAY_NEGATIVE,
+	GOG_ERROR_BAR_DISPLAY_BOTH
+} GogErrorBarDisplay;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogErrorBar-struct"></a><h3>GogErrorBar</h3>
+<pre class="programlisting">typedef struct _GogErrorBar GogErrorBar;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-ERROR-BAR-TYPE:CAPS"></a><h3>GOG_ERROR_BAR_TYPE</h3>
+<pre class="programlisting">#define GOG_ERROR_BAR_TYPE		(gog_error_bar_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-ERROR-BAR:CAPS"></a><h3>GOG_ERROR_BAR()</h3>
+<pre class="programlisting">#define GOG_ERROR_BAR(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GOG_ERROR_BAR_TYPE, GogErrorBar))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-ERROR-BAR:CAPS"></a><h3>IS_GOG_ERROR_BAR()</h3>
+<pre class="programlisting">#define IS_GOG_ERROR_BAR(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GOG_ERROR_BAR_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-error-bar-get-type"></a><h3>gog_error_bar_get_type ()</h3>
+<pre class="programlisting">GType               gog_error_bar_get_type              (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-error-bar-dup"></a><h3>gog_error_bar_dup ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-gog-error-bar.html#GogErrorBar">GogErrorBar</a> *       gog_error_bar_dup                   (<a class="link" href="goffice-06-gog-error-bar.html#GogErrorBar">GogErrorBar</a> const *bar);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-error-bar-prefs"></a><h3>gog_error_bar_prefs ()</h3>
+<pre class="programlisting">gpointer            gog_error_bar_prefs                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> *series,
+                                                         char const *property,
+                                                         gboolean horizontal,
+                                                         <a class="link" href="GogDataAllocator.html" title="GogDataAllocator">GogDataAllocator</a> *dalloc,
+                                                         GOCmdContext *cc);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>series</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>horizontal</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dalloc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-error-bar-get-bounds"></a><h3>gog_error_bar_get_bounds ()</h3>
+<pre class="programlisting">gboolean            gog_error_bar_get_bounds            (const <a class="link" href="goffice-06-gog-error-bar.html#GogErrorBar">GogErrorBar</a> *bar,
+                                                         int index,
+                                                         double *min,
+                                                         double *max);</pre>
+<p>
+If the value correponding to <em class="parameter"><code>index</code></em> is valid, fills min and max with the error values:
+-&gt; positive_error in <em class="parameter"><code>max</code></em>.
+-&gt; negative_error in <em class="parameter"><code>min</code></em>.
+If one of the errors is not valid or not defined, its value is set to -1.0.
+</p>
+<p>
+Return value : FALSE if the <em class="parameter"><code>bar-&gt;type</code></em> is GOG_ERROR_BAR_TYPE_NONE or if the value is not valid,
+TRUE otherwise.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bar</code></em> :</span></p></td>
+<td> A GogErrorBar
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>index</code></em> :</span></p></td>
+<td> the index corresponding to the value which error limits are 
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>min</code></em> :</span></p></td>
+<td> where the minimum value will be stored 
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>max</code></em> :</span></p></td>
+<td> where the maximum value will be stored
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-error-bar-get-minmax"></a><h3>gog_error_bar_get_minmax ()</h3>
+<pre class="programlisting">void                gog_error_bar_get_minmax            (const <a class="link" href="goffice-06-gog-error-bar.html#GogErrorBar">GogErrorBar</a> *bar,
+                                                         double *min,
+                                                         double *max);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>min</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>max</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-error-bar-render"></a><h3>gog_error_bar_render ()</h3>
+<pre class="programlisting">void                gog_error_bar_render                (const <a class="link" href="goffice-06-gog-error-bar.html#GogErrorBar">GogErrorBar</a> *bar,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *x_map,
+                                                         <a class="link" href="goffice-06-gog-axis.html#GogAxisMap" title="GogAxisMap">GogAxisMap</a> *y_map,
+                                                         double x,
+                                                         double y,
+                                                         double minus,
+                                                         double plus,
+                                                         gboolean horizontal);</pre>
+<p>
+Displays the error bar. If <em class="parameter"><code>plus</code></em> is negative, the positive side of the bar is not displayed,
+and if <em class="parameter"><code>minus</code></em> is negative, the negative side of the bar is not displayed.
+x_map and y_map are used to convert coordinates from data space to canvas coordinates.
+This function must not be called if <a class="link" href="goffice-06-gog-error-bar.html#gog-error-bar-get-bounds" title="gog_error_bar_get_bounds ()"><span class="type">gog_error_bar_get_bounds</span></a> returned FALSE.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bar</code></em> :</span></p></td>
+<td> A GogErrorBar
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td> A GogRenderer 
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x_map</code></em> :</span></p></td>
+<td>  A GogAxisMap for the x axis
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y_map</code></em> :</span></p></td>
+<td>  A GogAxisMap for the y axis
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td> x coordinate of the origin of the bar 
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td> y coordinate of the origin of the bar
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>minus</code></em> :</span></p></td>
+<td> distance from the origin to the negative end of the bar 
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plus</code></em> :</span></p></td>
+<td> distance from the origin to the positive end of the bar 
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>horizontal</code></em> :</span></p></td>
+<td> whether the bar is horizontal or not.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-error-bar-is-visible"></a><h3>gog_error_bar_is_visible ()</h3>
+<pre class="programlisting">gboolean            gog_error_bar_is_visible            (<a class="link" href="goffice-06-gog-error-bar.html#GogErrorBar">GogErrorBar</a> *bar);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bar</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

@@ -1,0 +1,1002 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GoFile</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch10.html" title="File utilities">
+<link rel="prev" href="ch10.html" title="File utilities">
+<link rel="next" href="ch11.html" title="Application">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch10.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch10.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="ch11.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-file.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-file.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-file"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-file.top_of_page"></a>GoFile</span></h2>
+<p>GoFile</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-file.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="goffice-06-go-file.html#GOFilePermissions" title="GOFilePermissions">GOFilePermissions</a>;
+enum                <a class="link" href="goffice-06-go-file.html#GODotDot" title="enum GODotDot">GODotDot</a>;
+#define             <a class="link" href="goffice-06-go-file.html#F-OK:CAPS" title="F_OK">F_OK</a>
+#define             <a class="link" href="goffice-06-go-file.html#X-OK:CAPS" title="X_OK">X_OK</a>
+#define             <a class="link" href="goffice-06-go-file.html#W-OK:CAPS" title="W_OK">W_OK</a>
+#define             <a class="link" href="goffice-06-go-file.html#R-OK:CAPS" title="R_OK">R_OK</a>
+char *              <a class="link" href="goffice-06-go-file.html#go-filename-simplify" title="go_filename_simplify ()">go_filename_simplify</a>                (const char *filename,
+                                                         <a class="link" href="goffice-06-go-file.html#GODotDot" title="enum GODotDot">GODotDot</a> dotdot,
+                                                         gboolean make_absolute);
+char *              <a class="link" href="goffice-06-go-file.html#go-url-simplify" title="go_url_simplify ()">go_url_simplify</a>                     (const char *uri);
+char *              <a class="link" href="goffice-06-go-file.html#go-filename-from-uri" title="go_filename_from_uri ()">go_filename_from_uri</a>                (const char *uri);
+char *              <a class="link" href="goffice-06-go-file.html#go-filename-to-uri" title="go_filename_to_uri ()">go_filename_to_uri</a>                  (const char *filename);
+char *              <a class="link" href="goffice-06-go-file.html#go-url-resolve-relative" title="go_url_resolve_relative ()">go_url_resolve_relative</a>             (const char *ref_uri,
+                                                         const char *rel_uri);
+char *              <a class="link" href="goffice-06-go-file.html#go-url-make-relative" title="go_url_make_relative ()">go_url_make_relative</a>                (const char *uri,
+                                                         const char *ref_uri);
+char *              <a class="link" href="goffice-06-go-file.html#go-shell-arg-to-uri" title="go_shell_arg_to_uri ()">go_shell_arg_to_uri</a>                 (const char *arg);
+char *              <a class="link" href="goffice-06-go-file.html#go-basename-from-uri" title="go_basename_from_uri ()">go_basename_from_uri</a>                (const char *uri);
+char *              <a class="link" href="goffice-06-go-file.html#go-dirname-from-uri" title="go_dirname_from_uri ()">go_dirname_from_uri</a>                 (const char *uri,
+                                                         gboolean brief);
+gchar const **      <a class="link" href="goffice-06-go-file.html#go-shell-argv-to-glib-encoding" title="go_shell_argv_to_glib_encoding ()">go_shell_argv_to_glib_encoding</a>      (gint argc,
+                                                         gchar const **argv);
+void                <a class="link" href="goffice-06-go-file.html#go-shell-argv-to-glib-encoding-free" title="go_shell_argv_to_glib_encoding_free ()">go_shell_argv_to_glib_encoding_free</a> (void);
+<a
+href="/local/gnome/test/share/gtk-doc/html/gsf/gsf-Input-from-unstructured-files.html#GsfInput"
+>GsfInput</a> *          <a class="link" href="goffice-06-go-file.html#go-file-open" title="go_file_open ()">go_file_open</a>                        (char const *uri,
+                                                         GError **err);
+<a
+href="/local/gnome/test/share/gtk-doc/html/gsf/gsf-Output-to-unstructured-files.html#GsfOutput"
+>GsfOutput</a> *         <a class="link" href="goffice-06-go-file.html#go-file-create" title="go_file_create ()">go_file_create</a>                      (char const *uri,
+                                                         GError **err);
+GSList *            <a class="link" href="goffice-06-go-file.html#go-file-split-urls" title="go_file_split_urls ()">go_file_split_urls</a>                  (char const *data);
+gchar *             <a class="link" href="goffice-06-go-file.html#go-file-get-owner-name" title="go_file_get_owner_name ()">go_file_get_owner_name</a>              (char const *uri);
+gchar *             <a class="link" href="goffice-06-go-file.html#go-file-get-group-name" title="go_file_get_group_name ()">go_file_get_group_name</a>              (char const *uri);
+<a class="link" href="goffice-06-go-file.html#GOFilePermissions" title="GOFilePermissions">GOFilePermissions</a> * <a class="link" href="goffice-06-go-file.html#go-get-file-permissions" title="go_get_file_permissions ()">go_get_file_permissions</a>             (char const *uri);
+void                <a class="link" href="goffice-06-go-file.html#go-set-file-permissions" title="go_set_file_permissions ()">go_set_file_permissions</a>             (char const *uri,
+                                                         <a class="link" href="goffice-06-go-file.html#GOFilePermissions" title="GOFilePermissions">GOFilePermissions</a> *file_permissions);
+time_t              <a class="link" href="goffice-06-go-file.html#go-file-get-date-accessed" title="go_file_get_date_accessed ()">go_file_get_date_accessed</a>           (char const *uri);
+time_t              <a class="link" href="goffice-06-go-file.html#go-file-get-date-modified" title="go_file_get_date_modified ()">go_file_get_date_modified</a>           (char const *uri);
+time_t              <a class="link" href="goffice-06-go-file.html#go-file-get-date-changed" title="go_file_get_date_changed ()">go_file_get_date_changed</a>            (char const *uri);
+gint                <a class="link" href="goffice-06-go-file.html#go-file-access" title="go_file_access ()">go_file_access</a>                      (char const *uri,
+                                                         gint mode);
+gchar *             <a class="link" href="goffice-06-go-file.html#go-url-decode" title="go_url_decode ()">go_url_decode</a>                       (gchar const *text);
+gchar *             <a class="link" href="goffice-06-go-file.html#go-url-encode" title="go_url_encode ()">go_url_encode</a>                       (gchar const *text,
+                                                         int type);
+GError *            <a class="link" href="goffice-06-go-file.html#go-url-show" title="go_url_show ()">go_url_show</a>                         (gchar const *url);
+gboolean            <a class="link" href="goffice-06-go-file.html#go-url-check-extension" title="go_url_check_extension ()">go_url_check_extension</a>              (gchar const *uri,
+                                                         gchar const *std_ext,
+                                                         gchar **new_uri);
+gchar *             <a class="link" href="goffice-06-go-file.html#go-get-mime-type" title="go_get_mime_type ()">go_get_mime_type</a>                    (gchar const *uri);
+gchar *             <a class="link" href="goffice-06-go-file.html#go-get-mime-type-for-data" title="go_get_mime_type_for_data ()">go_get_mime_type_for_data</a>           (gconstpointer data,
+                                                         int data_size);
+gchar const	*       <a class="link" href="goffice-06-go-file.html#go-mime-type-get-description" title="go_mime_type_get_description ()">go_mime_type_get_description</a>        (gchar const *mime_type);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-file.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-file.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOFilePermissions"></a><h3>GOFilePermissions</h3>
+<pre class="programlisting">typedef struct {
+	gboolean owner_read;
+	gboolean owner_write;
+	gboolean owner_execute;
+
+	gboolean group_read;
+	gboolean group_write;
+	gboolean group_execute;
+
+	gboolean others_read;
+	gboolean others_write;
+	gboolean others_execute;
+} GOFilePermissions;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GODotDot"></a><h3>enum GODotDot</h3>
+<pre class="programlisting">typedef enum {
+	GO_DOTDOT_SYNTACTIC,    /* Assume no symlinks.  */
+	GO_DOTDOT_TEST,         /* Check.  */
+	GO_DOTDOT_LEAVE         /* Leave alone.  */
+} GODotDot;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="F-OK:CAPS"></a><h3>F_OK</h3>
+<pre class="programlisting">#  define F_OK 0
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="X-OK:CAPS"></a><h3>X_OK</h3>
+<pre class="programlisting">#  define X_OK 1
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="W-OK:CAPS"></a><h3>W_OK</h3>
+<pre class="programlisting">#  define W_OK 2
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="R-OK:CAPS"></a><h3>R_OK</h3>
+<pre class="programlisting">#  define R_OK 4
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-filename-simplify"></a><h3>go_filename_simplify ()</h3>
+<pre class="programlisting">char *              go_filename_simplify                (const char *filename,
+                                                         <a class="link" href="goffice-06-go-file.html#GODotDot" title="enum GODotDot">GODotDot</a> dotdot,
+                                                         gboolean make_absolute);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filename</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dotdot</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>make_absolute</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-url-simplify"></a><h3>go_url_simplify ()</h3>
+<pre class="programlisting">char *              go_url_simplify                     (const char *uri);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-filename-from-uri"></a><h3>go_filename_from_uri ()</h3>
+<pre class="programlisting">char *              go_filename_from_uri                (const char *uri);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-filename-to-uri"></a><h3>go_filename_to_uri ()</h3>
+<pre class="programlisting">char *              go_filename_to_uri                  (const char *filename);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filename</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-url-resolve-relative"></a><h3>go_url_resolve_relative ()</h3>
+<pre class="programlisting">char *              go_url_resolve_relative             (const char *ref_uri,
+                                                         const char *rel_uri);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ref_uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rel_uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-url-make-relative"></a><h3>go_url_make_relative ()</h3>
+<pre class="programlisting">char *              go_url_make_relative                (const char *uri,
+                                                         const char *ref_uri);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ref_uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-shell-arg-to-uri"></a><h3>go_shell_arg_to_uri ()</h3>
+<pre class="programlisting">char *              go_shell_arg_to_uri                 (const char *arg);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-basename-from-uri"></a><h3>go_basename_from_uri ()</h3>
+<pre class="programlisting">char *              go_basename_from_uri                (const char *uri);</pre>
+<p>
+Decode the final path component.  Returns as UTF-8 encoded suitable
+for display.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-dirname-from-uri"></a><h3>go_dirname_from_uri ()</h3>
+<pre class="programlisting">char *              go_dirname_from_uri                 (const char *uri,
+                                                         gboolean brief);</pre>
+<p>
+Decode the all but the final path component.  Returns as UTF-8 encoded
+suitable for display.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>brief</code></em> :</span></p></td>
+<td> if TRUE, hide "file://" if present.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-shell-argv-to-glib-encoding"></a><h3>go_shell_argv_to_glib_encoding ()</h3>
+<pre class="programlisting">gchar const **      go_shell_argv_to_glib_encoding      (gint argc,
+                                                         gchar const **argv);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>argc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>argv</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-shell-argv-to-glib-encoding-free"></a><h3>go_shell_argv_to_glib_encoding_free ()</h3>
+<pre class="programlisting">void                go_shell_argv_to_glib_encoding_free (void);</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-file-open"></a><h3>go_file_open ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/gsf/gsf-Input-from-unstructured-files.html#GsfInput"
+>GsfInput</a> *          go_file_open                        (char const *uri,
+                                                         GError **err);</pre>
+<p>
+Try all available methods to open a file or return an error</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td> <span class="type">GError</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-file-create"></a><h3>go_file_create ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/gsf/gsf-Output-to-unstructured-files.html#GsfOutput"
+>GsfOutput</a> *         go_file_create                      (char const *uri,
+                                                         GError **err);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-file-split-urls"></a><h3>go_file_split_urls ()</h3>
+<pre class="programlisting">GSList *            go_file_split_urls                  (char const *data);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-file-get-owner-name"></a><h3>go_file_get_owner_name ()</h3>
+<pre class="programlisting">gchar *             go_file_get_owner_name              (char const *uri);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-file-get-group-name"></a><h3>go_file_get_group_name ()</h3>
+<pre class="programlisting">gchar *             go_file_get_group_name              (char const *uri);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-get-file-permissions"></a><h3>go_get_file_permissions ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-file.html#GOFilePermissions" title="GOFilePermissions">GOFilePermissions</a> * go_get_file_permissions             (char const *uri);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-set-file-permissions"></a><h3>go_set_file_permissions ()</h3>
+<pre class="programlisting">void                go_set_file_permissions             (char const *uri,
+                                                         <a class="link" href="goffice-06-go-file.html#GOFilePermissions" title="GOFilePermissions">GOFilePermissions</a> *file_permissions);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>file_permissions</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-file-get-date-accessed"></a><h3>go_file_get_date_accessed ()</h3>
+<pre class="programlisting">time_t              go_file_get_date_accessed           (char const *uri);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-file-get-date-modified"></a><h3>go_file_get_date_modified ()</h3>
+<pre class="programlisting">time_t              go_file_get_date_modified           (char const *uri);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-file-get-date-changed"></a><h3>go_file_get_date_changed ()</h3>
+<pre class="programlisting">time_t              go_file_get_date_changed            (char const *uri);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-file-access"></a><h3>go_file_access ()</h3>
+<pre class="programlisting">gint                go_file_access                      (char const *uri,
+                                                         gint mode);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mode</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-url-decode"></a><h3>go_url_decode ()</h3>
+<pre class="programlisting">gchar *             go_url_decode                       (gchar const *text);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-url-encode"></a><h3>go_url_encode ()</h3>
+<pre class="programlisting">gchar *             go_url_encode                       (gchar const *text,
+                                                         int type);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-url-show"></a><h3>go_url_show ()</h3>
+<pre class="programlisting">GError *            go_url_show                         (gchar const *url);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>url</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-url-check-extension"></a><h3>go_url_check_extension ()</h3>
+<pre class="programlisting">gboolean            go_url_check_extension              (gchar const *uri,
+                                                         gchar const *std_ext,
+                                                         gchar **new_uri);</pre>
+<p>
+Modifies given <em class="parameter"><code>uri</code></em> by adding the extension <em class="parameter"><code>std_ext</code></em> if needed.
+If no <em class="parameter"><code>std_ext</code></em> is given or <em class="parameter"><code>uri</code></em> already has some extension,
+it just copies <em class="parameter"><code>uri</code></em>.
+</p>
+<p>
+Value in new_uri:  newly allocated string which you should free after
+                   use, containing (optionally) modified uri.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td> Uri
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>std_ext</code></em> :</span></p></td>
+<td> Standard extension for the content type
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>new_uri</code></em> :</span></p></td>
+<td> New uri
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>  FALSE if the uri has an extension not matching <em class="parameter"><code>std_ext</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-get-mime-type"></a><h3>go_get_mime_type ()</h3>
+<pre class="programlisting">gchar *             go_get_mime_type                    (gchar const *uri);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-get-mime-type-for-data"></a><h3>go_get_mime_type_for_data ()</h3>
+<pre class="programlisting">gchar *             go_get_mime_type_for_data           (gconstpointer data,
+                                                         int data_size);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data_size</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-mime-type-get-description"></a><h3>go_mime_type_get_description ()</h3>
+<pre class="programlisting">gchar const	*       go_mime_type_get_description        (gchar const *mime_type);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mime_type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

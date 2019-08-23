@@ -1,0 +1,1869 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogObject</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch02.html" title="Abstract Base Classes">
+<link rel="prev" href="ch02.html" title="Abstract Base Classes">
+<link rel="next" href="GogStyledObject.html" title="GogStyledObject">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch02.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="GogStyledObject.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GogObject.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#GogObject.description" class="shortcut">Description</a>
+                 | 
+                <a href="#GogObject.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                 | 
+                <a href="#GogObject.properties" class="shortcut">Properties</a>
+                 | 
+                <a href="#GogObject.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="GogObject"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GogObject.top_of_page"></a>GogObject</span></h2>
+<p>GogObject — Base class for all objects of graph model</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GogObject.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="GogObject.html#GogEditorPage" title="GogEditorPage">GogEditorPage</a>;
+                    <a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a>;
+<a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a> *         <a class="link" href="GogObject.html#gog-editor-new" title="gog_editor_new ()">gog_editor_new</a>                      (void);
+void                <a class="link" href="GogObject.html#gog-editor-free" title="gog_editor_free ()">gog_editor_free</a>                     (<a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a> *editor);
+void                <a class="link" href="GogObject.html#gog-editor-add-page" title="gog_editor_add_page ()">gog_editor_add_page</a>                 (<a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a> *editor,
+                                                         gpointer widget,
+                                                         char const *label);
+void                <a class="link" href="GogObject.html#gog-editor-set-store-page" title="gog_editor_set_store_page ()">gog_editor_set_store_page</a>           (<a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a> *editor,
+                                                         unsigned *store_page);
+void                <a class="link" href="GogObject.html#gog-editor-register-widget" title="gog_editor_register_widget ()">gog_editor_register_widget</a>          (<a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a> *editor,
+                                                         GtkWidget *widget);
+GtkWidget *         <a class="link" href="GogObject.html#gog-editor-get-registered-widget" title="gog_editor_get_registered_widget ()">gog_editor_get_registered_widget</a>    (<a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a> *editor,
+                                                         char const *name);
+GtkWidget *         <a class="link" href="GogObject.html#gog-editor-get-notebook" title="gog_editor_get_notebook ()">gog_editor_get_notebook</a>             (<a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a> *editor);
+enum                <a class="link" href="GogObject.html#GogObjectNamingConv" title="enum GogObjectNamingConv">GogObjectNamingConv</a>;
+                    <a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole">GogObjectRole</a>;
+                    <a class="link" href="GogObject.html#GogObject-struct" title="GogObject">GogObject</a>;
+#define             <a class="link" href="GogObject.html#GOG-OBJECT-TYPE:CAPS" title="GOG_OBJECT_TYPE">GOG_OBJECT_TYPE</a>
+#define             <a class="link" href="GogObject.html#GOG-OBJECT:CAPS" title="GOG_OBJECT()">GOG_OBJECT</a>                          (o)
+#define             <a class="link" href="GogObject.html#IS-GOG-OBJECT:CAPS" title="IS_GOG_OBJECT()">IS_GOG_OBJECT</a>                       (o)
+#define             <a class="link" href="GogObject.html#GOG-OBJECT-CLASS:CAPS" title="GOG_OBJECT_CLASS()">GOG_OBJECT_CLASS</a>                    (k)
+#define             <a class="link" href="GogObject.html#IS-GOG-OBJECT-CLASS:CAPS" title="IS_GOG_OBJECT_CLASS()">IS_GOG_OBJECT_CLASS</a>                 (k)
+#define             <a class="link" href="GogObject.html#GOG-OBJECT-GET-CLASS:CAPS" title="GOG_OBJECT_GET_CLASS()">GOG_OBJECT_GET_CLASS</a>                (o)
+#define             <a class="link" href="GogObject.html#GOG-PARAM-PERSISTENT:CAPS" title="GOG_PARAM_PERSISTENT">GOG_PARAM_PERSISTENT</a>
+#define             <a class="link" href="GogObject.html#GOG-PARAM-FORCE-SAVE:CAPS" title="GOG_PARAM_FORCE_SAVE">GOG_PARAM_FORCE_SAVE</a>
+#define             <a class="link" href="GogObject.html#GOG-PARAM-POSITION:CAPS" title="GOG_PARAM_POSITION">GOG_PARAM_POSITION</a>
+GType               <a class="link" href="GogObject.html#gog-object-get-type" title="gog_object_get_type ()">gog_object_get_type</a>                 (void);
+void                (<a class="link" href="GogObject.html#GogDataDuplicator" title="GogDataDuplicator ()">*GogDataDuplicator</a>)                (<a class="link" href="GogDataset.html" title="GogDataset">GogDataset</a> const *src,
+                                                         <a class="link" href="GogDataset.html" title="GogDataset">GogDataset</a> *dst);
+<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *         <a class="link" href="GogObject.html#gog-object-dup" title="gog_object_dup ()">gog_object_dup</a>                      (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *src,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> *new_parent,
+                                                         <a class="link" href="GogObject.html#GogDataDuplicator" title="GogDataDuplicator ()">GogDataDuplicator</a> datadup);
+<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *         <a class="link" href="GogObject.html#gog-object-get-parent" title="gog_object_get_parent ()">gog_object_get_parent</a>               (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj);
+<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *         <a class="link" href="GogObject.html#gog-object-get-parent-typed" title="gog_object_get_parent_typed ()">gog_object_get_parent_typed</a>         (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         GType t);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *          <a class="link" href="GogObject.html#gog-object-get-graph" title="gog_object_get_graph ()">gog_object_get_graph</a>                (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> *          <a class="link" href="GogObject.html#gog-object-get-theme" title="gog_object_get_theme ()">gog_object_get_theme</a>                (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj);
+unsigned            <a class="link" href="GogObject.html#gog-object-get-id" title="gog_object_get_id ()">gog_object_get_id</a>                   (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj);
+char const  *       <a class="link" href="GogObject.html#gog-object-get-name" title="gog_object_get_name ()">gog_object_get_name</a>                 (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj);
+void                <a class="link" href="GogObject.html#gog-object-set-name" title="gog_object_set_name ()">gog_object_set_name</a>                 (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj,
+                                                         char *name,
+                                                         GError **err);
+GSList *            <a class="link" href="GogObject.html#gog-object-get-children" title="gog_object_get_children ()">gog_object_get_children</a>             (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         <a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole">GogObjectRole</a> const *filter);
+<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *         <a class="link" href="GogObject.html#gog-object-get-child-by-role" title="gog_object_get_child_by_role ()">gog_object_get_child_by_role</a>        (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         <a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole">GogObjectRole</a> const *role);
+<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *         <a class="link" href="GogObject.html#gog-object-get-child-by-name" title="gog_object_get_child_by_name ()">gog_object_get_child_by_name</a>        (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         char const *name);
+gpointer            <a class="link" href="GogObject.html#gog-object-get-editor" title="gog_object_get_editor ()">gog_object_get_editor</a>               (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj,
+                                                         <a class="link" href="GogDataAllocator.html" title="GogDataAllocator">GogDataAllocator</a> *dalloc,
+                                                         GOCmdContext *cc);
+<a class="link" href="GogView.html" title="GogView">GogView</a> *           <a class="link" href="GogObject.html#gog-object-new-view" title="gog_object_new_view ()">gog_object_new_view</a>                 (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         <a class="link" href="GogView.html" title="GogView">GogView</a> *parent);
+gboolean            <a class="link" href="GogObject.html#gog-object-is-deletable" title="gog_object_is_deletable ()">gog_object_is_deletable</a>             (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj);
+GSList *            <a class="link" href="GogObject.html#gog-object-possible-additions" title="gog_object_possible_additions ()">gog_object_possible_additions</a>       (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *parent);
+<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *         <a class="link" href="GogObject.html#gog-object-add-by-role" title="gog_object_add_by_role ()">gog_object_add_by_role</a>              (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *parent,
+                                                         <a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole">GogObjectRole</a> const *role,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> *child);
+<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *         <a class="link" href="GogObject.html#gog-object-add-by-name" title="gog_object_add_by_name ()">gog_object_add_by_name</a>              (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *parent,
+                                                         char const *role,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> *child);
+void                <a class="link" href="GogObject.html#gog-object-can-reorder" title="gog_object_can_reorder ()">gog_object_can_reorder</a>              (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         gboolean *inc_ok,
+                                                         gboolean *dec_ok);
+<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *         <a class="link" href="GogObject.html#gog-object-reorder" title="gog_object_reorder ()">gog_object_reorder</a>                  (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         gboolean inc,
+                                                         gboolean goto_max);
+#define             <a class="link" href="GogObject.html#gog-object-is-visible" title="gog_object_is_visible()">gog_object_is_visible</a>               (obj)
+void                <a class="link" href="GogObject.html#gog-object-set-invisible" title="gog_object_set_invisible ()">gog_object_set_invisible</a>            (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj,
+                                                         gboolean invisible);
+GogObjectPosition   <a class="link" href="GogObject.html#gog-object-get-position-flags" title="gog_object_get_position_flags ()">gog_object_get_position_flags</a>       (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         GogObjectPosition mask);
+gboolean            <a class="link" href="GogObject.html#gog-object-set-position-flags" title="gog_object_set_position_flags ()">gog_object_set_position_flags</a>       (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj,
+                                                         GogObjectPosition flags,
+                                                         GogObjectPosition mask);
+gboolean            <a class="link" href="GogObject.html#gog-object-is-default-position-flags" title="gog_object_is_default_position_flags ()">gog_object_is_default_position_flags</a>
+                                                        (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         char const *name);
+void                <a class="link" href="GogObject.html#gog-object-get-manual-position" title="gog_object_get_manual_position ()">gog_object_get_manual_position</a>      (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> *pos);
+void                <a class="link" href="GogObject.html#gog-object-set-manual-position" title="gog_object_set_manual_position ()">gog_object_set_manual_position</a>      (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *pos);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a>   <a class="link" href="GogObject.html#gog-object-get-manual-allocation" title="gog_object_get_manual_allocation ()">gog_object_get_manual_allocation</a>    (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *gobj,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *parent_allocation,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewRequisition"
+>GogViewRequisition</a> const *requisition);
+<a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole">GogObjectRole</a> const * <a class="link" href="GogObject.html#gog-object-find-role-by-name" title="gog_object_find_role_by_name ()">gog_object_find_role_by_name</a>      (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         char const *role);
+void                <a class="link" href="GogObject.html#gog-object-update" title="gog_object_update ()">gog_object_update</a>                   (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj);
+gboolean            <a class="link" href="GogObject.html#gog-object-request-update" title="gog_object_request_update ()">gog_object_request_update</a>           (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj);
+void                <a class="link" href="GogObject.html#gog-object-emit-changed" title="gog_object_emit_changed ()">gog_object_emit_changed</a>             (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj,
+                                                         gboolean size);
+gboolean            <a class="link" href="GogObject.html#gog-object-clear-parent" title="gog_object_clear_parent ()">gog_object_clear_parent</a>             (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj);
+gboolean            <a class="link" href="GogObject.html#gog-object-set-parent" title="gog_object_set_parent ()">gog_object_set_parent</a>               (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *child,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> *parent,
+                                                         <a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole">GogObjectRole</a> const *role,
+                                                         unsigned int id);
+void                <a class="link" href="GogObject.html#gog-object-register-roles" title="gog_object_register_roles ()">gog_object_register_roles</a>           (GogObjectClass *klass,
+                                                         <a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole">GogObjectRole</a> const *roles,
+                                                         unsigned int n_roles);
+void                <a class="link" href="GogObject.html#gog-object-request-editor-update" title="gog_object_request_editor_update ()">gog_object_request_editor_update</a>    (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogObject.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GogObject
+         +----<a class="link" href="GogStyledObject.html" title="GogStyledObject">GogStyledObject</a>
+         +----<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a>
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogObject.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="GogObject.html#GogObject--alignment" title='The "alignment" property'>alignment</a>"                gchar*                : Read / Write
+  "<a class="link" href="GogObject.html#GogObject--anchor" title='The "anchor" property'>anchor</a>"                   gchar*                : Read / Write
+  "<a class="link" href="GogObject.html#GogObject--compass" title='The "compass" property'>compass</a>"                  gchar*                : Read / Write
+  "<a class="link" href="GogObject.html#GogObject--id" title='The "id" property'>id</a>"                       guint                 : Read / Write
+  "<a class="link" href="GogObject.html#GogObject--invisible" title='The "invisible" property'>invisible</a>"                gboolean              : Read / Write
+  "<a class="link" href="GogObject.html#GogObject--is-position-manual" title='The "is-position-manual" property'>is-position-manual</a>"       gboolean              : Read / Write
+  "<a class="link" href="GogObject.html#GogObject--position" title='The "position" property'>position</a>"                 gchar*                : Read / Write
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogObject.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="GogObject.html#GogObject-changed" title='The "changed" signal'>changed</a>"                                        : Run Last
+  "<a class="link" href="GogObject.html#GogObject-child-added" title='The "child-added" signal'>child-added</a>"                                    : Run Last
+  "<a class="link" href="GogObject.html#GogObject-child-name-changed" title='The "child-name-changed" signal'>child-name-changed</a>"                             : Run Last
+  "<a class="link" href="GogObject.html#GogObject-child-removed" title='The "child-removed" signal'>child-removed</a>"                                  : Run Last
+  "<a class="link" href="GogObject.html#GogObject-children-reordered" title='The "children-reordered" signal'>children-reordered</a>"                             : Run Last
+  "<a class="link" href="GogObject.html#GogObject-name-changed" title='The "name-changed" signal'>name-changed</a>"                                   : Run Last
+  "<a class="link" href="GogObject.html#GogObject-update-editor" title='The "update-editor" signal'>update-editor</a>"                                  : Run Last
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogObject.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogObject.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GogEditorPage"></a><h3>GogEditorPage</h3>
+<pre class="programlisting">typedef struct {
+	char const	*label;		/* label for notebook page */
+	gpointer 	 widget;	/* GtkWidget* */	
+} GogEditorPage;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogEditor"></a><h3>GogEditor</h3>
+<pre class="programlisting">typedef struct {
+	unsigned	*store_page;		/* pointer to a place for storing last edited page */
+	GSList		*pages;			/* GogEditorPage */
+	GData		*registered_widgets;
+} GogEditor;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-editor-new"></a><h3>gog_editor_new ()</h3>
+<pre class="programlisting"><a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a> *         gog_editor_new                      (void);</pre>
+<p>
+Creates a new GogEditor object, which is used to store a 
+collection of property edition widgets (pages). The returned 
+object must be freed using <em class="parameter"><code>gog_editor_free</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-editor-free"></a><h3>gog_editor_free ()</h3>
+<pre class="programlisting">void                gog_editor_free                     (<a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a> *editor);</pre>
+<p>
+Frees a GogEditor object.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>editor</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html#GogEditor" title="GogEditor"><span class="type">GogEditor</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-editor-add-page"></a><h3>gog_editor_add_page ()</h3>
+<pre class="programlisting">void                gog_editor_add_page                 (<a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a> *editor,
+                                                         gpointer widget,
+                                                         char const *label);</pre>
+<p>
+Adds a page to <em class="parameter"><code>editor</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>editor</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html#GogEditor" title="GogEditor"><span class="type">GogEditor</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td> property edition widget
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>label</code></em> :</span></p></td>
+<td> a label identifying the widget
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-editor-set-store-page"></a><h3>gog_editor_set_store_page ()</h3>
+<pre class="programlisting">void                gog_editor_set_store_page           (<a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a> *editor,
+                                                         unsigned *store_page);</pre>
+<p>
+Sets a placeholder for storing the last active editor page.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>editor</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html#GogEditor" title="GogEditor"><span class="type">GogEditor</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>store_page</code></em> :</span></p></td>
+<td> placeholder for the last selected page
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-editor-register-widget"></a><h3>gog_editor_register_widget ()</h3>
+<pre class="programlisting">void                gog_editor_register_widget          (<a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a> *editor,
+                                                         GtkWidget *widget);</pre>
+<p>
+Registers a widget that then can be retrieved later using 
+<em class="parameter"><code>gog_editor_get_registered_widget</code></em>. The main use of this function is to 
+provide the ability to extend a page.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>editor</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html#GogEditor" title="GogEditor"><span class="type">GogEditor</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td> a <span class="type">GtkWidget</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-editor-get-registered-widget"></a><h3>gog_editor_get_registered_widget ()</h3>
+<pre class="programlisting">GtkWidget *         gog_editor_get_registered_widget    (<a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a> *editor,
+                                                         char const *name);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>editor</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html#GogEditor" title="GogEditor"><span class="type">GogEditor</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td> the name of the registered widget
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a widget previously registered using <em class="parameter"><code>gog_editor_register_widget</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-editor-get-notebook"></a><h3>gog_editor_get_notebook ()</h3>
+<pre class="programlisting">GtkWidget *         gog_editor_get_notebook             (<a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a> *editor);</pre>
+<p>
+Buils a GtkNotebook from the widget collection stored in <em class="parameter"><code>editor</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>editor</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html#GogEditor" title="GogEditor"><span class="type">GogEditor</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogObjectNamingConv"></a><h3>enum GogObjectNamingConv</h3>
+<pre class="programlisting">typedef enum {
+	GOG_OBJECT_NAME_BY_ROLE	 = 1,
+	GOG_OBJECT_NAME_BY_TYPE  = 2,
+	GOG_OBJECT_NAME_MANUALLY = 3
+} GogObjectNamingConv;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogObjectRole"></a><h3>GogObjectRole</h3>
+<pre class="programlisting">typedef struct {
+	char const *id;	/* for persistence */
+	char const *is_a_typename;
+	unsigned    priority;
+
+	guint32		  	allowable_positions;
+	GogObjectPosition 	default_position;
+	GogObjectNamingConv	naming_conv;
+
+	gboolean   (*can_add)	  (GogObject const *parent);
+	gboolean   (*can_remove)  (GogObject const *child);
+	GogObject *(*allocate)    (GogObject *parent);
+	void	   (*post_add)    (GogObject *parent, GogObject *child);
+	void       (*pre_remove)  (GogObject *parent, GogObject *child);
+	void       (*post_remove) (GogObject *parent, GogObject *child);
+
+	union { /* allow people to tack some useful tidbits on the end */
+		int		i;
+		float		f;
+		gpointer	p;
+	} user;
+} GogObjectRole;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogObject-struct"></a><h3>GogObject</h3>
+<pre class="programlisting">typedef struct _GogObject GogObject;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-OBJECT-TYPE:CAPS"></a><h3>GOG_OBJECT_TYPE</h3>
+<pre class="programlisting">#define GOG_OBJECT_TYPE		(gog_object_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-OBJECT:CAPS"></a><h3>GOG_OBJECT()</h3>
+<pre class="programlisting">#define GOG_OBJECT(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GOG_OBJECT_TYPE, GogObject))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-OBJECT:CAPS"></a><h3>IS_GOG_OBJECT()</h3>
+<pre class="programlisting">#define IS_GOG_OBJECT(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GOG_OBJECT_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-OBJECT-CLASS:CAPS"></a><h3>GOG_OBJECT_CLASS()</h3>
+<pre class="programlisting">#define GOG_OBJECT_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST ((k), GOG_OBJECT_TYPE, GogObjectClass))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>k</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-OBJECT-CLASS:CAPS"></a><h3>IS_GOG_OBJECT_CLASS()</h3>
+<pre class="programlisting">#define IS_GOG_OBJECT_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), GOG_OBJECT_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>k</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-OBJECT-GET-CLASS:CAPS"></a><h3>GOG_OBJECT_GET_CLASS()</h3>
+<pre class="programlisting">#define GOG_OBJECT_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GOG_OBJECT_TYPE, GogObjectClass))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-PARAM-PERSISTENT:CAPS"></a><h3>GOG_PARAM_PERSISTENT</h3>
+<pre class="programlisting">#define GOG_PARAM_PERSISTENT	(1 &lt;&lt; (G_PARAM_USER_SHIFT+0))
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-PARAM-FORCE-SAVE:CAPS"></a><h3>GOG_PARAM_FORCE_SAVE</h3>
+<pre class="programlisting">#define GOG_PARAM_FORCE_SAVE	(1 &lt;&lt; (G_PARAM_USER_SHIFT+1))	/* even if the value == default */
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-PARAM-POSITION:CAPS"></a><h3>GOG_PARAM_POSITION</h3>
+<pre class="programlisting">#define GOG_PARAM_POSITION	(1 &lt;&lt; (G_PARAM_USER_SHIFT+2))	/* position parameters */
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-get-type"></a><h3>gog_object_get_type ()</h3>
+<pre class="programlisting">GType               gog_object_get_type                 (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogDataDuplicator"></a><h3>GogDataDuplicator ()</h3>
+<pre class="programlisting">void                (*GogDataDuplicator)                (<a class="link" href="GogDataset.html" title="GogDataset">GogDataset</a> const *src,
+                                                         <a class="link" href="GogDataset.html" title="GogDataset">GogDataset</a> *dst);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-dup"></a><h3>gog_object_dup ()</h3>
+<pre class="programlisting"><a class="link" href="GogObject.html" title="GogObject">GogObject</a> *         gog_object_dup                      (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *src,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> *new_parent,
+                                                         <a class="link" href="GogObject.html#GogDataDuplicator" title="GogDataDuplicator ()">GogDataDuplicator</a> datadup);</pre>
+<p>
+Create a deep copy of <em class="parameter"><code>obj</code></em> using <em class="parameter"><code>new_parent</code></em> as its parent.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>new_parent</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a> the parent tree for the object (can be NULL)
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>datadup</code></em> :</span></p></td>
+<td> a function to duplicate the data (a default one is used if NULL) 
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> FIXME
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-get-parent"></a><h3>gog_object_get_parent ()</h3>
+<pre class="programlisting"><a class="link" href="GogObject.html" title="GogObject">GogObject</a> *         gog_object_get_parent               (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <em class="parameter"><code>obj</code></em>'s parent, potentially <code class="literal">NULL</code> if it has not been added to a
+	heirarchy yet.  does not change ref-count in any way.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-get-parent-typed"></a><h3>gog_object_get_parent_typed ()</h3>
+<pre class="programlisting"><a class="link" href="GogObject.html" title="GogObject">GogObject</a> *         gog_object_get_parent_typed         (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         GType t);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>t</code></em> :</span></p></td>
+<td> a <span class="type">GType</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <em class="parameter"><code>obj</code></em>'s parent of type <em class="parameter"><code>type</code></em>, potentially <code class="literal">NULL</code> if it has not been
+added to a hierarchy yet or none of the parents are of type <em class="parameter"><code>type</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-get-graph"></a><h3>gog_object_get_graph ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *          gog_object_get_graph                (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> const * <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the parent graph.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-get-theme"></a><h3>gog_object_get_theme ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> *          gog_object_get_theme                (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-get-id"></a><h3>gog_object_get_id ()</h3>
+<pre class="programlisting">unsigned            gog_object_get_id                   (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-get-name"></a><h3>gog_object_get_name ()</h3>
+<pre class="programlisting">char const  *       gog_object_get_name                 (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj);</pre>
+<p>
+No need to free the result</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-set-name"></a><h3>gog_object_set_name ()</h3>
+<pre class="programlisting">void                gog_object_set_name                 (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj,
+                                                         char *name,
+                                                         GError **err);</pre>
+<p>
+Assign the new name and signals that it has changed.
+NOTE : it _absorbs_ <em class="parameter"><code>name</code></em> rather than copying it, and generates a new name
+if <em class="parameter"><code>name</code></em> == <code class="literal">NULL</code></p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td> <span class="type">GError</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-get-children"></a><h3>gog_object_get_children ()</h3>
+<pre class="programlisting">GSList *            gog_object_get_children             (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         <a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole">GogObjectRole</a> const *filter);</pre>
+<p>
+The list needs to be Freed</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filter</code></em> :</span></p></td>
+<td> an optional <a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole"><span class="type">GogObjectRole</span></a> to use as a filter
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-get-child-by-role"></a><h3>gog_object_get_child_by_role ()</h3>
+<pre class="programlisting"><a class="link" href="GogObject.html" title="GogObject">GogObject</a> *         gog_object_get_child_by_role        (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         <a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole">GogObjectRole</a> const *role);</pre>
+<p>
+A convenience routine to find a unique child with <em class="parameter"><code>role</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>role</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole"><span class="type">GogObjectRole</span></a> to use as a filter
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <code class="literal">NULL</code> and spews an error if there is more than one.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-get-child-by-name"></a><h3>gog_object_get_child_by_name ()</h3>
+<pre class="programlisting"><a class="link" href="GogObject.html" title="GogObject">GogObject</a> *         gog_object_get_child_by_name        (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         char const *name);</pre>
+<p>
+A convenience routine to find a unique child with role == <em class="parameter"><code>name</code></em></p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td> a <span class="type">char</span> to use as a role name filter
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <code class="literal">NULL</code> and spews an error if there is more than one.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-get-editor"></a><h3>gog_object_get_editor ()</h3>
+<pre class="programlisting">gpointer            gog_object_get_editor               (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj,
+                                                         <a class="link" href="GogDataAllocator.html" title="GogDataAllocator">GogDataAllocator</a> *dalloc,
+                                                         GOCmdContext *cc);</pre>
+<p>
+Builds an object property editor, by calling GogObject::populate_editor
+virtual functions.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dalloc</code></em> :</span></p></td>
+<td> a <a class="link" href="GogDataAllocator.html" title="GogDataAllocator"><span class="type">GogDataAllocator</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cc</code></em> :</span></p></td>
+<td> a <span class="type">GOCmdContext</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a <span class="type">GtkNotebook</span> widget
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-new-view"></a><h3>gog_object_new_view ()</h3>
+<pre class="programlisting"><a class="link" href="GogView.html" title="GogView">GogView</a> *           gog_object_new_view                 (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         <a class="link" href="GogView.html" title="GogView">GogView</a> *parent);</pre>
+<p>
+Creates a new <a class="link" href="GogView.html" title="GogView"><span class="type">GogView</span></a> associated to <em class="parameter"><code>obj</code></em>, and sets its parent to <em class="parameter"><code>parent</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td> parent view
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new <a class="link" href="GogView.html" title="GogView"><span class="type">GogView</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-is-deletable"></a><h3>gog_object_is_deletable ()</h3>
+<pre class="programlisting">gboolean            gog_object_is_deletable             (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <code class="literal">TRUE</code> if <em class="parameter"><code>obj</code></em> can be deleted.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-possible-additions"></a><h3>gog_object_possible_additions ()</h3>
+<pre class="programlisting">GSList *            gog_object_possible_additions       (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *parent);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td> a <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a list of GogObjectRoles that could be added.
+	The resulting list needs to be freed
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-add-by-role"></a><h3>gog_object_add_by_role ()</h3>
+<pre class="programlisting"><a class="link" href="GogObject.html" title="GogObject">GogObject</a> *         gog_object_add_by_role              (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *parent,
+                                                         <a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole">GogObjectRole</a> const *role,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> *child);</pre>
+<p>
+Absorb a ref to <em class="parameter"><code>child</code></em> if it is non-NULL.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>role</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole"><span class="type">GogObjectRole</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>child</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <em class="parameter"><code>child</code></em> or a newly created object with <em class="parameter"><code>role</code></em>.  Callers do _not_ own
+	the reference.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-add-by-name"></a><h3>gog_object_add_by_name ()</h3>
+<pre class="programlisting"><a class="link" href="GogObject.html" title="GogObject">GogObject</a> *         gog_object_add_by_name              (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *parent,
+                                                         char const *role,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> *child);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>role</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>child</code></em> :</span></p></td>
+<td> optionally null <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a newly created child of <em class="parameter"><code>parent</code></em> in <em class="parameter"><code>role</code></em>.  If <em class="parameter"><code>child</code></em> is provided,
+it is assumed to be an unaffiliated object that will be assigned in <em class="parameter"><code>role</code></em>.
+On failure return NULL.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-can-reorder"></a><h3>gog_object_can_reorder ()</h3>
+<pre class="programlisting">void                gog_object_can_reorder              (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         gboolean *inc_ok,
+                                                         gboolean *dec_ok);</pre>
+<p>
+If <em class="parameter"><code>obj</code></em> can move forward or backward in its parents child list</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>inc_ok</code></em> :</span></p></td>
+<td> optionally <code class="literal">NULL</code> pointer for result.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dec_ok</code></em> :</span></p></td>
+<td> optionally <code class="literal">NULL</code> pointer for result.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-reorder"></a><h3>gog_object_reorder ()</h3>
+<pre class="programlisting"><a class="link" href="GogObject.html" title="GogObject">GogObject</a> *         gog_object_reorder                  (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         gboolean inc,
+                                                         gboolean goto_max);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>inc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>goto_max</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the object just before <em class="parameter"><code>obj</code></em> in the new ordering.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-is-visible"></a><h3>gog_object_is_visible()</h3>
+<pre class="programlisting">#define	  gog_object_is_visible(obj) (!((GogObject*)obj)-&gt;invisible)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-set-invisible"></a><h3>gog_object_set_invisible ()</h3>
+<pre class="programlisting">void                gog_object_set_invisible            (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj,
+                                                         gboolean invisible);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>invisible</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-get-position-flags"></a><h3>gog_object_get_position_flags ()</h3>
+<pre class="programlisting">GogObjectPosition   gog_object_get_position_flags       (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         GogObjectPosition mask);</pre>
+<p>
+Retrieve position flags of GogObject <em class="parameter"><code>obj</code></em>, masked by <em class="parameter"><code>mask</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mask</code></em> :</span></p></td>
+<td> <span class="type">GogObjectPosition</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-set-position-flags"></a><h3>gog_object_set_position_flags ()</h3>
+<pre class="programlisting">gboolean            gog_object_set_position_flags       (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj,
+                                                         GogObjectPosition flags,
+                                                         GogObjectPosition mask);</pre>
+<p>
+Attempts to set the position flags of <em class="parameter"><code>obj</code></em> to <em class="parameter"><code>flags</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>flags</code></em> :</span></p></td>
+<td> <span class="type">GogObjectPosition</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mask</code></em> :</span></p></td>
+<td> <span class="type">GogObjectPosition</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE the new flags are permitted.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-is-default-position-flags"></a><h3>gog_object_is_default_position_flags ()</h3>
+<pre class="programlisting">gboolean            gog_object_is_default_position_flags
+                                                        (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         char const *name);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-get-manual-position"></a><h3>gog_object_get_manual_position ()</h3>
+<pre class="programlisting">void                gog_object_get_manual_position      (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> *pos);</pre>
+<p>
+FIXME</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pos</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+><span class="type">GogViewAllocation</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-set-manual-position"></a><h3>gog_object_set_manual_position ()</h3>
+<pre class="programlisting">void                gog_object_set_manual_position      (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *pos);</pre>
+<p>
+set manual position of given object, in points.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pos</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+><span class="type">GogViewAllocation</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-get-manual-allocation"></a><h3>gog_object_get_manual_allocation ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a>   gog_object_get_manual_allocation    (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *gobj,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *parent_allocation,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewRequisition"
+>GogViewRequisition</a> const *requisition);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gobj</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent_allocation</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+><span class="type">GogViewAllocation</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>requisition</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewRequisition"
+><span class="type">GogViewRequisition</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> manual allocation of a GogObject given its parent allocation and
+its size request.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-find-role-by-name"></a><h3>gog_object_find_role_by_name ()</h3>
+<pre class="programlisting"><a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole">GogObjectRole</a> const * gog_object_find_role_by_name      (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         char const *role);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>role</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-update"></a><h3>gog_object_update ()</h3>
+<pre class="programlisting">void                gog_object_update                   (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-request-update"></a><h3>gog_object_request_update ()</h3>
+<pre class="programlisting">gboolean            gog_object_request_update           (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-emit-changed"></a><h3>gog_object_emit_changed ()</h3>
+<pre class="programlisting">void                gog_object_emit_changed             (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj,
+                                                         gboolean size);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-clear-parent"></a><h3>gog_object_clear_parent ()</h3>
+<pre class="programlisting">gboolean            gog_object_clear_parent             (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj);</pre>
+<p>
+Does _not_ unref the child, which in effect adds a ref by freeing up the ref
+previously associated with the parent.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-set-parent"></a><h3>gog_object_set_parent ()</h3>
+<pre class="programlisting">gboolean            gog_object_set_parent               (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *child,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> *parent,
+                                                         <a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole">GogObjectRole</a> const *role,
+                                                         unsigned int id);</pre>
+<p>
+Absorbs a ref to <em class="parameter"><code>child</code></em></p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>child</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>role</code></em> :</span></p></td>
+<td> a static string that can be sent to <em class="parameter"><code>parent</code></em>::add
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td> optionally <code class="literal">NULL</code>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-register-roles"></a><h3>gog_object_register_roles ()</h3>
+<pre class="programlisting">void                gog_object_register_roles           (GogObjectClass *klass,
+                                                         <a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole">GogObjectRole</a> const *roles,
+                                                         unsigned int n_roles);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>klass</code></em> :</span></p></td>
+<td> <span class="type">GogObjectClass</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>roles</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html#GogObjectRole" title="GogObjectRole"><span class="type">GogObjectRole</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_roles</code></em> :</span></p></td>
+<td> number of roles
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-object-request-editor-update"></a><h3>gog_object_request_editor_update ()</h3>
+<pre class="programlisting">void                gog_object_request_editor_update    (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *obj);</pre>
+<p>
+Emits a update-editor signal. This signal should be used by object editors
+in order to refresh their states.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogObject.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" lang="en">
+<a name="GogObject--alignment"></a><h3>The <code class="literal">"alignment"</code> property</h3>
+<pre class="programlisting">  "alignment"                gchar*                : Read / Write</pre>
+<p>Alignment flag.</p>
+<p>Default value: "fill"</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogObject--anchor"></a><h3>The <code class="literal">"anchor"</code> property</h3>
+<pre class="programlisting">  "anchor"                   gchar*                : Read / Write</pre>
+<p>Anchor for manual position.</p>
+<p>Default value: "top-left"</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogObject--compass"></a><h3>The <code class="literal">"compass"</code> property</h3>
+<pre class="programlisting">  "compass"                  gchar*                : Read / Write</pre>
+<p>Compass auto position flags.</p>
+<p>Default value: "top"</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogObject--id"></a><h3>The <code class="literal">"id"</code> property</h3>
+<pre class="programlisting">  "id"                       guint                 : Read / Write</pre>
+<p>Object numerical ID.</p>
+<p>Allowed values: &lt;= G_MAXINT</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogObject--invisible"></a><h3>The <code class="literal">"invisible"</code> property</h3>
+<pre class="programlisting">  "invisible"                gboolean              : Read / Write</pre>
+<p>Should the object be hidden.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogObject--is-position-manual"></a><h3>The <code class="literal">"is-position-manual"</code> property</h3>
+<pre class="programlisting">  "is-position-manual"       gboolean              : Read / Write</pre>
+<p>Is position manual.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogObject--position"></a><h3>The <code class="literal">"position"</code> property</h3>
+<pre class="programlisting">  "position"                 gchar*                : Read / Write</pre>
+<p>Position and size of object, in percentage of parent size.</p>
+<p>Default value: "0 0 1 1"</p>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogObject.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" lang="en">
+<a name="GogObject-changed"></a><h3>The <code class="literal">"changed"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *gogobject,
+                                                        gboolean   arg1,
+                                                        gpointer   user_data)      : Run Last</pre>
+<p>
+
+</p>
+
+@: 
+@:</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogObject-child-added"></a><h3>The <code class="literal">"child-added"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *gogobject,
+                                                        GObject   *arg1,
+                                                        gpointer   user_data)      : Run Last</pre>
+<p>
+
+</p>
+
+@: 
+@:</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogObject-child-name-changed"></a><h3>The <code class="literal">"child-name-changed"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *gogobject,
+                                                        GObject   *arg1,
+                                                        gpointer   user_data)      : Run Last</pre>
+<p>
+
+</p>
+
+@: 
+@:</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogObject-child-removed"></a><h3>The <code class="literal">"child-removed"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *gogobject,
+                                                        GObject   *arg1,
+                                                        gpointer   user_data)      : Run Last</pre>
+<p>
+
+</p>
+
+@: 
+@:</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogObject-children-reordered"></a><h3>The <code class="literal">"children-reordered"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *gogobject,
+                                                        gpointer   user_data)      : Run Last</pre>
+<p>
+
+</p>
+
+@:</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogObject-name-changed"></a><h3>The <code class="literal">"name-changed"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *gogobject,
+                                                        gpointer   user_data)      : Run Last</pre>
+<p>
+
+</p>
+
+@:</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogObject-update-editor"></a><h3>The <code class="literal">"update-editor"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="GogObject.html" title="GogObject">GogObject</a> *gogobject,
+                                                        gpointer   user_data)      : Run Last</pre>
+<p>
+
+</p>
+
+@:</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

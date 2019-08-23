@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="GOffice_reg_linear">
+	<information>
+		<name>Regression curve : linear</name>
+		<name xml:lang="ca">Corba de regressió: lineal</name>
+		<name xml:lang="es">Curva de regresión: lineal</name>
+		<name xml:lang="fr">Courbe de régression : linéaire</name>
+		<name xml:lang="it">Curve di regressione: lineare</name>
+		<name xml:lang="vi">Đường cong hồi quy: tuyến</name>
+		<description>Linear regression curves</description>
+		<description xml:lang="ca">Corbes de regressió lineal</description>
+		<description xml:lang="es">Curvas de regresión lineal</description>
+		<description xml:lang="fr">Courbes de régression linéaires</description>
+		<description xml:lang="it">Curve regressione lineare</description>
+		<description xml:lang="vi">Đường cong hồi quy tuyến</description>
+	</information>
+	<loader type="Gnumeric_Builtin:module">
+		<attribute value="linreg" name="module_file"/>
+	</loader>
+	<services>
+		<service type="trendline_engine" id="GogLinRegCurve">
+			<information>
+				<description>Linear regression curve engine</description>
+				<description xml:lang="ca">Motor de corba de regressió lineal</description>
+				<description xml:lang="es">Motor de curvas de regresión lineal</description>
+				<description xml:lang="fr">Moteur de courbes de régression linéaire</description>
+				<description xml:lang="it">Motore curva regressione lineare</description>
+				<description xml:lang="vi">Cơ chế đường cong hồi quy tuyến</description>
+			</information>
+		</service>
+		<service type="trendline_engine" id="GogExpRegCurve">
+			<information>
+				<description>Exponential regression curve engine</description>
+				<description xml:lang="ca">Motor de corba de regressió exponencial</description>
+				<description xml:lang="es">Motor de curvas de regresión exponencial</description>
+				<description xml:lang="fr">Moteur de courbe de régression exponentielle</description>
+				<description xml:lang="it">Motore curva regressione esponenziale</description>
+				<description xml:lang="vi">Cơ chế đường cong hồi quy số mũ</description>
+			</information>
+		</service>
+		<service type="trendline_engine" id="GogPowerRegCurve">
+			<information>
+				<description>Power regression curve engine</description>
+				<description xml:lang="ca">Motor de corba de regressió potencial</description>
+				<description xml:lang="es">Motor de curvas de regresión en potencia</description>
+				<description xml:lang="vi">Cơ chế đường cong hồi quy lũy thừa</description>
+			</information>
+		</service>
+		<service type="trendline_engine" id="GogLogRegCurve">
+			<information>
+				<description>Logarithmic regression curve engine</description>
+				<description xml:lang="ca">Motor de corba de regressió logarítmica</description>
+				<description xml:lang="es">Motor de curvas de regresión logarítmicas</description>
+				<description xml:lang="fr">Moteur de courbe de régression logarithmique</description>
+				<description xml:lang="it">Motore curva regressione logaritmica</description>
+				<description xml:lang="vi">Cơ chế đường cong hồi quy lôga</description>
+			</information>
+		</service>
+		<service type="trendline_engine" id="GogPolynomRegCurve">
+			<information>
+				<description>Polynomial regression curve engine</description>
+				<description xml:lang="ca">Motor de corba de regressió polinòmica</description>
+				<description xml:lang="es">Motor de curvas de regresión polinómicas</description>
+				<description xml:lang="fr">Moteur de courbe de régression exponentielle</description>
+				<description xml:lang="it">Motore curva regressione polinomiale</description>
+				<description xml:lang="vi">Cơ chế đường cong hồi quy đa thức</description>
+			</information>
+		</service>
+		<service type="trendline_type" id="linreg">
+			<file>reg-types.xml</file>
+			<information>
+				<description>Linear regression curves types</description>
+				<description xml:lang="ca">Tipus de corbes de regressió lineal</description>
+				<description xml:lang="es">Tipos de curvas de regresión lineal</description>
+				<description xml:lang="fr">Types de courbes de régressions linéaires</description>
+				<description xml:lang="it">Tipi di curve regressione lineare</description>
+				<description xml:lang="vi">Kiểu đường cong hồi quy tuyến</description>
+			</information>
+		</service>
+	</services>
+</plugin>

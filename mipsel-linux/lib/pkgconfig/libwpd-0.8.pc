@@ -1,0 +1,10 @@
+prefix=/opt/mipseltools/mipsel-linux
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libwpd-0.8
+Description: A library for reading and writing Corel WordPerfect(tm) documents
+Version: 0.8.14
+Libs: -L${libdir} -lwpd-0.8
+Cflags: -I${includedir}/libwpd-0.8

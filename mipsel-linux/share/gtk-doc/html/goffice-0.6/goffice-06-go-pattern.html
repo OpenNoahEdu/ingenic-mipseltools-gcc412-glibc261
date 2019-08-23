@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-pattern</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch06.html" title="Graphic object properties">
+<link rel="prev" href="goffice-06-go-marker.html" title="go-marker">
+<link rel="next" href="ch07.html" title="Rendering utilities">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-marker.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="ch07.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-pattern.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-pattern.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-pattern"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-pattern.top_of_page"></a>go-pattern</span></h2>
+<p>go-pattern</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-pattern.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="goffice-06-go-pattern.html#GOPattern" title="GOPattern">GOPattern</a>;
+enum                <a class="link" href="goffice-06-go-pattern.html#GOPatternType" title="enum GOPatternType">GOPatternType</a>;
+<a class="link" href="goffice-06-go-pattern.html#GOPatternType" title="enum GOPatternType">GOPatternType</a>       <a class="link" href="goffice-06-go-pattern.html#go-pattern-from-str" title="go_pattern_from_str ()">go_pattern_from_str</a>                 (char const *name);
+char const	*        <a class="link" href="goffice-06-go-pattern.html#go-pattern-as-str" title="go_pattern_as_str ()">go_pattern_as_str</a>                   (<a class="link" href="goffice-06-go-pattern.html#GOPatternType" title="enum GOPatternType">GOPatternType</a> pattern);
+gboolean            <a class="link" href="goffice-06-go-pattern.html#go-pattern-is-solid" title="go_pattern_is_solid ()">go_pattern_is_solid</a>                 (<a class="link" href="goffice-06-go-pattern.html#GOPattern" title="GOPattern">GOPattern</a> const *pat,
+                                                         GOColor *color);
+void                <a class="link" href="goffice-06-go-pattern.html#go-pattern-set-solid" title="go_pattern_set_solid ()">go_pattern_set_solid</a>                (<a class="link" href="goffice-06-go-pattern.html#GOPattern" title="GOPattern">GOPattern</a> *pat,
+                                                         GOColor fore);
+guint8 const 	*     <a class="link" href="goffice-06-go-pattern.html#go-pattern-get-pattern" title="go_pattern_get_pattern ()">go_pattern_get_pattern</a>              (<a class="link" href="goffice-06-go-pattern.html#GOPattern" title="GOPattern">GOPattern</a> const *pat);
+xmlChar *           <a class="link" href="goffice-06-go-pattern.html#go-pattern-get-svg-path" title="go_pattern_get_svg_path ()">go_pattern_get_svg_path</a>             (<a class="link" href="goffice-06-go-pattern.html#GOPattern" title="GOPattern">GOPattern</a> const *pattern,
+                                                         double *width,
+                                                         double *height);
+cairo_pattern_t *   <a class="link" href="goffice-06-go-pattern.html#go-pattern-create-cairo-pattern" title="go_pattern_create_cairo_pattern ()">go_pattern_create_cairo_pattern</a>     (<a class="link" href="goffice-06-go-pattern.html#GOPattern" title="GOPattern">GOPattern</a> const *pattern,
+                                                         cairo_t *cr);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-pattern.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-pattern.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOPattern"></a><h3>GOPattern</h3>
+<pre class="programlisting">typedef struct {
+	GOColor	 fore, back;
+	unsigned pattern;
+} GOPattern;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOPatternType"></a><h3>enum GOPatternType</h3>
+<pre class="programlisting">typedef enum {
+	GO_PATTERN_SOLID,
+	GO_PATTERN_GREY75,
+	GO_PATTERN_GREY50,
+	GO_PATTERN_GREY25,
+	GO_PATTERN_GREY125,
+	GO_PATTERN_GREY625,
+	GO_PATTERN_HORIZ,
+	GO_PATTERN_VERT,
+	GO_PATTERN_REV_DIAG,
+	GO_PATTERN_DIAG,
+	GO_PATTERN_DIAG_CROSS,
+	GO_PATTERN_THICK_DIAG_CROSS,
+	GO_PATTERN_THIN_HORIZ,
+	GO_PATTERN_THIN_VERT,
+	GO_PATTERN_THIN_REV_DIAG,
+	GO_PATTERN_THIN_DIAG,
+	GO_PATTERN_THIN_HORIZ_CROSS,
+	GO_PATTERN_THIN_DIAG_CROSS,
+	GO_PATTERN_FOREGROUND_SOLID,
+	GO_PATTERN_SMALL_CIRCLES,
+	GO_PATTERN_SEMI_CIRCLES,
+	GO_PATTERN_THATCH,
+	GO_PATTERN_LARGE_CIRCLES,
+	GO_PATTERN_BRICKS,
+	GO_PATTERN_MAX
+} GOPatternType;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-pattern-from-str"></a><h3>go_pattern_from_str ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-pattern.html#GOPatternType" title="enum GOPatternType">GOPatternType</a>       go_pattern_from_str                 (char const *name);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-pattern-as-str"></a><h3>go_pattern_as_str ()</h3>
+<pre class="programlisting">char const	*        go_pattern_as_str                   (<a class="link" href="goffice-06-go-pattern.html#GOPatternType" title="enum GOPatternType">GOPatternType</a> pattern);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pattern</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-pattern-is-solid"></a><h3>go_pattern_is_solid ()</h3>
+<pre class="programlisting">gboolean            go_pattern_is_solid                 (<a class="link" href="goffice-06-go-pattern.html#GOPattern" title="GOPattern">GOPattern</a> const *pat,
+                                                         GOColor *color);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pat</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-go-pattern.html#GOPattern" title="GOPattern"><span class="type">GOPattern</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
+<td> <span class="type">GOColor</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> if <em class="parameter"><code>pat</code></em> is solid, and stores the color in <em class="parameter"><code>color</code></em>.
+	If <em class="parameter"><code>pat</code></em> is not solid <em class="parameter"><code>color</code></em> is not touched.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-pattern-set-solid"></a><h3>go_pattern_set_solid ()</h3>
+<pre class="programlisting">void                go_pattern_set_solid                (<a class="link" href="goffice-06-go-pattern.html#GOPattern" title="GOPattern">GOPattern</a> *pat,
+                                                         GOColor fore);</pre>
+<p>
+Makes <em class="parameter"><code>pat</code></em> a solid pattern with colour <em class="parameter"><code>fore</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pat</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-pattern.html#GOPattern" title="GOPattern"><span class="type">GOPattern</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fore</code></em> :</span></p></td>
+<td> a <span class="type">GOColor</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-pattern-get-pattern"></a><h3>go_pattern_get_pattern ()</h3>
+<pre class="programlisting">guint8 const 	*     go_pattern_get_pattern              (<a class="link" href="goffice-06-go-pattern.html#GOPattern" title="GOPattern">GOPattern</a> const *pat);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pat</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-pattern-get-svg-path"></a><h3>go_pattern_get_svg_path ()</h3>
+<pre class="programlisting">xmlChar *           go_pattern_get_svg_path             (<a class="link" href="goffice-06-go-pattern.html#GOPattern" title="GOPattern">GOPattern</a> const *pattern,
+                                                         double *width,
+                                                         double *height);</pre>
+<p>
+Retrieves an SVG path as string, which represents pattern shape.
+Caller is responsible for freeing the resulting string.
+</p>
+<p>
+If width != NULL, returns pattern width.
+If height != NULL, returns pattern height.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pattern</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-pattern.html#GOPattern" title="GOPattern"><span class="type">GOPattern</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
+<td>  pattern width
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
+<td>  pattern height
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a <span class="type">xmlChar</span> buffer (free using xmlFree).
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-pattern-create-cairo-pattern"></a><h3>go_pattern_create_cairo_pattern ()</h3>
+<pre class="programlisting">cairo_pattern_t *   go_pattern_create_cairo_pattern     (<a class="link" href="goffice-06-go-pattern.html#GOPattern" title="GOPattern">GOPattern</a> const *pattern,
+                                                         cairo_t *cr);</pre>
+<p>
+Creates a cairo pattern object corresponding to <em class="parameter"><code>pattern</code></em> parameters. The returned
+surface must be freed after use, using cairo_pattern_destroy.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pattern</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-pattern.html#GOPattern" title="GOPattern"><span class="type">GOPattern</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cr</code></em> :</span></p></td>
+<td> a cairo context
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

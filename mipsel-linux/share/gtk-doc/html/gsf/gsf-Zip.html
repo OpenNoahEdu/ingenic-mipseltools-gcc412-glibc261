@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Zip</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="GSF Reference Manual">
+<link rel="up" href="parsers.html" title="Stream Parsers">
+<link rel="prev" href="gsf-XML-and-libxml.html" title="XML and libxml">
+<link rel="next" href="gsf-Compression.html" title="Compression">
+<meta name="generator" content="GTK-Doc V1.9 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="intro.html" title="Part&#160;I.&#160;GSF: Introduction">
+<link rel="part" href="history.html" title="Part&#160;II.&#160;GSF: History">
+<link rel="part" href="dependencies.html" title="Part&#160;III.&#160;GSF: Dependencies">
+<link rel="part" href="gsf-users.html" title="Part&#160;IV.&#160;Projects using GSF">
+<link rel="part" href="api.html" title="Part&#160;V.&#160;API Reference">
+<link rel="chapter" href="io.html" title="Basic Input/Output">
+<link rel="chapter" href="sources.html" title="Stream Sources">
+<link rel="chapter" href="parsers.html" title="Stream Parsers">
+<link rel="chapter" href="misc.html" title="Miscellaneous">
+<link rel="index" href="gsf-index.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gsf-XML-and-libxml.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="parsers.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GSF Reference Manual</th>
+<td><a accesskey="n" href="gsf-Compression.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2608008" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2608327" class="shortcut">Description</a>
+                  &#160;|&#160;
+                  <a href="#id2608139" class="shortcut">Object Hierarchy</a>
+                  &#160;|&#160;
+                  <a href="#id2608204" class="shortcut">Properties</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="gsf-Zip"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2608008"></a><span class="refentrytitle">Zip</span>
+</h2>
+<p>Zip</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<a name="GsfInfileZip"></a><a name="GsfOutfileZip"></a><pre class="synopsis">
+
+
+
+                    <a class="link" href="gsf-Zip.html#GsfInfileZip-struct">GsfInfileZip</a>;
+<a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile">GsfInfile</a>*          <a class="link" href="gsf-Zip.html#gsf-infile-zip-new">gsf_infile_zip_new</a>                  (<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a> *source,
+                                                         GError **err);
+                    <a class="link" href="gsf-Zip.html#GsfOutfileZip-struct">GsfOutfileZip</a>;
+<a class="link" href="gsf-Outfile-writing-structed-files.html#GsfOutfile">GsfOutfile</a>*         <a class="link" href="gsf-Zip.html#gsf-outfile-zip-new">gsf_outfile_zip_new</a>                 (<a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput">GsfOutput</a> *sink,
+                                                         GError **err);
+gboolean            <a class="link" href="gsf-Zip.html#gsf-outfile-zip-set-compression-method">gsf_outfile_zip_set_compression_method</a>
+                                                        (<a class="link" href="gsf-Zip.html#GsfOutfileZip">GsfOutfileZip</a> *zip,
+                                                         GsfZipCompressionMethod method);
+
+
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2608139"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+
+  GObject
+   +----<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>
+         +----<a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile">GsfInfile</a>
+               +----GsfInfileZip
+</pre>
+<pre class="synopsis">
+
+  GObject
+   +----<a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput">GsfOutput</a>
+         +----<a class="link" href="gsf-Outfile-writing-structed-files.html#GsfOutfile">GsfOutfile</a>
+               +----GsfOutfileZip
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2608204"></a><h2>Properties</h2>
+<pre class="synopsis">
+
+  "<a class="link" href="gsf-Zip.html#GsfInfileZip--compression-level">compression-level</a>"        gint                  : Read
+  "<a class="link" href="gsf-Zip.html#GsfInfileZip--internal-parent">internal-parent</a>"          <a class="link" href="gsf-Zip.html#GsfInfileZip">GsfInfileZip</a>          : Write / Construct Only
+  "<a class="link" href="gsf-Zip.html#GsfInfileZip--source">source</a>"                   <a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>              : Read / Write / Construct Only
+  "<a class="link" href="gsf-Zip.html#GsfOutfileZip--compression-level">compression-level</a>"        gint                  : Read / Write / Construct Only
+  "<a class="link" href="gsf-Zip.html#GsfOutfileZip--entry-name">entry-name</a>"               gchararray            : Read / Write / Construct Only
+  "<a class="link" href="gsf-Zip.html#GsfOutfileZip--sink">sink</a>"                     <a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput">GsfOutput</a>             : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2608327"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2608341"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2608352"></a><h3>
+<a name="GsfInfileZip-struct"></a>GsfInfileZip</h3>
+<a class="indexterm" name="id2608364"></a><pre class="programlisting">typedef struct _GsfInfileZip GsfInfileZip;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2608379"></a><h3>
+<a name="gsf-infile-zip-new"></a>gsf_infile_zip_new ()</h3>
+<a class="indexterm" name="id2608393"></a><pre class="programlisting"><a class="link" href="gsf-Infile-reading-structed-files.html#GsfInfile">GsfInfile</a>*          gsf_infile_zip_new                  (<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a> *source,
+                                                         GError **err);</pre>
+<p>
+Opens the root directory of a Zip file.
+</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>This adds a reference to <em class="parameter"><code>source</code></em>.</div>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em>&#160;:</span></p></td>
+<td> A base <a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput"><span class="type">GsfInput</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em>&#160;:</span></p></td>
+<td> A <span class="type">GError</span>, optionally <code class="literal">null</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> the new zip file handler
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2608508"></a><h3>
+<a name="GsfOutfileZip-struct"></a>GsfOutfileZip</h3>
+<a class="indexterm" name="id2608522"></a><pre class="programlisting">typedef struct _GsfOutfileZip GsfOutfileZip;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2608538"></a><h3>
+<a name="gsf-outfile-zip-new"></a>gsf_outfile_zip_new ()</h3>
+<a class="indexterm" name="id2608550"></a><pre class="programlisting"><a class="link" href="gsf-Outfile-writing-structed-files.html#GsfOutfile">GsfOutfile</a>*         gsf_outfile_zip_new                 (<a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput">GsfOutput</a> *sink,
+                                                         GError **err);</pre>
+<p>
+Creates the root directory of a Zip file and manages the addition of
+children.
+</p>
+<p>
+</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>This adds a reference to <em class="parameter"><code>sink</code></em>.</div>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sink</code></em>&#160;:</span></p></td>
+<td> a <a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput"><span class="type">GsfOutput</span></a> to hold the ZIP file
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em>&#160;:</span></p></td>
+<td> Location to store error, or <code class="literal">NULL</code>; currently unused.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> the new zip file handler
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2608663"></a><h3>
+<a name="gsf-outfile-zip-set-compression-method"></a>gsf_outfile_zip_set_compression_method ()</h3>
+<a class="indexterm" name="id2608677"></a><pre class="programlisting">gboolean            gsf_outfile_zip_set_compression_method
+                                                        (<a class="link" href="gsf-Zip.html#GsfOutfileZip">GsfOutfileZip</a> *zip,
+                                                         GsfZipCompressionMethod method);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>zip</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>method</code></em>&#160;:</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2608758"></a><h2>Property Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2608769"></a><h3>
+<a name="GsfInfileZip--compression-level"></a>The <code class="literal">"compression-level"</code> property</h3>
+<a class="indexterm" name="id2608786"></a><pre class="programlisting">  "compression-level"        gint                  : Read</pre>
+<p>The level of compression used, zero meaning none.</p>
+<p>Allowed values: [0,10]</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2608816"></a><h3>
+<a name="GsfInfileZip--internal-parent"></a>The <code class="literal">"internal-parent"</code> property</h3>
+<a class="indexterm" name="id2608833"></a><pre class="programlisting">  "internal-parent"          <a class="link" href="gsf-Zip.html#GsfInfileZip">GsfInfileZip</a>          : Write / Construct Only</pre>
+<p>Internal use only.</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2608856"></a><h3>
+<a name="GsfInfileZip--source"></a>The <code class="literal">"source"</code> property</h3>
+<a class="indexterm" name="id2608873"></a><pre class="programlisting">  "source"                   <a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>              : Read / Write / Construct Only</pre>
+<p>The archive being interpreted.</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2608897"></a><h3>
+<a name="GsfOutfileZip--compression-level"></a>The <code class="literal">"compression-level"</code> property</h3>
+<a class="indexterm" name="id2608914"></a><pre class="programlisting">  "compression-level"        gint                  : Read / Write / Construct Only</pre>
+<p>The level of compression used, zero meaning none.</p>
+<p>Allowed values: [0,10]</p>
+<p>Default value: 8</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2608945"></a><h3>
+<a name="GsfOutfileZip--entry-name"></a>The <code class="literal">"entry-name"</code> property</h3>
+<a class="indexterm" name="id2608961"></a><pre class="programlisting">  "entry-name"               gchararray            : Read / Write / Construct Only</pre>
+<p>The filename of this member in the archive without path.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2608988"></a><h3>
+<a name="GsfOutfileZip--sink"></a>The <code class="literal">"sink"</code> property</h3>
+<a class="indexterm" name="id2609004"></a><pre class="programlisting">  "sink"                     <a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput">GsfOutput</a>             : Read / Write / Construct Only</pre>
+<p>Where the archive is written.</p>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2609029"></a><div class="refsect2" lang="en"><a name="id2609030"></a></div>
+<hr>
+<div class="refsect2" lang="en"><a name="id2609031"></a></div>
+</div>
+</div>
+</body>
+</html>

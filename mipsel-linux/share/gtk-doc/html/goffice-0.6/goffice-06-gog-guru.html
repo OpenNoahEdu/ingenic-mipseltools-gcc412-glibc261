@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogGuru</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch03.html" title="Utilities">
+<link rel="prev" href="goffice-06-gog-control-foocanvas.html" title="GogControlFooCanvas">
+<link rel="next" href="goffice-06-gog-plot-engine.html" title="GogPlotEngine">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-gog-control-foocanvas.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-gog-plot-engine.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-gog-guru.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-gog-guru.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-gog-guru"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-gog-guru.top_of_page"></a>GogGuru</span></h2>
+<p>GogGuru — Graph creation guru and property editor</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-gog-guru.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+GtkWidget *         <a class="link" href="goffice-06-gog-guru.html#gog-guru" title="gog_guru ()">gog_guru</a>                            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph,
+                                                         <a class="link" href="GogDataAllocator.html" title="GogDataAllocator">GogDataAllocator</a> *dalloc,
+                                                         GOCmdContext *cc,
+                                                         GClosure *closure);
+GtkWidget *         <a class="link" href="goffice-06-gog-guru.html#gog-guru-get-help-button" title="gog_guru_get_help_button ()">gog_guru_get_help_button</a>            (GtkWidget *guru);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-guru.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-guru.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="gog-guru"></a><h3>gog_guru ()</h3>
+<pre class="programlisting">GtkWidget *         gog_guru                            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph,
+                                                         <a class="link" href="GogDataAllocator.html" title="GogDataAllocator">GogDataAllocator</a> *dalloc,
+                                                         GOCmdContext *cc,
+                                                         GClosure *closure);</pre>
+<p>
+CHANGED 0.5.3
+	: drop the <em class="parameter"><code>toplevel</code></em> window argument and have the callers handle
+	  widget_show and set_transient</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>graph</code></em> :</span></p></td>
+<td> the graph to edit
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dalloc</code></em> :</span></p></td>
+<td> The data allocator to use for editing
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cc</code></em> :</span></p></td>
+<td> Where to report errors
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>closure</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> and shows new graph guru.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-guru-get-help-button"></a><h3>gog_guru_get_help_button ()</h3>
+<pre class="programlisting">GtkWidget *         gog_guru_get_help_button            (GtkWidget *guru);</pre>
+<p>
+Quick utility to allow application specific help.  Required until we clean
+up the relationship between goffice and gnumeric to decide which parts of
+the hlpe live where.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>guru</code></em> :</span></p></td>
+<td> <span class="type">GtkWidget</span>  (the result of gog_guru).
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

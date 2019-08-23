@@ -1,0 +1,1436 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="Goffice Reference Manual" link="index.html" author="" name="goffice-0.6">
+  <chapters>
+    <sub name="Graphs" link="pt01.html">
+      <sub name="Objects" link="ch01.html">
+        <sub name="GogGraph" link="goffice-06-gog-graph.html"/>
+        <sub name="GogChart" link="goffice-06-gog-chart.html"/>
+        <sub name="GogLegend" link="goffice-06-gog-legend.html"/>
+        <sub name="GogGrid" link="goffice-06-gog-grid.html"/>
+        <sub name="GogAxis" link="goffice-06-gog-axis.html"/>
+        <sub name="GogAxisLine" link="goffice-06-gog-axis-line.html"/>
+        <sub name="GogGridLine" link="goffice-06-gog-grid-line.html"/>
+        <sub name="GogErrorBar" link="goffice-06-gog-error-bar.html"/>
+        <sub name="GogLabel" link="goffice-06-gog-label.html"/>
+        <sub name="GogSeriesLines" link="goffice-06-gog-series-lines.html"/>
+      </sub>
+      <sub name="Abstract Base Classes" link="ch02.html">
+        <sub name="GogObject" link="GogObject.html"/>
+        <sub name="GogStyledObject" link="GogStyledObject.html"/>
+        <sub name="GogOutlinedView" link="GogOutlinedView.html"/>
+        <sub name="GogPlot" link="goffice-06-gog-plot.html"/>
+        <sub name="GogSeries" link="goffice-06-gog-series.html"/>
+        <sub name="GogTrendLine" link="goffice-06-gog-trend-line.html"/>
+        <sub name="GogSmoothedCurve" link="GogSmoothedCurve.html"/>
+        <sub name="GogRegCurve" link="GogRegCurve.html"/>
+        <sub name="GogView" link="GogView.html"/>
+        <sub name="GogDataAllocator" link="GogDataAllocator.html"/>
+        <sub name="GogDataset" link="GogDataset.html"/>
+      </sub>
+      <sub name="Utilities" link="ch03.html">
+        <sub name="GogRenderer" link="goffice-06-gog-renderer.html"/>
+        <sub name="GogControlFooCanvas" link="goffice-06-gog-control-foocanvas.html"/>
+        <sub name="GogGuru" link="goffice-06-gog-guru.html"/>
+        <sub name="GogPlotEngine" link="goffice-06-gog-plot-engine.html"/>
+        <sub name="GogStyle" link="goffice-06-gog-style.html"/>
+        <sub name="GogTheme" link="goffice-06-gog-theme.html"/>
+        <sub name="GogChartMap" link="goffice-06-gog-chart-map.html"/>
+      </sub>
+    </sub>
+    <sub name="Widgets" link="pt02.html">
+      <sub name="Base widgets" link="ch04.html">
+        <sub name="GOComboBox" link="GOComboBox.html"/>
+        <sub name="go-combo-pixmaps" link="goffice-06-go-combo-pixmaps.html"/>
+        <sub name="GOOptionMenu" link="GOOptionMenu.html"/>
+        <sub name="GoPalette" link="GOPalette.html"/>
+        <sub name="GoSelector" link="GOSelector.html"/>
+      </sub>
+      <sub name="Selectors" link="ch05.html">
+        <sub name="go-combo-color" link="goffice-06-go-combo-color.html"/>
+        <sub name="go-combo-text" link="goffice-06-go-combo-text.html"/>
+        <sub name="go-charmap-sel" link="goffice-06-go-charmap-sel.html"/>
+        <sub name="go-font-sel" link="goffice-06-go-font-sel.html"/>
+        <sub name="go-format-sel" link="goffice-06-go-format-sel.html"/>
+        <sub name="go-locale-sel" link="goffice-06-go-locale-sel.html"/>
+        <sub name="go-rotation-sel" link="goffice-06-go-rotation-sel.html"/>
+      </sub>
+    </sub>
+    <sub name="Utilities" link="pt03.html">
+      <sub name="Graphic object properties" link="ch06.html">
+        <sub name="go-color" link="goffice-06-go-color.html"/>
+        <sub name="GoFont" link="goffice-06-go-font.html"/>
+        <sub name="go-gradient" link="goffice-06-go-gradient.html"/>
+        <sub name="go-line" link="goffice-06-go-line.html"/>
+        <sub name="go-marker" link="goffice-06-go-marker.html"/>
+        <sub name="go-pattern" link="goffice-06-go-pattern.html"/>
+      </sub>
+      <sub name="Rendering utilities" link="ch07.html">
+        <sub name="go-cairo" link="goffice-06-go-cairo.html"/>
+        <sub name="GoPath" link="goffice-06-go-path.html"/>
+        <sub name="go-geometry" link="goffice-06-go-geometry.html"/>
+      </sub>
+      <sub name="Data" link="ch08.html">
+        <sub name="go-data" link="goffice-06-go-data.html"/>
+      </sub>
+      <sub name="Mathematical functions" link="ch09.html">
+        <sub name="go-math" link="goffice-06-go-math.html"/>
+        <sub name="GoComplex" link="goffice-06-go-complex.html"/>
+        <sub name="GoFft" link="goffice-06-go-fft.html"/>
+        <sub name="Regressions" link="goffice-06-go-regression.html"/>
+        <sub name="go-units" link="goffice-06-go-units.html"/>
+      </sub>
+      <sub name="File utilities" link="ch10.html">
+        <sub name="GoFile" link="goffice-06-go-file.html"/>
+      </sub>
+      <sub name="Application" link="ch11.html">
+        <sub name="go-cmd-context" link="goffice-06-go-cmd-context.html"/>
+        <sub name="go-doc-control" link="goffice-06-go-doc-control.html"/>
+        <sub name="go-doc" link="goffice-06-go-doc.html"/>
+        <sub name="go-plugin" link="goffice-06-go-plugin.html"/>
+        <sub name="GOPluginLoader" link="GOPluginLoader.html"/>
+        <sub name="go-plugin-loader-module" link="goffice-06-go-plugin-loader-module.html"/>
+        <sub name="go-plugin-service" link="goffice-06-go-plugin-service.html"/>
+      </sub>
+      <sub name="Components" link="ch12.html">
+        <sub name="go-component-factory" link="goffice-06-go-component-factory.html"/>
+        <sub name="GOComponent" link="GOComponent.html"/>
+      </sub>
+      <sub name="Miscellaneous" link="ch13.html">
+        <sub name="go-format" link="goffice-06-go-format.html"/>
+        <sub name="go-glib-extras" link="goffice-06-go-glib-extras.html"/>
+        <sub name="go-libxml-extras" link="goffice-06-go-libxml-extras.html"/>
+        <sub name="GoUndo" link="GOUndoUnary.html"/>
+      </sub>
+    </sub>
+  </chapters>
+  <functions>
+    <function name="GOG_GRAPH_TYPE" link="goffice-06-gog-graph.html#GOG-GRAPH-TYPE:CAPS"/>
+    <function name="GOG_GRAPH()" link="goffice-06-gog-graph.html#GOG-GRAPH:CAPS"/>
+    <function name="IS_GOG_GRAPH()" link="goffice-06-gog-graph.html#IS-GOG-GRAPH:CAPS"/>
+    <function name="gog_graph_get_type ()" link="goffice-06-gog-graph.html#gog-graph-get-type"/>
+    <function name="gog_graph_validate_chart_layout ()" link="goffice-06-gog-graph.html#gog-graph-validate-chart-layout"/>
+    <function name="gog_graph_num_cols ()" link="goffice-06-gog-graph.html#gog-graph-num-cols"/>
+    <function name="gog_graph_num_rows ()" link="goffice-06-gog-graph.html#gog-graph-num-rows"/>
+    <function name="gog_graph_dup ()" link="goffice-06-gog-graph.html#gog-graph-dup"/>
+    <function name="gog_graph_get_theme ()" link="goffice-06-gog-graph.html#gog-graph-get-theme"/>
+    <function name="gog_graph_set_theme ()" link="goffice-06-gog-graph.html#gog-graph-set-theme"/>
+    <function name="gog_graph_get_data ()" link="goffice-06-gog-graph.html#gog-graph-get-data"/>
+    <function name="gog_graph_ref_data ()" link="goffice-06-gog-graph.html#gog-graph-ref-data"/>
+    <function name="gog_graph_unref_data ()" link="goffice-06-gog-graph.html#gog-graph-unref-data"/>
+    <function name="gog_graph_get_size ()" link="goffice-06-gog-graph.html#gog-graph-get-size"/>
+    <function name="gog_graph_set_size ()" link="goffice-06-gog-graph.html#gog-graph-set-size"/>
+    <function name="GOG_GRAPH_VIEW_TYPE" link="goffice-06-gog-graph.html#GOG-GRAPH-VIEW-TYPE:CAPS"/>
+    <function name="GOG_GRAPH_VIEW()" link="goffice-06-gog-graph.html#GOG-GRAPH-VIEW:CAPS"/>
+    <function name="IS_GOG_GRAPH_VIEW()" link="goffice-06-gog-graph.html#IS-GOG-GRAPH-VIEW:CAPS"/>
+    <function name="gog_graph_view_get_type ()" link="goffice-06-gog-graph.html#gog-graph-view-get-type"/>
+    <function name="gog_graph_view_get_selection ()" link="goffice-06-gog-graph.html#gog-graph-view-get-selection"/>
+    <function name="gog_graph_view_set_selection ()" link="goffice-06-gog-graph.html#gog-graph-view-set-selection"/>
+    <function name="gog_graph_get_supported_image_formats ()" link="goffice-06-gog-graph.html#gog-graph-get-supported-image-formats"/>
+    <function name="gog_graph_export_image ()" link="goffice-06-gog-graph.html#gog-graph-export-image"/>
+    <function name="gog_graph_view_handle_event ()" link="goffice-06-gog-graph.html#gog-graph-view-handle-event"/>
+    <function name="gog_graph_render_to_cairo ()" link="goffice-06-gog-graph.html#gog-graph-render-to-cairo"/>
+    <function name="gog_axis_set_from_str ()" link="goffice-06-gog-chart.html#gog-axis-set-from-str"/>
+    <function name="GOG_CHART_TYPE" link="goffice-06-gog-chart.html#GOG-CHART-TYPE:CAPS"/>
+    <function name="GOG_CHART()" link="goffice-06-gog-chart.html#GOG-CHART:CAPS"/>
+    <function name="IS_GOG_CHART()" link="goffice-06-gog-chart.html#IS-GOG-CHART:CAPS"/>
+    <function name="gog_chart_get_type ()" link="goffice-06-gog-chart.html#gog-chart-get-type"/>
+    <function name="gog_chart_get_position ()" link="goffice-06-gog-chart.html#gog-chart-get-position"/>
+    <function name="gog_chart_set_position ()" link="goffice-06-gog-chart.html#gog-chart-set-position"/>
+    <function name="gog_chart_get_plot_area ()" link="goffice-06-gog-chart.html#gog-chart-get-plot-area"/>
+    <function name="gog_chart_set_plot_area ()" link="goffice-06-gog-chart.html#gog-chart-set-plot-area"/>
+    <function name="gog_chart_request_cardinality_update ()" link="goffice-06-gog-chart.html#gog-chart-request-cardinality-update"/>
+    <function name="gog_chart_get_cardinality ()" link="goffice-06-gog-chart.html#gog-chart-get-cardinality"/>
+    <function name="gog_chart_foreach_elem ()" link="goffice-06-gog-chart.html#gog-chart-foreach-elem"/>
+    <function name="gog_chart_get_plots ()" link="goffice-06-gog-chart.html#gog-chart-get-plots"/>
+    <function name="gog_chart_get_axis_set ()" link="goffice-06-gog-chart.html#gog-chart-get-axis-set"/>
+    <function name="gog_chart_axis_set_is_valid ()" link="goffice-06-gog-chart.html#gog-chart-axis-set-is-valid"/>
+    <function name="gog_chart_axis_set_assign ()" link="goffice-06-gog-chart.html#gog-chart-axis-set-assign"/>
+    <function name="gog_chart_get_axes ()" link="goffice-06-gog-chart.html#gog-chart-get-axes"/>
+    <function name="gog_chart_get_grid ()" link="goffice-06-gog-chart.html#gog-chart-get-grid"/>
+    <function name="gog_chart_view_get_plot_area ()" link="goffice-06-gog-chart.html#gog-chart-view-get-plot-area"/>
+    <function name="GOG_LEGEND_TYPE" link="goffice-06-gog-legend.html#GOG-LEGEND-TYPE:CAPS"/>
+    <function name="GOG_LEGEND()" link="goffice-06-gog-legend.html#GOG-LEGEND:CAPS"/>
+    <function name="IS_GOG_LEGEND()" link="goffice-06-gog-legend.html#IS-GOG-LEGEND:CAPS"/>
+    <function name="gog_legend_get_type ()" link="goffice-06-gog-legend.html#gog-legend-get-type"/>
+    <function name="GOG_GRID_TYPE" link="goffice-06-gog-grid.html#GOG-GRID-TYPE:CAPS"/>
+    <function name="GOG_GRID()" link="goffice-06-gog-grid.html#GOG-GRID:CAPS"/>
+    <function name="IS_GOG_GRID()" link="goffice-06-gog-grid.html#IS-GOG-GRID:CAPS"/>
+    <function name="gog_grid_get_type ()" link="goffice-06-gog-grid.html#gog-grid-get-type"/>
+    <function name="enum GogAxisPolarUnit" link="goffice-06-gog-axis.html#GogAxisPolarUnit"/>
+    <function name="enum GogAxisElemType" link="goffice-06-gog-axis.html#GogAxisElemType"/>
+    <function name="GogAxisTick" link="goffice-06-gog-axis.html#GogAxisTick"/>
+    <function name="GogAxisMap" link="goffice-06-gog-axis.html#GogAxisMap"/>
+    <function name="gog_axis_map_new ()" link="goffice-06-gog-axis.html#gog-axis-map-new"/>
+    <function name="gog_axis_map ()" link="goffice-06-gog-axis.html#gog-axis-map"/>
+    <function name="gog_axis_map_to_view ()" link="goffice-06-gog-axis.html#gog-axis-map-to-view"/>
+    <function name="gog_axis_map_from_view ()" link="goffice-06-gog-axis.html#gog-axis-map-from-view"/>
+    <function name="gog_axis_map_finite ()" link="goffice-06-gog-axis.html#gog-axis-map-finite"/>
+    <function name="gog_axis_map_get_baseline ()" link="goffice-06-gog-axis.html#gog-axis-map-get-baseline"/>
+    <function name="gog_axis_map_get_extents ()" link="goffice-06-gog-axis.html#gog-axis-map-get-extents"/>
+    <function name="gog_axis_map_get_bounds ()" link="goffice-06-gog-axis.html#gog-axis-map-get-bounds"/>
+    <function name="gog_axis_map_free ()" link="goffice-06-gog-axis.html#gog-axis-map-free"/>
+    <function name="gog_axis_map_is_valid ()" link="goffice-06-gog-axis.html#gog-axis-map-is-valid"/>
+    <function name="gog_axis_map_is_inverted ()" link="goffice-06-gog-axis.html#gog-axis-map-is-inverted"/>
+    <function name="GOG_AXIS_TYPE" link="goffice-06-gog-axis.html#GOG-AXIS-TYPE:CAPS"/>
+    <function name="GOG_AXIS()" link="goffice-06-gog-axis.html#GOG-AXIS:CAPS"/>
+    <function name="IS_GOG_AXIS()" link="goffice-06-gog-axis.html#IS-GOG-AXIS:CAPS"/>
+    <function name="gog_axis_get_type ()" link="goffice-06-gog-axis.html#gog-axis-get-type"/>
+    <function name="gog_axis_get_atype ()" link="goffice-06-gog-axis.html#gog-axis-get-atype"/>
+    <function name="gog_axis_is_center_on_ticks ()" link="goffice-06-gog-axis.html#gog-axis-is-center-on-ticks"/>
+    <function name="gog_axis_is_discrete ()" link="goffice-06-gog-axis.html#gog-axis-is-discrete"/>
+    <function name="gog_axis_is_inverted ()" link="goffice-06-gog-axis.html#gog-axis-is-inverted"/>
+    <function name="gog_axis_get_bounds ()" link="goffice-06-gog-axis.html#gog-axis-get-bounds"/>
+    <function name="gog_axis_set_bounds ()" link="goffice-06-gog-axis.html#gog-axis-set-bounds"/>
+    <function name="gog_axis_set_extents ()" link="goffice-06-gog-axis.html#gog-axis-set-extents"/>
+    <function name="gog_axis_get_format ()" link="goffice-06-gog-axis.html#gog-axis-get-format"/>
+    <function name="gog_axis_set_format ()" link="goffice-06-gog-axis.html#gog-axis-set-format"/>
+    <function name="gog_axis_get_ticks ()" link="goffice-06-gog-axis.html#gog-axis-get-ticks"/>
+    <function name="gog_axis_get_labels ()" link="goffice-06-gog-axis.html#gog-axis-get-labels"/>
+    <function name="gog_axis_get_entry ()" link="goffice-06-gog-axis.html#gog-axis-get-entry"/>
+    <function name="gog_axis_add_contributor ()" link="goffice-06-gog-axis.html#gog-axis-add-contributor"/>
+    <function name="gog_axis_del_contributor ()" link="goffice-06-gog-axis.html#gog-axis-del-contributor"/>
+    <function name="gog_axis_contributors ()" link="goffice-06-gog-axis.html#gog-axis-contributors"/>
+    <function name="gog_axis_clear_contributors ()" link="goffice-06-gog-axis.html#gog-axis-clear-contributors"/>
+    <function name="gog_axis_bound_changed ()" link="goffice-06-gog-axis.html#gog-axis-bound-changed"/>
+    <function name="gog_axis_get_grid_line ()" link="goffice-06-gog-axis.html#gog-axis-get-grid-line"/>
+    <function name="gog_axis_set_polar_unit ()" link="goffice-06-gog-axis.html#gog-axis-set-polar-unit"/>
+    <function name="gog_axis_get_polar_unit ()" link="goffice-06-gog-axis.html#gog-axis-get-polar-unit"/>
+    <function name="gog_axis_get_polar_perimeter ()" link="goffice-06-gog-axis.html#gog-axis-get-polar-perimeter"/>
+    <function name="gog_axis_get_circular_rotation ()" link="goffice-06-gog-axis.html#gog-axis-get-circular-rotation"/>
+    <function name="enum GogAxisPosition" link="goffice-06-gog-axis-line.html#GogAxisPosition"/>
+    <function name="enum GogAxisTickTypes" link="goffice-06-gog-axis-line.html#GogAxisTickTypes"/>
+    <function name="GOG_AXIS_LINE_TYPE" link="goffice-06-gog-axis-line.html#GOG-AXIS-LINE-TYPE:CAPS"/>
+    <function name="GOG_AXIS_LINE()" link="goffice-06-gog-axis-line.html#GOG-AXIS-LINE:CAPS"/>
+    <function name="IS_GOG_AXIS_LINE()" link="goffice-06-gog-axis-line.html#IS-GOG-AXIS-LINE:CAPS"/>
+    <function name="gog_axis_line_get_type ()" link="goffice-06-gog-axis-line.html#gog-axis-line-get-type"/>
+    <function name="GOG_GRID_LINE_TYPE" link="goffice-06-gog-grid-line.html#GOG-GRID-LINE-TYPE:CAPS"/>
+    <function name="GOG_GRID_LINE()" link="goffice-06-gog-grid-line.html#GOG-GRID-LINE:CAPS"/>
+    <function name="IS_GOG_GRID_LINE()" link="goffice-06-gog-grid-line.html#IS-GOG-GRID-LINE:CAPS"/>
+    <function name="gog_grid_line_get_type ()" link="goffice-06-gog-grid-line.html#gog-grid-line-get-type"/>
+    <function name="gog_grid_line_is_minor ()" link="goffice-06-gog-grid-line.html#gog-grid-line-is-minor"/>
+    <function name="GogGridLineView" link="goffice-06-gog-grid-line.html#GogGridLineView"/>
+    <function name="gog_grid_line_view_render_stripes ()" link="goffice-06-gog-grid-line.html#gog-grid-line-view-render-stripes"/>
+    <function name="gog_grid_line_view_render_lines ()" link="goffice-06-gog-grid-line.html#gog-grid-line-view-render-lines"/>
+    <function name="enum GogErrorBarType" link="goffice-06-gog-error-bar.html#GogErrorBarType"/>
+    <function name="enum GogErrorBarDisplay" link="goffice-06-gog-error-bar.html#GogErrorBarDisplay"/>
+    <function name="GogErrorBar" link="goffice-06-gog-error-bar.html#GogErrorBar-struct"/>
+    <function name="GOG_ERROR_BAR_TYPE" link="goffice-06-gog-error-bar.html#GOG-ERROR-BAR-TYPE:CAPS"/>
+    <function name="GOG_ERROR_BAR()" link="goffice-06-gog-error-bar.html#GOG-ERROR-BAR:CAPS"/>
+    <function name="IS_GOG_ERROR_BAR()" link="goffice-06-gog-error-bar.html#IS-GOG-ERROR-BAR:CAPS"/>
+    <function name="gog_error_bar_get_type ()" link="goffice-06-gog-error-bar.html#gog-error-bar-get-type"/>
+    <function name="gog_error_bar_dup ()" link="goffice-06-gog-error-bar.html#gog-error-bar-dup"/>
+    <function name="gog_error_bar_prefs ()" link="goffice-06-gog-error-bar.html#gog-error-bar-prefs"/>
+    <function name="gog_error_bar_get_bounds ()" link="goffice-06-gog-error-bar.html#gog-error-bar-get-bounds"/>
+    <function name="gog_error_bar_get_minmax ()" link="goffice-06-gog-error-bar.html#gog-error-bar-get-minmax"/>
+    <function name="gog_error_bar_render ()" link="goffice-06-gog-error-bar.html#gog-error-bar-render"/>
+    <function name="gog_error_bar_is_visible ()" link="goffice-06-gog-error-bar.html#gog-error-bar-is-visible"/>
+    <function name="GOG_LABEL_TYPE" link="goffice-06-gog-label.html#GOG-LABEL-TYPE:CAPS"/>
+    <function name="GOG_LABEL()" link="goffice-06-gog-label.html#GOG-LABEL:CAPS"/>
+    <function name="IS_GOG_LABEL()" link="goffice-06-gog-label.html#IS-GOG-LABEL:CAPS"/>
+    <function name="gog_label_get_type ()" link="goffice-06-gog-label.html#gog-label-get-type"/>
+    <function name="GOG_REG_EQN_TYPE" link="goffice-06-gog-label.html#GOG-REG-EQN-TYPE:CAPS"/>
+    <function name="GOG_REG_EQN()" link="goffice-06-gog-label.html#GOG-REG-EQN:CAPS"/>
+    <function name="IS_GOG_REG_EQN()" link="goffice-06-gog-label.html#IS-GOG-REG-EQN:CAPS"/>
+    <function name="gog_reg_eqn_get_type ()" link="goffice-06-gog-label.html#gog-reg-eqn-get-type"/>
+    <function name="GOG_SERIES_LINES_TYPE" link="goffice-06-gog-series-lines.html#GOG-SERIES-LINES-TYPE:CAPS"/>
+    <function name="GOG_SERIES_LINES()" link="goffice-06-gog-series-lines.html#GOG-SERIES-LINES:CAPS"/>
+    <function name="IS_GOG_SERIES_LINES()" link="goffice-06-gog-series-lines.html#IS-GOG-SERIES-LINES:CAPS"/>
+    <function name="gog_series_lines_get_type ()" link="goffice-06-gog-series-lines.html#gog-series-lines-get-type"/>
+    <function name="gog_series_lines_render ()" link="goffice-06-gog-series-lines.html#gog-series-lines-render"/>
+    <function name="gog_series_lines_use_markers ()" link="goffice-06-gog-series-lines.html#gog-series-lines-use-markers"/>
+    <function name="GogEditorPage" link="GogObject.html#GogEditorPage"/>
+    <function name="GogEditor" link="GogObject.html#GogEditor"/>
+    <function name="gog_editor_new ()" link="GogObject.html#gog-editor-new"/>
+    <function name="gog_editor_free ()" link="GogObject.html#gog-editor-free"/>
+    <function name="gog_editor_add_page ()" link="GogObject.html#gog-editor-add-page"/>
+    <function name="gog_editor_set_store_page ()" link="GogObject.html#gog-editor-set-store-page"/>
+    <function name="gog_editor_register_widget ()" link="GogObject.html#gog-editor-register-widget"/>
+    <function name="gog_editor_get_registered_widget ()" link="GogObject.html#gog-editor-get-registered-widget"/>
+    <function name="gog_editor_get_notebook ()" link="GogObject.html#gog-editor-get-notebook"/>
+    <function name="enum GogObjectNamingConv" link="GogObject.html#GogObjectNamingConv"/>
+    <function name="GogObjectRole" link="GogObject.html#GogObjectRole"/>
+    <function name="GogObject" link="GogObject.html#GogObject-struct"/>
+    <function name="GOG_OBJECT_TYPE" link="GogObject.html#GOG-OBJECT-TYPE:CAPS"/>
+    <function name="GOG_OBJECT()" link="GogObject.html#GOG-OBJECT:CAPS"/>
+    <function name="IS_GOG_OBJECT()" link="GogObject.html#IS-GOG-OBJECT:CAPS"/>
+    <function name="GOG_OBJECT_CLASS()" link="GogObject.html#GOG-OBJECT-CLASS:CAPS"/>
+    <function name="IS_GOG_OBJECT_CLASS()" link="GogObject.html#IS-GOG-OBJECT-CLASS:CAPS"/>
+    <function name="GOG_OBJECT_GET_CLASS()" link="GogObject.html#GOG-OBJECT-GET-CLASS:CAPS"/>
+    <function name="GOG_PARAM_PERSISTENT" link="GogObject.html#GOG-PARAM-PERSISTENT:CAPS"/>
+    <function name="GOG_PARAM_FORCE_SAVE" link="GogObject.html#GOG-PARAM-FORCE-SAVE:CAPS"/>
+    <function name="GOG_PARAM_POSITION" link="GogObject.html#GOG-PARAM-POSITION:CAPS"/>
+    <function name="gog_object_get_type ()" link="GogObject.html#gog-object-get-type"/>
+    <function name="GogDataDuplicator ()" link="GogObject.html#GogDataDuplicator"/>
+    <function name="gog_object_dup ()" link="GogObject.html#gog-object-dup"/>
+    <function name="gog_object_get_parent ()" link="GogObject.html#gog-object-get-parent"/>
+    <function name="gog_object_get_parent_typed ()" link="GogObject.html#gog-object-get-parent-typed"/>
+    <function name="gog_object_get_graph ()" link="GogObject.html#gog-object-get-graph"/>
+    <function name="gog_object_get_theme ()" link="GogObject.html#gog-object-get-theme"/>
+    <function name="gog_object_get_id ()" link="GogObject.html#gog-object-get-id"/>
+    <function name="gog_object_get_name ()" link="GogObject.html#gog-object-get-name"/>
+    <function name="gog_object_set_name ()" link="GogObject.html#gog-object-set-name"/>
+    <function name="gog_object_get_children ()" link="GogObject.html#gog-object-get-children"/>
+    <function name="gog_object_get_child_by_role ()" link="GogObject.html#gog-object-get-child-by-role"/>
+    <function name="gog_object_get_child_by_name ()" link="GogObject.html#gog-object-get-child-by-name"/>
+    <function name="gog_object_get_editor ()" link="GogObject.html#gog-object-get-editor"/>
+    <function name="gog_object_new_view ()" link="GogObject.html#gog-object-new-view"/>
+    <function name="gog_object_is_deletable ()" link="GogObject.html#gog-object-is-deletable"/>
+    <function name="gog_object_possible_additions ()" link="GogObject.html#gog-object-possible-additions"/>
+    <function name="gog_object_add_by_role ()" link="GogObject.html#gog-object-add-by-role"/>
+    <function name="gog_object_add_by_name ()" link="GogObject.html#gog-object-add-by-name"/>
+    <function name="gog_object_can_reorder ()" link="GogObject.html#gog-object-can-reorder"/>
+    <function name="gog_object_reorder ()" link="GogObject.html#gog-object-reorder"/>
+    <function name="gog_object_is_visible()" link="GogObject.html#gog-object-is-visible"/>
+    <function name="gog_object_set_invisible ()" link="GogObject.html#gog-object-set-invisible"/>
+    <function name="gog_object_get_position_flags ()" link="GogObject.html#gog-object-get-position-flags"/>
+    <function name="gog_object_set_position_flags ()" link="GogObject.html#gog-object-set-position-flags"/>
+    <function name="gog_object_is_default_position_flags ()" link="GogObject.html#gog-object-is-default-position-flags"/>
+    <function name="gog_object_get_manual_position ()" link="GogObject.html#gog-object-get-manual-position"/>
+    <function name="gog_object_set_manual_position ()" link="GogObject.html#gog-object-set-manual-position"/>
+    <function name="gog_object_get_manual_allocation ()" link="GogObject.html#gog-object-get-manual-allocation"/>
+    <function name="gog_object_find_role_by_name ()" link="GogObject.html#gog-object-find-role-by-name"/>
+    <function name="gog_object_update ()" link="GogObject.html#gog-object-update"/>
+    <function name="gog_object_request_update ()" link="GogObject.html#gog-object-request-update"/>
+    <function name="gog_object_emit_changed ()" link="GogObject.html#gog-object-emit-changed"/>
+    <function name="gog_object_clear_parent ()" link="GogObject.html#gog-object-clear-parent"/>
+    <function name="gog_object_set_parent ()" link="GogObject.html#gog-object-set-parent"/>
+    <function name="gog_object_register_roles ()" link="GogObject.html#gog-object-register-roles"/>
+    <function name="gog_object_request_editor_update ()" link="GogObject.html#gog-object-request-editor-update"/>
+    <function name="The &quot;alignment&quot; property" link="GogObject.html#GogObject--alignment"/>
+    <function name="The &quot;anchor&quot; property" link="GogObject.html#GogObject--anchor"/>
+    <function name="The &quot;compass&quot; property" link="GogObject.html#GogObject--compass"/>
+    <function name="The &quot;id&quot; property" link="GogObject.html#GogObject--id"/>
+    <function name="The &quot;invisible&quot; property" link="GogObject.html#GogObject--invisible"/>
+    <function name="The &quot;is-position-manual&quot; property" link="GogObject.html#GogObject--is-position-manual"/>
+    <function name="The &quot;position&quot; property" link="GogObject.html#GogObject--position"/>
+    <function name="The &quot;changed&quot; signal" link="GogObject.html#GogObject-changed"/>
+    <function name="The &quot;child-added&quot; signal" link="GogObject.html#GogObject-child-added"/>
+    <function name="The &quot;child-name-changed&quot; signal" link="GogObject.html#GogObject-child-name-changed"/>
+    <function name="The &quot;child-removed&quot; signal" link="GogObject.html#GogObject-child-removed"/>
+    <function name="The &quot;children-reordered&quot; signal" link="GogObject.html#GogObject-children-reordered"/>
+    <function name="The &quot;name-changed&quot; signal" link="GogObject.html#GogObject-name-changed"/>
+    <function name="The &quot;update-editor&quot; signal" link="GogObject.html#GogObject-update-editor"/>
+    <function name="GogStyledObject" link="GogStyledObject.html#GogStyledObject-struct"/>
+    <function name="GOG_STYLED_OBJECT_TYPE" link="GogStyledObject.html#GOG-STYLED-OBJECT-TYPE:CAPS"/>
+    <function name="GOG_STYLED_OBJECT()" link="GogStyledObject.html#GOG-STYLED-OBJECT:CAPS"/>
+    <function name="IS_GOG_STYLED_OBJECT()" link="GogStyledObject.html#IS-GOG-STYLED-OBJECT:CAPS"/>
+    <function name="GOG_STYLED_OBJECT_GET_CLASS()" link="GogStyledObject.html#GOG-STYLED-OBJECT-GET-CLASS:CAPS"/>
+    <function name="gog_styled_object_get_type ()" link="GogStyledObject.html#gog-styled-object-get-type"/>
+    <function name="gog_styled_object_set_style ()" link="GogStyledObject.html#gog-styled-object-set-style"/>
+    <function name="gog_styled_object_get_style ()" link="GogStyledObject.html#gog-styled-object-get-style"/>
+    <function name="gog_styled_object_get_auto_style ()" link="GogStyledObject.html#gog-styled-object-get-auto-style"/>
+    <function name="gog_styled_object_style_changed ()" link="GogStyledObject.html#gog-styled-object-style-changed"/>
+    <function name="gog_styled_object_apply_theme ()" link="GogStyledObject.html#gog-styled-object-apply-theme"/>
+    <function name="The &quot;style&quot; property" link="GogStyledObject.html#GogStyledObject--style"/>
+    <function name="The &quot;style-changed&quot; signal" link="GogStyledObject.html#GogStyledObject-style-changed"/>
+    <function name="GogOutlinedObject" link="GogOutlinedView.html#GogOutlinedObject-struct"/>
+    <function name="GogOutlinedObjectClass" link="GogOutlinedView.html#GogOutlinedObjectClass"/>
+    <function name="GOG_OUTLINED_OBJECT_TYPE" link="GogOutlinedView.html#GOG-OUTLINED-OBJECT-TYPE:CAPS"/>
+    <function name="GOG_OUTLINED_OBJECT()" link="GogOutlinedView.html#GOG-OUTLINED-OBJECT:CAPS"/>
+    <function name="IS_GOG_OUTLINED_OBJECT()" link="GogOutlinedView.html#IS-GOG-OUTLINED-OBJECT:CAPS"/>
+    <function name="gog_outlined_object_get_type ()" link="GogOutlinedView.html#gog-outlined-object-get-type"/>
+    <function name="gog_outlined_object_get_pad ()" link="GogOutlinedView.html#gog-outlined-object-get-pad"/>
+    <function name="GogOutlinedView" link="GogOutlinedView.html#GogOutlinedView"/>
+    <function name="GOG_OUTLINED_VIEW_TYPE" link="GogOutlinedView.html#GOG-OUTLINED-VIEW-TYPE:CAPS"/>
+    <function name="GOG_OUTLINED_VIEW()" link="GogOutlinedView.html#GOG-OUTLINED-VIEW:CAPS"/>
+    <function name="IS_GOG_OUTLINED_VIEW()" link="GogOutlinedView.html#IS-GOG-OUTLINED-VIEW:CAPS"/>
+    <function name="GOG_OUTLINED_VIEW_GET_CLASS()" link="GogOutlinedView.html#GOG-OUTLINED-VIEW-GET-CLASS:CAPS"/>
+    <function name="gog_outlined_view_get_type ()" link="GogOutlinedView.html#gog-outlined-view-get-type"/>
+    <function name="The &quot;padding-pts&quot; property" link="GogOutlinedView.html#GogOutlinedObject--padding-pts"/>
+    <function name="GogPlotBoundInfo" link="goffice-06-gog-plot.html#GogPlotBoundInfo"/>
+    <function name="GOG_PLOT_TYPE" link="goffice-06-gog-plot.html#GOG-PLOT-TYPE:CAPS"/>
+    <function name="GOG_PLOT()" link="goffice-06-gog-plot.html#GOG-PLOT:CAPS"/>
+    <function name="IS_GOG_PLOT()" link="goffice-06-gog-plot.html#IS-GOG-PLOT:CAPS"/>
+    <function name="gog_plot_get_type ()" link="goffice-06-gog-plot.html#gog-plot-get-type"/>
+    <function name="gog_plot_new_by_type ()" link="goffice-06-gog-plot.html#gog-plot-new-by-type"/>
+    <function name="gog_plot_new_by_name ()" link="goffice-06-gog-plot.html#gog-plot-new-by-name"/>
+    <function name="gog_plot_make_similar ()" link="goffice-06-gog-plot.html#gog-plot-make-similar"/>
+    <function name="gog_plot_request_cardinality_update ()" link="goffice-06-gog-plot.html#gog-plot-request-cardinality-update"/>
+    <function name="gog_plot_update_cardinality ()" link="goffice-06-gog-plot.html#gog-plot-update-cardinality"/>
+    <function name="gog_plot_get_cardinality ()" link="goffice-06-gog-plot.html#gog-plot-get-cardinality"/>
+    <function name="gog_plot_foreach_elem ()" link="goffice-06-gog-plot.html#gog-plot-foreach-elem"/>
+    <function name="gog_plot_get_series ()" link="goffice-06-gog-plot.html#gog-plot-get-series"/>
+    <function name="gog_plot_get_axis_bounds ()" link="goffice-06-gog-plot.html#gog-plot-get-axis-bounds"/>
+    <function name="gog_plot_supports_vary_style_by_element ()" link="goffice-06-gog-plot.html#gog-plot-supports-vary-style-by-element"/>
+    <function name="gog_plot_new_series ()" link="goffice-06-gog-plot.html#gog-plot-new-series"/>
+    <function name="gog_plot_description ()" link="goffice-06-gog-plot.html#gog-plot-description"/>
+    <function name="gog_plot_axis_set_pref ()" link="goffice-06-gog-plot.html#gog-plot-axis-set-pref"/>
+    <function name="gog_plot_axis_set_is_valid ()" link="goffice-06-gog-plot.html#gog-plot-axis-set-is-valid"/>
+    <function name="gog_plot_axis_set_assign ()" link="goffice-06-gog-plot.html#gog-plot-axis-set-assign"/>
+    <function name="gog_plot_axis_clear ()" link="goffice-06-gog-plot.html#gog-plot-axis-clear"/>
+    <function name="gog_plot_get_axis ()" link="goffice-06-gog-plot.html#gog-plot-get-axis"/>
+    <function name="gog_plot_set_axis ()" link="goffice-06-gog-plot.html#gog-plot-set-axis"/>
+    <function name="gog_plot_update_3d ()" link="goffice-06-gog-plot.html#gog-plot-update-3d"/>
+    <function name="gog_plot_guru_helper ()" link="goffice-06-gog-plot.html#gog-plot-guru-helper"/>
+    <function name="enum GogSeriesFillType" link="goffice-06-gog-series.html#GogSeriesFillType"/>
+    <function name="GOG_SERIES_ELEMENT_TYPE" link="goffice-06-gog-series.html#GOG-SERIES-ELEMENT-TYPE:CAPS"/>
+    <function name="GOG_SERIES_ELEMENT()" link="goffice-06-gog-series.html#GOG-SERIES-ELEMENT:CAPS"/>
+    <function name="IS_GOG_SERIES_ELEMENT()" link="goffice-06-gog-series.html#IS-GOG-SERIES-ELEMENT:CAPS"/>
+    <function name="gog_series_element_get_type ()" link="goffice-06-gog-series.html#gog-series-element-get-type"/>
+    <function name="GOG_SERIES_TYPE" link="goffice-06-gog-series.html#GOG-SERIES-TYPE:CAPS"/>
+    <function name="GOG_SERIES()" link="goffice-06-gog-series.html#GOG-SERIES:CAPS"/>
+    <function name="IS_GOG_SERIES()" link="goffice-06-gog-series.html#IS-GOG-SERIES:CAPS"/>
+    <function name="gog_series_get_type ()" link="goffice-06-gog-series.html#gog-series-get-type"/>
+    <function name="gog_series_is_valid ()" link="goffice-06-gog-series.html#gog-series-is-valid"/>
+    <function name="gog_series_has_legend ()" link="goffice-06-gog-series.html#gog-series-has-legend"/>
+    <function name="gog_series_get_name ()" link="goffice-06-gog-series.html#gog-series-get-name"/>
+    <function name="gog_series_get_plot ()" link="goffice-06-gog-series.html#gog-series-get-plot"/>
+    <function name="gog_series_set_name ()" link="goffice-06-gog-series.html#gog-series-set-name"/>
+    <function name="gog_series_set_dim ()" link="goffice-06-gog-series.html#gog-series-set-dim"/>
+    <function name="gog_series_set_index ()" link="goffice-06-gog-series.html#gog-series-set-index"/>
+    <function name="gog_series_num_elements ()" link="goffice-06-gog-series.html#gog-series-num-elements"/>
+    <function name="gog_series_get_overrides ()" link="goffice-06-gog-series.html#gog-series-get-overrides"/>
+    <function name="gog_series_get_xy_data ()" link="goffice-06-gog-series.html#gog-series-get-xy-data"/>
+    <function name="gog_series_get_xyz_data ()" link="goffice-06-gog-series.html#gog-series-get-xyz-data"/>
+    <function name="gog_series_get_fill_type ()" link="goffice-06-gog-series.html#gog-series-get-fill-type"/>
+    <function name="gog_series_set_fill_type ()" link="goffice-06-gog-series.html#gog-series-set-fill-type"/>
+    <function name="gog_series_populate_fill_type_combo ()" link="goffice-06-gog-series.html#gog-series-populate-fill-type-combo"/>
+    <function name="gog_series_get_fill_type_from_combo ()" link="goffice-06-gog-series.html#gog-series-get-fill-type-from-combo"/>
+    <function name="GogTrendLine" link="goffice-06-gog-trend-line.html#GogTrendLine"/>
+    <function name="GogTrendLineClass" link="goffice-06-gog-trend-line.html#GogTrendLineClass"/>
+    <function name="GOG_TREND_LINE_TYPE" link="goffice-06-gog-trend-line.html#GOG-TREND-LINE-TYPE:CAPS"/>
+    <function name="GOG_TREND_LINE()" link="goffice-06-gog-trend-line.html#GOG-TREND-LINE:CAPS"/>
+    <function name="IS_GOG_TREND_LINE()" link="goffice-06-gog-trend-line.html#IS-GOG-TREND-LINE:CAPS"/>
+    <function name="gog_trend_line_get_type ()" link="goffice-06-gog-trend-line.html#gog-trend-line-get-type"/>
+    <function name="gog_trend_line_new_by_name ()" link="goffice-06-gog-trend-line.html#gog-trend-line-new-by-name"/>
+    <function name="gog_trend_line_new_by_type ()" link="goffice-06-gog-trend-line.html#gog-trend-line-new-by-type"/>
+    <function name="GogSmoothedCurve" link="GogSmoothedCurve.html#GogSmoothedCurve-struct"/>
+    <function name="GOG_SMOOTHED_CURVE_TYPE" link="GogSmoothedCurve.html#GOG-SMOOTHED-CURVE-TYPE:CAPS"/>
+    <function name="GOG_SMOOTHED_CURVE()" link="GogSmoothedCurve.html#GOG-SMOOTHED-CURVE:CAPS"/>
+    <function name="IS_GOG_SMOOTHED_CURVE()" link="GogSmoothedCurve.html#IS-GOG-SMOOTHED-CURVE:CAPS"/>
+    <function name="gog_smoothed_curve_get_type ()" link="GogSmoothedCurve.html#gog-smoothed-curve-get-type"/>
+    <function name="GogRegCurve" link="GogRegCurve.html#GogRegCurve-struct"/>
+    <function name="GOG_REG_CURVE_TYPE" link="GogRegCurve.html#GOG-REG-CURVE-TYPE:CAPS"/>
+    <function name="GOG_REG_CURVE()" link="GogRegCurve.html#GOG-REG-CURVE:CAPS"/>
+    <function name="IS_GOG_REG_CURVE()" link="GogRegCurve.html#IS-GOG-REG-CURVE:CAPS"/>
+    <function name="gog_reg_curve_get_type ()" link="GogRegCurve.html#gog-reg-curve-get-type"/>
+    <function name="gog_reg_curve_get_equation ()" link="GogRegCurve.html#gog-reg-curve-get-equation"/>
+    <function name="gog_reg_curve_get_R2 ()" link="GogRegCurve.html#gog-reg-curve-get-R2"/>
+    <function name="gog_reg_curve_get_bounds ()" link="GogRegCurve.html#gog-reg-curve-get-bounds"/>
+    <function name="The &quot;skip-invalid&quot; property" link="GogRegCurve.html#GogRegCurve--skip-invalid"/>
+    <function name="GogToolAction" link="GogView.html#GogToolAction"/>
+    <function name="GogTool" link="GogView.html#GogTool"/>
+    <function name="gog_tool_action_new ()" link="GogView.html#gog-tool-action-new"/>
+    <function name="gog_tool_action_move ()" link="GogView.html#gog-tool-action-move"/>
+    <function name="gog_tool_action_double_click ()" link="GogView.html#gog-tool-action-double-click"/>
+    <function name="gog_tool_action_free ()" link="GogView.html#gog-tool-action-free"/>
+    <function name="GogView" link="GogView.html#GogView-struct"/>
+    <function name="GOG_VIEW_TYPE" link="GogView.html#GOG-VIEW-TYPE:CAPS"/>
+    <function name="GOG_VIEW()" link="GogView.html#GOG-VIEW:CAPS"/>
+    <function name="IS_GOG_VIEW()" link="GogView.html#IS-GOG-VIEW:CAPS"/>
+    <function name="GOG_VIEW_CLASS()" link="GogView.html#GOG-VIEW-CLASS:CAPS"/>
+    <function name="IS_GOG_VIEW_CLASS()" link="GogView.html#IS-GOG-VIEW-CLASS:CAPS"/>
+    <function name="GOG_VIEW_GET_CLASS()" link="GogView.html#GOG-VIEW-GET-CLASS:CAPS"/>
+    <function name="gog_view_get_type ()" link="GogView.html#gog-view-get-type"/>
+    <function name="gog_view_get_model ()" link="GogView.html#gog-view-get-model"/>
+    <function name="gog_view_render ()" link="GogView.html#gog-view-render"/>
+    <function name="gog_view_queue_redraw ()" link="GogView.html#gog-view-queue-redraw"/>
+    <function name="gog_view_queue_resize ()" link="GogView.html#gog-view-queue-resize"/>
+    <function name="gog_view_padding_request ()" link="GogView.html#gog-view-padding-request"/>
+    <function name="gog_view_size_request ()" link="GogView.html#gog-view-size-request"/>
+    <function name="gog_view_size_allocate ()" link="GogView.html#gog-view-size-allocate"/>
+    <function name="gog_view_update_sizes ()" link="GogView.html#gog-view-update-sizes"/>
+    <function name="gog_view_find_child_view ()" link="GogView.html#gog-view-find-child-view"/>
+    <function name="gog_view_get_toolkit ()" link="GogView.html#gog-view-get-toolkit"/>
+    <function name="gog_view_render_toolkit ()" link="GogView.html#gog-view-render-toolkit"/>
+    <function name="gog_view_get_tool_at_point ()" link="GogView.html#gog-view-get-tool-at-point"/>
+    <function name="gog_view_get_view_at_point ()" link="GogView.html#gog-view-get-view-at-point"/>
+    <function name="gog_view_size_child_request ()" link="GogView.html#gog-view-size-child-request"/>
+    <function name="The &quot;model&quot; property" link="GogView.html#GogView--model"/>
+    <function name="The &quot;parent&quot; property" link="GogView.html#GogView--parent"/>
+    <function name="GOG_DATA_ALLOCATOR_TYPE" link="GogDataAllocator.html#GOG-DATA-ALLOCATOR-TYPE:CAPS"/>
+    <function name="GOG_DATA_ALLOCATOR()" link="GogDataAllocator.html#GOG-DATA-ALLOCATOR:CAPS"/>
+    <function name="IS_GOG_DATA_ALLOCATOR()" link="GogDataAllocator.html#IS-GOG-DATA-ALLOCATOR:CAPS"/>
+    <function name="GOG_DATA_ALLOCATOR_CLASS()" link="GogDataAllocator.html#GOG-DATA-ALLOCATOR-CLASS:CAPS"/>
+    <function name="IS_GOG_DATA_ALLOCATOR_CLASS()" link="GogDataAllocator.html#IS-GOG-DATA-ALLOCATOR-CLASS:CAPS"/>
+    <function name="GOG_DATA_ALLOCATOR_GET_CLASS()" link="GogDataAllocator.html#GOG-DATA-ALLOCATOR-GET-CLASS:CAPS"/>
+    <function name="gog_data_allocator_get_type ()" link="GogDataAllocator.html#gog-data-allocator-get-type"/>
+    <function name="gog_data_allocator_allocate ()" link="GogDataAllocator.html#gog-data-allocator-allocate"/>
+    <function name="gog_data_allocator_editor ()" link="GogDataAllocator.html#gog-data-allocator-editor"/>
+    <function name="GogDatasetElement" link="GogDataset.html#GogDatasetElement"/>
+    <function name="GOG_DATASET_TYPE" link="GogDataset.html#GOG-DATASET-TYPE:CAPS"/>
+    <function name="GOG_DATASET()" link="GogDataset.html#GOG-DATASET:CAPS"/>
+    <function name="IS_GOG_DATASET()" link="GogDataset.html#IS-GOG-DATASET:CAPS"/>
+    <function name="GOG_DATASET_CLASS()" link="GogDataset.html#GOG-DATASET-CLASS:CAPS"/>
+    <function name="IS_GOG_DATASET_CLASS()" link="GogDataset.html#IS-GOG-DATASET-CLASS:CAPS"/>
+    <function name="GOG_DATASET_GET_CLASS()" link="GogDataset.html#GOG-DATASET-GET-CLASS:CAPS"/>
+    <function name="gog_dataset_get_type ()" link="GogDataset.html#gog-dataset-get-type"/>
+    <function name="gog_dataset_dims ()" link="GogDataset.html#gog-dataset-dims"/>
+    <function name="gog_dataset_get_dim ()" link="GogDataset.html#gog-dataset-get-dim"/>
+    <function name="gog_dataset_set_dim ()" link="GogDataset.html#gog-dataset-set-dim"/>
+    <function name="gog_dataset_finalize ()" link="GogDataset.html#gog-dataset-finalize"/>
+    <function name="gog_dataset_parent_changed ()" link="GogDataset.html#gog-dataset-parent-changed"/>
+    <function name="gog_dataset_get_elem ()" link="GogDataset.html#gog-dataset-get-elem"/>
+    <function name="gog_dataset_set_dim_internal ()" link="GogDataset.html#gog-dataset-set-dim-internal"/>
+    <function name="gog_dataset_dup_to_simple ()" link="GogDataset.html#gog-dataset-dup-to-simple"/>
+    <function name="GdkPixbuf" link="goffice-06-gog-renderer.html#GdkPixbuf-struct"/>
+    <function name="enum GtkAnchorType" link="goffice-06-gog-renderer.html#GtkAnchorType"/>
+    <function name="GOG_RENDERER_CAIRO_WITH_SVG" link="goffice-06-gog-renderer.html#GOG-RENDERER-CAIRO-WITH-SVG:CAPS"/>
+    <function name="GOG_RENDERER_CAIRO_WITH_PDF" link="goffice-06-gog-renderer.html#GOG-RENDERER-CAIRO-WITH-PDF:CAPS"/>
+    <function name="GOG_RENDERER_CAIRO_WITH_PS" link="goffice-06-gog-renderer.html#GOG-RENDERER-CAIRO-WITH-PS:CAPS"/>
+    <function name="GOG_RENDERER_HAIRLINE_WIDTH_PTS" link="goffice-06-gog-renderer.html#GOG-RENDERER-HAIRLINE-WIDTH-PTS:CAPS"/>
+    <function name="GOG_RENDERER_GRIP_SIZE" link="goffice-06-gog-renderer.html#GOG-RENDERER-GRIP-SIZE:CAPS"/>
+    <function name="GOG_RENDERER_TYPE" link="goffice-06-gog-renderer.html#GOG-RENDERER-TYPE:CAPS"/>
+    <function name="GOG_RENDERER()" link="goffice-06-gog-renderer.html#GOG-RENDERER:CAPS"/>
+    <function name="IS_GOG_RENDERER()" link="goffice-06-gog-renderer.html#IS-GOG-RENDERER:CAPS"/>
+    <function name="GOG_RENDERER_GET_CLASS()" link="goffice-06-gog-renderer.html#GOG-RENDERER-GET-CLASS:CAPS"/>
+    <function name="gog_renderer_get_type ()" link="goffice-06-gog-renderer.html#gog-renderer-get-type"/>
+    <function name="gog_renderer_line_size ()" link="goffice-06-gog-renderer.html#gog-renderer-line-size"/>
+    <function name="gog_renderer_pt2r_x ()" link="goffice-06-gog-renderer.html#gog-renderer-pt2r-x"/>
+    <function name="gog_renderer_pt2r_y ()" link="goffice-06-gog-renderer.html#gog-renderer-pt2r-y"/>
+    <function name="gog_renderer_pt2r ()" link="goffice-06-gog-renderer.html#gog-renderer-pt2r"/>
+    <function name="gog_renderer_get_hairline_width_pts ()" link="goffice-06-gog-renderer.html#gog-renderer-get-hairline-width-pts"/>
+    <function name="gog_renderer_stroke_serie ()" link="goffice-06-gog-renderer.html#gog-renderer-stroke-serie"/>
+    <function name="gog_renderer_fill_serie ()" link="goffice-06-gog-renderer.html#gog-renderer-fill-serie"/>
+    <function name="gog_renderer_draw_shape ()" link="goffice-06-gog-renderer.html#gog-renderer-draw-shape"/>
+    <function name="gog_renderer_stroke_shape ()" link="goffice-06-gog-renderer.html#gog-renderer-stroke-shape"/>
+    <function name="gog_renderer_fill_shape ()" link="goffice-06-gog-renderer.html#gog-renderer-fill-shape"/>
+    <function name="gog_renderer_draw_circle ()" link="goffice-06-gog-renderer.html#gog-renderer-draw-circle"/>
+    <function name="gog_renderer_stroke_circle ()" link="goffice-06-gog-renderer.html#gog-renderer-stroke-circle"/>
+    <function name="gog_renderer_fill_circle ()" link="goffice-06-gog-renderer.html#gog-renderer-fill-circle"/>
+    <function name="gog_renderer_draw_rectangle ()" link="goffice-06-gog-renderer.html#gog-renderer-draw-rectangle"/>
+    <function name="gog_renderer_stroke_rectangle ()" link="goffice-06-gog-renderer.html#gog-renderer-stroke-rectangle"/>
+    <function name="gog_renderer_fill_rectangle ()" link="goffice-06-gog-renderer.html#gog-renderer-fill-rectangle"/>
+    <function name="gog_renderer_draw_grip ()" link="goffice-06-gog-renderer.html#gog-renderer-draw-grip"/>
+    <function name="gog_renderer_draw_selection_rectangle ()" link="goffice-06-gog-renderer.html#gog-renderer-draw-selection-rectangle"/>
+    <function name="gog_renderer_in_grip()" link="goffice-06-gog-renderer.html#gog-renderer-in-grip"/>
+    <function name="gog_renderer_draw_marker ()" link="goffice-06-gog-renderer.html#gog-renderer-draw-marker"/>
+    <function name="gog_renderer_draw_text ()" link="goffice-06-gog-renderer.html#gog-renderer-draw-text"/>
+    <function name="gog_renderer_get_text_OBR ()" link="goffice-06-gog-renderer.html#gog-renderer-get-text-OBR"/>
+    <function name="gog_renderer_get_text_AABR ()" link="goffice-06-gog-renderer.html#gog-renderer-get-text-AABR"/>
+    <function name="gog_renderer_push_style ()" link="goffice-06-gog-renderer.html#gog-renderer-push-style"/>
+    <function name="gog_renderer_pop_style ()" link="goffice-06-gog-renderer.html#gog-renderer-pop-style"/>
+    <function name="gog_renderer_push_clip ()" link="goffice-06-gog-renderer.html#gog-renderer-push-clip"/>
+    <function name="gog_renderer_push_clip_rectangle ()" link="goffice-06-gog-renderer.html#gog-renderer-push-clip-rectangle"/>
+    <function name="gog_renderer_pop_clip ()" link="goffice-06-gog-renderer.html#gog-renderer-pop-clip"/>
+    <function name="gog_renderer_update ()" link="goffice-06-gog-renderer.html#gog-renderer-update"/>
+    <function name="gog_renderer_get_cairo_surface ()" link="goffice-06-gog-renderer.html#gog-renderer-get-cairo-surface"/>
+    <function name="gog_renderer_get_pixbuf ()" link="goffice-06-gog-renderer.html#gog-renderer-get-pixbuf"/>
+    <function name="gog_renderer_request_update ()" link="goffice-06-gog-renderer.html#gog-renderer-request-update"/>
+    <function name="gog_renderer_render_to_cairo ()" link="goffice-06-gog-renderer.html#gog-renderer-render-to-cairo"/>
+    <function name="gog_renderer_export_image ()" link="goffice-06-gog-renderer.html#gog-renderer-export-image"/>
+    <function name="gog_renderer_new ()" link="goffice-06-gog-renderer.html#gog-renderer-new"/>
+    <function name="gog_renderer_draw_sharp_path ()" link="goffice-06-gog-renderer.html#gog-renderer-draw-sharp-path"/>
+    <function name="gog_renderer_draw_sharp_polygon ()" link="goffice-06-gog-renderer.html#gog-renderer-draw-sharp-polygon"/>
+    <function name="gog_renderer_draw_path ()" link="goffice-06-gog-renderer.html#gog-renderer-draw-path"/>
+    <function name="gog_renderer_draw_polygon ()" link="goffice-06-gog-renderer.html#gog-renderer-draw-polygon"/>
+    <function name="gog_renderer_draw_bezier_path ()" link="goffice-06-gog-renderer.html#gog-renderer-draw-bezier-path"/>
+    <function name="GOG_CONTROL_FOOCANVAS_TYPE" link="goffice-06-gog-control-foocanvas.html#GOG-CONTROL-FOOCANVAS-TYPE:CAPS"/>
+    <function name="GOG_CONTROL_FOOCANVAS()" link="goffice-06-gog-control-foocanvas.html#GOG-CONTROL-FOOCANVAS:CAPS"/>
+    <function name="IS_GOG_CONTROL_FOOCANVAS()" link="goffice-06-gog-control-foocanvas.html#IS-GOG-CONTROL-FOOCANVAS:CAPS"/>
+    <function name="GogControlFooCanvas" link="goffice-06-gog-control-foocanvas.html#GogControlFooCanvas-struct"/>
+    <function name="GogControlFooCanvasClass" link="goffice-06-gog-control-foocanvas.html#GogControlFooCanvasClass"/>
+    <function name="gog_control_foocanvas_get_type ()" link="goffice-06-gog-control-foocanvas.html#gog-control-foocanvas-get-type"/>
+    <function name="The &quot;h&quot; property" link="goffice-06-gog-control-foocanvas.html#GogControlFooCanvas--h"/>
+    <function name="The &quot;model&quot; property" link="goffice-06-gog-control-foocanvas.html#GogControlFooCanvas--model"/>
+    <function name="The &quot;renderer&quot; property" link="goffice-06-gog-control-foocanvas.html#GogControlFooCanvas--renderer"/>
+    <function name="The &quot;w&quot; property" link="goffice-06-gog-control-foocanvas.html#GogControlFooCanvas--w"/>
+    <function name="gog_guru ()" link="goffice-06-gog-guru.html#gog-guru"/>
+    <function name="gog_guru_get_help_button ()" link="goffice-06-gog-guru.html#gog-guru-get-help-button"/>
+    <function name="GogPlotType" link="goffice-06-gog-plot-engine.html#GogPlotType"/>
+    <function name="GogPlotFamily" link="goffice-06-gog-plot-engine.html#GogPlotFamily"/>
+    <function name="gog_plot_families ()" link="goffice-06-gog-plot-engine.html#gog-plot-families"/>
+    <function name="gog_plot_family_by_name ()" link="goffice-06-gog-plot-engine.html#gog-plot-family-by-name"/>
+    <function name="gog_plot_family_register ()" link="goffice-06-gog-plot-engine.html#gog-plot-family-register"/>
+    <function name="gog_plot_family_unregister ()" link="goffice-06-gog-plot-engine.html#gog-plot-family-unregister"/>
+    <function name="gog_plot_type_register ()" link="goffice-06-gog-plot-engine.html#gog-plot-type-register"/>
+    <function name="GogTrendLineType" link="goffice-06-gog-plot-engine.html#GogTrendLineType"/>
+    <function name="gog_trend_line_types ()" link="goffice-06-gog-plot-engine.html#gog-trend-line-types"/>
+    <function name="gog_plugin_services_init ()" link="goffice-06-gog-plot-engine.html#gog-plugin-services-init"/>
+    <function name="gog_plugin_services_shutdown ()" link="goffice-06-gog-plot-engine.html#gog-plugin-services-shutdown"/>
+    <function name="GOG_STYLE_TYPE" link="goffice-06-gog-style.html#GOG-STYLE-TYPE:CAPS"/>
+    <function name="GOG_STYLE()" link="goffice-06-gog-style.html#GOG-STYLE:CAPS"/>
+    <function name="IS_GOG_STYLE()" link="goffice-06-gog-style.html#IS-GOG-STYLE:CAPS"/>
+    <function name="gog_style_get_type ()" link="goffice-06-gog-style.html#gog-style-get-type"/>
+    <function name="enum GogStyleFlag" link="goffice-06-gog-style.html#GogStyleFlag"/>
+    <function name="enum GogFillStyle" link="goffice-06-gog-style.html#GogFillStyle"/>
+    <function name="enum GogImageType" link="goffice-06-gog-style.html#GogImageType"/>
+    <function name="GogStyleLine" link="goffice-06-gog-style.html#GogStyleLine"/>
+    <function name="GogStyleMark" link="goffice-06-gog-style.html#GogStyleMark"/>
+    <function name="GogStyle" link="goffice-06-gog-style.html#GogStyle-struct"/>
+    <function name="gog_style_new ()" link="goffice-06-gog-style.html#gog-style-new"/>
+    <function name="gog_style_dup ()" link="goffice-06-gog-style.html#gog-style-dup"/>
+    <function name="gog_style_assign ()" link="goffice-06-gog-style.html#gog-style-assign"/>
+    <function name="gog_style_apply_theme ()" link="goffice-06-gog-style.html#gog-style-apply-theme"/>
+    <function name="gog_style_get_marker ()" link="goffice-06-gog-style.html#gog-style-get-marker"/>
+    <function name="gog_style_set_marker ()" link="goffice-06-gog-style.html#gog-style-set-marker"/>
+    <function name="gog_style_set_font_desc ()" link="goffice-06-gog-style.html#gog-style-set-font-desc"/>
+    <function name="gog_style_set_font ()" link="goffice-06-gog-style.html#gog-style-set-font"/>
+    <function name="gog_style_set_fill_brightness ()" link="goffice-06-gog-style.html#gog-style-set-fill-brightness"/>
+    <function name="gog_style_set_fill_image_filename ()" link="goffice-06-gog-style.html#gog-style-set-fill-image-filename"/>
+    <function name="gog_style_set_text_angle ()" link="goffice-06-gog-style.html#gog-style-set-text-angle"/>
+    <function name="gog_style_is_different_size ()" link="goffice-06-gog-style.html#gog-style-is-different-size"/>
+    <function name="gog_style_is_marker_visible ()" link="goffice-06-gog-style.html#gog-style-is-marker-visible"/>
+    <function name="gog_style_is_line_visible ()" link="goffice-06-gog-style.html#gog-style-is-line-visible"/>
+    <function name="gog_style_is_outline_visible ()" link="goffice-06-gog-style.html#gog-style-is-outline-visible"/>
+    <function name="gog_style_is_fill_visible ()" link="goffice-06-gog-style.html#gog-style-is-fill-visible"/>
+    <function name="gog_style_force_auto ()" link="goffice-06-gog-style.html#gog-style-force-auto"/>
+    <function name="gog_style_populate_editor ()" link="goffice-06-gog-style.html#gog-style-populate-editor"/>
+    <function name="gog_style_get_editor ()" link="goffice-06-gog-style.html#gog-style-get-editor"/>
+    <function name="gog_style_create_cairo_pattern ()" link="goffice-06-gog-style.html#gog-style-create-cairo-pattern"/>
+    <function name="GOG_THEME_TYPE" link="goffice-06-gog-theme.html#GOG-THEME-TYPE:CAPS"/>
+    <function name="GOG_THEME()" link="goffice-06-gog-theme.html#GOG-THEME:CAPS"/>
+    <function name="IS_GOG_THEME()" link="goffice-06-gog-theme.html#IS-GOG-THEME:CAPS"/>
+    <function name="gog_theme_get_type ()" link="goffice-06-gog-theme.html#gog-theme-get-type"/>
+    <function name="gog_theme_new ()" link="goffice-06-gog-theme.html#gog-theme-new"/>
+    <function name="gog_theme_new_from_file ()" link="goffice-06-gog-theme.html#gog-theme-new-from-file"/>
+    <function name="gog_theme_get_name ()" link="goffice-06-gog-theme.html#gog-theme-get-name"/>
+    <function name="gog_theme_fillin_style ()" link="goffice-06-gog-theme.html#gog-theme-fillin-style"/>
+    <function name="gog_theme_registry_add ()" link="goffice-06-gog-theme.html#gog-theme-registry-add"/>
+    <function name="gog_theme_registry_lookup ()" link="goffice-06-gog-theme.html#gog-theme-registry-lookup"/>
+    <function name="gog_theme_registry_get_theme_names ()" link="goffice-06-gog-theme.html#gog-theme-registry-get-theme-names"/>
+    <function name="gog_themes_init ()" link="goffice-06-gog-theme.html#gog-themes-init"/>
+    <function name="gog_themes_shutdown ()" link="goffice-06-gog-theme.html#gog-themes-shutdown"/>
+    <function name="GogChartMapPolarData" link="goffice-06-gog-chart-map.html#GogChartMapPolarData"/>
+    <function name="GogChartMap" link="goffice-06-gog-chart-map.html#GogChartMap"/>
+    <function name="gog_chart_map_new ()" link="goffice-06-gog-chart-map.html#gog-chart-map-new"/>
+    <function name="gog_chart_map_2D_to_view ()" link="goffice-06-gog-chart-map.html#gog-chart-map-2D-to-view"/>
+    <function name="gog_chart_map_get_axis_map ()" link="goffice-06-gog-chart-map.html#gog-chart-map-get-axis-map"/>
+    <function name="gog_chart_map_is_valid ()" link="goffice-06-gog-chart-map.html#gog-chart-map-is-valid"/>
+    <function name="gog_chart_map_free ()" link="goffice-06-gog-chart-map.html#gog-chart-map-free"/>
+    <function name="gog_chart_map_make_path ()" link="goffice-06-gog-chart-map.html#gog-chart-map-make-path"/>
+    <function name="gog_chart_map_make_close_path ()" link="goffice-06-gog-chart-map.html#gog-chart-map-make-close-path"/>
+    <function name="gog_chart_map_get_polar_parms ()" link="goffice-06-gog-chart-map.html#gog-chart-map-get-polar-parms"/>
+    <function name="GO_COMBO_BOX_TYPE" link="GOComboBox.html#GO-COMBO-BOX-TYPE:CAPS"/>
+    <function name="GO_COMBO_BOX()" link="GOComboBox.html#GO-COMBO-BOX:CAPS"/>
+    <function name="IS_GO_COMBO_BOX()" link="GOComboBox.html#IS-GO-COMBO-BOX:CAPS"/>
+    <function name="GO_COMBO_BOX_CLASS()" link="GOComboBox.html#GO-COMBO-BOX-CLASS:CAPS"/>
+    <function name="GOComboBoxPrivate" link="GOComboBox.html#GOComboBoxPrivate"/>
+    <function name="GOComboBox" link="GOComboBox.html#GOComboBox-struct"/>
+    <function name="go_combo_box_get_type ()" link="GOComboBox.html#go-combo-box-get-type"/>
+    <function name="go_combo_box_set_tooltip ()" link="GOComboBox.html#go-combo-box-set-tooltip"/>
+    <function name="go_combo_box_set_relief ()" link="GOComboBox.html#go-combo-box-set-relief"/>
+    <function name="go_combo_box_set_title ()" link="GOComboBox.html#go-combo-box-set-title"/>
+    <function name="go_combo_box_get_title ()" link="GOComboBox.html#go-combo-box-get-title"/>
+    <function name="go_combo_box_set_tearable ()" link="GOComboBox.html#go-combo-box-set-tearable"/>
+    <function name="go_combo_box_construct ()" link="GOComboBox.html#go-combo-box-construct"/>
+    <function name="go_combo_box_get_pos ()" link="GOComboBox.html#go-combo-box-get-pos"/>
+    <function name="go_combo_box_popup_hide ()" link="GOComboBox.html#go-combo-box-popup-hide"/>
+    <function name="go_combo_box_popup_display ()" link="GOComboBox.html#go-combo-box-popup-display"/>
+    <function name="go_combo_box_set_display ()" link="GOComboBox.html#go-combo-box-set-display"/>
+    <function name="The &quot;pop-down-done&quot; signal" link="GOComboBox.html#GOComboBox-pop-down-done"/>
+    <function name="GO_COMBO_PIXMAPS_TYPE" link="goffice-06-go-combo-pixmaps.html#GO-COMBO-PIXMAPS-TYPE:CAPS"/>
+    <function name="GO_COMBO_PIXMAPS()" link="goffice-06-go-combo-pixmaps.html#GO-COMBO-PIXMAPS:CAPS"/>
+    <function name="IS_GO_COMBO_PIXMAPS()" link="goffice-06-go-combo-pixmaps.html#IS-GO-COMBO-PIXMAPS:CAPS"/>
+    <function name="GOComboPixmaps" link="goffice-06-go-combo-pixmaps.html#GOComboPixmaps-struct"/>
+    <function name="GOMenuPixmaps" link="goffice-06-go-combo-pixmaps.html#GOMenuPixmaps"/>
+    <function name="go_combo_pixmaps_get_type ()" link="goffice-06-go-combo-pixmaps.html#go-combo-pixmaps-get-type"/>
+    <function name="go_combo_pixmaps_new ()" link="goffice-06-go-combo-pixmaps.html#go-combo-pixmaps-new"/>
+    <function name="go_combo_pixmaps_add_element ()" link="goffice-06-go-combo-pixmaps.html#go-combo-pixmaps-add-element"/>
+    <function name="go_combo_pixmaps_select_index ()" link="goffice-06-go-combo-pixmaps.html#go-combo-pixmaps-select-index"/>
+    <function name="go_combo_pixmaps_select_id ()" link="goffice-06-go-combo-pixmaps.html#go-combo-pixmaps-select-id"/>
+    <function name="go_combo_pixmaps_get_selected ()" link="goffice-06-go-combo-pixmaps.html#go-combo-pixmaps-get-selected"/>
+    <function name="go_combo_pixmaps_get_preview ()" link="goffice-06-go-combo-pixmaps.html#go-combo-pixmaps-get-preview"/>
+    <function name="go_menu_pixmaps_new ()" link="goffice-06-go-combo-pixmaps.html#go-menu-pixmaps-new"/>
+    <function name="go_menu_pixmaps_add_element ()" link="goffice-06-go-combo-pixmaps.html#go-menu-pixmaps-add-element"/>
+    <function name="The &quot;changed&quot; signal" link="goffice-06-go-combo-pixmaps.html#GOComboPixmaps-changed"/>
+    <function name="GOOptionMenu" link="GOOptionMenu.html#GOOptionMenu-struct"/>
+    <function name="go_option_menu_new ()" link="GOOptionMenu.html#go-option-menu-new"/>
+    <function name="go_option_menu_set_menu ()" link="GOOptionMenu.html#go-option-menu-set-menu"/>
+    <function name="go_option_menu_set_history ()" link="GOOptionMenu.html#go-option-menu-set-history"/>
+    <function name="go_option_menu_get_history ()" link="GOOptionMenu.html#go-option-menu-get-history"/>
+    <function name="The &quot;menu&quot; property" link="GOOptionMenu.html#GOOptionMenu--menu"/>
+    <function name="The &quot;changed&quot; signal" link="GOOptionMenu.html#GOOptionMenu-changed"/>
+    <function name="GOPaletteSwatchRenderCallback ()" link="GOPalette.html#GOPaletteSwatchRenderCallback"/>
+    <function name="GOPaletteSwatchTooltipCallback ()" link="GOPalette.html#GOPaletteSwatchTooltipCallback"/>
+    <function name="GOPalettePrivate" link="GOPalette.html#GOPalettePrivate"/>
+    <function name="GOPalette" link="GOPalette.html#GOPalette-struct"/>
+    <function name="go_palette_new ()" link="GOPalette.html#go-palette-new"/>
+    <function name="go_palette_show_automatic ()" link="GOPalette.html#go-palette-show-automatic"/>
+    <function name="go_palette_show_custom ()" link="GOPalette.html#go-palette-show-custom"/>
+    <function name="go_palette_get_user_data ()" link="GOPalette.html#go-palette-get-user-data"/>
+    <function name="go_palette_swatch_new ()" link="GOPalette.html#go-palette-swatch-new"/>
+    <function name="go_palette_get_n_swatches ()" link="GOPalette.html#go-palette-get-n-swatches"/>
+    <function name="The &quot;activate&quot; signal" link="GOPalette.html#GOPalette-activate"/>
+    <function name="The &quot;automatic-activate&quot; signal" link="GOPalette.html#GOPalette-automatic-activate"/>
+    <function name="The &quot;custom-activate&quot; signal" link="GOPalette.html#GOPalette-custom-activate"/>
+    <function name="GOSelectorPrivate" link="GOSelector.html#GOSelectorPrivate"/>
+    <function name="GOSelector" link="GOSelector.html#GOSelector-struct"/>
+    <function name="go_selector_new ()" link="GOSelector.html#go-selector-new"/>
+    <function name="go_selector_get_active ()" link="GOSelector.html#go-selector-get-active"/>
+    <function name="go_selector_set_active ()" link="GOSelector.html#go-selector-set-active"/>
+    <function name="go_selector_update_swatch ()" link="GOSelector.html#go-selector-update-swatch"/>
+    <function name="go_selector_activate ()" link="GOSelector.html#go-selector-activate"/>
+    <function name="go_selector_get_user_data ()" link="GOSelector.html#go-selector-get-user-data"/>
+    <function name="GOSelectorDndDataReceived ()" link="GOSelector.html#GOSelectorDndDataReceived"/>
+    <function name="GOSelectorDndDataGet ()" link="GOSelector.html#GOSelectorDndDataGet"/>
+    <function name="GOSelectorDndFillIcon ()" link="GOSelector.html#GOSelectorDndFillIcon"/>
+    <function name="go_selector_setup_dnd ()" link="GOSelector.html#go-selector-setup-dnd"/>
+    <function name="The &quot;activate&quot; signal" link="GOSelector.html#GOSelector-activate"/>
+    <function name="GO_COMBO_COLOR_TYPE" link="goffice-06-go-combo-color.html#GO-COMBO-COLOR-TYPE:CAPS"/>
+    <function name="GO_COMBO_COLOR()" link="goffice-06-go-combo-color.html#GO-COMBO-COLOR:CAPS"/>
+    <function name="IS_GO_COMBO_COLOR()" link="goffice-06-go-combo-color.html#IS-GO-COMBO-COLOR:CAPS"/>
+    <function name="GO_COMBO_COLOR_CLASS()" link="goffice-06-go-combo-color.html#GO-COMBO-COLOR-CLASS:CAPS"/>
+    <function name="GOComboColor" link="goffice-06-go-combo-color.html#GOComboColor-struct"/>
+    <function name="go_combo_color_get_type ()" link="goffice-06-go-combo-color.html#go-combo-color-get-type"/>
+    <function name="go_combo_color_new ()" link="goffice-06-go-combo-color.html#go-combo-color-new"/>
+    <function name="go_combo_color_get_color ()" link="goffice-06-go-combo-color.html#go-combo-color-get-color"/>
+    <function name="go_combo_color_set_color ()" link="goffice-06-go-combo-color.html#go-combo-color-set-color"/>
+    <function name="go_combo_color_set_color_to_default ()" link="goffice-06-go-combo-color.html#go-combo-color-set-color-to-default"/>
+    <function name="go_combo_color_set_color_gdk ()" link="goffice-06-go-combo-color.html#go-combo-color-set-color-gdk"/>
+    <function name="go_combo_color_set_allow_alpha ()" link="goffice-06-go-combo-color.html#go-combo-color-set-allow-alpha"/>
+    <function name="go_combo_color_set_instant_apply ()" link="goffice-06-go-combo-color.html#go-combo-color-set-instant-apply"/>
+    <function name="The &quot;color-changed&quot; signal" link="goffice-06-go-combo-color.html#GOComboColor-color-changed"/>
+    <function name="The &quot;display-custom-dialog&quot; signal" link="goffice-06-go-combo-color.html#GOComboColor-display-custom-dialog"/>
+    <function name="GO_TYPE_COMBO_TEXT" link="goffice-06-go-combo-text.html#GO-TYPE-COMBO-TEXT:CAPS"/>
+    <function name="GO_COMBO_TEXT()" link="goffice-06-go-combo-text.html#GO-COMBO-TEXT:CAPS"/>
+    <function name="IS_GO_COMBO_TEXT()" link="goffice-06-go-combo-text.html#IS-GO-COMBO-TEXT:CAPS"/>
+    <function name="GoComboText" link="goffice-06-go-combo-text.html#GoComboText-struct"/>
+    <function name="enum GoComboTextSearch" link="goffice-06-go-combo-text.html#GoComboTextSearch"/>
+    <function name="go_combo_text_get_type ()" link="goffice-06-go-combo-text.html#go-combo-text-get-type"/>
+    <function name="go_combo_text_new ()" link="goffice-06-go-combo-text.html#go-combo-text-new"/>
+    <function name="go_combo_text_glade_new ()" link="goffice-06-go-combo-text.html#go-combo-text-glade-new"/>
+    <function name="go_combo_text_get_entry ()" link="goffice-06-go-combo-text.html#go-combo-text-get-entry"/>
+    <function name="go_combo_text_set_text ()" link="goffice-06-go-combo-text.html#go-combo-text-set-text"/>
+    <function name="go_combo_text_add_item ()" link="goffice-06-go-combo-text.html#go-combo-text-add-item"/>
+    <function name="The &quot;entry-changed&quot; signal" link="goffice-06-go-combo-text.html#GoComboText-entry-changed"/>
+    <function name="The &quot;selection-changed&quot; signal" link="goffice-06-go-combo-text.html#GoComboText-selection-changed"/>
+    <function name="GO_CHARMAP_SEL_TYPE" link="goffice-06-go-charmap-sel.html#GO-CHARMAP-SEL-TYPE:CAPS"/>
+    <function name="GO_CHARMAP_SEL()" link="goffice-06-go-charmap-sel.html#GO-CHARMAP-SEL:CAPS"/>
+    <function name="IS_GO_CHARMAP_SEL()" link="goffice-06-go-charmap-sel.html#IS-GO-CHARMAP-SEL:CAPS"/>
+    <function name="GOCharmapSel" link="goffice-06-go-charmap-sel.html#GOCharmapSel-struct"/>
+    <function name="enum GOCharmapSelTestDirection" link="goffice-06-go-charmap-sel.html#GOCharmapSelTestDirection"/>
+    <function name="go_charmap_sel_get_type ()" link="goffice-06-go-charmap-sel.html#go-charmap-sel-get-type"/>
+    <function name="go_charmap_sel_new ()" link="goffice-06-go-charmap-sel.html#go-charmap-sel-new"/>
+    <function name="go_charmap_sel_get_encoding ()" link="goffice-06-go-charmap-sel.html#go-charmap-sel-get-encoding"/>
+    <function name="go_charmap_sel_set_encoding ()" link="goffice-06-go-charmap-sel.html#go-charmap-sel-set-encoding"/>
+    <function name="go_charmap_sel_get_encoding_name ()" link="goffice-06-go-charmap-sel.html#go-charmap-sel-get-encoding-name"/>
+    <function name="The &quot;TestDirection&quot; property" link="goffice-06-go-charmap-sel.html#GOCharmapSel--TestDirection"/>
+    <function name="The &quot;charmap-changed&quot; signal" link="goffice-06-go-charmap-sel.html#GOCharmapSel-charmap-changed"/>
+    <function name="GO_FONT_SEL_TYPE" link="goffice-06-go-font-sel.html#GO-FONT-SEL-TYPE:CAPS"/>
+    <function name="GO_FONT_SEL()" link="goffice-06-go-font-sel.html#GO-FONT-SEL:CAPS"/>
+    <function name="IS_GO_FONT_SEL()" link="goffice-06-go-font-sel.html#IS-GO-FONT-SEL:CAPS"/>
+    <function name="GOFontSel" link="goffice-06-go-font-sel.html#GOFontSel-struct"/>
+    <function name="go_font_sel_get_type ()" link="goffice-06-go-font-sel.html#go-font-sel-get-type"/>
+    <function name="go_font_sel_new ()" link="goffice-06-go-font-sel.html#go-font-sel-new"/>
+    <function name="go_font_sel_set_font ()" link="goffice-06-go-font-sel.html#go-font-sel-set-font"/>
+    <function name="go_font_sel_get_font ()" link="goffice-06-go-font-sel.html#go-font-sel-get-font"/>
+    <function name="go_font_sel_editable_enters ()" link="goffice-06-go-font-sel.html#go-font-sel-editable-enters"/>
+    <function name="go_font_sel_set_sample_text ()" link="goffice-06-go-font-sel.html#go-font-sel-set-sample-text"/>
+    <function name="The &quot;font-changed&quot; signal" link="goffice-06-go-font-sel.html#GOFontSel-font-changed"/>
+    <function name="GO_FORMAT_SEL_TYPE" link="goffice-06-go-format-sel.html#GO-FORMAT-SEL-TYPE:CAPS"/>
+    <function name="GO_FORMAT_SEL()" link="goffice-06-go-format-sel.html#GO-FORMAT-SEL:CAPS"/>
+    <function name="IS_GO_FORMAT_SEL()" link="goffice-06-go-format-sel.html#IS-GO-FORMAT-SEL:CAPS"/>
+    <function name="GOFormatSel" link="goffice-06-go-format-sel.html#GOFormatSel-struct"/>
+    <function name="go_format_sel_get_type ()" link="goffice-06-go-format-sel.html#go-format-sel-get-type"/>
+    <function name="go_format_sel_new ()" link="goffice-06-go-format-sel.html#go-format-sel-new"/>
+    <function name="go_format_sel_new_full ()" link="goffice-06-go-format-sel.html#go-format-sel-new-full"/>
+    <function name="go_format_sel_set_focus ()" link="goffice-06-go-format-sel.html#go-format-sel-set-focus"/>
+    <function name="go_format_sel_set_style_format ()" link="goffice-06-go-format-sel.html#go-format-sel-set-style-format"/>
+    <function name="go_format_sel_set_locale ()" link="goffice-06-go-format-sel.html#go-format-sel-set-locale"/>
+    <function name="go_format_sel_get_fmt ()" link="goffice-06-go-format-sel.html#go-format-sel-get-fmt"/>
+    <function name="go_format_sel_get_dateconv ()" link="goffice-06-go-format-sel.html#go-format-sel-get-dateconv"/>
+    <function name="go_format_sel_set_dateconv ()" link="goffice-06-go-format-sel.html#go-format-sel-set-dateconv"/>
+    <function name="go_format_sel_show_preview ()" link="goffice-06-go-format-sel.html#go-format-sel-show-preview"/>
+    <function name="go_format_sel_hide_preview ()" link="goffice-06-go-format-sel.html#go-format-sel-hide-preview"/>
+    <function name="go_format_sel_editable_enters ()" link="goffice-06-go-format-sel.html#go-format-sel-editable-enters"/>
+    <function name="go_format_sel_format_classification ()" link="goffice-06-go-format-sel.html#go-format-sel-format-classification"/>
+    <function name="The &quot;format-changed&quot; signal" link="goffice-06-go-format-sel.html#GOFormatSel-format-changed"/>
+    <function name="The &quot;generate-preview&quot; signal" link="goffice-06-go-format-sel.html#GOFormatSel-generate-preview"/>
+    <function name="GO_LOCALE_SEL_TYPE" link="goffice-06-go-locale-sel.html#GO-LOCALE-SEL-TYPE:CAPS"/>
+    <function name="GO_LOCALE_SEL()" link="goffice-06-go-locale-sel.html#GO-LOCALE-SEL:CAPS"/>
+    <function name="IS_GO_LOCALE_SEL()" link="goffice-06-go-locale-sel.html#IS-GO-LOCALE-SEL:CAPS"/>
+    <function name="GOLocaleSel" link="goffice-06-go-locale-sel.html#GOLocaleSel-struct"/>
+    <function name="go_locale_sel_get_type ()" link="goffice-06-go-locale-sel.html#go-locale-sel-get-type"/>
+    <function name="go_locale_sel_new ()" link="goffice-06-go-locale-sel.html#go-locale-sel-new"/>
+    <function name="go_locale_sel_get_locale ()" link="goffice-06-go-locale-sel.html#go-locale-sel-get-locale"/>
+    <function name="go_locale_sel_set_locale ()" link="goffice-06-go-locale-sel.html#go-locale-sel-set-locale"/>
+    <function name="go_locale_sel_set_sensitive ()" link="goffice-06-go-locale-sel.html#go-locale-sel-set-sensitive"/>
+    <function name="go_locale_sel_get_locale_name ()" link="goffice-06-go-locale-sel.html#go-locale-sel-get-locale-name"/>
+    <function name="The &quot;locale-changed&quot; signal" link="goffice-06-go-locale-sel.html#GOLocaleSel-locale-changed"/>
+    <function name="GO_ROTATION_SEL_TYPE" link="goffice-06-go-rotation-sel.html#GO-ROTATION-SEL-TYPE:CAPS"/>
+    <function name="GO_ROTATION_SEL()" link="goffice-06-go-rotation-sel.html#GO-ROTATION-SEL:CAPS"/>
+    <function name="IS_GO_ROTATION_SEL()" link="goffice-06-go-rotation-sel.html#IS-GO-ROTATION-SEL:CAPS"/>
+    <function name="GORotationSel" link="goffice-06-go-rotation-sel.html#GORotationSel-struct"/>
+    <function name="go_rotation_sel_get_type ()" link="goffice-06-go-rotation-sel.html#go-rotation-sel-get-type"/>
+    <function name="go_rotation_sel_new ()" link="goffice-06-go-rotation-sel.html#go-rotation-sel-new"/>
+    <function name="go_rotation_sel_set_rotation ()" link="goffice-06-go-rotation-sel.html#go-rotation-sel-set-rotation"/>
+    <function name="go_rotation_sel_get_rotation ()" link="goffice-06-go-rotation-sel.html#go-rotation-sel-get-rotation"/>
+    <function name="The &quot;rotation-changed&quot; signal" link="goffice-06-go-rotation-sel.html#GORotationSel-rotation-changed"/>
+    <function name="GONamedColor" link="goffice-06-go-color.html#GONamedColor"/>
+    <function name="GDK_TO_UINT()" link="goffice-06-go-color.html#GDK-TO-UINT:CAPS"/>
+    <function name="RGB_TO_UINT()" link="goffice-06-go-color.html#RGB-TO-UINT:CAPS"/>
+    <function name="RGB_TO_RGBA()" link="goffice-06-go-color.html#RGB-TO-RGBA:CAPS"/>
+    <function name="RGB_WHITE" link="goffice-06-go-color.html#RGB-WHITE:CAPS"/>
+    <function name="RGB_BLACK" link="goffice-06-go-color.html#RGB-BLACK:CAPS"/>
+    <function name="RGB_RED" link="goffice-06-go-color.html#RGB-RED:CAPS"/>
+    <function name="RGB_GREEN" link="goffice-06-go-color.html#RGB-GREEN:CAPS"/>
+    <function name="RGB_BLUE" link="goffice-06-go-color.html#RGB-BLUE:CAPS"/>
+    <function name="RGB_YELLOW" link="goffice-06-go-color.html#RGB-YELLOW:CAPS"/>
+    <function name="RGB_VIOLET" link="goffice-06-go-color.html#RGB-VIOLET:CAPS"/>
+    <function name="RGB_CYAN" link="goffice-06-go-color.html#RGB-CYAN:CAPS"/>
+    <function name="RGB_GREY()" link="goffice-06-go-color.html#RGB-GREY:CAPS"/>
+    <function name="RGBA_TO_UINT()" link="goffice-06-go-color.html#RGBA-TO-UINT:CAPS"/>
+    <function name="RGBA_WHITE" link="goffice-06-go-color.html#RGBA-WHITE:CAPS"/>
+    <function name="RGBA_BLACK" link="goffice-06-go-color.html#RGBA-BLACK:CAPS"/>
+    <function name="RGBA_RED" link="goffice-06-go-color.html#RGBA-RED:CAPS"/>
+    <function name="RGBA_GREEN" link="goffice-06-go-color.html#RGBA-GREEN:CAPS"/>
+    <function name="RGBA_BLUE" link="goffice-06-go-color.html#RGBA-BLUE:CAPS"/>
+    <function name="RGBA_YELLOW" link="goffice-06-go-color.html#RGBA-YELLOW:CAPS"/>
+    <function name="RGBA_VIOLET" link="goffice-06-go-color.html#RGBA-VIOLET:CAPS"/>
+    <function name="RGBA_CYAN" link="goffice-06-go-color.html#RGBA-CYAN:CAPS"/>
+    <function name="RGBA_GREY()" link="goffice-06-go-color.html#RGBA-GREY:CAPS"/>
+    <function name="UINT_RGBA_R()" link="goffice-06-go-color.html#UINT-RGBA-R:CAPS"/>
+    <function name="UINT_RGBA_G()" link="goffice-06-go-color.html#UINT-RGBA-G:CAPS"/>
+    <function name="UINT_RGBA_B()" link="goffice-06-go-color.html#UINT-RGBA-B:CAPS"/>
+    <function name="UINT_RGBA_A()" link="goffice-06-go-color.html#UINT-RGBA-A:CAPS"/>
+    <function name="UINT_RGBA_CHANGE_R()" link="goffice-06-go-color.html#UINT-RGBA-CHANGE-R:CAPS"/>
+    <function name="UINT_RGBA_CHANGE_G()" link="goffice-06-go-color.html#UINT-RGBA-CHANGE-G:CAPS"/>
+    <function name="UINT_RGBA_CHANGE_B()" link="goffice-06-go-color.html#UINT-RGBA-CHANGE-B:CAPS"/>
+    <function name="UINT_RGBA_CHANGE_A()" link="goffice-06-go-color.html#UINT-RGBA-CHANGE-A:CAPS"/>
+    <function name="UINT_TO_RGB()" link="goffice-06-go-color.html#UINT-TO-RGB:CAPS"/>
+    <function name="UINT_TO_RGBA()" link="goffice-06-go-color.html#UINT-TO-RGBA:CAPS"/>
+    <function name="MONO_INTERPOLATE()" link="goffice-06-go-color.html#MONO-INTERPOLATE:CAPS"/>
+    <function name="UINT_INTERPOLATE()" link="goffice-06-go-color.html#UINT-INTERPOLATE:CAPS"/>
+    <function name="PIXEL_RGB()" link="goffice-06-go-color.html#PIXEL-RGB:CAPS"/>
+    <function name="PIXEL_RGBA()" link="goffice-06-go-color.html#PIXEL-RGBA:CAPS"/>
+    <function name="PIXEL_RGB_UINT()" link="goffice-06-go-color.html#PIXEL-RGB-UINT:CAPS"/>
+    <function name="PIXEL_RGBA_UINT()" link="goffice-06-go-color.html#PIXEL-RGBA-UINT:CAPS"/>
+    <function name="PIXEL_BLACK()" link="goffice-06-go-color.html#PIXEL-BLACK:CAPS"/>
+    <function name="PIXEL_WHITE()" link="goffice-06-go-color.html#PIXEL-WHITE:CAPS"/>
+    <function name="PIXEL_GREY()" link="goffice-06-go-color.html#PIXEL-GREY:CAPS"/>
+    <function name="PIXEL_GREYA()" link="goffice-06-go-color.html#PIXEL-GREYA:CAPS"/>
+    <function name="DOUBLE_RGBA_R()" link="goffice-06-go-color.html#DOUBLE-RGBA-R:CAPS"/>
+    <function name="DOUBLE_RGBA_G()" link="goffice-06-go-color.html#DOUBLE-RGBA-G:CAPS"/>
+    <function name="DOUBLE_RGBA_B()" link="goffice-06-go-color.html#DOUBLE-RGBA-B:CAPS"/>
+    <function name="DOUBLE_RGBA_A()" link="goffice-06-go-color.html#DOUBLE-RGBA-A:CAPS"/>
+    <function name="GO_COLOR_TO_CAIRO()" link="goffice-06-go-color.html#GO-COLOR-TO-CAIRO:CAPS"/>
+    <function name="go_color_to_artpix ()" link="goffice-06-go-color.html#go-color-to-artpix"/>
+    <function name="go_color_render_svp ()" link="goffice-06-go-color.html#go-color-render-svp"/>
+    <function name="go_color_from_str ()" link="goffice-06-go-color.html#go-color-from-str"/>
+    <function name="go_color_as_str ()" link="goffice-06-go-color.html#go-color-as-str"/>
+    <function name="go_color_to_pango ()" link="goffice-06-go-color.html#go-color-to-pango"/>
+    <function name="go_color_to_gdk ()" link="goffice-06-go-color.html#go-color-to-gdk"/>
+    <function name="GOFontMetrics" link="goffice-06-go-font.html#GOFontMetrics"/>
+    <function name="GOFont" link="goffice-06-go-font.html#GOFont"/>
+    <function name="go_font_new_by_desc ()" link="goffice-06-go-font.html#go-font-new-by-desc"/>
+    <function name="go_font_new_by_name ()" link="goffice-06-go-font.html#go-font-new-by-name"/>
+    <function name="go_font_new_by_index ()" link="goffice-06-go-font.html#go-font-new-by-index"/>
+    <function name="go_font_as_str ()" link="goffice-06-go-font.html#go-font-as-str"/>
+    <function name="go_font_ref ()" link="goffice-06-go-font.html#go-font-ref"/>
+    <function name="go_font_unref ()" link="goffice-06-go-font.html#go-font-unref"/>
+    <function name="go_font_eq ()" link="goffice-06-go-font.html#go-font-eq"/>
+    <function name="go_fonts_list_families ()" link="goffice-06-go-font.html#go-fonts-list-families"/>
+    <function name="go_fonts_list_sizes ()" link="goffice-06-go-font.html#go-fonts-list-sizes"/>
+    <function name="go_font_metrics_new ()" link="goffice-06-go-font.html#go-font-metrics-new"/>
+    <function name="go_font_metrics_free ()" link="goffice-06-go-font.html#go-font-metrics-free"/>
+    <function name="go_font_cache_register ()" link="goffice-06-go-font.html#go-font-cache-register"/>
+    <function name="go_font_cache_unregister ()" link="goffice-06-go-font.html#go-font-cache-unregister"/>
+    <function name="go_fonts_init ()" link="goffice-06-go-font.html#go-fonts-init"/>
+    <function name="go_fonts_shutdown ()" link="goffice-06-go-font.html#go-fonts-shutdown"/>
+    <function name="enum GOGradientDirection" link="goffice-06-go-gradient.html#GOGradientDirection"/>
+    <function name="go_gradient_dir_from_str ()" link="goffice-06-go-gradient.html#go-gradient-dir-from-str"/>
+    <function name="go_gradient_dir_as_str ()" link="goffice-06-go-gradient.html#go-gradient-dir-as-str"/>
+    <function name="go_gradient_setup ()" link="goffice-06-go-gradient.html#go-gradient-setup"/>
+    <function name="enum GOLineDashType" link="goffice-06-go-line.html#GOLineDashType"/>
+    <function name="enum GOLineInterpolation" link="goffice-06-go-line.html#GOLineInterpolation"/>
+    <function name="GOLineDashSequence" link="goffice-06-go-line.html#GOLineDashSequence"/>
+    <function name="go_line_dash_from_str ()" link="goffice-06-go-line.html#go-line-dash-from-str"/>
+    <function name="go_line_dash_as_str ()" link="goffice-06-go-line.html#go-line-dash-as-str"/>
+    <function name="go_line_dash_as_label ()" link="goffice-06-go-line.html#go-line-dash-as-label"/>
+    <function name="go_line_dash_get_length ()" link="goffice-06-go-line.html#go-line-dash-get-length"/>
+    <function name="go_line_dash_get_sequence ()" link="goffice-06-go-line.html#go-line-dash-get-sequence"/>
+    <function name="go_line_dash_sequence_free ()" link="goffice-06-go-line.html#go-line-dash-sequence-free"/>
+    <function name="go_line_interpolation_from_str ()" link="goffice-06-go-line.html#go-line-interpolation-from-str"/>
+    <function name="go_line_interpolation_as_str ()" link="goffice-06-go-line.html#go-line-interpolation-as-str"/>
+    <function name="GO_MARKER_TYPE" link="goffice-06-go-marker.html#GO-MARKER-TYPE:CAPS"/>
+    <function name="GO_MARKER()" link="goffice-06-go-marker.html#GO-MARKER:CAPS"/>
+    <function name="IS_GO_MARKER()" link="goffice-06-go-marker.html#IS-GO-MARKER:CAPS"/>
+    <function name="enum GOMarkerShape" link="goffice-06-go-marker.html#GOMarkerShape"/>
+    <function name="go_marker_get_type ()" link="goffice-06-go-marker.html#go-marker-get-type"/>
+    <function name="go_marker_shape_from_str ()" link="goffice-06-go-marker.html#go-marker-shape-from-str"/>
+    <function name="go_marker_shape_as_str ()" link="goffice-06-go-marker.html#go-marker-shape-as-str"/>
+    <function name="go_marker_get_shape ()" link="goffice-06-go-marker.html#go-marker-get-shape"/>
+    <function name="go_marker_set_shape ()" link="goffice-06-go-marker.html#go-marker-set-shape"/>
+    <function name="go_marker_get_outline_color ()" link="goffice-06-go-marker.html#go-marker-get-outline-color"/>
+    <function name="go_marker_set_outline_color ()" link="goffice-06-go-marker.html#go-marker-set-outline-color"/>
+    <function name="go_marker_get_fill_color ()" link="goffice-06-go-marker.html#go-marker-get-fill-color"/>
+    <function name="go_marker_set_fill_color ()" link="goffice-06-go-marker.html#go-marker-set-fill-color"/>
+    <function name="go_marker_get_size ()" link="goffice-06-go-marker.html#go-marker-get-size"/>
+    <function name="go_marker_set_size ()" link="goffice-06-go-marker.html#go-marker-set-size"/>
+    <function name="go_marker_get_outline_width ()" link="goffice-06-go-marker.html#go-marker-get-outline-width"/>
+    <function name="go_marker_assign ()" link="goffice-06-go-marker.html#go-marker-assign"/>
+    <function name="go_marker_dup ()" link="goffice-06-go-marker.html#go-marker-dup"/>
+    <function name="go_marker_new ()" link="goffice-06-go-marker.html#go-marker-new"/>
+    <function name="go_marker_render ()" link="goffice-06-go-marker.html#go-marker-render"/>
+    <function name="go_marker_create_cairo_surface ()" link="goffice-06-go-marker.html#go-marker-create-cairo-surface"/>
+    <function name="GOPattern" link="goffice-06-go-pattern.html#GOPattern"/>
+    <function name="enum GOPatternType" link="goffice-06-go-pattern.html#GOPatternType"/>
+    <function name="go_pattern_from_str ()" link="goffice-06-go-pattern.html#go-pattern-from-str"/>
+    <function name="go_pattern_as_str ()" link="goffice-06-go-pattern.html#go-pattern-as-str"/>
+    <function name="go_pattern_is_solid ()" link="goffice-06-go-pattern.html#go-pattern-is-solid"/>
+    <function name="go_pattern_set_solid ()" link="goffice-06-go-pattern.html#go-pattern-set-solid"/>
+    <function name="go_pattern_get_pattern ()" link="goffice-06-go-pattern.html#go-pattern-get-pattern"/>
+    <function name="go_pattern_get_svg_path ()" link="goffice-06-go-pattern.html#go-pattern-get-svg-path"/>
+    <function name="go_pattern_create_cairo_pattern ()" link="goffice-06-go-pattern.html#go-pattern-create-cairo-pattern"/>
+    <function name="GO_CAIRO_CLAMP()" link="goffice-06-go-cairo.html#GO-CAIRO-CLAMP:CAPS"/>
+    <function name="GO_CAIRO_CLAMP_SNAP()" link="goffice-06-go-cairo.html#GO-CAIRO-CLAMP-SNAP:CAPS"/>
+    <function name="go_cairo_emit_svg_path ()" link="goffice-06-go-cairo.html#go-cairo-emit-svg-path"/>
+    <function name="go_cairo_surface_is_vector ()" link="goffice-06-go-cairo.html#go-cairo-surface-is-vector"/>
+    <function name="go_cairo_convert_data_to_pixbuf ()" link="goffice-06-go-cairo.html#go-cairo-convert-data-to-pixbuf"/>
+    <function name="go_cairo_convert_data_from_pixbuf ()" link="goffice-06-go-cairo.html#go-cairo-convert-data-from-pixbuf"/>
+    <function name="enum GOPathDirection" link="goffice-06-go-path.html#GOPathDirection"/>
+    <function name="enum GOPathOptions" link="goffice-06-go-path.html#GOPathOptions"/>
+    <function name="GOPathPoint" link="goffice-06-go-path.html#GOPathPoint"/>
+    <function name="GOPath" link="goffice-06-go-path.html#GOPath"/>
+    <function name="IS_GO_PATH()" link="goffice-06-go-path.html#IS-GO-PATH:CAPS"/>
+    <function name="go_path_new ()" link="goffice-06-go-path.html#go-path-new"/>
+    <function name="go_path_clear ()" link="goffice-06-go-path.html#go-path-clear"/>
+    <function name="go_path_free ()" link="goffice-06-go-path.html#go-path-free"/>
+    <function name="go_path_set_options ()" link="goffice-06-go-path.html#go-path-set-options"/>
+    <function name="go_path_get_options ()" link="goffice-06-go-path.html#go-path-get-options"/>
+    <function name="go_path_move_to ()" link="goffice-06-go-path.html#go-path-move-to"/>
+    <function name="go_path_line_to ()" link="goffice-06-go-path.html#go-path-line-to"/>
+    <function name="go_path_curve_to ()" link="goffice-06-go-path.html#go-path-curve-to"/>
+    <function name="go_path_close ()" link="goffice-06-go-path.html#go-path-close"/>
+    <function name="go_path_ring_wedge ()" link="goffice-06-go-path.html#go-path-ring-wedge"/>
+    <function name="go_path_pie_wedge ()" link="goffice-06-go-path.html#go-path-pie-wedge"/>
+    <function name="go_path_arc ()" link="goffice-06-go-path.html#go-path-arc"/>
+    <function name="go_path_arc_to ()" link="goffice-06-go-path.html#go-path-arc-to"/>
+    <function name="go_path_rectangle ()" link="goffice-06-go-path.html#go-path-rectangle"/>
+    <function name="go_path_interpret ()" link="goffice-06-go-path.html#go-path-interpret"/>
+    <function name="GO_GEOMETRY_ANGLE_TOLERANCE" link="goffice-06-go-geometry.html#GO-GEOMETRY-ANGLE-TOLERANCE:CAPS"/>
+    <function name="enum GOGeometrySide" link="goffice-06-go-geometry.html#GOGeometrySide"/>
+    <function name="enum GODirection" link="goffice-06-go-geometry.html#GODirection"/>
+    <function name="enum GOGeometryRotationType" link="goffice-06-go-geometry.html#GOGeometryRotationType"/>
+    <function name="GOGeometryOBR" link="goffice-06-go-geometry.html#GOGeometryOBR"/>
+    <function name="GOGeometryAABR" link="goffice-06-go-geometry.html#GOGeometryAABR"/>
+    <function name="go_geometry_cartesian_to_polar ()" link="goffice-06-go-geometry.html#go-geometry-cartesian-to-polar"/>
+    <function name="go_geometry_point_to_segment ()" link="goffice-06-go-geometry.html#go-geometry-point-to-segment"/>
+    <function name="go_geometry_AABR_add ()" link="goffice-06-go-geometry.html#go-geometry-AABR-add"/>
+    <function name="go_geometry_OBR_to_AABR ()" link="goffice-06-go-geometry.html#go-geometry-OBR-to-AABR"/>
+    <function name="go_geometry_test_OBR_overlap ()" link="goffice-06-go-geometry.html#go-geometry-test-OBR-overlap"/>
+    <function name="go_geometry_get_rotation_type ()" link="goffice-06-go-geometry.html#go-geometry-get-rotation-type"/>
+    <function name="go_geometry_calc_label_anchor ()" link="goffice-06-go-geometry.html#go-geometry-calc-label-anchor"/>
+    <function name="go_geometry_calc_label_position ()" link="goffice-06-go-geometry.html#go-geometry-calc-label-position"/>
+    <function name="GO_DIRECTION_TYPE" link="goffice-06-go-geometry.html#GO-DIRECTION-TYPE:CAPS"/>
+    <function name="go_direction_get_type ()" link="goffice-06-go-geometry.html#go-direction-get-type"/>
+    <function name="go_direction_is_horizontal ()" link="goffice-06-go-geometry.html#go-direction-is-horizontal"/>
+    <function name="go_direction_is_forward ()" link="goffice-06-go-geometry.html#go-direction-is-forward"/>
+    <function name="GO_DATA_TYPE" link="goffice-06-go-data.html#GO-DATA-TYPE:CAPS"/>
+    <function name="GO_DATA()" link="goffice-06-go-data.html#GO-DATA:CAPS"/>
+    <function name="IS_GO_DATA()" link="goffice-06-go-data.html#IS-GO-DATA:CAPS"/>
+    <function name="go_data_get_type ()" link="goffice-06-go-data.html#go-data-get-type"/>
+    <function name="go_data_dup ()" link="goffice-06-go-data.html#go-data-dup"/>
+    <function name="go_data_eq ()" link="goffice-06-go-data.html#go-data-eq"/>
+    <function name="go_data_preferred_fmt ()" link="goffice-06-go-data.html#go-data-preferred-fmt"/>
+    <function name="go_data_as_str ()" link="goffice-06-go-data.html#go-data-as-str"/>
+    <function name="go_data_from_str ()" link="goffice-06-go-data.html#go-data-from-str"/>
+    <function name="go_data_emit_changed ()" link="goffice-06-go-data.html#go-data-emit-changed"/>
+    <function name="GO_DATA_SCALAR_TYPE" link="goffice-06-go-data.html#GO-DATA-SCALAR-TYPE:CAPS"/>
+    <function name="GO_DATA_SCALAR()" link="goffice-06-go-data.html#GO-DATA-SCALAR:CAPS"/>
+    <function name="IS_GO_DATA_SCALAR()" link="goffice-06-go-data.html#IS-GO-DATA-SCALAR:CAPS"/>
+    <function name="go_data_scalar_get_type ()" link="goffice-06-go-data.html#go-data-scalar-get-type"/>
+    <function name="go_data_scalar_get_value ()" link="goffice-06-go-data.html#go-data-scalar-get-value"/>
+    <function name="go_data_scalar_get_str ()" link="goffice-06-go-data.html#go-data-scalar-get-str"/>
+    <function name="GO_DATA_VECTOR_TYPE" link="goffice-06-go-data.html#GO-DATA-VECTOR-TYPE:CAPS"/>
+    <function name="GO_DATA_VECTOR()" link="goffice-06-go-data.html#GO-DATA-VECTOR:CAPS"/>
+    <function name="IS_GO_DATA_VECTOR()" link="goffice-06-go-data.html#IS-GO-DATA-VECTOR:CAPS"/>
+    <function name="go_data_vector_get_type ()" link="goffice-06-go-data.html#go-data-vector-get-type"/>
+    <function name="go_data_vector_get_len ()" link="goffice-06-go-data.html#go-data-vector-get-len"/>
+    <function name="go_data_vector_get_values ()" link="goffice-06-go-data.html#go-data-vector-get-values"/>
+    <function name="go_data_vector_get_value ()" link="goffice-06-go-data.html#go-data-vector-get-value"/>
+    <function name="go_data_vector_get_str ()" link="goffice-06-go-data.html#go-data-vector-get-str"/>
+    <function name="go_data_vector_get_minmax ()" link="goffice-06-go-data.html#go-data-vector-get-minmax"/>
+    <function name="GO_DATA_MATRIX_TYPE" link="goffice-06-go-data.html#GO-DATA-MATRIX-TYPE:CAPS"/>
+    <function name="GO_DATA_MATRIX()" link="goffice-06-go-data.html#GO-DATA-MATRIX:CAPS"/>
+    <function name="IS_GO_DATA_MATRIX()" link="goffice-06-go-data.html#IS-GO-DATA-MATRIX:CAPS"/>
+    <function name="go_data_matrix_get_type ()" link="goffice-06-go-data.html#go-data-matrix-get-type"/>
+    <function name="go_data_matrix_get_size ()" link="goffice-06-go-data.html#go-data-matrix-get-size"/>
+    <function name="go_data_matrix_get_values ()" link="goffice-06-go-data.html#go-data-matrix-get-values"/>
+    <function name="go_data_matrix_get_value ()" link="goffice-06-go-data.html#go-data-matrix-get-value"/>
+    <function name="go_data_matrix_get_str ()" link="goffice-06-go-data.html#go-data-matrix-get-str"/>
+    <function name="go_data_matrix_get_minmax ()" link="goffice-06-go-data.html#go-data-matrix-get-minmax"/>
+    <function name="M_PI" link="goffice-06-go-math.html#M-PI:CAPS"/>
+    <function name="go_math_init ()" link="goffice-06-go-math.html#go-math-init"/>
+    <function name="go_continued_fraction ()" link="goffice-06-go-math.html#go-continued-fraction"/>
+    <function name="go_stern_brocot ()" link="goffice-06-go-math.html#go-stern-brocot"/>
+    <function name="go_add_epsilon ()" link="goffice-06-go-math.html#go-add-epsilon"/>
+    <function name="go_sub_epsilon ()" link="goffice-06-go-math.html#go-sub-epsilon"/>
+    <function name="go_fake_floor ()" link="goffice-06-go-math.html#go-fake-floor"/>
+    <function name="go_fake_ceil ()" link="goffice-06-go-math.html#go-fake-ceil"/>
+    <function name="go_fake_round ()" link="goffice-06-go-math.html#go-fake-round"/>
+    <function name="go_fake_trunc ()" link="goffice-06-go-math.html#go-fake-trunc"/>
+    <function name="go_rint ()" link="goffice-06-go-math.html#go-rint"/>
+    <function name="go_finite ()" link="goffice-06-go-math.html#go-finite"/>
+    <function name="go_pow2 ()" link="goffice-06-go-math.html#go-pow2"/>
+    <function name="go_pow10 ()" link="goffice-06-go-math.html#go-pow10"/>
+    <function name="go_strtod ()" link="goffice-06-go-math.html#go-strtod"/>
+    <function name="go_ascii_strtod ()" link="goffice-06-go-math.html#go-ascii-strtod"/>
+    <function name="asinh ()" link="goffice-06-go-math.html#asinh"/>
+    <function name="acosh ()" link="goffice-06-go-math.html#acosh"/>
+    <function name="atanh ()" link="goffice-06-go-math.html#atanh"/>
+    <function name="log1p ()" link="goffice-06-go-math.html#log1p"/>
+    <function name="expm1 ()" link="goffice-06-go-math.html#expm1"/>
+    <function name="go_finitel" link="goffice-06-go-math.html#go-finitel"/>
+    <function name="isnan" link="goffice-06-go-math.html#isnan"/>
+    <function name="finite" link="goffice-06-go-math.html#finite"/>
+    <function name="go_complex" link="goffice-06-go-complex.html#go-complex"/>
+    <function name="go_complexl" link="goffice-06-go-complex.html#go-complexl"/>
+    <function name="go_complex_to_string ()" link="goffice-06-go-complex.html#go-complex-to-string"/>
+    <function name="go_complex_from_string ()" link="goffice-06-go-complex.html#go-complex-from-string"/>
+    <function name="go_complex_to_polar ()" link="goffice-06-go-complex.html#go-complex-to-polar"/>
+    <function name="go_complex_from_polar ()" link="goffice-06-go-complex.html#go-complex-from-polar"/>
+    <function name="go_complex_mul ()" link="goffice-06-go-complex.html#go-complex-mul"/>
+    <function name="go_complex_div ()" link="goffice-06-go-complex.html#go-complex-div"/>
+    <function name="go_complex_pow ()" link="goffice-06-go-complex.html#go-complex-pow"/>
+    <function name="go_complex_sqrt ()" link="goffice-06-go-complex.html#go-complex-sqrt"/>
+    <function name="go_complex_init ()" link="goffice-06-go-complex.html#go-complex-init"/>
+    <function name="go_complex_real ()" link="goffice-06-go-complex.html#go-complex-real"/>
+    <function name="go_complex_real_p ()" link="goffice-06-go-complex.html#go-complex-real-p"/>
+    <function name="go_complex_zero_p ()" link="goffice-06-go-complex.html#go-complex-zero-p"/>
+    <function name="go_complex_mod ()" link="goffice-06-go-complex.html#go-complex-mod"/>
+    <function name="go_complex_angle ()" link="goffice-06-go-complex.html#go-complex-angle"/>
+    <function name="go_complex_conj ()" link="goffice-06-go-complex.html#go-complex-conj"/>
+    <function name="go_complex_scale_real ()" link="goffice-06-go-complex.html#go-complex-scale-real"/>
+    <function name="go_complex_add ()" link="goffice-06-go-complex.html#go-complex-add"/>
+    <function name="go_complex_sub ()" link="goffice-06-go-complex.html#go-complex-sub"/>
+    <function name="go_complex_exp ()" link="goffice-06-go-complex.html#go-complex-exp"/>
+    <function name="go_complex_ln ()" link="goffice-06-go-complex.html#go-complex-ln"/>
+    <function name="go_complex_sin ()" link="goffice-06-go-complex.html#go-complex-sin"/>
+    <function name="go_complex_cos ()" link="goffice-06-go-complex.html#go-complex-cos"/>
+    <function name="go_complex_tan ()" link="goffice-06-go-complex.html#go-complex-tan"/>
+    <function name="go_complex_to_stringl ()" link="goffice-06-go-complex.html#go-complex-to-stringl"/>
+    <function name="go_complex_from_stringl ()" link="goffice-06-go-complex.html#go-complex-from-stringl"/>
+    <function name="go_complex_to_polarl ()" link="goffice-06-go-complex.html#go-complex-to-polarl"/>
+    <function name="go_complex_from_polarl ()" link="goffice-06-go-complex.html#go-complex-from-polarl"/>
+    <function name="go_complex_mull ()" link="goffice-06-go-complex.html#go-complex-mull"/>
+    <function name="go_complex_divl ()" link="goffice-06-go-complex.html#go-complex-divl"/>
+    <function name="go_complex_powl ()" link="goffice-06-go-complex.html#go-complex-powl"/>
+    <function name="go_complex_sqrtl ()" link="goffice-06-go-complex.html#go-complex-sqrtl"/>
+    <function name="go_complex_initl ()" link="goffice-06-go-complex.html#go-complex-initl"/>
+    <function name="go_complex_reall ()" link="goffice-06-go-complex.html#go-complex-reall"/>
+    <function name="go_complex_real_pl ()" link="goffice-06-go-complex.html#go-complex-real-pl"/>
+    <function name="go_complex_zero_pl ()" link="goffice-06-go-complex.html#go-complex-zero-pl"/>
+    <function name="go_complex_conjl ()" link="goffice-06-go-complex.html#go-complex-conjl"/>
+    <function name="go_complex_scale_reall ()" link="goffice-06-go-complex.html#go-complex-scale-reall"/>
+    <function name="go_complex_addl ()" link="goffice-06-go-complex.html#go-complex-addl"/>
+    <function name="go_complex_subl ()" link="goffice-06-go-complex.html#go-complex-subl"/>
+    <function name="go_complex_expl ()" link="goffice-06-go-complex.html#go-complex-expl"/>
+    <function name="go_complex_lnl ()" link="goffice-06-go-complex.html#go-complex-lnl"/>
+    <function name="go_complex_sinl ()" link="goffice-06-go-complex.html#go-complex-sinl"/>
+    <function name="go_complex_cosl ()" link="goffice-06-go-complex.html#go-complex-cosl"/>
+    <function name="go_complex_tanl ()" link="goffice-06-go-complex.html#go-complex-tanl"/>
+    <function name="go_fourier_fft ()" link="goffice-06-go-fft.html#go-fourier-fft"/>
+    <function name="go_fourier_fftl ()" link="goffice-06-go-fft.html#go-fourier-fftl"/>
+    <function name="enum RegressionResult" link="goffice-06-go-regression.html#RegressionResult"/>
+    <function name="go_regression_stat_t" link="goffice-06-go-regression.html#go-regression-stat-t"/>
+    <function name="go_regression_stat_new ()" link="goffice-06-go-regression.html#go-regression-stat-new"/>
+    <function name="go_regression_stat_destroy ()" link="goffice-06-go-regression.html#go-regression-stat-destroy"/>
+    <function name="go_linear_regression ()" link="goffice-06-go-regression.html#go-linear-regression"/>
+    <function name="go_exponential_regression ()" link="goffice-06-go-regression.html#go-exponential-regression"/>
+    <function name="go_power_regression ()" link="goffice-06-go-regression.html#go-power-regression"/>
+    <function name="go_logarithmic_regression ()" link="goffice-06-go-regression.html#go-logarithmic-regression"/>
+    <function name="LOGFIT_C_ACCURACY" link="goffice-06-go-regression.html#LOGFIT-C-ACCURACY:CAPS"/>
+    <function name="LOGFIT_C_STEP_FACTOR" link="goffice-06-go-regression.html#LOGFIT-C-STEP-FACTOR:CAPS"/>
+    <function name="LOGFIT_C_RANGE_FACTOR" link="goffice-06-go-regression.html#LOGFIT-C-RANGE-FACTOR:CAPS"/>
+    <function name="go_logarithmic_fit ()" link="goffice-06-go-regression.html#go-logarithmic-fit"/>
+    <function name="GORegressionFunction ()" link="goffice-06-go-regression.html#GORegressionFunction"/>
+    <function name="go_non_linear_regression ()" link="goffice-06-go-regression.html#go-non-linear-regression"/>
+    <function name="go_matrix_invert ()" link="goffice-06-go-regression.html#go-matrix-invert"/>
+    <function name="go_matrix_determinant ()" link="goffice-06-go-regression.html#go-matrix-determinant"/>
+    <function name="go_regression_stat_tl" link="goffice-06-go-regression.html#go-regression-stat-tl"/>
+    <function name="go_regression_stat_newl ()" link="goffice-06-go-regression.html#go-regression-stat-newl"/>
+    <function name="go_regression_stat_destroyl ()" link="goffice-06-go-regression.html#go-regression-stat-destroyl"/>
+    <function name="go_linear_regressionl ()" link="goffice-06-go-regression.html#go-linear-regressionl"/>
+    <function name="go_exponential_regressionl ()" link="goffice-06-go-regression.html#go-exponential-regressionl"/>
+    <function name="go_power_regressionl ()" link="goffice-06-go-regression.html#go-power-regressionl"/>
+    <function name="go_logarithmic_regressionl ()" link="goffice-06-go-regression.html#go-logarithmic-regressionl"/>
+    <function name="go_logarithmic_fitl ()" link="goffice-06-go-regression.html#go-logarithmic-fitl"/>
+    <function name="GORegressionFunctionl ()" link="goffice-06-go-regression.html#GORegressionFunctionl"/>
+    <function name="go_non_linear_regressionl ()" link="goffice-06-go-regression.html#go-non-linear-regressionl"/>
+    <function name="go_matrix_invertl ()" link="goffice-06-go-regression.html#go-matrix-invertl"/>
+    <function name="PT_PER_IN" link="goffice-06-go-units.html#PT-PER-IN:CAPS"/>
+    <function name="CM_PER_IN" link="goffice-06-go-units.html#CM-PER-IN:CAPS"/>
+    <function name="EMU_PER_IN" link="goffice-06-go-units.html#EMU-PER-IN:CAPS"/>
+    <function name="UN_PER_IN" link="goffice-06-go-units.html#UN-PER-IN:CAPS"/>
+    <function name="UN_PER_EMU" link="goffice-06-go-units.html#UN-PER-EMU:CAPS"/>
+    <function name="UN_PER_PT" link="goffice-06-go-units.html#UN-PER-PT:CAPS"/>
+    <function name="UN_PER_CM" link="goffice-06-go-units.html#UN-PER-CM:CAPS"/>
+    <function name="GO_IN_TO_UN()" link="goffice-06-go-units.html#GO-IN-TO-UN:CAPS"/>
+    <function name="GO_IN_TO_PT()" link="goffice-06-go-units.html#GO-IN-TO-PT:CAPS"/>
+    <function name="GO_IN_TO_CM()" link="goffice-06-go-units.html#GO-IN-TO-CM:CAPS"/>
+    <function name="GO_IN_TO_EMU()" link="goffice-06-go-units.html#GO-IN-TO-EMU:CAPS"/>
+    <function name="GO_UN_TO_IN()" link="goffice-06-go-units.html#GO-UN-TO-IN:CAPS"/>
+    <function name="GO_UN_TO_PT()" link="goffice-06-go-units.html#GO-UN-TO-PT:CAPS"/>
+    <function name="GO_UN_TO_CM()" link="goffice-06-go-units.html#GO-UN-TO-CM:CAPS"/>
+    <function name="GO_UN_TO_EMU()" link="goffice-06-go-units.html#GO-UN-TO-EMU:CAPS"/>
+    <function name="GO_PT_TO_UN()" link="goffice-06-go-units.html#GO-PT-TO-UN:CAPS"/>
+    <function name="GO_PT_TO_IN()" link="goffice-06-go-units.html#GO-PT-TO-IN:CAPS"/>
+    <function name="GO_PT_TO_CM()" link="goffice-06-go-units.html#GO-PT-TO-CM:CAPS"/>
+    <function name="GO_PT_TO_EMU()" link="goffice-06-go-units.html#GO-PT-TO-EMU:CAPS"/>
+    <function name="GO_CM_TO_UN()" link="goffice-06-go-units.html#GO-CM-TO-UN:CAPS"/>
+    <function name="GO_CM_TO_IN()" link="goffice-06-go-units.html#GO-CM-TO-IN:CAPS"/>
+    <function name="GO_CM_TO_PT()" link="goffice-06-go-units.html#GO-CM-TO-PT:CAPS"/>
+    <function name="GO_CM_TO_EMU()" link="goffice-06-go-units.html#GO-CM-TO-EMU:CAPS"/>
+    <function name="GO_EMU_TO_UN()" link="goffice-06-go-units.html#GO-EMU-TO-UN:CAPS"/>
+    <function name="GO_EMU_TO_IN()" link="goffice-06-go-units.html#GO-EMU-TO-IN:CAPS"/>
+    <function name="GO_EMU_TO_PT()" link="goffice-06-go-units.html#GO-EMU-TO-PT:CAPS"/>
+    <function name="GO_EMU_TO_CM()" link="goffice-06-go-units.html#GO-EMU-TO-CM:CAPS"/>
+    <function name="GODistance" link="goffice-06-go-units.html#GODistance"/>
+    <function name="GOPoint" link="goffice-06-go-units.html#GOPoint"/>
+    <function name="GORect" link="goffice-06-go-units.html#GORect"/>
+    <function name="GOFilePermissions" link="goffice-06-go-file.html#GOFilePermissions"/>
+    <function name="enum GODotDot" link="goffice-06-go-file.html#GODotDot"/>
+    <function name="F_OK" link="goffice-06-go-file.html#F-OK:CAPS"/>
+    <function name="X_OK" link="goffice-06-go-file.html#X-OK:CAPS"/>
+    <function name="W_OK" link="goffice-06-go-file.html#W-OK:CAPS"/>
+    <function name="R_OK" link="goffice-06-go-file.html#R-OK:CAPS"/>
+    <function name="go_filename_simplify ()" link="goffice-06-go-file.html#go-filename-simplify"/>
+    <function name="go_url_simplify ()" link="goffice-06-go-file.html#go-url-simplify"/>
+    <function name="go_filename_from_uri ()" link="goffice-06-go-file.html#go-filename-from-uri"/>
+    <function name="go_filename_to_uri ()" link="goffice-06-go-file.html#go-filename-to-uri"/>
+    <function name="go_url_resolve_relative ()" link="goffice-06-go-file.html#go-url-resolve-relative"/>
+    <function name="go_url_make_relative ()" link="goffice-06-go-file.html#go-url-make-relative"/>
+    <function name="go_shell_arg_to_uri ()" link="goffice-06-go-file.html#go-shell-arg-to-uri"/>
+    <function name="go_basename_from_uri ()" link="goffice-06-go-file.html#go-basename-from-uri"/>
+    <function name="go_dirname_from_uri ()" link="goffice-06-go-file.html#go-dirname-from-uri"/>
+    <function name="go_shell_argv_to_glib_encoding ()" link="goffice-06-go-file.html#go-shell-argv-to-glib-encoding"/>
+    <function name="go_shell_argv_to_glib_encoding_free ()" link="goffice-06-go-file.html#go-shell-argv-to-glib-encoding-free"/>
+    <function name="go_file_open ()" link="goffice-06-go-file.html#go-file-open"/>
+    <function name="go_file_create ()" link="goffice-06-go-file.html#go-file-create"/>
+    <function name="go_file_split_urls ()" link="goffice-06-go-file.html#go-file-split-urls"/>
+    <function name="go_file_get_owner_name ()" link="goffice-06-go-file.html#go-file-get-owner-name"/>
+    <function name="go_file_get_group_name ()" link="goffice-06-go-file.html#go-file-get-group-name"/>
+    <function name="go_get_file_permissions ()" link="goffice-06-go-file.html#go-get-file-permissions"/>
+    <function name="go_set_file_permissions ()" link="goffice-06-go-file.html#go-set-file-permissions"/>
+    <function name="go_file_get_date_accessed ()" link="goffice-06-go-file.html#go-file-get-date-accessed"/>
+    <function name="go_file_get_date_modified ()" link="goffice-06-go-file.html#go-file-get-date-modified"/>
+    <function name="go_file_get_date_changed ()" link="goffice-06-go-file.html#go-file-get-date-changed"/>
+    <function name="go_file_access ()" link="goffice-06-go-file.html#go-file-access"/>
+    <function name="go_url_decode ()" link="goffice-06-go-file.html#go-url-decode"/>
+    <function name="go_url_encode ()" link="goffice-06-go-file.html#go-url-encode"/>
+    <function name="go_url_show ()" link="goffice-06-go-file.html#go-url-show"/>
+    <function name="go_url_check_extension ()" link="goffice-06-go-file.html#go-url-check-extension"/>
+    <function name="go_get_mime_type ()" link="goffice-06-go-file.html#go-get-mime-type"/>
+    <function name="go_get_mime_type_for_data ()" link="goffice-06-go-file.html#go-get-mime-type-for-data"/>
+    <function name="go_mime_type_get_description ()" link="goffice-06-go-file.html#go-mime-type-get-description"/>
+    <function name="GO_CMD_CONTEXT_TYPE" link="goffice-06-go-cmd-context.html#GO-CMD-CONTEXT-TYPE:CAPS"/>
+    <function name="GO_CMD_CONTEXT()" link="goffice-06-go-cmd-context.html#GO-CMD-CONTEXT:CAPS"/>
+    <function name="IS_GO_CMD_CONTEXT()" link="goffice-06-go-cmd-context.html#IS-GO-CMD-CONTEXT:CAPS"/>
+    <function name="go_cmd_context_get_type ()" link="goffice-06-go-cmd-context.html#go-cmd-context-get-type"/>
+    <function name="go_cmd_context_error ()" link="goffice-06-go-cmd-context.html#go-cmd-context-error"/>
+    <function name="go_cmd_context_get_password ()" link="goffice-06-go-cmd-context.html#go-cmd-context-get-password"/>
+    <function name="go_cmd_context_set_sensitive ()" link="goffice-06-go-cmd-context.html#go-cmd-context-set-sensitive"/>
+    <function name="go_cmd_context_error_system ()" link="goffice-06-go-cmd-context.html#go-cmd-context-error-system"/>
+    <function name="go_cmd_context_error_import ()" link="goffice-06-go-cmd-context.html#go-cmd-context-error-import"/>
+    <function name="go_cmd_context_error_export ()" link="goffice-06-go-cmd-context.html#go-cmd-context-error-export"/>
+    <function name="go_cmd_context_error_invalid ()" link="goffice-06-go-cmd-context.html#go-cmd-context-error-invalid"/>
+    <function name="go_cmd_context_error_info ()" link="goffice-06-go-cmd-context.html#go-cmd-context-error-info"/>
+    <function name="go_error_system ()" link="goffice-06-go-cmd-context.html#go-error-system"/>
+    <function name="go_error_import ()" link="goffice-06-go-cmd-context.html#go-error-import"/>
+    <function name="go_error_export ()" link="goffice-06-go-cmd-context.html#go-error-export"/>
+    <function name="go_error_invalid ()" link="goffice-06-go-cmd-context.html#go-error-invalid"/>
+    <function name="GO_DOC_CONTROL_TYPE" link="goffice-06-go-doc-control.html#GO-DOC-CONTROL-TYPE:CAPS"/>
+    <function name="GO_DOC_CONTROL()" link="goffice-06-go-doc-control.html#GO-DOC-CONTROL:CAPS"/>
+    <function name="IS_GO_DOC_CONTROL()" link="goffice-06-go-doc-control.html#IS-GO-DOC-CONTROL:CAPS"/>
+    <function name="enum GODocControlState" link="goffice-06-go-doc-control.html#GODocControlState"/>
+    <function name="go_doc_control_get_type ()" link="goffice-06-go-doc-control.html#go-doc-control-get-type"/>
+    <function name="GO_DOC_TYPE" link="goffice-06-go-doc.html#GO-DOC-TYPE:CAPS"/>
+    <function name="GO_DOC()" link="goffice-06-go-doc.html#GO-DOC:CAPS"/>
+    <function name="IS_GO_DOC()" link="goffice-06-go-doc.html#IS-GO-DOC:CAPS"/>
+    <function name="go_doc_get_type ()" link="goffice-06-go-doc.html#go-doc-get-type"/>
+    <function name="go_doc_is_pristine ()" link="goffice-06-go-doc.html#go-doc-is-pristine"/>
+    <function name="go_doc_set_dirty ()" link="goffice-06-go-doc.html#go-doc-set-dirty"/>
+    <function name="go_doc_is_dirty ()" link="goffice-06-go-doc.html#go-doc-is-dirty"/>
+    <function name="go_doc_set_uri ()" link="goffice-06-go-doc.html#go-doc-set-uri"/>
+    <function name="go_doc_get_uri ()" link="goffice-06-go-doc.html#go-doc-get-uri"/>
+    <function name="go_doc_get_meta_data ()" link="goffice-06-go-doc.html#go-doc-get-meta-data"/>
+    <function name="go_doc_set_meta_data ()" link="goffice-06-go-doc.html#go-doc-set-meta-data"/>
+    <function name="go_doc_update_meta_data ()" link="goffice-06-go-doc.html#go-doc-update-meta-data"/>
+    <function name="go_doc_new_from_input ()" link="goffice-06-go-doc.html#go-doc-new-from-input"/>
+    <function name="go_doc_new_from_uri ()" link="goffice-06-go-doc.html#go-doc-new-from-uri"/>
+    <function name="go_doc_save ()" link="goffice-06-go-doc.html#go-doc-save"/>
+    <function name="go_doc_save_as ()" link="goffice-06-go-doc.html#go-doc-save-as"/>
+    <function name="go_doc_sendto ()" link="goffice-06-go-doc.html#go-doc-sendto"/>
+    <function name="GO_PLUGIN_TYPE" link="goffice-06-go-plugin.html#GO-PLUGIN-TYPE:CAPS"/>
+    <function name="GO_PLUGIN()" link="goffice-06-go-plugin.html#GO-PLUGIN:CAPS"/>
+    <function name="IS_GO_PLUGIN()" link="goffice-06-go-plugin.html#IS-GO-PLUGIN:CAPS"/>
+    <function name="go_plugin_get_type ()" link="goffice-06-go-plugin.html#go-plugin-get-type"/>
+    <function name="go_plugin_activate ()" link="goffice-06-go-plugin.html#go-plugin-activate"/>
+    <function name="go_plugin_deactivate ()" link="goffice-06-go-plugin.html#go-plugin-deactivate"/>
+    <function name="go_plugin_is_active ()" link="goffice-06-go-plugin.html#go-plugin-is-active"/>
+    <function name="go_plugin_can_deactivate ()" link="goffice-06-go-plugin.html#go-plugin-can-deactivate"/>
+    <function name="go_plugin_load_service ()" link="goffice-06-go-plugin.html#go-plugin-load-service"/>
+    <function name="go_plugin_unload_service ()" link="goffice-06-go-plugin.html#go-plugin-unload-service"/>
+    <function name="go_plugin_is_loaded ()" link="goffice-06-go-plugin.html#go-plugin-is-loaded"/>
+    <function name="go_plugin_use_ref ()" link="goffice-06-go-plugin.html#go-plugin-use-ref"/>
+    <function name="go_plugin_use_unref ()" link="goffice-06-go-plugin.html#go-plugin-use-unref"/>
+    <function name="go_plugin_get_type_module ()" link="goffice-06-go-plugin.html#go-plugin-get-type-module"/>
+    <function name="go_plugin_get_dir_name ()" link="goffice-06-go-plugin.html#go-plugin-get-dir-name"/>
+    <function name="go_plugin_get_id ()" link="goffice-06-go-plugin.html#go-plugin-get-id"/>
+    <function name="go_plugin_get_name ()" link="goffice-06-go-plugin.html#go-plugin-get-name"/>
+    <function name="go_plugin_get_description ()" link="goffice-06-go-plugin.html#go-plugin-get-description"/>
+    <function name="go_plugin_get_textdomain ()" link="goffice-06-go-plugin.html#go-plugin-get-textdomain"/>
+    <function name="go_plugin_get_services ()" link="goffice-06-go-plugin.html#go-plugin-get-services"/>
+    <function name="go_plugin_get_dependencies_ids ()" link="goffice-06-go-plugin.html#go-plugin-get-dependencies-ids"/>
+    <function name="go_plugins_init ()" link="goffice-06-go-plugin.html#go-plugins-init"/>
+    <function name="go_plugins_shutdown ()" link="goffice-06-go-plugin.html#go-plugins-shutdown"/>
+    <function name="go_plugins_add ()" link="goffice-06-go-plugin.html#go-plugins-add"/>
+    <function name="go_plugins_register_loader ()" link="goffice-06-go-plugin.html#go-plugins-register-loader"/>
+    <function name="go_plugins_unregister_loader ()" link="goffice-06-go-plugin.html#go-plugins-unregister-loader"/>
+    <function name="go_plugins_get_plugin_by_id ()" link="goffice-06-go-plugin.html#go-plugins-get-plugin-by-id"/>
+    <function name="go_plugins_get_available_plugins ()" link="goffice-06-go-plugin.html#go-plugins-get-available-plugins"/>
+    <function name="go_plugins_get_active_plugins ()" link="goffice-06-go-plugin.html#go-plugins-get-active-plugins"/>
+    <function name="go_plugins_rescan ()" link="goffice-06-go-plugin.html#go-plugins-rescan"/>
+    <function name="go_plugins_get_plugin_dir ()" link="goffice-06-go-plugin.html#go-plugins-get-plugin-dir"/>
+    <function name="go_plugin_db_mark_plugin_for_deactivation ()" link="goffice-06-go-plugin.html#go-plugin-db-mark-plugin-for-deactivation"/>
+    <function name="go_plugin_db_is_plugin_marked_for_deactivation ()" link="goffice-06-go-plugin.html#go-plugin-db-is-plugin-marked-for-deactivation"/>
+    <function name="go_plugin_db_activate_plugin_list ()" link="goffice-06-go-plugin.html#go-plugin-db-activate-plugin-list"/>
+    <function name="go_plugin_db_deactivate_plugin_list ()" link="goffice-06-go-plugin.html#go-plugin-db-deactivate-plugin-list"/>
+    <function name="GO_PLUGIN_LOADER_TYPE" link="GOPluginLoader.html#GO-PLUGIN-LOADER-TYPE:CAPS"/>
+    <function name="GO_PLUGIN_LOADER()" link="GOPluginLoader.html#GO-PLUGIN-LOADER:CAPS"/>
+    <function name="IS_GO_PLUGIN_LOADER()" link="GOPluginLoader.html#IS-GO-PLUGIN-LOADER:CAPS"/>
+    <function name="GO_PLUGIN_LOADER_CLASS()" link="GOPluginLoader.html#GO-PLUGIN-LOADER-CLASS:CAPS"/>
+    <function name="IS_GO_PLUGIN_LOADER_CLASS()" link="GOPluginLoader.html#IS-GO-PLUGIN-LOADER-CLASS:CAPS"/>
+    <function name="go_plugin_loader_get_type ()" link="GOPluginLoader.html#go-plugin-loader-get-type"/>
+    <function name="go_plugin_loader_set_attributes ()" link="GOPluginLoader.html#go-plugin-loader-set-attributes"/>
+    <function name="go_plugin_loader_get_plugin ()" link="GOPluginLoader.html#go-plugin-loader-get-plugin"/>
+    <function name="go_plugin_loader_set_plugin ()" link="GOPluginLoader.html#go-plugin-loader-set-plugin"/>
+    <function name="go_plugin_loader_load_base ()" link="GOPluginLoader.html#go-plugin-loader-load-base"/>
+    <function name="go_plugin_loader_unload_base ()" link="GOPluginLoader.html#go-plugin-loader-unload-base"/>
+    <function name="go_plugin_loader_load_service ()" link="GOPluginLoader.html#go-plugin-loader-load-service"/>
+    <function name="go_plugin_loader_unload_service ()" link="GOPluginLoader.html#go-plugin-loader-unload-service"/>
+    <function name="go_plugin_loader_is_base_loaded ()" link="GOPluginLoader.html#go-plugin-loader-is-base-loaded"/>
+    <function name="GO_PLUGIN_LOADER_MODULE_TYPE" link="goffice-06-go-plugin-loader-module.html#GO-PLUGIN-LOADER-MODULE-TYPE:CAPS"/>
+    <function name="GO_PLUGIN_LOADER_MODULE()" link="goffice-06-go-plugin-loader-module.html#GO-PLUGIN-LOADER-MODULE:CAPS"/>
+    <function name="IS_GO_PLUGIN_LOADER_MODULE()" link="goffice-06-go-plugin-loader-module.html#IS-GO-PLUGIN-LOADER-MODULE:CAPS"/>
+    <function name="GO_PLUGIN_LOADER_MODULE_CLASS()" link="goffice-06-go-plugin-loader-module.html#GO-PLUGIN-LOADER-MODULE-CLASS:CAPS"/>
+    <function name="IS_GO_PLUGIN_LOADER_MODULE_CLASS()" link="goffice-06-go-plugin-loader-module.html#IS-GO-PLUGIN-LOADER-MODULE-CLASS:CAPS"/>
+    <function name="GOPluginLoaderModule" link="goffice-06-go-plugin-loader-module.html#GOPluginLoaderModule-struct"/>
+    <function name="GOPluginLoaderModuleClass" link="goffice-06-go-plugin-loader-module.html#GOPluginLoaderModuleClass"/>
+    <function name="go_plugin_loader_module_get_type ()" link="goffice-06-go-plugin-loader-module.html#go-plugin-loader-module-get-type"/>
+    <function name="go_plugin_loader_module_register_version ()" link="goffice-06-go-plugin-loader-module.html#go-plugin-loader-module-register-version"/>
+    <function name="GO_PLUGIN_SERVICE_TYPE" link="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-TYPE:CAPS"/>
+    <function name="GO_PLUGIN_SERVICE()" link="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE:CAPS"/>
+    <function name="IS_GO_PLUGIN_SERVICE()" link="goffice-06-go-plugin-service.html#IS-GO-PLUGIN-SERVICE:CAPS"/>
+    <function name="plugin_service_get_type ()" link="goffice-06-go-plugin-service.html#plugin-service-get-type"/>
+    <function name="GO_PLUGIN_SERVICE_GENERAL_TYPE" link="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-GENERAL-TYPE:CAPS"/>
+    <function name="GO_PLUGIN_SERVICE_GENERAL()" link="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-GENERAL:CAPS"/>
+    <function name="IS_GO_PLUGIN_SERVICE_GENERAL()" link="goffice-06-go-plugin-service.html#IS-GO-PLUGIN-SERVICE-GENERAL:CAPS"/>
+    <function name="plugin_service_general_get_type ()" link="goffice-06-go-plugin-service.html#plugin-service-general-get-type"/>
+    <function name="PluginServiceGeneral" link="goffice-06-go-plugin-service.html#PluginServiceGeneral-struct"/>
+    <function name="PluginServiceGeneralCallbacks" link="goffice-06-go-plugin-service.html#PluginServiceGeneralCallbacks"/>
+    <function name="GO_PLUGIN_SERVICE_FILE_OPENER_TYPE" link="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-FILE-OPENER-TYPE:CAPS"/>
+    <function name="GO_PLUGIN_SERVICE_FILE_OPENER()" link="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-FILE-OPENER:CAPS"/>
+    <function name="IS_GO_PLUGIN_SERVICE_FILE_OPENER()" link="goffice-06-go-plugin-service.html#IS-GO-PLUGIN-SERVICE-FILE-OPENER:CAPS"/>
+    <function name="plugin_service_file_opener_get_type ()" link="goffice-06-go-plugin-service.html#plugin-service-file-opener-get-type"/>
+    <function name="PluginServiceFileOpener" link="goffice-06-go-plugin-service.html#PluginServiceFileOpener-struct"/>
+    <function name="PluginServiceFileOpenerCallbacks" link="goffice-06-go-plugin-service.html#PluginServiceFileOpenerCallbacks"/>
+    <function name="GO_PLUGIN_SERVICE_FILE_SAVER_TYPE" link="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-FILE-SAVER-TYPE:CAPS"/>
+    <function name="GO_PLUGIN_SERVICE_FILE_SAVER()" link="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-FILE-SAVER:CAPS"/>
+    <function name="IS_GO_PLUGIN_SERVICE_FILE_SAVER()" link="goffice-06-go-plugin-service.html#IS-GO-PLUGIN-SERVICE-FILE-SAVER:CAPS"/>
+    <function name="plugin_service_file_saver_get_type ()" link="goffice-06-go-plugin-service.html#plugin-service-file-saver-get-type"/>
+    <function name="PluginServiceFileSaver" link="goffice-06-go-plugin-service.html#PluginServiceFileSaver-struct"/>
+    <function name="PluginServiceFileSaverCallbacks" link="goffice-06-go-plugin-service.html#PluginServiceFileSaverCallbacks"/>
+    <function name="GO_PLUGIN_SERVICE_PLUGIN_LOADER_TYPE" link="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-PLUGIN-LOADER-TYPE:CAPS"/>
+    <function name="GO_PLUGIN_SERVICE_PLUGIN_LOADER()" link="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-PLUGIN-LOADER:CAPS"/>
+    <function name="IS_GO_PLUGIN_SERVICE_PLUGIN_LOADER()" link="goffice-06-go-plugin-service.html#IS-GO-PLUGIN-SERVICE-PLUGIN-LOADER:CAPS"/>
+    <function name="plugin_service_plugin_loader_get_type ()" link="goffice-06-go-plugin-service.html#plugin-service-plugin-loader-get-type"/>
+    <function name="PluginServicePluginLoader" link="goffice-06-go-plugin-service.html#PluginServicePluginLoader-struct"/>
+    <function name="PluginServicePluginLoaderCallbacks" link="goffice-06-go-plugin-service.html#PluginServicePluginLoaderCallbacks"/>
+    <function name="plugin_service_plugin_loader_generate_type ()" link="goffice-06-go-plugin-service.html#plugin-service-plugin-loader-generate-type"/>
+    <function name="GO_PLUGIN_SERVICE_GOBJECT_LOADER_TYPE" link="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-GOBJECT-LOADER-TYPE:CAPS"/>
+    <function name="GO_PLUGIN_SERVICE_GOBJECT_LOADER()" link="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-GOBJECT-LOADER:CAPS"/>
+    <function name="IS_GO_PLUGIN_SERVICE_GOBJECT_LOADER()" link="goffice-06-go-plugin-service.html#IS-GO-PLUGIN-SERVICE-GOBJECT-LOADER:CAPS"/>
+    <function name="plugin_service_gobject_loader_get_type ()" link="goffice-06-go-plugin-service.html#plugin-service-gobject-loader-get-type"/>
+    <function name="PluginServiceGObjectLoader" link="goffice-06-go-plugin-service.html#PluginServiceGObjectLoader-struct"/>
+    <function name="GO_PLUGIN_SERVICE_SIMPLE_TYPE" link="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-SIMPLE-TYPE:CAPS"/>
+    <function name="GO_PLUGIN_SERVICE_SIMPLE()" link="goffice-06-go-plugin-service.html#GO-PLUGIN-SERVICE-SIMPLE:CAPS"/>
+    <function name="IS_GO_PLUGIN_SERVICE_SIMPLE()" link="goffice-06-go-plugin-service.html#IS-GO-PLUGIN-SERVICE-SIMPLE:CAPS"/>
+    <function name="plugin_service_simple_get_type ()" link="goffice-06-go-plugin-service.html#plugin-service-simple-get-type"/>
+    <function name="PluginServiceSimple" link="goffice-06-go-plugin-service.html#PluginServiceSimple-struct"/>
+    <function name="plugin_service_new ()" link="goffice-06-go-plugin-service.html#plugin-service-new"/>
+    <function name="plugin_service_get_id ()" link="goffice-06-go-plugin-service.html#plugin-service-get-id"/>
+    <function name="plugin_service_get_description ()" link="goffice-06-go-plugin-service.html#plugin-service-get-description"/>
+    <function name="plugin_service_get_plugin ()" link="goffice-06-go-plugin-service.html#plugin-service-get-plugin"/>
+    <function name="plugin_service_get_cbs ()" link="goffice-06-go-plugin-service.html#plugin-service-get-cbs"/>
+    <function name="plugin_service_activate ()" link="goffice-06-go-plugin-service.html#plugin-service-activate"/>
+    <function name="plugin_service_deactivate ()" link="goffice-06-go-plugin-service.html#plugin-service-deactivate"/>
+    <function name="plugin_service_load ()" link="goffice-06-go-plugin-service.html#plugin-service-load"/>
+    <function name="plugin_service_unload ()" link="goffice-06-go-plugin-service.html#plugin-service-unload"/>
+    <function name="GOPluginServiceCreate ()" link="goffice-06-go-plugin-service.html#GOPluginServiceCreate"/>
+    <function name="plugin_services_init ()" link="goffice-06-go-plugin-service.html#plugin-services-init"/>
+    <function name="plugin_services_shutdown ()" link="goffice-06-go-plugin-service.html#plugin-services-shutdown"/>
+    <function name="plugin_service_define ()" link="goffice-06-go-plugin-service.html#plugin-service-define"/>
+    <function name="enum GOMimePriority" link="goffice-06-go-component-factory.html#GOMimePriority"/>
+    <function name="go_components_get_mime_types ()" link="goffice-06-go-component-factory.html#go-components-get-mime-types"/>
+    <function name="go_components_get_priority ()" link="goffice-06-go-component-factory.html#go-components-get-priority"/>
+    <function name="go_components_support_clipboard ()" link="goffice-06-go-component-factory.html#go-components-support-clipboard"/>
+    <function name="go_components_add_mime_type ()" link="goffice-06-go-component-factory.html#go-components-add-mime-type"/>
+    <function name="go_components_set_mime_suffix ()" link="goffice-06-go-component-factory.html#go-components-set-mime-suffix"/>
+    <function name="go_components_get_mime_suffix ()" link="goffice-06-go-component-factory.html#go-components-get-mime-suffix"/>
+    <function name="goc_plugin_services_init ()" link="goffice-06-go-component-factory.html#goc-plugin-services-init"/>
+    <function name="goc_plugin_services_shutdown ()" link="goffice-06-go-component-factory.html#goc-plugin-services-shutdown"/>
+    <function name="GOComponent" link="GOComponent.html#GOComponent-struct"/>
+    <function name="GO_COMPONENT_TYPE" link="GOComponent.html#GO-COMPONENT-TYPE:CAPS"/>
+    <function name="GO_COMPONENT()" link="GOComponent.html#GO-COMPONENT:CAPS"/>
+    <function name="IS_GO_COMPONENT()" link="GOComponent.html#IS-GO-COMPONENT:CAPS"/>
+    <function name="GOC_PARAM_PERSISTENT" link="GOComponent.html#GOC-PARAM-PERSISTENT:CAPS"/>
+    <function name="go_component_get_type ()" link="GOComponent.html#go-component-get-type"/>
+    <function name="go_component_new_by_mime_type ()" link="GOComponent.html#go-component-new-by-mime-type"/>
+    <function name="go_component_set_default_size ()" link="GOComponent.html#go-component-set-default-size"/>
+    <function name="go_component_needs_window ()" link="GOComponent.html#go-component-needs-window"/>
+    <function name="go_component_set_window ()" link="GOComponent.html#go-component-set-window"/>
+    <function name="go_component_set_data ()" link="GOComponent.html#go-component-set-data"/>
+    <function name="go_component_get_data ()" link="GOComponent.html#go-component-get-data"/>
+    <function name="go_component_set_size ()" link="GOComponent.html#go-component-set-size"/>
+    <function name="go_component_is_resizable ()" link="GOComponent.html#go-component-is-resizable"/>
+    <function name="go_component_is_editable ()" link="GOComponent.html#go-component-is-editable"/>
+    <function name="go_component_edit ()" link="GOComponent.html#go-component-edit"/>
+    <function name="go_component_emit_changed ()" link="GOComponent.html#go-component-emit-changed"/>
+    <function name="go_component_set_command_context ()" link="GOComponent.html#go-component-set-command-context"/>
+    <function name="go_component_get_command_context ()" link="GOComponent.html#go-component-get-command-context"/>
+    <function name="go_component_render ()" link="GOComponent.html#go-component-render"/>
+    <function name="The &quot;ascent&quot; property" link="GOComponent.html#GOComponent--ascent"/>
+    <function name="The &quot;descent&quot; property" link="GOComponent.html#GOComponent--descent"/>
+    <function name="The &quot;height&quot; property" link="GOComponent.html#GOComponent--height"/>
+    <function name="The &quot;mime-type&quot; property" link="GOComponent.html#GOComponent--mime-type"/>
+    <function name="The &quot;width&quot; property" link="GOComponent.html#GOComponent--width"/>
+    <function name="The &quot;changed&quot; signal" link="GOComponent.html#GOComponent-changed"/>
+    <function name="enum GOFormatFamily" link="goffice-06-go-format.html#GOFormatFamily"/>
+    <function name="enum GOFormatNumberError" link="goffice-06-go-format.html#GOFormatNumberError"/>
+    <function name="GOFormatMeasure ()" link="goffice-06-go-format.html#GOFormatMeasure"/>
+    <function name="go_format_measure_zero ()" link="goffice-06-go-format.html#go-format-measure-zero"/>
+    <function name="go_format_measure_pango ()" link="goffice-06-go-format.html#go-format-measure-pango"/>
+    <function name="go_format_measure_strlen ()" link="goffice-06-go-format.html#go-format-measure-strlen"/>
+    <function name="go_render_general ()" link="goffice-06-go-format.html#go-render-general"/>
+    <function name="go_render_generall ()" link="goffice-06-go-format.html#go-render-generall"/>
+    <function name="go_format_new_from_XL ()" link="goffice-06-go-format.html#go-format-new-from-XL"/>
+    <function name="go_format_new_markup ()" link="goffice-06-go-format.html#go-format-new-markup"/>
+    <function name="go_format_general ()" link="goffice-06-go-format.html#go-format-general"/>
+    <function name="go_format_empty ()" link="goffice-06-go-format.html#go-format-empty"/>
+    <function name="go_format_default_date ()" link="goffice-06-go-format.html#go-format-default-date"/>
+    <function name="go_format_default_time ()" link="goffice-06-go-format.html#go-format-default-time"/>
+    <function name="go_format_default_date_time ()" link="goffice-06-go-format.html#go-format-default-date-time"/>
+    <function name="go_format_default_percentage ()" link="goffice-06-go-format.html#go-format-default-percentage"/>
+    <function name="go_format_default_money ()" link="goffice-06-go-format.html#go-format-default-money"/>
+    <function name="go_format_str_localize ()" link="goffice-06-go-format.html#go-format-str-localize"/>
+    <function name="go_format_str_delocalize ()" link="goffice-06-go-format.html#go-format-str-delocalize"/>
+    <function name="go_format_as_XL ()" link="goffice-06-go-format.html#go-format-as-XL"/>
+    <function name="go_format_ref ()" link="goffice-06-go-format.html#go-format-ref"/>
+    <function name="go_format_unref ()" link="goffice-06-go-format.html#go-format-unref"/>
+    <function name="go_format_is_invalid ()" link="goffice-06-go-format.html#go-format-is-invalid"/>
+    <function name="go_format_is_general ()" link="goffice-06-go-format.html#go-format-is-general"/>
+    <function name="go_format_is_markup ()" link="goffice-06-go-format.html#go-format-is-markup"/>
+    <function name="go_format_is_text ()" link="goffice-06-go-format.html#go-format-is-text"/>
+    <function name="go_format_is_var_width ()" link="goffice-06-go-format.html#go-format-is-var-width"/>
+    <function name="go_format_is_date ()" link="goffice-06-go-format.html#go-format-is-date"/>
+    <function name="go_format_month_before_day ()" link="goffice-06-go-format.html#go-format-month-before-day"/>
+    <function name="go_format_has_hour ()" link="goffice-06-go-format.html#go-format-has-hour"/>
+    <function name="go_format_specialize ()" link="goffice-06-go-format.html#go-format-specialize"/>
+    <function name="go_format_specializel ()" link="goffice-06-go-format.html#go-format-specializel"/>
+    <function name="go_format_get_family ()" link="goffice-06-go-format.html#go-format-get-family"/>
+    <function name="go_format_get_markup ()" link="goffice-06-go-format.html#go-format-get-markup"/>
+    <function name="go_format_is_simple ()" link="goffice-06-go-format.html#go-format-is-simple"/>
+    <function name="go_format_value_gstring ()" link="goffice-06-go-format.html#go-format-value-gstring"/>
+    <function name="go_format_value ()" link="goffice-06-go-format.html#go-format-value"/>
+    <function name="go_format_value_gstringl ()" link="goffice-06-go-format.html#go-format-value-gstringl"/>
+    <function name="go_format_valuel ()" link="goffice-06-go-format.html#go-format-valuel"/>
+    <function name="go_format_eq ()" link="goffice-06-go-format.html#go-format-eq"/>
+    <function name="go_format_inc_precision ()" link="goffice-06-go-format.html#go-format-inc-precision"/>
+    <function name="go_format_dec_precision ()" link="goffice-06-go-format.html#go-format-dec-precision"/>
+    <function name="go_format_toggle_1000sep ()" link="goffice-06-go-format.html#go-format-toggle-1000sep"/>
+    <function name="GOFormatCurrency" link="goffice-06-go-format.html#GOFormatCurrency"/>
+    <function name="go_number_format_init ()" link="goffice-06-go-format.html#go-number-format-init"/>
+    <function name="go_number_format_shutdown ()" link="goffice-06-go-format.html#go-number-format-shutdown"/>
+    <function name="go_currency_date_format_init ()" link="goffice-06-go-format.html#go-currency-date-format-init"/>
+    <function name="go_currency_date_format_shutdown ()" link="goffice-06-go-format.html#go-currency-date-format-shutdown"/>
+    <function name="GOMapFunc ()" link="goffice-06-go-glib-extras.html#GOMapFunc"/>
+    <function name="go_ptr_array_insert ()" link="goffice-06-go-glib-extras.html#go-ptr-array-insert"/>
+    <function name="go_hash_keys ()" link="goffice-06-go-glib-extras.html#go-hash-keys"/>
+    <function name="go_hash_values ()" link="goffice-06-go-glib-extras.html#go-hash-values"/>
+    <function name="go_slist_map ()" link="goffice-06-go-glib-extras.html#go-slist-map"/>
+    <function name="go_slist_create ()" link="goffice-06-go-glib-extras.html#go-slist-create"/>
+    <function name="go_slist_free_custom ()" link="goffice-06-go-glib-extras.html#go-slist-free-custom"/>
+    <function name="go_string_slist_copy()" link="goffice-06-go-glib-extras.html#go-string-slist-copy"/>
+    <function name="go_strsplit_to_slist ()" link="goffice-06-go-glib-extras.html#go-strsplit-to-slist"/>
+    <function name="GO_SLIST_FOREACH()" link="goffice-06-go-glib-extras.html#GO-SLIST-FOREACH:CAPS"/>
+    <function name="GO_SLIST_PREPEND()" link="goffice-06-go-glib-extras.html#GO-SLIST-PREPEND:CAPS"/>
+    <function name="GO_SLIST_APPEND()" link="goffice-06-go-glib-extras.html#GO-SLIST-APPEND:CAPS"/>
+    <function name="GO_SLIST_REMOVE()" link="goffice-06-go-glib-extras.html#GO-SLIST-REMOVE:CAPS"/>
+    <function name="GO_SLIST_CONCAT()" link="goffice-06-go-glib-extras.html#GO-SLIST-CONCAT:CAPS"/>
+    <function name="GO_SLIST_REVERSE()" link="goffice-06-go-glib-extras.html#GO-SLIST-REVERSE:CAPS"/>
+    <function name="GO_SLIST_SORT()" link="goffice-06-go-glib-extras.html#GO-SLIST-SORT:CAPS"/>
+    <function name="go_list_index_custom ()" link="goffice-06-go-glib-extras.html#go-list-index-custom"/>
+    <function name="go_list_free_custom ()" link="goffice-06-go-glib-extras.html#go-list-free-custom"/>
+    <function name="GO_LIST_FOREACH()" link="goffice-06-go-glib-extras.html#GO-LIST-FOREACH:CAPS"/>
+    <function name="GO_LIST_PREPEND()" link="goffice-06-go-glib-extras.html#GO-LIST-PREPEND:CAPS"/>
+    <function name="GO_LIST_APPEND()" link="goffice-06-go-glib-extras.html#GO-LIST-APPEND:CAPS"/>
+    <function name="GO_LIST_REMOVE()" link="goffice-06-go-glib-extras.html#GO-LIST-REMOVE:CAPS"/>
+    <function name="GO_LIST_CONCAT()" link="goffice-06-go-glib-extras.html#GO-LIST-CONCAT:CAPS"/>
+    <function name="GO_LIST_REVERSE()" link="goffice-06-go-glib-extras.html#GO-LIST-REVERSE:CAPS"/>
+    <function name="GO_LIST_SORT()" link="goffice-06-go-glib-extras.html#GO-LIST-SORT:CAPS"/>
+    <function name="go_str_compare ()" link="goffice-06-go-glib-extras.html#go-str-compare"/>
+    <function name="go_ascii_strcase_hash ()" link="goffice-06-go-glib-extras.html#go-ascii-strcase-hash"/>
+    <function name="go_ascii_strcase_equal ()" link="goffice-06-go-glib-extras.html#go-ascii-strcase-equal"/>
+    <function name="go_utf8_collate_casefold ()" link="goffice-06-go-glib-extras.html#go-utf8-collate-casefold"/>
+    <function name="go_utf8_strcapital ()" link="goffice-06-go-glib-extras.html#go-utf8-strcapital"/>
+    <function name="go_strescape ()" link="goffice-06-go-glib-extras.html#go-strescape"/>
+    <function name="go_strunescape ()" link="goffice-06-go-glib-extras.html#go-strunescape"/>
+    <function name="go_string_append_gstring ()" link="goffice-06-go-glib-extras.html#go-string-append-gstring"/>
+    <function name="go_string_append_c_n ()" link="goffice-06-go-glib-extras.html#go-string-append-c-n"/>
+    <function name="go_guess_encoding ()" link="goffice-06-go-glib-extras.html#go-guess-encoding"/>
+    <function name="go_get_real_name ()" link="goffice-06-go-glib-extras.html#go-get-real-name"/>
+    <function name="go_destroy_password ()" link="goffice-06-go-glib-extras.html#go-destroy-password"/>
+    <function name="go_mem_chunk_new ()" link="goffice-06-go-glib-extras.html#go-mem-chunk-new"/>
+    <function name="go_mem_chunk_destroy ()" link="goffice-06-go-glib-extras.html#go-mem-chunk-destroy"/>
+    <function name="go_mem_chunk_alloc ()" link="goffice-06-go-glib-extras.html#go-mem-chunk-alloc"/>
+    <function name="go_mem_chunk_alloc0 ()" link="goffice-06-go-glib-extras.html#go-mem-chunk-alloc0"/>
+    <function name="go_mem_chunk_free ()" link="goffice-06-go-glib-extras.html#go-mem-chunk-free"/>
+    <function name="go_mem_chunk_foreach_leak ()" link="goffice-06-go-glib-extras.html#go-mem-chunk-foreach-leak"/>
+    <function name="go_object_toggle ()" link="goffice-06-go-glib-extras.html#go-object-toggle"/>
+    <function name="go_object_set_property ()" link="goffice-06-go-glib-extras.html#go-object-set-property"/>
+    <function name="go_object_properties_collect ()" link="goffice-06-go-glib-extras.html#go-object-properties-collect"/>
+    <function name="go_object_properties_apply ()" link="goffice-06-go-glib-extras.html#go-object-properties-apply"/>
+    <function name="go_object_properties_free ()" link="goffice-06-go-glib-extras.html#go-object-properties-free"/>
+    <function name="GOParseKeyValueFunc ()" link="goffice-06-go-glib-extras.html#GOParseKeyValueFunc"/>
+    <function name="go_parse_key_value ()" link="goffice-06-go-glib-extras.html#go-parse-key-value"/>
+    <function name="go_xml_parse_file ()" link="goffice-06-go-libxml-extras.html#go-xml-parse-file"/>
+    <function name="xml_node_get_cstr ()" link="goffice-06-go-libxml-extras.html#xml-node-get-cstr"/>
+    <function name="xml_node_set_cstr ()" link="goffice-06-go-libxml-extras.html#xml-node-set-cstr"/>
+    <function name="xml_node_get_bool ()" link="goffice-06-go-libxml-extras.html#xml-node-get-bool"/>
+    <function name="xml_node_set_bool ()" link="goffice-06-go-libxml-extras.html#xml-node-set-bool"/>
+    <function name="xml_node_get_int ()" link="goffice-06-go-libxml-extras.html#xml-node-get-int"/>
+    <function name="xml_node_set_int ()" link="goffice-06-go-libxml-extras.html#xml-node-set-int"/>
+    <function name="xml_node_get_double ()" link="goffice-06-go-libxml-extras.html#xml-node-get-double"/>
+    <function name="xml_node_set_double ()" link="goffice-06-go-libxml-extras.html#xml-node-set-double"/>
+    <function name="xml_node_get_gocolor ()" link="goffice-06-go-libxml-extras.html#xml-node-get-gocolor"/>
+    <function name="xml_node_set_gocolor ()" link="goffice-06-go-libxml-extras.html#xml-node-set-gocolor"/>
+    <function name="xml_node_get_enum ()" link="goffice-06-go-libxml-extras.html#xml-node-get-enum"/>
+    <function name="xml_node_set_enum ()" link="goffice-06-go-libxml-extras.html#xml-node-set-enum"/>
+    <function name="e_xml_get_child_by_name ()" link="goffice-06-go-libxml-extras.html#e-xml-get-child-by-name"/>
+    <function name="e_xml_get_child_by_name_no_lang ()" link="goffice-06-go-libxml-extras.html#e-xml-get-child-by-name-no-lang"/>
+    <function name="e_xml_get_child_by_name_by_lang ()" link="goffice-06-go-libxml-extras.html#e-xml-get-child-by-name-by-lang"/>
+    <function name="GO_UNDO_TYPE" link="GOUndoUnary.html#GO-UNDO-TYPE:CAPS"/>
+    <function name="GO_UNDO()" link="GOUndoUnary.html#GO-UNDO:CAPS"/>
+    <function name="IS_GO_UNDO()" link="GOUndoUnary.html#IS-GO-UNDO:CAPS"/>
+    <function name="go_undo_get_type ()" link="GOUndoUnary.html#go-undo-get-type"/>
+    <function name="GOUndo" link="GOUndoUnary.html#GOUndo-struct"/>
+    <function name="go_undo_undo ()" link="GOUndoUnary.html#go-undo-undo"/>
+    <function name="go_undo_undo_with_data ()" link="GOUndoUnary.html#go-undo-undo-with-data"/>
+    <function name="go_undo_combine ()" link="GOUndoUnary.html#go-undo-combine"/>
+    <function name="GO_UNDO_GROUP_TYPE" link="GOUndoUnary.html#GO-UNDO-GROUP-TYPE:CAPS"/>
+    <function name="GO_UNDO_GROUP()" link="GOUndoUnary.html#GO-UNDO-GROUP:CAPS"/>
+    <function name="IS_GO_UNDO_GROUP()" link="GOUndoUnary.html#IS-GO-UNDO-GROUP:CAPS"/>
+    <function name="go_undo_group_get_type ()" link="GOUndoUnary.html#go-undo-group-get-type"/>
+    <function name="GOUndoGroup" link="GOUndoUnary.html#GOUndoGroup-struct"/>
+    <function name="go_undo_group_new ()" link="GOUndoUnary.html#go-undo-group-new"/>
+    <function name="go_undo_group_add ()" link="GOUndoUnary.html#go-undo-group-add"/>
+    <function name="GO_UNDO_BINARY_TYPE" link="GOUndoUnary.html#GO-UNDO-BINARY-TYPE:CAPS"/>
+    <function name="GO_UNDO_BINARY()" link="GOUndoUnary.html#GO-UNDO-BINARY:CAPS"/>
+    <function name="IS_GO_UNDO_BINARY()" link="GOUndoUnary.html#IS-GO-UNDO-BINARY:CAPS"/>
+    <function name="go_undo_binary_get_type ()" link="GOUndoUnary.html#go-undo-binary-get-type"/>
+    <function name="GOUndoBinaryFunc ()" link="GOUndoUnary.html#GOUndoBinaryFunc"/>
+    <function name="GOUndoBinary" link="GOUndoUnary.html#GOUndoBinary-struct"/>
+    <function name="go_undo_binary_new ()" link="GOUndoUnary.html#go-undo-binary-new"/>
+    <function name="GO_UNDO_UNARY_TYPE" link="GOUndoUnary.html#GO-UNDO-UNARY-TYPE:CAPS"/>
+    <function name="GO_UNDO_UNARY()" link="GOUndoUnary.html#GO-UNDO-UNARY:CAPS"/>
+    <function name="IS_GO_UNDO_UNARY()" link="GOUndoUnary.html#IS-GO-UNDO-UNARY:CAPS"/>
+    <function name="go_undo_unary_get_type ()" link="GOUndoUnary.html#go-undo-unary-get-type"/>
+    <function name="GOUndoUnaryFunc ()" link="GOUndoUnary.html#GOUndoUnaryFunc"/>
+    <function name="GOUndoUnary" link="GOUndoUnary.html#GOUndoUnary-struct"/>
+    <function name="go_undo_unary_new ()" link="GOUndoUnary.html#go-undo-unary-new"/>
+  </functions>
+</book>

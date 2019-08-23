@@ -1,0 +1,1695 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-format</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch13.html" title="Miscellaneous">
+<link rel="prev" href="ch13.html" title="Miscellaneous">
+<link rel="next" href="goffice-06-go-glib-extras.html" title="go-glib-extras">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch13.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch13.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-go-glib-extras.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-format.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-format.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-format"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-format.top_of_page"></a>go-format</span></h2>
+<p>go-format</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-format.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+enum                <a class="link" href="goffice-06-go-format.html#GOFormatFamily" title="enum GOFormatFamily">GOFormatFamily</a>;
+enum                <a class="link" href="goffice-06-go-format.html#GOFormatNumberError" title="enum GOFormatNumberError">GOFormatNumberError</a>;
+int                 (<a class="link" href="goffice-06-go-format.html#GOFormatMeasure" title="GOFormatMeasure ()">*GOFormatMeasure</a>)                  (const GString *str,
+                                                         PangoLayout *layout);
+int                 <a class="link" href="goffice-06-go-format.html#go-format-measure-zero" title="go_format_measure_zero ()">go_format_measure_zero</a>              (const GString *str,
+                                                         PangoLayout *layout);
+int                 <a class="link" href="goffice-06-go-format.html#go-format-measure-pango" title="go_format_measure_pango ()">go_format_measure_pango</a>             (const GString *str,
+                                                         PangoLayout *layout);
+int                 <a class="link" href="goffice-06-go-format.html#go-format-measure-strlen" title="go_format_measure_strlen ()">go_format_measure_strlen</a>            (const GString *str,
+                                                         PangoLayout *layout);
+void                <a class="link" href="goffice-06-go-format.html#go-render-general" title="go_render_general ()">go_render_general</a>                   (PangoLayout *layout,
+                                                         GString *str,
+                                                         <a class="link" href="goffice-06-go-format.html#GOFormatMeasure" title="GOFormatMeasure ()">GOFormatMeasure</a> measure,
+                                                         const <a class="link" href="goffice-06-go-font.html#GOFontMetrics" title="GOFontMetrics">GOFontMetrics</a> *metrics,
+                                                         double val,
+                                                         int col_width,
+                                                         gboolean unicode_minus);
+void                <a class="link" href="goffice-06-go-format.html#go-render-generall" title="go_render_generall ()">go_render_generall</a>                  (PangoLayout *layout,
+                                                         GString *str,
+                                                         <a class="link" href="goffice-06-go-format.html#GOFormatMeasure" title="GOFormatMeasure ()">GOFormatMeasure</a> measure,
+                                                         const <a class="link" href="goffice-06-go-font.html#GOFontMetrics" title="GOFontMetrics">GOFontMetrics</a> *metrics,
+                                                         long double val,
+                                                         int col_width,
+                                                         gboolean unicode_minus);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          <a class="link" href="goffice-06-go-format.html#go-format-new-from-XL" title="go_format_new_from_XL ()">go_format_new_from_XL</a>               (char const *str);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          <a class="link" href="goffice-06-go-format.html#go-format-new-markup" title="go_format_new_markup ()">go_format_new_markup</a>                (PangoAttrList *markup,
+                                                         gboolean add_ref);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          <a class="link" href="goffice-06-go-format.html#go-format-general" title="go_format_general ()">go_format_general</a>                   (void);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          <a class="link" href="goffice-06-go-format.html#go-format-empty" title="go_format_empty ()">go_format_empty</a>                     (void);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          <a class="link" href="goffice-06-go-format.html#go-format-default-date" title="go_format_default_date ()">go_format_default_date</a>              (void);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          <a class="link" href="goffice-06-go-format.html#go-format-default-time" title="go_format_default_time ()">go_format_default_time</a>              (void);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          <a class="link" href="goffice-06-go-format.html#go-format-default-date-time" title="go_format_default_date_time ()">go_format_default_date_time</a>         (void);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          <a class="link" href="goffice-06-go-format.html#go-format-default-percentage" title="go_format_default_percentage ()">go_format_default_percentage</a>        (void);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          <a class="link" href="goffice-06-go-format.html#go-format-default-money" title="go_format_default_money ()">go_format_default_money</a>             (void);
+char *              <a class="link" href="goffice-06-go-format.html#go-format-str-localize" title="go_format_str_localize ()">go_format_str_localize</a>              (char const *str);
+char *              <a class="link" href="goffice-06-go-format.html#go-format-str-delocalize" title="go_format_str_delocalize ()">go_format_str_delocalize</a>            (char const *str);
+const char*         <a class="link" href="goffice-06-go-format.html#go-format-as-XL" title="go_format_as_XL ()">go_format_as_XL</a>                     (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          <a class="link" href="goffice-06-go-format.html#go-format-ref" title="go_format_ref ()">go_format_ref</a>                       (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *fmt);
+void                <a class="link" href="goffice-06-go-format.html#go-format-unref" title="go_format_unref ()">go_format_unref</a>                     (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *fmt);
+gboolean            <a class="link" href="goffice-06-go-format.html#go-format-is-invalid" title="go_format_is_invalid ()">go_format_is_invalid</a>                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);
+gboolean            <a class="link" href="goffice-06-go-format.html#go-format-is-general" title="go_format_is_general ()">go_format_is_general</a>                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);
+gboolean            <a class="link" href="goffice-06-go-format.html#go-format-is-markup" title="go_format_is_markup ()">go_format_is_markup</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);
+gboolean            <a class="link" href="goffice-06-go-format.html#go-format-is-text" title="go_format_is_text ()">go_format_is_text</a>                   (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);
+gboolean            <a class="link" href="goffice-06-go-format.html#go-format-is-var-width" title="go_format_is_var_width ()">go_format_is_var_width</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);
+int                 <a class="link" href="goffice-06-go-format.html#go-format-is-date" title="go_format_is_date ()">go_format_is_date</a>                   (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);
+int                 <a class="link" href="goffice-06-go-format.html#go-format-month-before-day" title="go_format_month_before_day ()">go_format_month_before_day</a>          (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);
+gboolean            <a class="link" href="goffice-06-go-format.html#go-format-has-hour" title="go_format_has_hour ()">go_format_has_hour</a>                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);
+const <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *    <a class="link" href="goffice-06-go-format.html#go-format-specialize" title="go_format_specialize ()">go_format_specialize</a>                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt,
+                                                         double val,
+                                                         char type,
+                                                         gboolean *inhibit_minus);
+const <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *    <a class="link" href="goffice-06-go-format.html#go-format-specializel" title="go_format_specializel ()">go_format_specializel</a>               (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt,
+                                                         long double val,
+                                                         char type,
+                                                         gboolean *inhibit_minus);
+<a class="link" href="goffice-06-go-format.html#GOFormatFamily" title="enum GOFormatFamily">GOFormatFamily</a>      <a class="link" href="goffice-06-go-format.html#go-format-get-family" title="go_format_get_family ()">go_format_get_family</a>                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);
+const PangoAttrList * <a class="link" href="goffice-06-go-format.html#go-format-get-markup" title="go_format_get_markup ()">go_format_get_markup</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);
+gboolean            <a class="link" href="goffice-06-go-format.html#go-format-is-simple" title="go_format_is_simple ()">go_format_is_simple</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);
+<a class="link" href="goffice-06-go-format.html#GOFormatNumberError" title="enum GOFormatNumberError">GOFormatNumberError</a>  <a class="link" href="goffice-06-go-format.html#go-format-value-gstring" title="go_format_value_gstring ()">go_format_value_gstring</a>            (PangoLayout *layout,
+                                                         GString *str,
+                                                         const <a class="link" href="goffice-06-go-format.html#GOFormatMeasure" title="GOFormatMeasure ()">GOFormatMeasure</a> measure,
+                                                         const <a class="link" href="goffice-06-go-font.html#GOFontMetrics" title="GOFontMetrics">GOFontMetrics</a> *metrics,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt,
+                                                         double val,
+                                                         char type,
+                                                         const char *sval,
+                                                         GOColor *go_color,
+                                                         int col_width,
+                                                         GODateConventions const *date_conv,
+                                                         gboolean unicode_minus);
+char *              <a class="link" href="goffice-06-go-format.html#go-format-value" title="go_format_value ()">go_format_value</a>                     (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt,
+                                                         double val);
+<a class="link" href="goffice-06-go-format.html#GOFormatNumberError" title="enum GOFormatNumberError">GOFormatNumberError</a>  <a class="link" href="goffice-06-go-format.html#go-format-value-gstringl" title="go_format_value_gstringl ()">go_format_value_gstringl</a>           (PangoLayout *layout,
+                                                         GString *str,
+                                                         const <a class="link" href="goffice-06-go-format.html#GOFormatMeasure" title="GOFormatMeasure ()">GOFormatMeasure</a> measure,
+                                                         const <a class="link" href="goffice-06-go-font.html#GOFontMetrics" title="GOFontMetrics">GOFontMetrics</a> *metrics,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt,
+                                                         long double val,
+                                                         char type,
+                                                         const char *sval,
+                                                         GOColor *go_color,
+                                                         int col_width,
+                                                         GODateConventions const *date_conv,
+                                                         gboolean unicode_minus);
+char *              <a class="link" href="goffice-06-go-format.html#go-format-valuel" title="go_format_valuel ()">go_format_valuel</a>                    (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt,
+                                                         long double val);
+gboolean            <a class="link" href="goffice-06-go-format.html#go-format-eq" title="go_format_eq ()">go_format_eq</a>                        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *a,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *b);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          <a class="link" href="goffice-06-go-format.html#go-format-inc-precision" title="go_format_inc_precision ()">go_format_inc_precision</a>             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          <a class="link" href="goffice-06-go-format.html#go-format-dec-precision" title="go_format_dec_precision ()">go_format_dec_precision</a>             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          <a class="link" href="goffice-06-go-format.html#go-format-toggle-1000sep" title="go_format_toggle_1000sep ()">go_format_toggle_1000sep</a>            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);
+                    <a class="link" href="goffice-06-go-format.html#GOFormatCurrency" title="GOFormatCurrency">GOFormatCurrency</a>;
+void                <a class="link" href="goffice-06-go-format.html#go-number-format-init" title="go_number_format_init ()">go_number_format_init</a>               (void);
+void                <a class="link" href="goffice-06-go-format.html#go-number-format-shutdown" title="go_number_format_shutdown ()">go_number_format_shutdown</a>           (void);
+void                <a class="link" href="goffice-06-go-format.html#go-currency-date-format-init" title="go_currency_date_format_init ()">go_currency_date_format_init</a>        (void);
+void                <a class="link" href="goffice-06-go-format.html#go-currency-date-format-shutdown" title="go_currency_date_format_shutdown ()">go_currency_date_format_shutdown</a>    (void);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-format.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-format.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOFormatFamily"></a><h3>enum GOFormatFamily</h3>
+<pre class="programlisting">typedef enum {
+	GO_FORMAT_UNKNOWN	= -1,
+
+	GO_FORMAT_GENERAL	= 0,
+	GO_FORMAT_NUMBER	= 1,
+	GO_FORMAT_CURRENCY	= 2,
+	GO_FORMAT_ACCOUNTING	= 3,
+	GO_FORMAT_DATE		= 4,
+	GO_FORMAT_TIME		= 5,
+	GO_FORMAT_PERCENTAGE	= 6,
+	GO_FORMAT_FRACTION	= 7,
+	GO_FORMAT_SCIENTIFIC	= 8,
+	GO_FORMAT_TEXT		= 9,
+	GO_FORMAT_SPECIAL	= 10,
+
+	GO_FORMAT_MARKUP	= 11	/* Internal use only */
+} GOFormatFamily;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOFormatNumberError"></a><h3>enum GOFormatNumberError</h3>
+<pre class="programlisting">typedef enum {
+	GO_FORMAT_NUMBER_OK = 0,
+	GO_FORMAT_NUMBER_INVALID_FORMAT,
+	GO_FORMAT_NUMBER_DATE_ERROR
+} GOFormatNumberError;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOFormatMeasure"></a><h3>GOFormatMeasure ()</h3>
+<pre class="programlisting">int                 (*GOFormatMeasure)                  (const GString *str,
+                                                         PangoLayout *layout);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>layout</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-measure-zero"></a><h3>go_format_measure_zero ()</h3>
+<pre class="programlisting">int                 go_format_measure_zero              (const GString *str,
+                                                         PangoLayout *layout);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>layout</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-measure-pango"></a><h3>go_format_measure_pango ()</h3>
+<pre class="programlisting">int                 go_format_measure_pango             (const GString *str,
+                                                         PangoLayout *layout);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>layout</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-measure-strlen"></a><h3>go_format_measure_strlen ()</h3>
+<pre class="programlisting">int                 go_format_measure_strlen            (const GString *str,
+                                                         PangoLayout *layout);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>layout</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-render-general"></a><h3>go_render_general ()</h3>
+<pre class="programlisting">void                go_render_general                   (PangoLayout *layout,
+                                                         GString *str,
+                                                         <a class="link" href="goffice-06-go-format.html#GOFormatMeasure" title="GOFormatMeasure ()">GOFormatMeasure</a> measure,
+                                                         const <a class="link" href="goffice-06-go-font.html#GOFontMetrics" title="GOFontMetrics">GOFontMetrics</a> *metrics,
+                                                         double val,
+                                                         int col_width,
+                                                         gboolean unicode_minus);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>layout</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>measure</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>metrics</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>col_width</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>unicode_minus</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-render-generall"></a><h3>go_render_generall ()</h3>
+<pre class="programlisting">void                go_render_generall                  (PangoLayout *layout,
+                                                         GString *str,
+                                                         <a class="link" href="goffice-06-go-format.html#GOFormatMeasure" title="GOFormatMeasure ()">GOFormatMeasure</a> measure,
+                                                         const <a class="link" href="goffice-06-go-font.html#GOFontMetrics" title="GOFontMetrics">GOFontMetrics</a> *metrics,
+                                                         long double val,
+                                                         int col_width,
+                                                         gboolean unicode_minus);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>layout</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>measure</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>metrics</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>col_width</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>unicode_minus</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-new-from-XL"></a><h3>go_format_new_from_XL ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          go_format_new_from_XL               (char const *str);</pre>
+<p>
+Looks up and potentially creates a GOFormat from the supplied string in
+XL format.
+</p>
+<p>
+<em class="parameter"><code>descriptor_string</code></em>: XL descriptor in UTF-8 encoding.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-new-markup"></a><h3>go_format_new_markup ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          go_format_new_markup                (PangoAttrList *markup,
+                                                         gboolean add_ref);</pre>
+<p>
+Create a MARKUP format.  If <em class="parameter"><code>add_ref</code></em> is FALSE absorb the reference to
+<em class="parameter"><code>markup</code></em>, otherwise add a reference.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>markup</code></em> :</span></p></td>
+<td> <span class="type">PangoAttrList</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>add_ref</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-general"></a><h3>go_format_general ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          go_format_general                   (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-empty"></a><h3>go_format_empty ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          go_format_empty                     (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-default-date"></a><h3>go_format_default_date ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          go_format_default_date              (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-default-time"></a><h3>go_format_default_time ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          go_format_default_time              (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-default-date-time"></a><h3>go_format_default_date_time ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          go_format_default_date_time         (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-default-percentage"></a><h3>go_format_default_percentage ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          go_format_default_percentage        (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-default-money"></a><h3>go_format_default_money ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          go_format_default_money             (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-str-localize"></a><h3>go_format_str_localize ()</h3>
+<pre class="programlisting">char *              go_format_str_localize              (char const *str);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-str-delocalize"></a><h3>go_format_str_delocalize ()</h3>
+<pre class="programlisting">char *              go_format_str_delocalize            (char const *str);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-as-XL"></a><h3>go_format_as_XL ()</h3>
+<pre class="programlisting">const char*         go_format_as_XL                     (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+><span class="type">GOFormat</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the XL style format strint.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-ref"></a><h3>go_format_ref ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          go_format_ref                       (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *fmt);</pre>
+<p>
+Adds a reference to a GOFormat.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+><span class="type">GOFormat</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-unref"></a><h3>go_format_unref ()</h3>
+<pre class="programlisting">void                go_format_unref                     (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *fmt);</pre>
+<p>
+Removes a reference to <em class="parameter"><code>fmt</code></em>, freeing when it goes to zero.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+><span class="type">GOFormat</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-is-invalid"></a><h3>go_format_is_invalid ()</h3>
+<pre class="programlisting">gboolean            go_format_is_invalid                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td> Format to query
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if, and if only, the format is invalid
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-is-general"></a><h3>go_format_is_general ()</h3>
+<pre class="programlisting">gboolean            go_format_is_general                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td> Format to query
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if the format is "General", possibly with condition,
+	color, and/or locale.  ("xGeneral" is thus not considered to be General
+	for the purpose of this function.)
+Returns FALSE otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-is-markup"></a><h3>go_format_is_markup ()</h3>
+<pre class="programlisting">gboolean            go_format_is_markup                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td> Format to query
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if the format is a markup format
+	Returns FALSE otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-is-text"></a><h3>go_format_is_text ()</h3>
+<pre class="programlisting">gboolean            go_format_is_text                   (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td> Format to query
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if the format is a text format
+	Returns FALSE otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-is-var-width"></a><h3>go_format_is_var_width ()</h3>
+<pre class="programlisting">gboolean            go_format_is_var_width              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td> Format to query
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if the format is variable width, i.e., can stretch.
+	Returns FALSE otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-is-date"></a><h3>go_format_is_date ()</h3>
+<pre class="programlisting">int                 go_format_is_date                   (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td> Format to query
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if the format is a date format.
+	Returns FALSE if the format is not a date format.
+	Returns -1 if the format is inconsistent.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-month-before-day"></a><h3>go_format_month_before_day ()</h3>
+<pre class="programlisting">int                 go_format_month_before_day          (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td> Format to query
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+ 0, if format is a date format with day and month in that order
+ 1, if format is a date format with month and day in that order, unless
+ 2, if format is a date with year before month before day
+-1, otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-has-hour"></a><h3>go_format_has_hour ()</h3>
+<pre class="programlisting">gboolean            go_format_has_hour                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td> Format to query
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if format is a number format with an hour specifier
+	    FALSE otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-specialize"></a><h3>go_format_specialize ()</h3>
+<pre class="programlisting">const <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *    go_format_specialize                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt,
+                                                         double val,
+                                                         char type,
+                                                         gboolean *inhibit_minus);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>inhibit_minus</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-specializel"></a><h3>go_format_specializel ()</h3>
+<pre class="programlisting">const <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *    go_format_specializel               (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt,
+                                                         long double val,
+                                                         char type,
+                                                         gboolean *inhibit_minus);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>inhibit_minus</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-get-family"></a><h3>go_format_get_family ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-format.html#GOFormatFamily" title="enum GOFormatFamily">GOFormatFamily</a>      go_format_get_family                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-get-markup"></a><h3>go_format_get_markup ()</h3>
+<pre class="programlisting">const PangoAttrList * go_format_get_markup              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-is-simple"></a><h3>go_format_is_simple ()</h3>
+<pre class="programlisting">gboolean            go_format_is_simple                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-value-gstring"></a><h3>go_format_value_gstring ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-format.html#GOFormatNumberError" title="enum GOFormatNumberError">GOFormatNumberError</a>  go_format_value_gstring            (PangoLayout *layout,
+                                                         GString *str,
+                                                         const <a class="link" href="goffice-06-go-format.html#GOFormatMeasure" title="GOFormatMeasure ()">GOFormatMeasure</a> measure,
+                                                         const <a class="link" href="goffice-06-go-font.html#GOFontMetrics" title="GOFontMetrics">GOFontMetrics</a> *metrics,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt,
+                                                         double val,
+                                                         char type,
+                                                         const char *sval,
+                                                         GOColor *go_color,
+                                                         int col_width,
+                                                         GODateConventions const *date_conv,
+                                                         gboolean unicode_minus);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>layout</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>measure</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>metrics</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sval</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>go_color</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>col_width</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>date_conv</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>unicode_minus</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-value"></a><h3>go_format_value ()</h3>
+<pre class="programlisting">char *              go_format_value                     (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt,
+                                                         double val);</pre>
+<p>
+Converts <em class="parameter"><code>val</code></em> into a string using format specified by <em class="parameter"><code>fmt</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+><span class="type">GOFormat</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td> value to format
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a newly allocated string containing formated value.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-value-gstringl"></a><h3>go_format_value_gstringl ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-format.html#GOFormatNumberError" title="enum GOFormatNumberError">GOFormatNumberError</a>  go_format_value_gstringl           (PangoLayout *layout,
+                                                         GString *str,
+                                                         const <a class="link" href="goffice-06-go-format.html#GOFormatMeasure" title="GOFormatMeasure ()">GOFormatMeasure</a> measure,
+                                                         const <a class="link" href="goffice-06-go-font.html#GOFontMetrics" title="GOFontMetrics">GOFontMetrics</a> *metrics,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt,
+                                                         long double val,
+                                                         char type,
+                                                         const char *sval,
+                                                         GOColor *go_color,
+                                                         int col_width,
+                                                         GODateConventions const *date_conv,
+                                                         gboolean unicode_minus);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>layout</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>measure</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>metrics</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sval</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>go_color</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>col_width</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>date_conv</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>unicode_minus</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-valuel"></a><h3>go_format_valuel ()</h3>
+<pre class="programlisting">char *              go_format_valuel                    (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt,
+                                                         long double val);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-eq"></a><h3>go_format_eq ()</h3>
+<pre class="programlisting">gboolean            go_format_eq                        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *a,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *b);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-inc-precision"></a><h3>go_format_inc_precision ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          go_format_inc_precision             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);</pre>
+<p>
+Increaseds the displayed precision for <em class="parameter"><code>fmt</code></em> by one digit.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+><span class="type">GOFormat</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> NULL if the new format would not change things
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-dec-precision"></a><h3>go_format_dec_precision ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          go_format_dec_precision             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);</pre>
+<p>
+Decreases the displayed precision for <em class="parameter"><code>fmt</code></em> by one digit.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+><span class="type">GOFormat</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> NULL if the new format would not change things
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-format-toggle-1000sep"></a><h3>go_format_toggle_1000sep ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          go_format_toggle_1000sep            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> const *fmt);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOFormatCurrency"></a><h3>GOFormatCurrency</h3>
+<pre class="programlisting">typedef struct {
+	gchar const *symbol;
+	gchar const *description;
+	gboolean precedes;
+	gboolean has_space;
+} GOFormatCurrency;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-number-format-init"></a><h3>go_number_format_init ()</h3>
+<pre class="programlisting">void                go_number_format_init               (void);</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-number-format-shutdown"></a><h3>go_number_format_shutdown ()</h3>
+<pre class="programlisting">void                go_number_format_shutdown           (void);</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-currency-date-format-init"></a><h3>go_currency_date_format_init ()</h3>
+<pre class="programlisting">void                go_currency_date_format_init        (void);</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-currency-date-format-shutdown"></a><h3>go_currency_date_format_shutdown ()</h3>
+<pre class="programlisting">void                go_currency_date_format_shutdown    (void);</pre>
+<p>
+
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

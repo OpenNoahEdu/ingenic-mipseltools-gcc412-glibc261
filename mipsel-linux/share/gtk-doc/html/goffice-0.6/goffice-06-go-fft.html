@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GoFft</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch09.html" title="Mathematical functions">
+<link rel="prev" href="goffice-06-go-complex.html" title="GoComplex">
+<link rel="next" href="goffice-06-go-regression.html" title="Regressions">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-complex.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch09.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-go-regression.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-fft.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-fft.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-fft"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-fft.top_of_page"></a>GoFft</span></h2>
+<p>GoFft</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-fft.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+void                <a class="link" href="goffice-06-go-fft.html#go-fourier-fft" title="go_fourier_fft ()">go_fourier_fft</a>                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *in,
+                                                         int n,
+                                                         int skip,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> **fourier,
+                                                         gboolean inverse);
+void                <a class="link" href="goffice-06-go-fft.html#go-fourier-fftl" title="go_fourier_fftl ()">go_fourier_fftl</a>                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *in,
+                                                         int n,
+                                                         int skip,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> **fourier,
+                                                         gboolean inverse);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-fft.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-fft.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="go-fourier-fft"></a><h3>go_fourier_fft ()</h3>
+<pre class="programlisting">void                go_fourier_fft                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *in,
+                                                         int n,
+                                                         int skip,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> **fourier,
+                                                         gboolean inverse);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>in</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>skip</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fourier</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>inverse</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-fourier-fftl"></a><h3>go_fourier_fftl ()</h3>
+<pre class="programlisting">void                go_fourier_fftl                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *in,
+                                                         int n,
+                                                         int skip,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> **fourier,
+                                                         gboolean inverse);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>in</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>skip</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fourier</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>inverse</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

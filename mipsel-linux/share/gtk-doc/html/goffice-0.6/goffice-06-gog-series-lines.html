@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogSeriesLines</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch01.html" title="Objects">
+<link rel="prev" href="goffice-06-gog-label.html" title="GogLabel">
+<link rel="next" href="ch02.html" title="Abstract Base Classes">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-gog-label.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="ch02.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-gog-series-lines.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-gog-series-lines.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-gog-series-lines"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-gog-series-lines.top_of_page"></a>GogSeriesLines</span></h2>
+<p>GogSeriesLines — Droplines</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-gog-series-lines.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="goffice-06-gog-series-lines.html#GOG-SERIES-LINES-TYPE:CAPS" title="GOG_SERIES_LINES_TYPE">GOG_SERIES_LINES_TYPE</a>
+#define             <a class="link" href="goffice-06-gog-series-lines.html#GOG-SERIES-LINES:CAPS" title="GOG_SERIES_LINES()">GOG_SERIES_LINES</a>                    (o)
+#define             <a class="link" href="goffice-06-gog-series-lines.html#IS-GOG-SERIES-LINES:CAPS" title="IS_GOG_SERIES_LINES()">IS_GOG_SERIES_LINES</a>                 (o)
+GType               <a class="link" href="goffice-06-gog-series-lines.html#gog-series-lines-get-type" title="gog_series_lines_get_type ()">gog_series_lines_get_type</a>           (void);
+void                <a class="link" href="goffice-06-gog-series-lines.html#gog-series-lines-render" title="gog_series_lines_render ()">gog_series_lines_render</a>             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeriesLines.html"
+>GogSeriesLines</a> *lines,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *bbox,
+                                                         ArtVpath *path,
+                                                         gboolean invert);
+void                <a class="link" href="goffice-06-gog-series-lines.html#gog-series-lines-use-markers" title="gog_series_lines_use_markers ()">gog_series_lines_use_markers</a>        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeriesLines.html"
+>GogSeriesLines</a> *lines,
+                                                         gboolean use_markers);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-series-lines.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-series-lines.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOG-SERIES-LINES-TYPE:CAPS"></a><h3>GOG_SERIES_LINES_TYPE</h3>
+<pre class="programlisting">#define GOG_SERIES_LINES_TYPE		(gog_series_lines_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-SERIES-LINES:CAPS"></a><h3>GOG_SERIES_LINES()</h3>
+<pre class="programlisting">#define GOG_SERIES_LINES(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GOG_SERIES_LINES_TYPE, GogSeriesLines))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-SERIES-LINES:CAPS"></a><h3>IS_GOG_SERIES_LINES()</h3>
+<pre class="programlisting">#define IS_GOG_SERIES_LINES(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GOG_SERIES_LINES_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-lines-get-type"></a><h3>gog_series_lines_get_type ()</h3>
+<pre class="programlisting">GType               gog_series_lines_get_type           (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-lines-render"></a><h3>gog_series_lines_render ()</h3>
+<pre class="programlisting">void                gog_series_lines_render             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeriesLines.html"
+>GogSeriesLines</a> *lines,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogRenderer.html"
+>GogRenderer</a> *rend,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *bbox,
+                                                         ArtVpath *path,
+                                                         gboolean invert);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lines</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rend</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bbox</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>invert</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-series-lines-use-markers"></a><h3>gog_series_lines_use_markers ()</h3>
+<pre class="programlisting">void                gog_series_lines_use_markers        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeriesLines.html"
+>GogSeriesLines</a> *lines,
+                                                         gboolean use_markers);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lines</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>use_markers</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

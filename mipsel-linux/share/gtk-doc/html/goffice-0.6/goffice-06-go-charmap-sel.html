@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-charmap-sel</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch05.html" title="Selectors">
+<link rel="prev" href="goffice-06-go-combo-text.html" title="go-combo-text">
+<link rel="next" href="goffice-06-go-font-sel.html" title="go-font-sel">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-combo-text.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch05.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-go-font-sel.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-charmap-sel.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-charmap-sel.description" class="shortcut">Description</a>
+                 | 
+                <a href="#goffice-06-go-charmap-sel.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                 | 
+                <a href="#goffice-06-go-charmap-sel.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                 | 
+                <a href="#goffice-06-go-charmap-sel.properties" class="shortcut">Properties</a>
+                 | 
+                <a href="#goffice-06-go-charmap-sel.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-charmap-sel"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-charmap-sel.top_of_page"></a>go-charmap-sel</span></h2>
+<p>go-charmap-sel</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-charmap-sel.synopsis"></a><h2>Synopsis</h2>
+<a name="GOCharmapSel"></a><pre class="synopsis">
+#define             <a class="link" href="goffice-06-go-charmap-sel.html#GO-CHARMAP-SEL-TYPE:CAPS" title="GO_CHARMAP_SEL_TYPE">GO_CHARMAP_SEL_TYPE</a>
+#define             <a class="link" href="goffice-06-go-charmap-sel.html#GO-CHARMAP-SEL:CAPS" title="GO_CHARMAP_SEL()">GO_CHARMAP_SEL</a>                      (obj)
+#define             <a class="link" href="goffice-06-go-charmap-sel.html#IS-GO-CHARMAP-SEL:CAPS" title="IS_GO_CHARMAP_SEL()">IS_GO_CHARMAP_SEL</a>                   (obj)
+                    <a class="link" href="goffice-06-go-charmap-sel.html#GOCharmapSel-struct" title="GOCharmapSel">GOCharmapSel</a>;
+enum                <a class="link" href="goffice-06-go-charmap-sel.html#GOCharmapSelTestDirection" title="enum GOCharmapSelTestDirection">GOCharmapSelTestDirection</a>;
+GType               <a class="link" href="goffice-06-go-charmap-sel.html#go-charmap-sel-get-type" title="go_charmap_sel_get_type ()">go_charmap_sel_get_type</a>             (void);
+GtkWidget *         <a class="link" href="goffice-06-go-charmap-sel.html#go-charmap-sel-new" title="go_charmap_sel_new ()">go_charmap_sel_new</a>                  (<a class="link" href="goffice-06-go-charmap-sel.html#GOCharmapSelTestDirection" title="enum GOCharmapSelTestDirection">GOCharmapSelTestDirection</a> test);
+gchar const *       <a class="link" href="goffice-06-go-charmap-sel.html#go-charmap-sel-get-encoding" title="go_charmap_sel_get_encoding ()">go_charmap_sel_get_encoding</a>         (<a class="link" href="goffice-06-go-charmap-sel.html#GOCharmapSel">GOCharmapSel</a> *cs);
+gboolean            <a class="link" href="goffice-06-go-charmap-sel.html#go-charmap-sel-set-encoding" title="go_charmap_sel_set_encoding ()">go_charmap_sel_set_encoding</a>         (<a class="link" href="goffice-06-go-charmap-sel.html#GOCharmapSel">GOCharmapSel</a> *cs,
+                                                         const char *enc);
+const char *        <a class="link" href="goffice-06-go-charmap-sel.html#go-charmap-sel-get-encoding-name" title="go_charmap_sel_get_encoding_name ()">go_charmap_sel_get_encoding_name</a>    (<a class="link" href="goffice-06-go-charmap-sel.html#GOCharmapSel">GOCharmapSel</a> *cs,
+                                                         const char *enc);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-charmap-sel.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkObject
+               +----GtkWidget
+                     +----GtkContainer
+                           +----GtkBox
+                                 +----GtkHBox
+                                       +----GOCharmapSel
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-charmap-sel.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GOCharmapSel implements
+ AtkImplementorIface and  GtkBuildable.</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-charmap-sel.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="goffice-06-go-charmap-sel.html#GOCharmapSel--TestDirection" title='The "TestDirection" property'>TestDirection</a>"            guint                 : Read / Write
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-charmap-sel.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="goffice-06-go-charmap-sel.html#GOCharmapSel-charmap-changed" title='The "charmap-changed" signal'>charmap-changed</a>"                                : Run Last
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-charmap-sel.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-charmap-sel.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GO-CHARMAP-SEL-TYPE:CAPS"></a><h3>GO_CHARMAP_SEL_TYPE</h3>
+<pre class="programlisting">#define GO_CHARMAP_SEL_TYPE        (go_charmap_sel_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-CHARMAP-SEL:CAPS"></a><h3>GO_CHARMAP_SEL()</h3>
+<pre class="programlisting">#define GO_CHARMAP_SEL(obj)        (G_TYPE_CHECK_INSTANCE_CAST((obj), GO_CHARMAP_SEL_TYPE, GOCharmapSel))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-CHARMAP-SEL:CAPS"></a><h3>IS_GO_CHARMAP_SEL()</h3>
+<pre class="programlisting">#define IS_GO_CHARMAP_SEL(obj)     (G_TYPE_CHECK_INSTANCE_TYPE((obj), GO_CHARMAP_SEL_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOCharmapSel-struct"></a><h3>GOCharmapSel</h3>
+<pre class="programlisting">typedef struct _GOCharmapSel GOCharmapSel;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOCharmapSelTestDirection"></a><h3>enum GOCharmapSelTestDirection</h3>
+<pre class="programlisting">typedef enum {
+	GO_CHARMAP_SEL_TO_UTF8 = 0,
+	GO_CHARMAP_SEL_FROM_UTF8
+} GOCharmapSelTestDirection;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-charmap-sel-get-type"></a><h3>go_charmap_sel_get_type ()</h3>
+<pre class="programlisting">GType               go_charmap_sel_get_type             (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-charmap-sel-new"></a><h3>go_charmap_sel_new ()</h3>
+<pre class="programlisting">GtkWidget *         go_charmap_sel_new                  (<a class="link" href="goffice-06-go-charmap-sel.html#GOCharmapSelTestDirection" title="enum GOCharmapSelTestDirection">GOCharmapSelTestDirection</a> test);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>test</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-charmap-sel-get-encoding"></a><h3>go_charmap_sel_get_encoding ()</h3>
+<pre class="programlisting">gchar const *       go_charmap_sel_get_encoding         (<a class="link" href="goffice-06-go-charmap-sel.html#GOCharmapSel">GOCharmapSel</a> *cs);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cs</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-charmap-sel-set-encoding"></a><h3>go_charmap_sel_set_encoding ()</h3>
+<pre class="programlisting">gboolean            go_charmap_sel_set_encoding         (<a class="link" href="goffice-06-go-charmap-sel.html#GOCharmapSel">GOCharmapSel</a> *cs,
+                                                         const char *enc);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cs</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>enc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-charmap-sel-get-encoding-name"></a><h3>go_charmap_sel_get_encoding_name ()</h3>
+<pre class="programlisting">const char *        go_charmap_sel_get_encoding_name    (<a class="link" href="goffice-06-go-charmap-sel.html#GOCharmapSel">GOCharmapSel</a> *cs,
+                                                         const char *enc);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cs</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>enc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-charmap-sel.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOCharmapSel--TestDirection"></a><h3>The <code class="literal">"TestDirection"</code> property</h3>
+<pre class="programlisting">  "TestDirection"            guint                 : Read / Write</pre>
+<p>This value determines which iconv test to perform.</p>
+<p>Allowed values: &lt;= 1</p>
+<p>Default value: 0</p>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-charmap-sel.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOCharmapSel-charmap-changed"></a><h3>The <code class="literal">"charmap-changed"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="goffice-06-go-charmap-sel.html#GOCharmapSel">GOCharmapSel</a> *gocharmapsel,
+                                                        gpointer      arg1,
+                                                        gpointer      user_data)         : Run Last</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gocharmapsel</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg1</code></em> :</span></p></td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

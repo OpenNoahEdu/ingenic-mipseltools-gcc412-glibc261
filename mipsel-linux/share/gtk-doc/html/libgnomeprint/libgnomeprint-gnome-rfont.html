@@ -1,0 +1,581 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>gnome-rfont</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="GNOME Print Reference Manual">
+<link rel="up" href="libgnomeprintunsorted.html" title="Part&#160;II.&#160;API Reference">
+<link rel="prev" href="libgnomeprint-gnome-print-unit.html" title="gnome-print-unit">
+<meta name="generator" content="GTK-Doc V1.8 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="libgnomeprint.html" title="Part&#160;I.&#160;GNOME Print Overview">
+<link rel="part" href="libgnomeprintunsorted.html" title="Part&#160;II.&#160;API Reference">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libgnomeprint-gnome-print-unit.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="libgnomeprintunsorted.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GNOME Print Reference Manual</th>
+<td>&#160;</td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id3007902" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id3008328" class="shortcut">Description</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="libgnomeprint-gnome-rfont"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id3007902"></a><span class="refentrytitle">gnome-rfont</span>
+</h2>
+<p>gnome-rfont</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<pre class="synopsis">
+
+
+
+                    <a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a>;
+                    <a href="libgnomeprint-gnome-rfont.html#GnomeRFontClass">GnomeRFontClass</a>;
+<a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a>*         <a href="libgnomeprint-gnome-rfont.html#gnome-font-get-rfont">gnome_font_get_rfont</a>                (<a href="libgnomeprint-gnome-font.html#GnomeFont">GnomeFont</a> *font,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> *t);
+#define             <a href="libgnomeprint-gnome-rfont.html#gnome-rfont-ref">gnome_rfont_ref</a>                     (o)
+#define             <a href="libgnomeprint-gnome-rfont.html#gnome-rfont-unref">gnome_rfont_unref</a>                   (o)
+#define             <a href="libgnomeprint-gnome-rfont.html#gnome-rfont-render-pgl-rgb8">gnome_rfont_render_pgl_rgb8</a>
+#define             <a href="libgnomeprint-gnome-rfont.html#gnome-rfont-render-pgl-rgba8">gnome_rfont_render_pgl_rgba8</a>
+#define             <a href="libgnomeprint-gnome-rfont.html#GNOME-RFONT-RENDER-DEFAULT:CAPS">GNOME_RFONT_RENDER_DEFAULT</a>
+<a href="libgnomeprint-gnome-font.html#GnomeFont">GnomeFont</a>*          <a href="libgnomeprint-gnome-rfont.html#gnome-rfont-get-font">gnome_rfont_get_font</a>                (const <a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont);
+<a href="libgnomeprint-gnome-font.html#GnomeFontFace">GnomeFontFace</a>*      <a href="libgnomeprint-gnome-rfont.html#gnome-rfont-get-face">gnome_rfont_get_face</a>                (const <a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont);
+<a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a>*            <a href="libgnomeprint-gnome-rfont.html#gnome-rfont-get-matrix">gnome_rfont_get_matrix</a>              (const <a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> *matrix);
+ArtPoint*           <a href="libgnomeprint-gnome-rfont.html#gnome-rfont-get-glyph-stdadvance">gnome_rfont_get_glyph_stdadvance</a>    (<a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> glyph,
+                                                         ArtPoint *advance);
+ArtDRect*           <a href="libgnomeprint-gnome-rfont.html#gnome-rfont-get-glyph-stdbbox">gnome_rfont_get_glyph_stdbbox</a>       (<a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> glyph,
+                                                         ArtDRect *bbox);
+ArtPoint*           <a href="libgnomeprint-gnome-rfont.html#gnome-rfont-get-glyph-stdkerning">gnome_rfont_get_glyph_stdkerning</a>    (<a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> glyph0,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> glyph1,
+                                                         ArtPoint *kerning);
+const ArtBpath*     <a href="libgnomeprint-gnome-rfont.html#gnome-rfont-get-glyph-bpath">gnome_rfont_get_glyph_bpath</a>         (<a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> glyph);
+const ArtSVP*       <a href="libgnomeprint-gnome-rfont.html#gnome-rfont-get-glyph-svp">gnome_rfont_get_glyph_svp</a>           (<a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> glyph);
+<a
+href="../pango/pango-Fonts.html#PangoFont"
+>PangoFont</a>*          <a href="libgnomeprint-gnome-rfont.html#gnome-rfont-get-closest-pango-font">gnome_rfont_get_closest_pango_font</a>  (const <a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont,
+                                                         <a
+href="../pango/pango-Fonts.html#PangoFontMap"
+>PangoFontMap</a> *map);
+<a
+href="../pango/pango-Fonts.html#PangoFontDescription"
+>PangoFontDescription</a>* <a href="libgnomeprint-gnome-rfont.html#gnome-rfont-get-pango-description">gnome_rfont_get_pango_description</a> (const <a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont);
+
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id3008328"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id3008342"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id3008352"></a><h3>
+<a name="GnomeRFont"></a>GnomeRFont</h3>
+<a class="indexterm" name="id3008365"></a><pre class="programlisting">typedef struct _GnomeRFont GnomeRFont;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3008380"></a><h3>
+<a name="GnomeRFontClass"></a>GnomeRFontClass</h3>
+<a class="indexterm" name="id3008393"></a><pre class="programlisting">typedef struct _GnomeRFontClass GnomeRFontClass;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3008409"></a><h3>
+<a name="gnome-font-get-rfont"></a>gnome_font_get_rfont ()</h3>
+<a class="indexterm" name="id3008422"></a><pre class="programlisting"><a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a>*         gnome_font_get_rfont                (<a href="libgnomeprint-gnome-font.html#GnomeFont">GnomeFont</a> *font,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> *t);</pre>
+<p>
+Creates a new RFont from <em class="parameter"><code>font</code></em> and font-&gt;raster affine matrix
+Matrix can be 2x2, although if read, all 2x3 values are
+retrieved. RFont is referenced, so you have to unref it
+somewhere</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>font</code></em>&#160;:</span></td>
+<td> 
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>t</code></em>&#160;:</span></td>
+<td> 
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> the font created, NULL on error.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3008513"></a><h3>
+<a name="gnome-rfont-ref"></a>gnome_rfont_ref()</h3>
+<a class="indexterm" name="id3008526"></a><pre class="programlisting">#define             gnome_rfont_ref(o)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><span class="term"><em class="parameter"><code>o</code></em>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3008559"></a><h3>
+<a name="gnome-rfont-unref"></a>gnome_rfont_unref()</h3>
+<a class="indexterm" name="id3008572"></a><pre class="programlisting">#define             gnome_rfont_unref(o)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><span class="term"><em class="parameter"><code>o</code></em>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3008605"></a><h3>
+<a name="gnome-rfont-render-pgl-rgb8"></a>gnome_rfont_render_pgl_rgb8</h3>
+<a class="indexterm" name="id3008617"></a><pre class="programlisting">#define             gnome_rfont_render_pgl_rgb8</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3008633"></a><h3>
+<a name="gnome-rfont-render-pgl-rgba8"></a>gnome_rfont_render_pgl_rgba8</h3>
+<a class="indexterm" name="id3008647"></a><pre class="programlisting">#define             gnome_rfont_render_pgl_rgba8</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3008663"></a><h3>
+<a name="GNOME-RFONT-RENDER-DEFAULT:CAPS"></a>GNOME_RFONT_RENDER_DEFAULT</h3>
+<a class="indexterm" name="id3008677"></a><pre class="programlisting">#define GNOME_RFONT_RENDER_DEFAULT 0
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3008693"></a><h3>
+<a name="gnome-rfont-get-font"></a>gnome_rfont_get_font ()</h3>
+<a class="indexterm" name="id3008706"></a><pre class="programlisting"><a href="libgnomeprint-gnome-font.html#GnomeFont">GnomeFont</a>*          gnome_rfont_get_font                (const <a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>rfont</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3008762"></a><h3>
+<a name="gnome-rfont-get-face"></a>gnome_rfont_get_face ()</h3>
+<a class="indexterm" name="id3008775"></a><pre class="programlisting"><a href="libgnomeprint-gnome-font.html#GnomeFontFace">GnomeFontFace</a>*      gnome_rfont_get_face                (const <a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>rfont</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3008832"></a><h3>
+<a name="gnome-rfont-get-matrix"></a>gnome_rfont_get_matrix ()</h3>
+<a class="indexterm" name="id3008845"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a>*            gnome_rfont_get_matrix              (const <a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> *matrix);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>rfont</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>matrix</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3008923"></a><h3>
+<a name="gnome-rfont-get-glyph-stdadvance"></a>gnome_rfont_get_glyph_stdadvance ()</h3>
+<a class="indexterm" name="id3008936"></a><pre class="programlisting">ArtPoint*           gnome_rfont_get_glyph_stdadvance    (<a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> glyph,
+                                                         ArtPoint *advance);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>rfont</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>glyph</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>advance</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3009035"></a><h3>
+<a name="gnome-rfont-get-glyph-stdbbox"></a>gnome_rfont_get_glyph_stdbbox ()</h3>
+<a class="indexterm" name="id3009049"></a><pre class="programlisting">ArtDRect*           gnome_rfont_get_glyph_stdbbox       (<a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> glyph,
+                                                         ArtDRect *bbox);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>rfont</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>glyph</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>bbox</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3009148"></a><h3>
+<a name="gnome-rfont-get-glyph-stdkerning"></a>gnome_rfont_get_glyph_stdkerning ()</h3>
+<a class="indexterm" name="id3009162"></a><pre class="programlisting">ArtPoint*           gnome_rfont_get_glyph_stdkerning    (<a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> glyph0,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> glyph1,
+                                                         ArtPoint *kerning);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>rfont</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>glyph0</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>glyph1</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>kerning</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3009282"></a><h3>
+<a name="gnome-rfont-get-glyph-bpath"></a>gnome_rfont_get_glyph_bpath ()</h3>
+<a class="indexterm" name="id3009296"></a><pre class="programlisting">const ArtBpath*     gnome_rfont_get_glyph_bpath         (<a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> glyph);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>rfont</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>glyph</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3009374"></a><h3>
+<a name="gnome-rfont-get-glyph-svp"></a>gnome_rfont_get_glyph_svp ()</h3>
+<a class="indexterm" name="id3009388"></a><pre class="programlisting">const ArtSVP*       gnome_rfont_get_glyph_svp           (<a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> glyph);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>rfont</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>glyph</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3009466"></a><h3>
+<a name="gnome-rfont-get-closest-pango-font"></a>gnome_rfont_get_closest_pango_font ()</h3>
+<a class="indexterm" name="id3009481"></a><pre class="programlisting"><a
+href="../pango/pango-Fonts.html#PangoFont"
+>PangoFont</a>*          gnome_rfont_get_closest_pango_font  (const <a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont,
+                                                         <a
+href="../pango/pango-Fonts.html#PangoFontMap"
+>PangoFontMap</a> *map);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>rfont</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>map</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id3009558"></a><h3>
+<a name="gnome-rfont-get-pango-description"></a>gnome_rfont_get_pango_description ()</h3>
+<a class="indexterm" name="id3009572"></a><pre class="programlisting"><a
+href="../pango/pango-Fonts.html#PangoFontDescription"
+>PangoFontDescription</a>* gnome_rfont_get_pango_description (const <a href="libgnomeprint-gnome-rfont.html#GnomeRFont">GnomeRFont</a> *rfont);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>rfont</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,845 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogStyle</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch03.html" title="Utilities">
+<link rel="prev" href="goffice-06-gog-plot-engine.html" title="GogPlotEngine">
+<link rel="next" href="goffice-06-gog-theme.html" title="GogTheme">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-gog-plot-engine.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-gog-theme.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-gog-style.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-gog-style.description" class="shortcut">Description</a>
+                 | 
+                <a href="#goffice-06-gog-style.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                 | 
+                <a href="#goffice-06-gog-style.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-gog-style"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-gog-style.top_of_page"></a>GogStyle</span></h2>
+<p>GogStyle — Style of graph objects</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-gog-style.synopsis"></a><h2>Synopsis</h2>
+<a name="GogStyle"></a><pre class="synopsis">
+#define             <a class="link" href="goffice-06-gog-style.html#GOG-STYLE-TYPE:CAPS" title="GOG_STYLE_TYPE">GOG_STYLE_TYPE</a>
+#define             <a class="link" href="goffice-06-gog-style.html#GOG-STYLE:CAPS" title="GOG_STYLE()">GOG_STYLE</a>                           (o)
+#define             <a class="link" href="goffice-06-gog-style.html#IS-GOG-STYLE:CAPS" title="IS_GOG_STYLE()">IS_GOG_STYLE</a>                        (o)
+GType               <a class="link" href="goffice-06-gog-style.html#gog-style-get-type" title="gog_style_get_type ()">gog_style_get_type</a>                  (void);
+enum                <a class="link" href="goffice-06-gog-style.html#GogStyleFlag" title="enum GogStyleFlag">GogStyleFlag</a>;
+enum                <a class="link" href="goffice-06-gog-style.html#GogFillStyle" title="enum GogFillStyle">GogFillStyle</a>;
+enum                <a class="link" href="goffice-06-gog-style.html#GogImageType" title="enum GogImageType">GogImageType</a>;
+                    <a class="link" href="goffice-06-gog-style.html#GogStyleLine" title="GogStyleLine">GogStyleLine</a>;
+                    <a class="link" href="goffice-06-gog-style.html#GogStyleMark" title="GogStyleMark">GogStyleMark</a>;
+                    <a class="link" href="goffice-06-gog-style.html#GogStyle-struct" title="GogStyle">GogStyle</a>;
+<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *          <a class="link" href="goffice-06-gog-style.html#gog-style-new" title="gog_style_new ()">gog_style_new</a>                       (void);
+<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *          <a class="link" href="goffice-06-gog-style.html#gog-style-dup" title="gog_style_dup ()">gog_style_dup</a>                       (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *style);
+void                <a class="link" href="goffice-06-gog-style.html#gog-style-assign" title="gog_style_assign ()">gog_style_assign</a>                    (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *dst,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *src);
+void                <a class="link" href="goffice-06-gog-style.html#gog-style-apply-theme" title="gog_style_apply_theme ()">gog_style_apply_theme</a>               (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *dst,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *src);
+GOMarker const *    <a class="link" href="goffice-06-gog-style.html#gog-style-get-marker" title="gog_style_get_marker ()">gog_style_get_marker</a>                (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style);
+void                <a class="link" href="goffice-06-gog-style.html#gog-style-set-marker" title="gog_style_set_marker ()">gog_style_set_marker</a>                (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         GOMarker *marker);
+void                <a class="link" href="goffice-06-gog-style.html#gog-style-set-font-desc" title="gog_style_set_font_desc ()">gog_style_set_font_desc</a>             (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         PangoFontDescription *desc);
+void                <a class="link" href="goffice-06-gog-style.html#gog-style-set-font" title="gog_style_set_font ()">gog_style_set_font</a>                  (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         <a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *font);
+void                <a class="link" href="goffice-06-gog-style.html#gog-style-set-fill-brightness" title="gog_style_set_fill_brightness ()">gog_style_set_fill_brightness</a>       (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         float brightness);
+void                <a class="link" href="goffice-06-gog-style.html#gog-style-set-fill-image-filename" title="gog_style_set_fill_image_filename ()">gog_style_set_fill_image_filename</a>   (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         char *filename);
+void                <a class="link" href="goffice-06-gog-style.html#gog-style-set-text-angle" title="gog_style_set_text_angle ()">gog_style_set_text_angle</a>            (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         double angle);
+gboolean            <a class="link" href="goffice-06-gog-style.html#gog-style-is-different-size" title="gog_style_is_different_size ()">gog_style_is_different_size</a>         (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *a,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *b);
+gboolean            <a class="link" href="goffice-06-gog-style.html#gog-style-is-marker-visible" title="gog_style_is_marker_visible ()">gog_style_is_marker_visible</a>         (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *style);
+gboolean            <a class="link" href="goffice-06-gog-style.html#gog-style-is-line-visible" title="gog_style_is_line_visible ()">gog_style_is_line_visible</a>           (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *style);
+gboolean            <a class="link" href="goffice-06-gog-style.html#gog-style-is-outline-visible" title="gog_style_is_outline_visible ()">gog_style_is_outline_visible</a>        (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *style);
+gboolean            <a class="link" href="goffice-06-gog-style.html#gog-style-is-fill-visible" title="gog_style_is_fill_visible ()">gog_style_is_fill_visible</a>           (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *style);
+void                <a class="link" href="goffice-06-gog-style.html#gog-style-force-auto" title="gog_style_force_auto ()">gog_style_force_auto</a>                (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style);
+void                <a class="link" href="goffice-06-gog-style.html#gog-style-populate-editor" title="gog_style_populate_editor ()">gog_style_populate_editor</a>           (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         <a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a> *editor,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *default_style,
+                                                         GOCmdContext *cc,
+                                                         GObject *object_with_style,
+                                                         gboolean watch_for_external_change);
+gpointer            <a class="link" href="goffice-06-gog-style.html#gog-style-get-editor" title="gog_style_get_editor ()">gog_style_get_editor</a>                (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *default_style,
+                                                         GOCmdContext *cc,
+                                                         GObject *object_with_style);
+cairo_pattern_t *   <a class="link" href="goffice-06-gog-style.html#gog-style-create-cairo-pattern" title="gog_style_create_cairo_pattern ()">gog_style_create_cairo_pattern</a>      (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *style,
+                                                         cairo_t *cr);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-style.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GogStyle
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-style.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GogStyle implements
+ <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPersist.html"
+>GogPersist</a>.</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-style.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-style.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOG-STYLE-TYPE:CAPS"></a><h3>GOG_STYLE_TYPE</h3>
+<pre class="programlisting">#define GOG_STYLE_TYPE	(gog_style_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-STYLE:CAPS"></a><h3>GOG_STYLE()</h3>
+<pre class="programlisting">#define GOG_STYLE(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GOG_STYLE_TYPE, GogStyle))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-STYLE:CAPS"></a><h3>IS_GOG_STYLE()</h3>
+<pre class="programlisting">#define IS_GOG_STYLE(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GOG_STYLE_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-get-type"></a><h3>gog_style_get_type ()</h3>
+<pre class="programlisting">GType               gog_style_get_type                  (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogStyleFlag"></a><h3>enum GogStyleFlag</h3>
+<pre class="programlisting">typedef enum {
+	GOG_STYLE_OUTLINE	= 1 &lt;&lt; 0,
+	GOG_STYLE_FILL		= 1 &lt;&lt; 1,
+	GOG_STYLE_LINE		= 1 &lt;&lt; 2,
+	GOG_STYLE_MARKER	= 1 &lt;&lt; 3,
+	GOG_STYLE_FONT		= 1 &lt;&lt; 4,
+	GOG_STYLE_TEXT_LAYOUT	= 1 &lt;&lt; 5,
+	GOG_STYLE_INTERPOLATION	= 1 &lt;&lt; 6,
+	GOG_STYLE_MARKER_NO_COLOR	= 1 &lt;&lt; 7,
+	GOG_STYLE_ALL		= 0x1F
+} GogStyleFlag;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogFillStyle"></a><h3>enum GogFillStyle</h3>
+<pre class="programlisting">typedef enum {
+	GOG_FILL_STYLE_NONE	= 0,
+	GOG_FILL_STYLE_PATTERN	= 1,
+	GOG_FILL_STYLE_GRADIENT	= 2,
+	GOG_FILL_STYLE_IMAGE	= 3
+} GogFillStyle;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogImageType"></a><h3>enum GogImageType</h3>
+<pre class="programlisting">typedef enum {
+	GOG_IMAGE_STRETCHED,
+	GOG_IMAGE_WALLPAPER,
+	GOG_IMAGE_CENTERED
+} GogImageType;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogStyleLine"></a><h3>GogStyleLine</h3>
+<pre class="programlisting">typedef struct {
+	/* &lt;0 == no outline,
+	 * =0 == hairline : unscaled, minimum useful (can be bigger than visible) size.
+	 * &gt;0 in pts */
+	float	 	 width;
+	GOLineDashType 	 dash_type;
+	gboolean	 auto_dash;
+	GOColor	 	 color;
+	gboolean 	 auto_color;
+	unsigned	 pattern_unimplemented_yet; /* TODO: implement. Not used
+				and must not be used before implementation */
+} GogStyleLine;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogStyleMark"></a><h3>GogStyleMark</h3>
+<pre class="programlisting">typedef struct {
+	GOMarker *mark;
+	gboolean auto_shape;
+	gboolean auto_outline_color;
+	gboolean auto_fill_color;
+} GogStyleMark;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogStyle-struct"></a><h3>GogStyle</h3>
+<pre class="programlisting">typedef struct _GogStyle GogStyle;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-new"></a><h3>gog_style_new ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *          gog_style_new                       (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-dup"></a><h3>gog_style_dup ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *          gog_style_dup                       (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *style);</pre>
+<p>
+Duplicates <em class="parameter"><code>style</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td> a source <a class="link" href="goffice-06-gog-style.html#GogStyle"><span class="type">GogStyle</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new <a class="link" href="goffice-06-gog-style.html#GogStyle"><span class="type">GogStyle</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-assign"></a><h3>gog_style_assign ()</h3>
+<pre class="programlisting">void                gog_style_assign                    (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *dst,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-apply-theme"></a><h3>gog_style_apply_theme ()</h3>
+<pre class="programlisting">void                gog_style_apply_theme               (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *dst,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *src);</pre>
+<p>
+Merge the attributes from <em class="parameter"><code>src</code></em> onto the elements of <em class="parameter"><code>dst</code></em> that were not user
+assigned (is_auto)</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-gog-style.html#GogStyle"><span class="type">GogStyle</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>  <a class="link" href="goffice-06-gog-style.html#GogStyle"><span class="type">GogStyle</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-get-marker"></a><h3>gog_style_get_marker ()</h3>
+<pre class="programlisting">GOMarker const *    gog_style_get_marker                (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style);</pre>
+<p>
+Accessor for <em class="parameter"><code>style</code></em>::marker, without referencing it.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-gog-style.html#GogStyle"><span class="type">GogStyle</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the style <span class="type">GOMarker</span>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-set-marker"></a><h3>gog_style_set_marker ()</h3>
+<pre class="programlisting">void                gog_style_set_marker                (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         GOMarker *marker);</pre>
+<p>
+Absorb a reference to <em class="parameter"><code>marker</code></em> and assign it to <em class="parameter"><code>style</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-gog-style.html#GogStyle"><span class="type">GogStyle</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>marker</code></em> :</span></p></td>
+<td> <span class="type">GOMarker</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-set-font-desc"></a><h3>gog_style_set_font_desc ()</h3>
+<pre class="programlisting">void                gog_style_set_font_desc             (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         PangoFontDescription *desc);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>desc</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-set-font"></a><h3>gog_style_set_font ()</h3>
+<pre class="programlisting">void                gog_style_set_font                  (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         <a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *font);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>font</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-set-fill-brightness"></a><h3>gog_style_set_fill_brightness ()</h3>
+<pre class="programlisting">void                gog_style_set_fill_brightness       (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         float brightness);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>brightness</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-set-fill-image-filename"></a><h3>gog_style_set_fill_image_filename ()</h3>
+<pre class="programlisting">void                gog_style_set_fill_image_filename   (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         char *filename);</pre>
+<p>
+absorb the string and eventually free it.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-gog-style.html#GogStyle"><span class="type">GogStyle</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filename</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-set-text-angle"></a><h3>gog_style_set_text_angle ()</h3>
+<pre class="programlisting">void                gog_style_set_text_angle            (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         double angle);</pre>
+<p>
+Set text rotation angle in degrees. Valid values are in the range
+[-180.0° , 180.0°].</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-gog-style.html#GogStyle"><span class="type">GogStyle</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>angle</code></em> :</span></p></td>
+<td> text rotation in degrees
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-is-different-size"></a><h3>gog_style_is_different_size ()</h3>
+<pre class="programlisting">gboolean            gog_style_is_different_size         (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *a,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *b);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-is-marker-visible"></a><h3>gog_style_is_marker_visible ()</h3>
+<pre class="programlisting">gboolean            gog_style_is_marker_visible         (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *style);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-is-line-visible"></a><h3>gog_style_is_line_visible ()</h3>
+<pre class="programlisting">gboolean            gog_style_is_line_visible           (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *style);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-is-outline-visible"></a><h3>gog_style_is_outline_visible ()</h3>
+<pre class="programlisting">gboolean            gog_style_is_outline_visible        (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *style);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-is-fill-visible"></a><h3>gog_style_is_fill_visible ()</h3>
+<pre class="programlisting">gboolean            gog_style_is_fill_visible           (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *style);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-force-auto"></a><h3>gog_style_force_auto ()</h3>
+<pre class="programlisting">void                gog_style_force_auto                (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-populate-editor"></a><h3>gog_style_populate_editor ()</h3>
+<pre class="programlisting">void                gog_style_populate_editor           (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         <a class="link" href="GogObject.html#GogEditor" title="GogEditor">GogEditor</a> *editor,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *default_style,
+                                                         GOCmdContext *cc,
+                                                         GObject *object_with_style,
+                                                         gboolean watch_for_external_change);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>editor</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>default_style</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_with_style</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>watch_for_external_change</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-get-editor"></a><h3>gog_style_get_editor ()</h3>
+<pre class="programlisting">gpointer            gog_style_get_editor                (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *default_style,
+                                                         GOCmdContext *cc,
+                                                         GObject *object_with_style);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>default_style</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_with_style</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-style-create-cairo-pattern"></a><h3>gog_style_create_cairo_pattern ()</h3>
+<pre class="programlisting">cairo_pattern_t *   gog_style_create_cairo_pattern      (<a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> const *style,
+                                                         cairo_t *cr);</pre>
+<p>
+Create a cairo_patern_t using the current style settings for filling.
+A pattern will be created only if the style has the corresponding field
+and if it is not set to a none constant.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-gog-style.html#GogStyle"><span class="type">GogStyle</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cr</code></em> :</span></p></td>
+<td> a cairo context
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the pattern or NULL if it could not be created.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

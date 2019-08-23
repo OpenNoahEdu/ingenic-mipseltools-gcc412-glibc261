@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogSmoothedCurve</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch02.html" title="Abstract Base Classes">
+<link rel="prev" href="goffice-06-gog-trend-line.html" title="GogTrendLine">
+<link rel="next" href="GogRegCurve.html" title="GogRegCurve">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-gog-trend-line.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="GogRegCurve.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GogSmoothedCurve.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#GogSmoothedCurve.description" class="shortcut">Description</a>
+                 | 
+                <a href="#GogSmoothedCurve.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="GogSmoothedCurve"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GogSmoothedCurve.top_of_page"></a>GogSmoothedCurve</span></h2>
+<p>GogSmoothedCurve — Base class for smoothed curves</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GogSmoothedCurve.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="GogSmoothedCurve.html#GogSmoothedCurve-struct" title="GogSmoothedCurve">GogSmoothedCurve</a>;
+#define             <a class="link" href="GogSmoothedCurve.html#GOG-SMOOTHED-CURVE-TYPE:CAPS" title="GOG_SMOOTHED_CURVE_TYPE">GOG_SMOOTHED_CURVE_TYPE</a>
+#define             <a class="link" href="GogSmoothedCurve.html#GOG-SMOOTHED-CURVE:CAPS" title="GOG_SMOOTHED_CURVE()">GOG_SMOOTHED_CURVE</a>                  (o)
+#define             <a class="link" href="GogSmoothedCurve.html#IS-GOG-SMOOTHED-CURVE:CAPS" title="IS_GOG_SMOOTHED_CURVE()">IS_GOG_SMOOTHED_CURVE</a>               (o)
+GType               <a class="link" href="GogSmoothedCurve.html#gog-smoothed-curve-get-type" title="gog_smoothed_curve_get_type ()">gog_smoothed_curve_get_type</a>         (void);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogSmoothedCurve.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----<a class="link" href="GogObject.html" title="GogObject">GogObject</a>
+         +----<a class="link" href="GogStyledObject.html" title="GogStyledObject">GogStyledObject</a>
+               +----<a class="link" href="goffice-06-gog-trend-line.html#GogTrendLine">GogTrendLine</a>
+                     +----GogSmoothedCurve
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogSmoothedCurve.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="GogSmoothedCurve.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GogSmoothedCurve-struct"></a><h3>GogSmoothedCurve</h3>
+<pre class="programlisting">typedef struct _GogSmoothedCurve GogSmoothedCurve;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-SMOOTHED-CURVE-TYPE:CAPS"></a><h3>GOG_SMOOTHED_CURVE_TYPE</h3>
+<pre class="programlisting">#define GOG_SMOOTHED_CURVE_TYPE	(gog_smoothed_curve_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-SMOOTHED-CURVE:CAPS"></a><h3>GOG_SMOOTHED_CURVE()</h3>
+<pre class="programlisting">#define GOG_SMOOTHED_CURVE(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GOG_SMOOTHED_CURVE_TYPE, GogSmoothedCurve))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-SMOOTHED-CURVE:CAPS"></a><h3>IS_GOG_SMOOTHED_CURVE()</h3>
+<pre class="programlisting">#define IS_GOG_SMOOTHED_CURVE(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GOG_SMOOTHED_CURVE_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-smoothed-curve-get-type"></a><h3>gog_smoothed_curve_get_type ()</h3>
+<pre class="programlisting">GType               gog_smoothed_curve_get_type         (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

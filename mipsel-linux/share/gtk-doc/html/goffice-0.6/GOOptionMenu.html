@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GOOptionMenu</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch04.html" title="Base widgets">
+<link rel="prev" href="goffice-06-go-combo-pixmaps.html" title="go-combo-pixmaps">
+<link rel="next" href="GOPalette.html" title="GoPalette">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-combo-pixmaps.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch04.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="GOPalette.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GOOptionMenu.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#GOOptionMenu.description" class="shortcut">Description</a>
+                 | 
+                <a href="#GOOptionMenu.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                 | 
+                <a href="#GOOptionMenu.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                 | 
+                <a href="#GOOptionMenu.properties" class="shortcut">Properties</a>
+                 | 
+                <a href="#GOOptionMenu.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="GOOptionMenu"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GOOptionMenu.top_of_page"></a>GOOptionMenu</span></h2>
+<p>GOOptionMenu</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GOOptionMenu.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="GOOptionMenu.html#GOOptionMenu-struct" title="GOOptionMenu">GOOptionMenu</a>;
+GtkWidget*          <a class="link" href="GOOptionMenu.html#go-option-menu-new" title="go_option_menu_new ()">go_option_menu_new</a>                  (void);
+void                <a class="link" href="GOOptionMenu.html#go-option-menu-set-menu" title="go_option_menu_set_menu ()">go_option_menu_set_menu</a>             (<a class="link" href="GOOptionMenu.html" title="GOOptionMenu">GOOptionMenu</a> *option_menu,
+                                                         GtkWidget *menu);
+void                <a class="link" href="GOOptionMenu.html#go-option-menu-set-history" title="go_option_menu_set_history ()">go_option_menu_set_history</a>          (<a class="link" href="GOOptionMenu.html" title="GOOptionMenu">GOOptionMenu</a> *option_menu,
+                                                         GSList *selection);
+GtkWidget *         <a class="link" href="GOOptionMenu.html#go-option-menu-get-history" title="go_option_menu_get_history ()">go_option_menu_get_history</a>          (<a class="link" href="GOOptionMenu.html" title="GOOptionMenu">GOOptionMenu</a> *option_menu);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOOptionMenu.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkObject
+               +----GtkWidget
+                     +----GtkContainer
+                           +----GtkBin
+                                 +----GtkButton
+                                       +----GOOptionMenu
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOOptionMenu.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GOOptionMenu implements
+ AtkImplementorIface and  GtkBuildable.</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOOptionMenu.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="GOOptionMenu.html#GOOptionMenu--menu" title='The "menu" property'>menu</a>"                     GtkMenu*              : Read / Write
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOOptionMenu.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="GOOptionMenu.html#GOOptionMenu-changed" title='The "changed" signal'>changed</a>"                                        : Run Last
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOOptionMenu.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOOptionMenu.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOOptionMenu-struct"></a><h3>GOOptionMenu</h3>
+<pre class="programlisting">typedef struct _GOOptionMenu GOOptionMenu;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-option-menu-new"></a><h3>go_option_menu_new ()</h3>
+<pre class="programlisting">GtkWidget*          go_option_menu_new                  (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-option-menu-set-menu"></a><h3>go_option_menu_set_menu ()</h3>
+<pre class="programlisting">void                go_option_menu_set_menu             (<a class="link" href="GOOptionMenu.html" title="GOOptionMenu">GOOptionMenu</a> *option_menu,
+                                                         GtkWidget *menu);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>option_menu</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>menu</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-option-menu-set-history"></a><h3>go_option_menu_set_history ()</h3>
+<pre class="programlisting">void                go_option_menu_set_history          (<a class="link" href="GOOptionMenu.html" title="GOOptionMenu">GOOptionMenu</a> *option_menu,
+                                                         GSList *selection);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>option_menu</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-option-menu-get-history"></a><h3>go_option_menu_get_history ()</h3>
+<pre class="programlisting">GtkWidget *         go_option_menu_get_history          (<a class="link" href="GOOptionMenu.html" title="GOOptionMenu">GOOptionMenu</a> *option_menu);</pre>
+<p>
+Retrieves the currently selected menu item.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>option_menu</code></em> :</span></p></td>
+<td> a <a class="link" href="GOOptionMenu.html" title="GOOptionMenu"><span class="type">GOOptionMenu</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the selected menu_item
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOOptionMenu.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOOptionMenu--menu"></a><h3>The <code class="literal">"menu"</code> property</h3>
+<pre class="programlisting">  "menu"                     GtkMenu*              : Read / Write</pre>
+<p>The menu of options.</p>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOOptionMenu.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOOptionMenu-changed"></a><h3>The <code class="literal">"changed"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="GOOptionMenu.html" title="GOOptionMenu">GOOptionMenu</a> *gooptionmenu,
+                                                        gpointer      user_data)         : Run Last</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gooptionmenu</code></em> :</span></p></td>
+<td>the object which received the signal.
+
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

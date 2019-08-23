@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-cairo</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch07.html" title="Rendering utilities">
+<link rel="prev" href="ch07.html" title="Rendering utilities">
+<link rel="next" href="goffice-06-go-path.html" title="GoPath">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch07.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch07.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-go-path.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-cairo.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-cairo.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-cairo"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-cairo.top_of_page"></a>go-cairo</span></h2>
+<p>go-cairo</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-cairo.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="goffice-06-go-cairo.html#GO-CAIRO-CLAMP:CAPS" title="GO_CAIRO_CLAMP()">GO_CAIRO_CLAMP</a>                      (x)
+#define             <a class="link" href="goffice-06-go-cairo.html#GO-CAIRO-CLAMP-SNAP:CAPS" title="GO_CAIRO_CLAMP_SNAP()">GO_CAIRO_CLAMP_SNAP</a>                 (x,even)
+void                <a class="link" href="goffice-06-go-cairo.html#go-cairo-emit-svg-path" title="go_cairo_emit_svg_path ()">go_cairo_emit_svg_path</a>              (cairo_t *cr,
+                                                         char const *path);
+gboolean            <a class="link" href="goffice-06-go-cairo.html#go-cairo-surface-is-vector" title="go_cairo_surface_is_vector ()">go_cairo_surface_is_vector</a>          (cairo_surface_t const *surface);
+void                <a class="link" href="goffice-06-go-cairo.html#go-cairo-convert-data-to-pixbuf" title="go_cairo_convert_data_to_pixbuf ()">go_cairo_convert_data_to_pixbuf</a>     (unsigned char *dst,
+                                                         unsigned char const *src,
+                                                         int width,
+                                                         int height,
+                                                         int rowstride);
+void                <a class="link" href="goffice-06-go-cairo.html#go-cairo-convert-data-from-pixbuf" title="go_cairo_convert_data_from_pixbuf ()">go_cairo_convert_data_from_pixbuf</a>   (unsigned char *dst,
+                                                         unsigned char const *src,
+                                                         int width,
+                                                         int height,
+                                                         int rowstride);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-cairo.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-cairo.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GO-CAIRO-CLAMP:CAPS"></a><h3>GO_CAIRO_CLAMP()</h3>
+<pre class="programlisting">#define GO_CAIRO_CLAMP(x) CLAMP((x),-15000,15000)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-CAIRO-CLAMP-SNAP:CAPS"></a><h3>GO_CAIRO_CLAMP_SNAP()</h3>
+<pre class="programlisting">#define GO_CAIRO_CLAMP_SNAP(x,even) GO_CAIRO_CLAMP(even ? floor (x + .5):floor (x) + .5)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>even</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-cairo-emit-svg-path"></a><h3>go_cairo_emit_svg_path ()</h3>
+<pre class="programlisting">void                go_cairo_emit_svg_path              (cairo_t *cr,
+                                                         char const *path);</pre>
+<p>
+Emits a path described as a SVG path string (d property of path elements) to 
+a cairo context.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cr</code></em> :</span></p></td>
+<td> a cairo context
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td> a SVG path
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-cairo-surface-is-vector"></a><h3>go_cairo_surface_is_vector ()</h3>
+<pre class="programlisting">gboolean            go_cairo_surface_is_vector          (cairo_surface_t const *surface);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>surface</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-cairo-convert-data-to-pixbuf"></a><h3>go_cairo_convert_data_to_pixbuf ()</h3>
+<pre class="programlisting">void                go_cairo_convert_data_to_pixbuf     (unsigned char *dst,
+                                                         unsigned char const *src,
+                                                         int width,
+                                                         int height,
+                                                         int rowstride);</pre>
+<p>
+Converts the pixel data stored in <em class="parameter"><code>src</code></em> in CAIRO_FORMAT_ARGB32 cairo format 
+to GDK_COLORSPACE_RGB pixbuf format and move them
+to <em class="parameter"><code>dst</code></em>. If <em class="parameter"><code>src</code></em> == <em class="parameter"><code>dst</code></em>, pixel are converted in place.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td> a pointer to pixel data in pixbuf format
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td> a pointer to pixel data in cairo format
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
+<td> image width
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
+<td> image height
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rowstride</code></em> :</span></p></td>
+<td> data rowstride
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-cairo-convert-data-from-pixbuf"></a><h3>go_cairo_convert_data_from_pixbuf ()</h3>
+<pre class="programlisting">void                go_cairo_convert_data_from_pixbuf   (unsigned char *dst,
+                                                         unsigned char const *src,
+                                                         int width,
+                                                         int height,
+                                                         int rowstride);</pre>
+<p>
+Converts the pixel data stored in <em class="parameter"><code>src</code></em> in GDK_COLORSPACE_RGB pixbuf 
+format to CAIRO_FORMAT_ARGB32 cairo format and move them
+to <em class="parameter"><code>dst</code></em>. If <em class="parameter"><code>src</code></em> == <em class="parameter"><code>dst</code></em>, pixel are converted in place.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td> a pointer to pixel data in cairo format
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td> a pointer to pixel data in pixbuf format
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
+<td> image width
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
+<td> image height
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rowstride</code></em> :</span></p></td>
+<td> data rowstride
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

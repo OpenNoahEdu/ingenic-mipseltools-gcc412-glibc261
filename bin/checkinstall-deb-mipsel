@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Packaging utility.
+#
+# Usage: 
+# 
+#   $ checkinstall-deb-mipsel                         --> do packaging of make install (default)
+#   $ checkinstall-deb-mipsel make install-libs       --> do packaging of make install-libs
+#   $ checkinstall-deb-mipsel make arg1 arg2          --> do packaging of make arg1 arg2
+#
+
+export PATH=/opt/mipseltools/mipsel-linux/bin:$PATH  # path of strip
+
+checkinstall -D --arch=mipsel --pkggroup=ingenic --maintainer=package-maintainer@ingenic.cn --strip=yes --stripso=yes $*

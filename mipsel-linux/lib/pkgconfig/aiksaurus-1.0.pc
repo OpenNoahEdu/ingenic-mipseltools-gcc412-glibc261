@@ -1,0 +1,10 @@
+prefix=/opt/mipseltools/mipsel-linux
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: Aiksaurus
+Description: English Thesaurus Library
+Version: 1.2.1
+Libs: -L${libdir} -lAiksaurus
+Cflags: -I${includedir}/Aiksaurus

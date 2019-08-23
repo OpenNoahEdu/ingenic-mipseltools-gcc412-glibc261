@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-line</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch06.html" title="Graphic object properties">
+<link rel="prev" href="goffice-06-go-gradient.html" title="go-gradient">
+<link rel="next" href="goffice-06-go-marker.html" title="go-marker">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-gradient.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-go-marker.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-line.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-line.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-line"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-line.top_of_page"></a>go-line</span></h2>
+<p>go-line</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-line.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+enum                <a class="link" href="goffice-06-go-line.html#GOLineDashType" title="enum GOLineDashType">GOLineDashType</a>;
+enum                <a class="link" href="goffice-06-go-line.html#GOLineInterpolation" title="enum GOLineInterpolation">GOLineInterpolation</a>;
+                    <a class="link" href="goffice-06-go-line.html#GOLineDashSequence" title="GOLineDashSequence">GOLineDashSequence</a>;
+<a class="link" href="goffice-06-go-line.html#GOLineDashType" title="enum GOLineDashType">GOLineDashType</a>      <a class="link" href="goffice-06-go-line.html#go-line-dash-from-str" title="go_line_dash_from_str ()">go_line_dash_from_str</a>               (char const *name);
+char const 		*      <a class="link" href="goffice-06-go-line.html#go-line-dash-as-str" title="go_line_dash_as_str ()">go_line_dash_as_str</a>                 (<a class="link" href="goffice-06-go-line.html#GOLineDashType" title="enum GOLineDashType">GOLineDashType</a> type);
+char const 		*      <a class="link" href="goffice-06-go-line.html#go-line-dash-as-label" title="go_line_dash_as_label ()">go_line_dash_as_label</a>               (<a class="link" href="goffice-06-go-line.html#GOLineDashType" title="enum GOLineDashType">GOLineDashType</a> type);
+double              <a class="link" href="goffice-06-go-line.html#go-line-dash-get-length" title="go_line_dash_get_length ()">go_line_dash_get_length</a>             (<a class="link" href="goffice-06-go-line.html#GOLineDashType" title="enum GOLineDashType">GOLineDashType</a> type);
+<a class="link" href="goffice-06-go-line.html#GOLineDashSequence" title="GOLineDashSequence">GOLineDashSequence</a> * <a class="link" href="goffice-06-go-line.html#go-line-dash-get-sequence" title="go_line_dash_get_sequence ()">go_line_dash_get_sequence</a>          (<a class="link" href="goffice-06-go-line.html#GOLineDashType" title="enum GOLineDashType">GOLineDashType</a> type,
+                                                         double scale);
+void                <a class="link" href="goffice-06-go-line.html#go-line-dash-sequence-free" title="go_line_dash_sequence_free ()">go_line_dash_sequence_free</a>          (<a class="link" href="goffice-06-go-line.html#GOLineDashSequence" title="GOLineDashSequence">GOLineDashSequence</a> *sequence);
+<a class="link" href="goffice-06-go-line.html#GOLineInterpolation" title="enum GOLineInterpolation">GOLineInterpolation</a>  <a class="link" href="goffice-06-go-line.html#go-line-interpolation-from-str" title="go_line_interpolation_from_str ()">go_line_interpolation_from_str</a>     (char const *name);
+char const 		*      <a class="link" href="goffice-06-go-line.html#go-line-interpolation-as-str" title="go_line_interpolation_as_str ()">go_line_interpolation_as_str</a>        (<a class="link" href="goffice-06-go-line.html#GOLineInterpolation" title="enum GOLineInterpolation">GOLineInterpolation</a> type);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-line.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-line.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOLineDashType"></a><h3>enum GOLineDashType</h3>
+<pre class="programlisting">typedef enum {
+	GO_LINE_NONE,
+	GO_LINE_SOLID,
+	GO_LINE_S_DOT,
+	GO_LINE_S_DASH_DOT,
+	GO_LINE_S_DASH_DOT_DOT,
+	GO_LINE_DASH_DOT_DOT_DOT,
+	GO_LINE_DOT,
+	GO_LINE_S_DASH,
+	GO_LINE_DASH,
+	GO_LINE_LONG_DASH,
+	GO_LINE_DASH_DOT,
+	GO_LINE_DASH_DOT_DOT,
+	GO_LINE_MAX
+} GOLineDashType;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOLineInterpolation"></a><h3>enum GOLineInterpolation</h3>
+<pre class="programlisting">typedef enum {
+	GO_LINE_INTERPOLATION_LINEAR,
+	GO_LINE_INTERPOLATION_SPLINE,
+	GO_LINE_INTERPOLATION_STEP_START,
+	GO_LINE_INTERPOLATION_STEP_END,
+	GO_LINE_INTERPOLATION_STEP_CENTER_X,
+	GO_LINE_INTERPOLATION_STEP_CENTER_Y,
+	GO_LINE_INTERPOLATION_MAX
+} GOLineInterpolation;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOLineDashSequence"></a><h3>GOLineDashSequence</h3>
+<pre class="programlisting">typedef struct {
+	double		 offset;
+	unsigned int	 n_dash;
+	double		*dash;
+} GOLineDashSequence;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-line-dash-from-str"></a><h3>go_line_dash_from_str ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-line.html#GOLineDashType" title="enum GOLineDashType">GOLineDashType</a>      go_line_dash_from_str               (char const *name);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td> Name of the dash type
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-line.html#GOLineDashType" title="enum GOLineDashType"><span class="type">GOLineDashType</span></a> corresponding to name, or <code class="literal">GO_LINE_NONE</code>
+	if not found.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-line-dash-as-str"></a><h3>go_line_dash_as_str ()</h3>
+<pre class="programlisting">char const 		*      go_line_dash_as_str                 (<a class="link" href="goffice-06-go-line.html#GOLineDashType" title="enum GOLineDashType">GOLineDashType</a> type);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-line.html#GOLineDashType" title="enum GOLineDashType"><span class="type">GOLineDashType</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a pointer to the nickname of the dash type, or "none" if 
+	type is invalid. The returning string should not be freed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-line-dash-as-label"></a><h3>go_line_dash_as_label ()</h3>
+<pre class="programlisting">char const 		*      go_line_dash_as_label               (<a class="link" href="goffice-06-go-line.html#GOLineDashType" title="enum GOLineDashType">GOLineDashType</a> type);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-line.html#GOLineDashType" title="enum GOLineDashType"><span class="type">GOLineDashType</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a pointer to the user readable name of the dash type,
+	or the name of <code class="literal">GO_LINE_NONE</code> if type is invalid. The returned
+	string should not be freed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-line-dash-get-length"></a><h3>go_line_dash_get_length ()</h3>
+<pre class="programlisting">double              go_line_dash_get_length             (<a class="link" href="goffice-06-go-line.html#GOLineDashType" title="enum GOLineDashType">GOLineDashType</a> type);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-go-line.html#GOLineDashType" title="enum GOLineDashType"><span class="type">GOLineDashType</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the unscaled length of the dash sequence.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-line-dash-get-sequence"></a><h3>go_line_dash_get_sequence ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-line.html#GOLineDashSequence" title="GOLineDashSequence">GOLineDashSequence</a> * go_line_dash_get_sequence          (<a class="link" href="goffice-06-go-line.html#GOLineDashType" title="enum GOLineDashType">GOLineDashType</a> type,
+                                                         double scale);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-line.html#GOLineDashType" title="enum GOLineDashType"><span class="type">GOLineDashType</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>scale</code></em> :</span></p></td>
+<td> dash scale
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a struct containing the dash sequence corresponding to <em class="parameter"><code>type</code></em>,
+	or <code class="literal">NULL</code> if type is invalid or equal to <code class="literal">GO_LINE_NONE</code>.
+	The lengths are scaled according to <em class="parameter"><code>scale</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-line-dash-sequence-free"></a><h3>go_line_dash_sequence_free ()</h3>
+<pre class="programlisting">void                go_line_dash_sequence_free          (<a class="link" href="goffice-06-go-line.html#GOLineDashSequence" title="GOLineDashSequence">GOLineDashSequence</a> *sequence);</pre>
+<p>
+Frees the dash sequence struct.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>sequence</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-line.html#GOLineDashSequence" title="GOLineDashSequence"><span class="type">GOLineDashSequence</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-line-interpolation-from-str"></a><h3>go_line_interpolation_from_str ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-line.html#GOLineInterpolation" title="enum GOLineInterpolation">GOLineInterpolation</a>  go_line_interpolation_from_str     (char const *name);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td> an interpolation type nickname
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-line.html#GOLineInterpolation" title="enum GOLineInterpolation"><span class="type">GOLineInterpolation</span></a> corresponding to <em class="parameter"><code>name</code></em>, or 
+	<code class="literal">GO_LINE_INTERPOLATION_LINEAR</code> if not found.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-line-interpolation-as-str"></a><h3>go_line_interpolation_as_str ()</h3>
+<pre class="programlisting">char const 		*      go_line_interpolation_as_str        (<a class="link" href="goffice-06-go-line.html#GOLineInterpolation" title="enum GOLineInterpolation">GOLineInterpolation</a> type);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td> an interpolation type
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a pointer to the nickname of <em class="parameter"><code>type</code></em>, or "linear" if type
+	is invalid. The returned string should not be freed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

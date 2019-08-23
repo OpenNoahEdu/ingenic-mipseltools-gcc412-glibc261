@@ -1,0 +1,15 @@
+prefix=/opt/mipseltools-gcc412-glibc261/mipsel-linux
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+xthreadlib=-lpthread
+
+Name: X11
+Description: X Library
+Version: 1.1.5
+Requires: xproto kbproto
+Requires.private: xau xdmcp 
+Cflags: -I${includedir} 
+Libs: -L${libdir} -lX11
+Libs.private: -lpthread

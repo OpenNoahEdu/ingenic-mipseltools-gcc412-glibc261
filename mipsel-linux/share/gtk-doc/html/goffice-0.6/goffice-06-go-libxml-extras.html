@@ -1,0 +1,668 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-libxml-extras</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch13.html" title="Miscellaneous">
+<link rel="prev" href="goffice-06-go-glib-extras.html" title="go-glib-extras">
+<link rel="next" href="GOUndoUnary.html" title="GoUndo">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-glib-extras.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch13.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="GOUndoUnary.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-libxml-extras.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-libxml-extras.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-libxml-extras"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-libxml-extras.top_of_page"></a>go-libxml-extras</span></h2>
+<p>go-libxml-extras</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-libxml-extras.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+xmlDocPtr           <a class="link" href="goffice-06-go-libxml-extras.html#go-xml-parse-file" title="go_xml_parse_file ()">go_xml_parse_file</a>                   (const char *filename);
+xmlChar *           <a class="link" href="goffice-06-go-libxml-extras.html#xml-node-get-cstr" title="xml_node_get_cstr ()">xml_node_get_cstr</a>                   (xmlNodePtr node,
+                                                         char const *name);
+void                <a class="link" href="goffice-06-go-libxml-extras.html#xml-node-set-cstr" title="xml_node_set_cstr ()">xml_node_set_cstr</a>                   (xmlNodePtr node,
+                                                         char const *name,
+                                                         char const *val);
+gboolean            <a class="link" href="goffice-06-go-libxml-extras.html#xml-node-get-bool" title="xml_node_get_bool ()">xml_node_get_bool</a>                   (xmlNodePtr node,
+                                                         char const *name,
+                                                         gboolean *result);
+void                <a class="link" href="goffice-06-go-libxml-extras.html#xml-node-set-bool" title="xml_node_set_bool ()">xml_node_set_bool</a>                   (xmlNodePtr node,
+                                                         char const *name,
+                                                         gboolean val);
+gboolean            <a class="link" href="goffice-06-go-libxml-extras.html#xml-node-get-int" title="xml_node_get_int ()">xml_node_get_int</a>                    (xmlNodePtr node,
+                                                         char const *name,
+                                                         int *result);
+void                <a class="link" href="goffice-06-go-libxml-extras.html#xml-node-set-int" title="xml_node_set_int ()">xml_node_set_int</a>                    (xmlNodePtr node,
+                                                         char const *name,
+                                                         int val);
+gboolean            <a class="link" href="goffice-06-go-libxml-extras.html#xml-node-get-double" title="xml_node_get_double ()">xml_node_get_double</a>                 (xmlNodePtr node,
+                                                         char const *name,
+                                                         double *result);
+void                <a class="link" href="goffice-06-go-libxml-extras.html#xml-node-set-double" title="xml_node_set_double ()">xml_node_set_double</a>                 (xmlNodePtr node,
+                                                         char const *name,
+                                                         double val,
+                                                         int precision);
+gboolean            <a class="link" href="goffice-06-go-libxml-extras.html#xml-node-get-gocolor" title="xml_node_get_gocolor ()">xml_node_get_gocolor</a>                (xmlNodePtr node,
+                                                         char const *name,
+                                                         GOColor *result);
+void                <a class="link" href="goffice-06-go-libxml-extras.html#xml-node-set-gocolor" title="xml_node_set_gocolor ()">xml_node_set_gocolor</a>                (xmlNodePtr node,
+                                                         char const *name,
+                                                         GOColor val);
+gboolean            <a class="link" href="goffice-06-go-libxml-extras.html#xml-node-get-enum" title="xml_node_get_enum ()">xml_node_get_enum</a>                   (xmlNodePtr node,
+                                                         char const *name,
+                                                         GType etype,
+                                                         gint *val);
+void                <a class="link" href="goffice-06-go-libxml-extras.html#xml-node-set-enum" title="xml_node_set_enum ()">xml_node_set_enum</a>                   (xmlNodePtr node,
+                                                         char const *name,
+                                                         GType etype,
+                                                         gint val);
+xmlNode *           <a class="link" href="goffice-06-go-libxml-extras.html#e-xml-get-child-by-name" title="e_xml_get_child_by_name ()">e_xml_get_child_by_name</a>             (xmlNode const *tree,
+                                                         char const *name);
+xmlNode *           <a class="link" href="goffice-06-go-libxml-extras.html#e-xml-get-child-by-name-no-lang" title="e_xml_get_child_by_name_no_lang ()">e_xml_get_child_by_name_no_lang</a>     (xmlNode const *tree,
+                                                         char const *name);
+xmlNode *           <a class="link" href="goffice-06-go-libxml-extras.html#e-xml-get-child-by-name-by-lang" title="e_xml_get_child_by_name_by_lang ()">e_xml_get_child_by_name_by_lang</a>     (xmlNode const *tree,
+                                                         char const *name);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-libxml-extras.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-libxml-extras.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="go-xml-parse-file"></a><h3>go_xml_parse_file ()</h3>
+<pre class="programlisting">xmlDocPtr           go_xml_parse_file                   (const char *filename);</pre>
+<p>
+Like xmlParseFile, but faster.  Does not accept compressed files.
+See http://bugzilla.gnome.org/show_bug.cgi?id=168414
+</p>
+<p>
+Note: this reads the entire file into memory and should therefore
+not be used for user-supplied files.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filename</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="xml-node-get-cstr"></a><h3>xml_node_get_cstr ()</h3>
+<pre class="programlisting">xmlChar *           xml_node_get_cstr                   (xmlNodePtr node,
+                                                         char const *name);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="xml-node-set-cstr"></a><h3>xml_node_set_cstr ()</h3>
+<pre class="programlisting">void                xml_node_set_cstr                   (xmlNodePtr node,
+                                                         char const *name,
+                                                         char const *val);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="xml-node-get-bool"></a><h3>xml_node_get_bool ()</h3>
+<pre class="programlisting">gboolean            xml_node_get_bool                   (xmlNodePtr node,
+                                                         char const *name,
+                                                         gboolean *result);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>result</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="xml-node-set-bool"></a><h3>xml_node_set_bool ()</h3>
+<pre class="programlisting">void                xml_node_set_bool                   (xmlNodePtr node,
+                                                         char const *name,
+                                                         gboolean val);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="xml-node-get-int"></a><h3>xml_node_get_int ()</h3>
+<pre class="programlisting">gboolean            xml_node_get_int                    (xmlNodePtr node,
+                                                         char const *name,
+                                                         int *result);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>result</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="xml-node-set-int"></a><h3>xml_node_set_int ()</h3>
+<pre class="programlisting">void                xml_node_set_int                    (xmlNodePtr node,
+                                                         char const *name,
+                                                         int val);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="xml-node-get-double"></a><h3>xml_node_get_double ()</h3>
+<pre class="programlisting">gboolean            xml_node_get_double                 (xmlNodePtr node,
+                                                         char const *name,
+                                                         double *result);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>result</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="xml-node-set-double"></a><h3>xml_node_set_double ()</h3>
+<pre class="programlisting">void                xml_node_set_double                 (xmlNodePtr node,
+                                                         char const *name,
+                                                         double val,
+                                                         int precision);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>precision</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="xml-node-get-gocolor"></a><h3>xml_node_get_gocolor ()</h3>
+<pre class="programlisting">gboolean            xml_node_get_gocolor                (xmlNodePtr node,
+                                                         char const *name,
+                                                         GOColor *result);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>result</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="xml-node-set-gocolor"></a><h3>xml_node_set_gocolor ()</h3>
+<pre class="programlisting">void                xml_node_set_gocolor                (xmlNodePtr node,
+                                                         char const *name,
+                                                         GOColor val);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="xml-node-get-enum"></a><h3>xml_node_get_enum ()</h3>
+<pre class="programlisting">gboolean            xml_node_get_enum                   (xmlNodePtr node,
+                                                         char const *name,
+                                                         GType etype,
+                                                         gint *val);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>etype</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="xml-node-set-enum"></a><h3>xml_node_set_enum ()</h3>
+<pre class="programlisting">void                xml_node_set_enum                   (xmlNodePtr node,
+                                                         char const *name,
+                                                         GType etype,
+                                                         gint val);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>etype</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="e-xml-get-child-by-name"></a><h3>e_xml_get_child_by_name ()</h3>
+<pre class="programlisting">xmlNode *           e_xml_get_child_by_name             (xmlNode const *tree,
+                                                         char const *name);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tree</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="e-xml-get-child-by-name-no-lang"></a><h3>e_xml_get_child_by_name_no_lang ()</h3>
+<pre class="programlisting">xmlNode *           e_xml_get_child_by_name_no_lang     (xmlNode const *tree,
+                                                         char const *name);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tree</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="e-xml-get-child-by-name-by-lang"></a><h3>e_xml_get_child_by_name_by_lang ()</h3>
+<pre class="programlisting">xmlNode *           e_xml_get_child_by_name_by_lang     (xmlNode const *tree,
+                                                         char const *name);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tree</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

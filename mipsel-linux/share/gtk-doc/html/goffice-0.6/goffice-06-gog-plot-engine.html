@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogPlotEngine</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch03.html" title="Utilities">
+<link rel="prev" href="goffice-06-gog-guru.html" title="GogGuru">
+<link rel="next" href="goffice-06-gog-style.html" title="GogStyle">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-gog-guru.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-gog-style.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-gog-plot-engine.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-gog-plot-engine.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-gog-plot-engine"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-gog-plot-engine.top_of_page"></a>GogPlotEngine</span></h2>
+<p>GogPlotEngine — Plot and regression curve plugin management</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-gog-plot-engine.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="goffice-06-gog-plot-engine.html#GogPlotType" title="GogPlotType">GogPlotType</a>;
+                    <a class="link" href="goffice-06-gog-plot-engine.html#GogPlotFamily" title="GogPlotFamily">GogPlotFamily</a>;
+GHashTable const *  <a class="link" href="goffice-06-gog-plot-engine.html#gog-plot-families" title="gog_plot_families ()">gog_plot_families</a>                   (void);
+<a class="link" href="goffice-06-gog-plot-engine.html#GogPlotFamily" title="GogPlotFamily">GogPlotFamily</a> *     <a class="link" href="goffice-06-gog-plot-engine.html#gog-plot-family-by-name" title="gog_plot_family_by_name ()">gog_plot_family_by_name</a>             (char const *name);
+<a class="link" href="goffice-06-gog-plot-engine.html#GogPlotFamily" title="GogPlotFamily">GogPlotFamily</a> *     <a class="link" href="goffice-06-gog-plot-engine.html#gog-plot-family-register" title="gog_plot_family_register ()">gog_plot_family_register</a>            (char const *name,
+                                                         char const *sample_image_file,
+                                                         int priority,
+                                                         GogAxisSet axis_set);
+void                <a class="link" href="goffice-06-gog-plot-engine.html#gog-plot-family-unregister" title="gog_plot_family_unregister ()">gog_plot_family_unregister</a>          (<a class="link" href="goffice-06-gog-plot-engine.html#GogPlotFamily" title="GogPlotFamily">GogPlotFamily</a> *family);
+<a class="link" href="goffice-06-gog-plot-engine.html#GogPlotType" title="GogPlotType">GogPlotType</a> *       <a class="link" href="goffice-06-gog-plot-engine.html#gog-plot-type-register" title="gog_plot_type_register ()">gog_plot_type_register</a>              (<a class="link" href="goffice-06-gog-plot-engine.html#GogPlotFamily" title="GogPlotFamily">GogPlotFamily</a> *famlily,
+                                                         int col,
+                                                         int row,
+                                                         char const *name,
+                                                         char const *sample_image_file,
+                                                         char const *description,
+                                                         char const *engine);
+                    <a class="link" href="goffice-06-gog-plot-engine.html#GogTrendLineType" title="GogTrendLineType">GogTrendLineType</a>;
+GHashTable const *  <a class="link" href="goffice-06-gog-plot-engine.html#gog-trend-line-types" title="gog_trend_line_types ()">gog_trend_line_types</a>                (void);
+void                <a class="link" href="goffice-06-gog-plot-engine.html#gog-plugin-services-init" title="gog_plugin_services_init ()">gog_plugin_services_init</a>            (void);
+void                <a class="link" href="goffice-06-gog-plot-engine.html#gog-plugin-services-shutdown" title="gog_plugin_services_shutdown ()">gog_plugin_services_shutdown</a>        (void);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-plot-engine.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-plot-engine.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GogPlotType"></a><h3>GogPlotType</h3>
+<pre class="programlisting">typedef struct {
+	GogPlotFamily 	*family;
+	char 		*engine;
+
+	char 		*name, *sample_image_file;
+	char 		*description; /* untranslated */
+	int 		 col, row;
+
+	GHashTable 	*properties;
+} GogPlotType;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogPlotFamily"></a><h3>GogPlotFamily</h3>
+<pre class="programlisting">typedef struct {
+	char *name, *sample_image_file;
+	int priority;
+
+	GogAxisSet	 axis_set;
+
+	GHashTable *types;
+} GogPlotFamily;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-families"></a><h3>gog_plot_families ()</h3>
+<pre class="programlisting">GHashTable const *  gog_plot_families                   (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-family-by-name"></a><h3>gog_plot_family_by_name ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-gog-plot-engine.html#GogPlotFamily" title="GogPlotFamily">GogPlotFamily</a> *     gog_plot_family_by_name             (char const *name);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-family-register"></a><h3>gog_plot_family_register ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-gog-plot-engine.html#GogPlotFamily" title="GogPlotFamily">GogPlotFamily</a> *     gog_plot_family_register            (char const *name,
+                                                         char const *sample_image_file,
+                                                         int priority,
+                                                         GogAxisSet axis_set);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sample_image_file</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>priority</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis_set</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-family-unregister"></a><h3>gog_plot_family_unregister ()</h3>
+<pre class="programlisting">void                gog_plot_family_unregister          (<a class="link" href="goffice-06-gog-plot-engine.html#GogPlotFamily" title="GogPlotFamily">GogPlotFamily</a> *family);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>family</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-type-register"></a><h3>gog_plot_type_register ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-gog-plot-engine.html#GogPlotType" title="GogPlotType">GogPlotType</a> *       gog_plot_type_register              (<a class="link" href="goffice-06-gog-plot-engine.html#GogPlotFamily" title="GogPlotFamily">GogPlotFamily</a> *famlily,
+                                                         int col,
+                                                         int row,
+                                                         char const *name,
+                                                         char const *sample_image_file,
+                                                         char const *description,
+                                                         char const *engine);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>famlily</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>col</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>row</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sample_image_file</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>description</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>engine</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogTrendLineType"></a><h3>GogTrendLineType</h3>
+<pre class="programlisting">typedef struct {
+	char *engine;
+
+	char *name;
+	char *description; /* untranslated */
+
+	GHashTable *properties;
+} GogTrendLineType;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-trend-line-types"></a><h3>gog_trend_line_types ()</h3>
+<pre class="programlisting">GHashTable const *  gog_trend_line_types                (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plugin-services-init"></a><h3>gog_plugin_services_init ()</h3>
+<pre class="programlisting">void                gog_plugin_services_init            (void);</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plugin-services-shutdown"></a><h3>gog_plugin_services_shutdown ()</h3>
+<pre class="programlisting">void                gog_plugin_services_shutdown        (void);</pre>
+<p>
+
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

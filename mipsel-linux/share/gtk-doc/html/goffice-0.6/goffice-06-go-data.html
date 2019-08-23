@@ -1,0 +1,993 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-data</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch08.html" title="Data">
+<link rel="prev" href="ch08.html" title="Data">
+<link rel="next" href="ch09.html" title="Mathematical functions">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch08.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch08.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="ch09.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-data.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-data.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-data"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-data.top_of_page"></a>go-data</span></h2>
+<p>go-data</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-data.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="goffice-06-go-data.html#GO-DATA-TYPE:CAPS" title="GO_DATA_TYPE">GO_DATA_TYPE</a>
+#define             <a class="link" href="goffice-06-go-data.html#GO-DATA:CAPS" title="GO_DATA()">GO_DATA</a>                             (o)
+#define             <a class="link" href="goffice-06-go-data.html#IS-GO-DATA:CAPS" title="IS_GO_DATA()">IS_GO_DATA</a>                          (o)
+GType               <a class="link" href="goffice-06-go-data.html#go-data-get-type" title="go_data_get_type ()">go_data_get_type</a>                    (void);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *            <a class="link" href="goffice-06-go-data.html#go-data-dup" title="go_data_dup ()">go_data_dup</a>                         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> const *src);
+gboolean            <a class="link" href="goffice-06-go-data.html#go-data-eq" title="go_data_eq ()">go_data_eq</a>                          (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> const *a,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> const *b);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          <a class="link" href="goffice-06-go-data.html#go-data-preferred-fmt" title="go_data_preferred_fmt ()">go_data_preferred_fmt</a>               (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> const *dat);
+char *              <a class="link" href="goffice-06-go-data.html#go-data-as-str" title="go_data_as_str ()">go_data_as_str</a>                      (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> const *dat);
+gboolean            <a class="link" href="goffice-06-go-data.html#go-data-from-str" title="go_data_from_str ()">go_data_from_str</a>                    (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *dat,
+                                                         char const *str);
+void                <a class="link" href="goffice-06-go-data.html#go-data-emit-changed" title="go_data_emit_changed ()">go_data_emit_changed</a>                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *dat);
+#define             <a class="link" href="goffice-06-go-data.html#GO-DATA-SCALAR-TYPE:CAPS" title="GO_DATA_SCALAR_TYPE">GO_DATA_SCALAR_TYPE</a>
+#define             <a class="link" href="goffice-06-go-data.html#GO-DATA-SCALAR:CAPS" title="GO_DATA_SCALAR()">GO_DATA_SCALAR</a>                      (o)
+#define             <a class="link" href="goffice-06-go-data.html#IS-GO-DATA-SCALAR:CAPS" title="IS_GO_DATA_SCALAR()">IS_GO_DATA_SCALAR</a>                   (o)
+GType               <a class="link" href="goffice-06-go-data.html#go-data-scalar-get-type" title="go_data_scalar_get_type ()">go_data_scalar_get_type</a>             (void);
+double              <a class="link" href="goffice-06-go-data.html#go-data-scalar-get-value" title="go_data_scalar_get_value ()">go_data_scalar_get_value</a>            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataScalar.html"
+>GODataScalar</a> *val);
+char const *        <a class="link" href="goffice-06-go-data.html#go-data-scalar-get-str" title="go_data_scalar_get_str ()">go_data_scalar_get_str</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataScalar.html"
+>GODataScalar</a> *val);
+#define             <a class="link" href="goffice-06-go-data.html#GO-DATA-VECTOR-TYPE:CAPS" title="GO_DATA_VECTOR_TYPE">GO_DATA_VECTOR_TYPE</a>
+#define             <a class="link" href="goffice-06-go-data.html#GO-DATA-VECTOR:CAPS" title="GO_DATA_VECTOR()">GO_DATA_VECTOR</a>                      (o)
+#define             <a class="link" href="goffice-06-go-data.html#IS-GO-DATA-VECTOR:CAPS" title="IS_GO_DATA_VECTOR()">IS_GO_DATA_VECTOR</a>                   (o)
+GType               <a class="link" href="goffice-06-go-data.html#go-data-vector-get-type" title="go_data_vector_get_type ()">go_data_vector_get_type</a>             (void);
+int                 <a class="link" href="goffice-06-go-data.html#go-data-vector-get-len" title="go_data_vector_get_len ()">go_data_vector_get_len</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataVector.html"
+>GODataVector</a> *vec);
+double *            <a class="link" href="goffice-06-go-data.html#go-data-vector-get-values" title="go_data_vector_get_values ()">go_data_vector_get_values</a>           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataVector.html"
+>GODataVector</a> *vec);
+double              <a class="link" href="goffice-06-go-data.html#go-data-vector-get-value" title="go_data_vector_get_value ()">go_data_vector_get_value</a>            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataVector.html"
+>GODataVector</a> *vec,
+                                                         unsigned  i);
+char *              <a class="link" href="goffice-06-go-data.html#go-data-vector-get-str" title="go_data_vector_get_str ()">go_data_vector_get_str</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataVector.html"
+>GODataVector</a> *vec,
+                                                         unsigned  i);
+void                <a class="link" href="goffice-06-go-data.html#go-data-vector-get-minmax" title="go_data_vector_get_minmax ()">go_data_vector_get_minmax</a>           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataVector.html"
+>GODataVector</a> *vec,
+                                                         double *min,
+                                                         double *max);
+#define             <a class="link" href="goffice-06-go-data.html#GO-DATA-MATRIX-TYPE:CAPS" title="GO_DATA_MATRIX_TYPE">GO_DATA_MATRIX_TYPE</a>
+#define             <a class="link" href="goffice-06-go-data.html#GO-DATA-MATRIX:CAPS" title="GO_DATA_MATRIX()">GO_DATA_MATRIX</a>                      (o)
+#define             <a class="link" href="goffice-06-go-data.html#IS-GO-DATA-MATRIX:CAPS" title="IS_GO_DATA_MATRIX()">IS_GO_DATA_MATRIX</a>                   (o)
+GType               <a class="link" href="goffice-06-go-data.html#go-data-matrix-get-type" title="go_data_matrix_get_type ()">go_data_matrix_get_type</a>             (void);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataMatrix.html#GODataMatrixSize"
+>GODataMatrixSize</a>    <a class="link" href="goffice-06-go-data.html#go-data-matrix-get-size" title="go_data_matrix_get_size ()">go_data_matrix_get_size</a>             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataMatrix.html"
+>GODataMatrix</a> *mat);
+double *            <a class="link" href="goffice-06-go-data.html#go-data-matrix-get-values" title="go_data_matrix_get_values ()">go_data_matrix_get_values</a>           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataMatrix.html"
+>GODataMatrix</a> *mat);
+double              <a class="link" href="goffice-06-go-data.html#go-data-matrix-get-value" title="go_data_matrix_get_value ()">go_data_matrix_get_value</a>            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataMatrix.html"
+>GODataMatrix</a> *mat,
+                                                         unsigned  i,
+                                                         unsigned  j);
+char *              <a class="link" href="goffice-06-go-data.html#go-data-matrix-get-str" title="go_data_matrix_get_str ()">go_data_matrix_get_str</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataMatrix.html"
+>GODataMatrix</a> *mat,
+                                                         unsigned  i,
+                                                         unsigned  j);
+void                <a class="link" href="goffice-06-go-data.html#go-data-matrix-get-minmax" title="go_data_matrix_get_minmax ()">go_data_matrix_get_minmax</a>           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataMatrix.html"
+>GODataMatrix</a> *mat,
+                                                         double *min,
+                                                         double *max);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-data.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-data.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GO-DATA-TYPE:CAPS"></a><h3>GO_DATA_TYPE</h3>
+<pre class="programlisting">#define GO_DATA_TYPE	(go_data_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-DATA:CAPS"></a><h3>GO_DATA()</h3>
+<pre class="programlisting">#define GO_DATA(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GO_DATA_TYPE, GOData))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-DATA:CAPS"></a><h3>IS_GO_DATA()</h3>
+<pre class="programlisting">#define IS_GO_DATA(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_DATA_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-get-type"></a><h3>go_data_get_type ()</h3>
+<pre class="programlisting">GType               go_data_get_type                    (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-dup"></a><h3>go_data_dup ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *            go_data_dup                         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> const *src);</pre>
+<p>
+A deep copy of <em class="parameter"><code>src</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+><span class="type">GOData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-eq"></a><h3>go_data_eq ()</h3>
+<pre class="programlisting">gboolean            go_data_eq                          (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> const *a,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> const *b);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+><span class="type">GOData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+><span class="type">GOData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if <em class="parameter"><code>a</code></em> and <em class="parameter"><code>b</code></em> are the same
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-preferred-fmt"></a><h3>go_data_preferred_fmt ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/goffice-GoFormat.html#GOFormat"
+>GOFormat</a> *          go_data_preferred_fmt               (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> const *dat);</pre>
+<p>
+Caller is responsible for unrefing the result.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dat</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+><span class="type">GOData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the fmt preferred by the the data
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-as-str"></a><h3>go_data_as_str ()</h3>
+<pre class="programlisting">char *              go_data_as_str                      (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> const *dat);</pre>
+<p>
+Return a string representation of the data source that the caller is
+responsible for freeing
+</p>
+<p>
+NOTE : This is the _source_ not the content.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dat</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+><span class="type">GOData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-from-str"></a><h3>go_data_from_str ()</h3>
+<pre class="programlisting">gboolean            go_data_from_str                    (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *dat,
+                                                         char const *str);</pre>
+<p>
+De-serializes the source information returned from go_data_as_str.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dat</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+><span class="type">GOData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> FALSE on error.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-emit-changed"></a><h3>go_data_emit_changed ()</h3>
+<pre class="programlisting">void                go_data_emit_changed                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *dat);</pre>
+<p>
+protected utility to emit a 'changed' signal</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>dat</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+><span class="type">GOData</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-DATA-SCALAR-TYPE:CAPS"></a><h3>GO_DATA_SCALAR_TYPE</h3>
+<pre class="programlisting">#define GO_DATA_SCALAR_TYPE	(go_data_scalar_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-DATA-SCALAR:CAPS"></a><h3>GO_DATA_SCALAR()</h3>
+<pre class="programlisting">#define GO_DATA_SCALAR(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GO_DATA_SCALAR_TYPE, GODataScalar))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-DATA-SCALAR:CAPS"></a><h3>IS_GO_DATA_SCALAR()</h3>
+<pre class="programlisting">#define IS_GO_DATA_SCALAR(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_DATA_SCALAR_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-scalar-get-type"></a><h3>go_data_scalar_get_type ()</h3>
+<pre class="programlisting">GType               go_data_scalar_get_type             (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-scalar-get-value"></a><h3>go_data_scalar_get_value ()</h3>
+<pre class="programlisting">double              go_data_scalar_get_value            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataScalar.html"
+>GODataScalar</a> *val);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-scalar-get-str"></a><h3>go_data_scalar_get_str ()</h3>
+<pre class="programlisting">char const *        go_data_scalar_get_str              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataScalar.html"
+>GODataScalar</a> *val);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-DATA-VECTOR-TYPE:CAPS"></a><h3>GO_DATA_VECTOR_TYPE</h3>
+<pre class="programlisting">#define GO_DATA_VECTOR_TYPE	(go_data_vector_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-DATA-VECTOR:CAPS"></a><h3>GO_DATA_VECTOR()</h3>
+<pre class="programlisting">#define GO_DATA_VECTOR(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GO_DATA_VECTOR_TYPE, GODataVector))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-DATA-VECTOR:CAPS"></a><h3>IS_GO_DATA_VECTOR()</h3>
+<pre class="programlisting">#define IS_GO_DATA_VECTOR(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_DATA_VECTOR_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-vector-get-type"></a><h3>go_data_vector_get_type ()</h3>
+<pre class="programlisting">GType               go_data_vector_get_type             (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-vector-get-len"></a><h3>go_data_vector_get_len ()</h3>
+<pre class="programlisting">int                 go_data_vector_get_len              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataVector.html"
+>GODataVector</a> *vec);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>vec</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-vector-get-values"></a><h3>go_data_vector_get_values ()</h3>
+<pre class="programlisting">double *            go_data_vector_get_values           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataVector.html"
+>GODataVector</a> *vec);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>vec</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-vector-get-value"></a><h3>go_data_vector_get_value ()</h3>
+<pre class="programlisting">double              go_data_vector_get_value            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataVector.html"
+>GODataVector</a> *vec,
+                                                         unsigned  i);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>vec</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>i</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-vector-get-str"></a><h3>go_data_vector_get_str ()</h3>
+<pre class="programlisting">char *              go_data_vector_get_str              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataVector.html"
+>GODataVector</a> *vec,
+                                                         unsigned  i);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>vec</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>i</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-vector-get-minmax"></a><h3>go_data_vector_get_minmax ()</h3>
+<pre class="programlisting">void                go_data_vector_get_minmax           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataVector.html"
+>GODataVector</a> *vec,
+                                                         double *min,
+                                                         double *max);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>vec</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>min</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>max</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-DATA-MATRIX-TYPE:CAPS"></a><h3>GO_DATA_MATRIX_TYPE</h3>
+<pre class="programlisting">#define GO_DATA_MATRIX_TYPE	(go_data_matrix_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-DATA-MATRIX:CAPS"></a><h3>GO_DATA_MATRIX()</h3>
+<pre class="programlisting">#define GO_DATA_MATRIX(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GO_DATA_MATRIX_TYPE, GODataMatrix))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-DATA-MATRIX:CAPS"></a><h3>IS_GO_DATA_MATRIX()</h3>
+<pre class="programlisting">#define IS_GO_DATA_MATRIX(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_DATA_MATRIX_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-matrix-get-type"></a><h3>go_data_matrix_get_type ()</h3>
+<pre class="programlisting">GType               go_data_matrix_get_type             (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-matrix-get-size"></a><h3>go_data_matrix_get_size ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataMatrix.html#GODataMatrixSize"
+>GODataMatrixSize</a>    go_data_matrix_get_size             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataMatrix.html"
+>GODataMatrix</a> *mat);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mat</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-matrix-get-values"></a><h3>go_data_matrix_get_values ()</h3>
+<pre class="programlisting">double *            go_data_matrix_get_values           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataMatrix.html"
+>GODataMatrix</a> *mat);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mat</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-matrix-get-value"></a><h3>go_data_matrix_get_value ()</h3>
+<pre class="programlisting">double              go_data_matrix_get_value            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataMatrix.html"
+>GODataMatrix</a> *mat,
+                                                         unsigned  i,
+                                                         unsigned  j);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mat</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>i</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>j</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-matrix-get-str"></a><h3>go_data_matrix_get_str ()</h3>
+<pre class="programlisting">char *              go_data_matrix_get_str              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataMatrix.html"
+>GODataMatrix</a> *mat,
+                                                         unsigned  i,
+                                                         unsigned  j);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mat</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>i</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>j</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-data-matrix-get-minmax"></a><h3>go_data_matrix_get_minmax ()</h3>
+<pre class="programlisting">void                go_data_matrix_get_minmax           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GODataMatrix.html"
+>GODataMatrix</a> *mat,
+                                                         double *min,
+                                                         double *max);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mat</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>min</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>max</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

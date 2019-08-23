@@ -1,0 +1,11 @@
+prefix=/opt/mipseltools/mipsel-linux
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libots-1
+Description: A library for auto-summarizing texts
+Version: 0.5.0
+Requires: glib-2.0
+Libs: -L${libdir} -lots-1
+Cflags: -I${includedir}/libots-1

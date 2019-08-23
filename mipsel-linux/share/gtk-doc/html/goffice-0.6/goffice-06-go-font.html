@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GoFont</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch06.html" title="Graphic object properties">
+<link rel="prev" href="goffice-06-go-color.html" title="go-color">
+<link rel="next" href="goffice-06-go-gradient.html" title="go-gradient">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-color.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-go-gradient.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-font.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-font.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-font"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-font.top_of_page"></a>GoFont</span></h2>
+<p>GoFont — Fonts</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-font.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="goffice-06-go-font.html#GOFontMetrics" title="GOFontMetrics">GOFontMetrics</a>;
+                    <a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a>;
+<a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *      <a class="link" href="goffice-06-go-font.html#go-font-new-by-desc" title="go_font_new_by_desc ()">go_font_new_by_desc</a>                 (PangoFontDescription *desc);
+<a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *      <a class="link" href="goffice-06-go-font.html#go-font-new-by-name" title="go_font_new_by_name ()">go_font_new_by_name</a>                 (char const *str);
+<a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *      <a class="link" href="goffice-06-go-font.html#go-font-new-by-index" title="go_font_new_by_index ()">go_font_new_by_index</a>                (unsigned  i);
+char *              <a class="link" href="goffice-06-go-font.html#go-font-as-str" title="go_font_as_str ()">go_font_as_str</a>                      (<a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *font);
+<a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *      <a class="link" href="goffice-06-go-font.html#go-font-ref" title="go_font_ref ()">go_font_ref</a>                         (<a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *font);
+void                <a class="link" href="goffice-06-go-font.html#go-font-unref" title="go_font_unref ()">go_font_unref</a>                       (<a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *font);
+gboolean            <a class="link" href="goffice-06-go-font.html#go-font-eq" title="go_font_eq ()">go_font_eq</a>                          (<a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *a,
+                                                         <a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *b);
+GSList *            <a class="link" href="goffice-06-go-font.html#go-fonts-list-families" title="go_fonts_list_families ()">go_fonts_list_families</a>              (PangoContext *context);
+GSList *            <a class="link" href="goffice-06-go-font.html#go-fonts-list-sizes" title="go_fonts_list_sizes ()">go_fonts_list_sizes</a>                 (void);
+<a class="link" href="goffice-06-go-font.html#GOFontMetrics" title="GOFontMetrics">GOFontMetrics</a> *     <a class="link" href="goffice-06-go-font.html#go-font-metrics-new" title="go_font_metrics_new ()">go_font_metrics_new</a>                 (PangoContext *context,
+                                                         <a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *font);
+void                <a class="link" href="goffice-06-go-font.html#go-font-metrics-free" title="go_font_metrics_free ()">go_font_metrics_free</a>                (<a class="link" href="goffice-06-go-font.html#GOFontMetrics" title="GOFontMetrics">GOFontMetrics</a> *metrics);
+void                <a class="link" href="goffice-06-go-font.html#go-font-cache-register" title="go_font_cache_register ()">go_font_cache_register</a>              (GClosure *callback);
+void                <a class="link" href="goffice-06-go-font.html#go-font-cache-unregister" title="go_font_cache_unregister ()">go_font_cache_unregister</a>            (GClosure *callback);
+void                <a class="link" href="goffice-06-go-font.html#go-fonts-init" title="go_fonts_init ()">go_fonts_init</a>                       (void);
+void                <a class="link" href="goffice-06-go-font.html#go-fonts-shutdown" title="go_fonts_shutdown ()">go_fonts_shutdown</a>                   (void);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-font.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-font.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOFontMetrics"></a><h3>GOFontMetrics</h3>
+<pre class="programlisting">typedef struct {
+	int digit_widths[10];
+	int min_digit_width;
+	int max_digit_width;
+	int avg_digit_width;
+	int hyphen_width, minus_width, plus_width;
+	int E_width;
+	int hash_width;
+	int space_width;
+
+	/*
+	 * A space that is narrower than a regular space, or 0 if no such
+	 * character was found.
+	 */
+	gunichar thin_space;
+	int thin_space_width;
+} GOFontMetrics;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOFont"></a><h3>GOFont</h3>
+<pre class="programlisting">typedef struct {
+	int ref_count;
+	int font_index; /* each renderer keeps an array for lookup */
+
+	PangoFontDescription *desc;
+
+	/* Attributes.  Currently unused.  */
+	int underline;
+	gboolean strikethrough;
+	GOColor color;
+} GOFont;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-font-new-by-desc"></a><h3>go_font_new_by_desc ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *      go_font_new_by_desc                 (PangoFontDescription *desc);</pre>
+<p>
+Aborbs <em class="parameter"><code>desc</code></em> and returns a ref to a font that matches it.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>desc</code></em> :</span></p></td>
+<td> <span class="type">PangoFontDescription</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-font-new-by-name"></a><h3>go_font_new_by_name ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *      go_font_new_by_name                 (char const *str);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-font-new-by-index"></a><h3>go_font_new_by_index ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *      go_font_new_by_index                (unsigned  i);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>i</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-font-as-str"></a><h3>go_font_as_str ()</h3>
+<pre class="programlisting">char *              go_font_as_str                      (<a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *font);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>font</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-font-ref"></a><h3>go_font_ref ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *      go_font_ref                         (<a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *font);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>font</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-font-unref"></a><h3>go_font_unref ()</h3>
+<pre class="programlisting">void                go_font_unref                       (<a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *font);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>font</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-font-eq"></a><h3>go_font_eq ()</h3>
+<pre class="programlisting">gboolean            go_font_eq                          (<a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *a,
+                                                         <a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *b);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-fonts-list-families"></a><h3>go_fonts_list_families ()</h3>
+<pre class="programlisting">GSList *            go_fonts_list_families              (PangoContext *context);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-fonts-list-sizes"></a><h3>go_fonts_list_sizes ()</h3>
+<pre class="programlisting">GSList *            go_fonts_list_sizes                 (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-font-metrics-new"></a><h3>go_font_metrics_new ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-font.html#GOFontMetrics" title="GOFontMetrics">GOFontMetrics</a> *     go_font_metrics_new                 (PangoContext *context,
+                                                         <a class="link" href="goffice-06-go-font.html#GOFont" title="GOFont">GOFont</a> const *font);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>font</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-font-metrics-free"></a><h3>go_font_metrics_free ()</h3>
+<pre class="programlisting">void                go_font_metrics_free                (<a class="link" href="goffice-06-go-font.html#GOFontMetrics" title="GOFontMetrics">GOFontMetrics</a> *metrics);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>metrics</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-font-cache-register"></a><h3>go_font_cache_register ()</h3>
+<pre class="programlisting">void                go_font_cache_register              (GClosure *callback);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-font-cache-unregister"></a><h3>go_font_cache_unregister ()</h3>
+<pre class="programlisting">void                go_font_cache_unregister            (GClosure *callback);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-fonts-init"></a><h3>go_fonts_init ()</h3>
+<pre class="programlisting">void                go_fonts_init                       (void);</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-fonts-shutdown"></a><h3>go_fonts_shutdown ()</h3>
+<pre class="programlisting">void                go_fonts_shutdown                   (void);</pre>
+<p>
+
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

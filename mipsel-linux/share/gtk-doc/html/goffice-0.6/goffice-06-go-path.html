@@ -1,0 +1,788 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GoPath</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch07.html" title="Rendering utilities">
+<link rel="prev" href="goffice-06-go-cairo.html" title="go-cairo">
+<link rel="next" href="goffice-06-go-geometry.html" title="go-geometry">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-cairo.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch07.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-go-geometry.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-path.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-path.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-path"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-path.top_of_page"></a>GoPath</span></h2>
+<p>GoPath — Path handling</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-path.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+enum                <a class="link" href="goffice-06-go-path.html#GOPathDirection" title="enum GOPathDirection">GOPathDirection</a>;
+enum                <a class="link" href="goffice-06-go-path.html#GOPathOptions" title="enum GOPathOptions">GOPathOptions</a>;
+                    <a class="link" href="goffice-06-go-path.html#GOPathPoint" title="GOPathPoint">GOPathPoint</a>;
+                    <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a>;
+#define             <a class="link" href="goffice-06-go-path.html#IS-GO-PATH:CAPS" title="IS_GO_PATH()">IS_GO_PATH</a>                          (x)
+<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *            <a class="link" href="goffice-06-go-path.html#go-path-new" title="go_path_new ()">go_path_new</a>                         (void);
+void                <a class="link" href="goffice-06-go-path.html#go-path-clear" title="go_path_clear ()">go_path_clear</a>                       (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path);
+void                <a class="link" href="goffice-06-go-path.html#go-path-free" title="go_path_free ()">go_path_free</a>                        (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path);
+void                <a class="link" href="goffice-06-go-path.html#go-path-set-options" title="go_path_set_options ()">go_path_set_options</a>                 (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPathOptions" title="enum GOPathOptions">GOPathOptions</a> options);
+<a class="link" href="goffice-06-go-path.html#GOPathOptions" title="enum GOPathOptions">GOPathOptions</a>       <a class="link" href="goffice-06-go-path.html#go-path-get-options" title="go_path_get_options ()">go_path_get_options</a>                 (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *path);
+void                <a class="link" href="goffice-06-go-path.html#go-path-move-to" title="go_path_move_to ()">go_path_move_to</a>                     (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         double x,
+                                                         double y);
+void                <a class="link" href="goffice-06-go-path.html#go-path-line-to" title="go_path_line_to ()">go_path_line_to</a>                     (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         double x,
+                                                         double y);
+void                <a class="link" href="goffice-06-go-path.html#go-path-curve-to" title="go_path_curve_to ()">go_path_curve_to</a>                    (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         double x0,
+                                                         double y0,
+                                                         double x1,
+                                                         double y1,
+                                                         double x2,
+                                                         double y2);
+void                <a class="link" href="goffice-06-go-path.html#go-path-close" title="go_path_close ()">go_path_close</a>                       (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path);
+void                <a class="link" href="goffice-06-go-path.html#go-path-ring-wedge" title="go_path_ring_wedge ()">go_path_ring_wedge</a>                  (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         double cx,
+                                                         double cy,
+                                                         double rx_out,
+                                                         double ry_out,
+                                                         double rx_in,
+                                                         double ry_in,
+                                                         double th0,
+                                                         double th1);
+void                <a class="link" href="goffice-06-go-path.html#go-path-pie-wedge" title="go_path_pie_wedge ()">go_path_pie_wedge</a>                   (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         double cx,
+                                                         double cy,
+                                                         double rx,
+                                                         double ry,
+                                                         double th0,
+                                                         double th1);
+void                <a class="link" href="goffice-06-go-path.html#go-path-arc" title="go_path_arc ()">go_path_arc</a>                         (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         double cx,
+                                                         double cy,
+                                                         double rx,
+                                                         double ry,
+                                                         double th0,
+                                                         double th1);
+void                <a class="link" href="goffice-06-go-path.html#go-path-arc-to" title="go_path_arc_to ()">go_path_arc_to</a>                      (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         double cx,
+                                                         double cy,
+                                                         double rx,
+                                                         double ry,
+                                                         double th0,
+                                                         double th1);
+void                <a class="link" href="goffice-06-go-path.html#go-path-rectangle" title="go_path_rectangle ()">go_path_rectangle</a>                   (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         double x,
+                                                         double y,
+                                                         double width,
+                                                         double height);
+void                <a class="link" href="goffice-06-go-path.html#go-path-interpret" title="go_path_interpret ()">go_path_interpret</a>                   (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *path,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPathDirection" title="enum GOPathDirection">GOPathDirection</a> direction,
+                                                         GOPathMoveToFunc *move_to,
+                                                         GOPathLineToFunc *line_to,
+                                                         GOPathCurveToFunc *curve_to,
+                                                         GOPathClosePathFunc *close_path,
+                                                         void *closure);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-path.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-path.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOPathDirection"></a><h3>enum GOPathDirection</h3>
+<pre class="programlisting">typedef enum {
+	GO_PATH_DIRECTION_FORWARD,
+	GO_PATH_DIRECTION_BACKWARD
+} GOPathDirection;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOPathOptions"></a><h3>enum GOPathOptions</h3>
+<pre class="programlisting">typedef enum {
+	GO_PATH_OPTIONS_SNAP_COORDINATES 	= 1&lt;&lt;0,
+	GO_PATH_OPTIONS_SNAP_WIDTH		= 1&lt;&lt;1,
+	GO_PATH_OPTIONS_SHARP			= 3
+} GOPathOptions;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOPathPoint"></a><h3>GOPathPoint</h3>
+<pre class="programlisting">typedef struct {
+	double x;
+	double y;
+} GOPathPoint;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOPath"></a><h3>GOPath</h3>
+<pre class="programlisting">typedef struct {
+	GOPathDataBuffer *data_buffer_head;
+	GOPathDataBuffer *data_buffer_tail;
+
+	gboolean sharp;
+} GOPath;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-PATH:CAPS"></a><h3>IS_GO_PATH()</h3>
+<pre class="programlisting">#define IS_GO_PATH(x) ((x) != NULL)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-path-new"></a><h3>go_path_new ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *            go_path_new                         (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-path-clear"></a><h3>go_path_clear ()</h3>
+<pre class="programlisting">void                go_path_clear                       (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-path-free"></a><h3>go_path_free ()</h3>
+<pre class="programlisting">void                go_path_free                        (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path);</pre>
+<p>
+Frees all memory allocated for <em class="parameter"><code>path</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath"><span class="type">GOPath</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-path-set-options"></a><h3>go_path_set_options ()</h3>
+<pre class="programlisting">void                go_path_set_options                 (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPathOptions" title="enum GOPathOptions">GOPathOptions</a> options);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>options</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-path-get-options"></a><h3>go_path_get_options ()</h3>
+<pre class="programlisting"><a class="link" href="goffice-06-go-path.html#GOPathOptions" title="enum GOPathOptions">GOPathOptions</a>       go_path_get_options                 (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *path);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-path-move-to"></a><h3>go_path_move_to ()</h3>
+<pre class="programlisting">void                go_path_move_to                     (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         double x,
+                                                         double y);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-path-line-to"></a><h3>go_path_line_to ()</h3>
+<pre class="programlisting">void                go_path_line_to                     (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         double x,
+                                                         double y);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-path-curve-to"></a><h3>go_path_curve_to ()</h3>
+<pre class="programlisting">void                go_path_curve_to                    (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         double x0,
+                                                         double y0,
+                                                         double x1,
+                                                         double y1,
+                                                         double x2,
+                                                         double y2);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x0</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y0</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x2</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y2</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-path-close"></a><h3>go_path_close ()</h3>
+<pre class="programlisting">void                go_path_close                       (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-path-ring-wedge"></a><h3>go_path_ring_wedge ()</h3>
+<pre class="programlisting">void                go_path_ring_wedge                  (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         double cx,
+                                                         double cy,
+                                                         double rx_out,
+                                                         double ry_out,
+                                                         double rx_in,
+                                                         double ry_in,
+                                                         double th0,
+                                                         double th1);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cx</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cy</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rx_out</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ry_out</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rx_in</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ry_in</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>th0</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>th1</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-path-pie-wedge"></a><h3>go_path_pie_wedge ()</h3>
+<pre class="programlisting">void                go_path_pie_wedge                   (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         double cx,
+                                                         double cy,
+                                                         double rx,
+                                                         double ry,
+                                                         double th0,
+                                                         double th1);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cx</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cy</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rx</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ry</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>th0</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>th1</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-path-arc"></a><h3>go_path_arc ()</h3>
+<pre class="programlisting">void                go_path_arc                         (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         double cx,
+                                                         double cy,
+                                                         double rx,
+                                                         double ry,
+                                                         double th0,
+                                                         double th1);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cx</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cy</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rx</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ry</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>th0</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>th1</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-path-arc-to"></a><h3>go_path_arc_to ()</h3>
+<pre class="programlisting">void                go_path_arc_to                      (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         double cx,
+                                                         double cy,
+                                                         double rx,
+                                                         double ry,
+                                                         double th0,
+                                                         double th1);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cx</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cy</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rx</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ry</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>th0</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>th1</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-path-rectangle"></a><h3>go_path_rectangle ()</h3>
+<pre class="programlisting">void                go_path_rectangle                   (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> *path,
+                                                         double x,
+                                                         double y,
+                                                         double width,
+                                                         double height);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-path-interpret"></a><h3>go_path_interpret ()</h3>
+<pre class="programlisting">void                go_path_interpret                   (<a class="link" href="goffice-06-go-path.html#GOPath" title="GOPath">GOPath</a> const *path,
+                                                         <a class="link" href="goffice-06-go-path.html#GOPathDirection" title="enum GOPathDirection">GOPathDirection</a> direction,
+                                                         GOPathMoveToFunc *move_to,
+                                                         GOPathLineToFunc *line_to,
+                                                         GOPathCurveToFunc *curve_to,
+                                                         GOPathClosePathFunc *close_path,
+                                                         void *closure);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>direction</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>move_to</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>line_to</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>curve_to</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>close_path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>closure</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

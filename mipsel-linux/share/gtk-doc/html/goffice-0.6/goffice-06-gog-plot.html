@@ -1,0 +1,867 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogPlot</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch02.html" title="Abstract Base Classes">
+<link rel="prev" href="GogOutlinedView.html" title="GogOutlinedView">
+<link rel="next" href="goffice-06-gog-series.html" title="GogSeries">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="GogOutlinedView.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-gog-series.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-gog-plot.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-gog-plot.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-gog-plot"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-gog-plot.top_of_page"></a>GogPlot</span></h2>
+<p>GogPlot — Base class for plots</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-gog-plot.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="goffice-06-gog-plot.html#GogPlotBoundInfo" title="GogPlotBoundInfo">GogPlotBoundInfo</a>;
+#define             <a class="link" href="goffice-06-gog-plot.html#GOG-PLOT-TYPE:CAPS" title="GOG_PLOT_TYPE">GOG_PLOT_TYPE</a>
+#define             <a class="link" href="goffice-06-gog-plot.html#GOG-PLOT:CAPS" title="GOG_PLOT()">GOG_PLOT</a>                            (o)
+#define             <a class="link" href="goffice-06-gog-plot.html#IS-GOG-PLOT:CAPS" title="IS_GOG_PLOT()">IS_GOG_PLOT</a>                         (o)
+GType               <a class="link" href="goffice-06-gog-plot.html#gog-plot-get-type" title="gog_plot_get_type ()">gog_plot_get_type</a>                   (void);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *           <a class="link" href="goffice-06-gog-plot.html#gog-plot-new-by-type" title="gog_plot_new_by_type ()">gog_plot_new_by_type</a>                (<a class="link" href="goffice-06-gog-plot-engine.html#GogPlotType" title="GogPlotType">GogPlotType</a> const *type);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *           <a class="link" href="goffice-06-gog-plot.html#gog-plot-new-by-name" title="gog_plot_new_by_name ()">gog_plot_new_by_name</a>                (char const *id);
+gboolean            <a class="link" href="goffice-06-gog-plot.html#gog-plot-make-similar" title="gog_plot_make_similar ()">gog_plot_make_similar</a>               (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *dst,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> const *src);
+void                <a class="link" href="goffice-06-gog-plot.html#gog-plot-request-cardinality-update" title="gog_plot_request_cardinality_update ()">gog_plot_request_cardinality_update</a> (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot);
+void                <a class="link" href="goffice-06-gog-plot.html#gog-plot-update-cardinality" title="gog_plot_update_cardinality ()">gog_plot_update_cardinality</a>         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot,
+                                                         int index_num);
+void                <a class="link" href="goffice-06-gog-plot.html#gog-plot-get-cardinality" title="gog_plot_get_cardinality ()">gog_plot_get_cardinality</a>            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot,
+                                                         unsigned *full,
+                                                         unsigned *visible);
+void                <a class="link" href="goffice-06-gog-plot.html#gog-plot-foreach-elem" title="gog_plot_foreach_elem ()">gog_plot_foreach_elem</a>               (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot,
+                                                         gboolean only_visible,
+                                                         GogEnumFunc handler,
+                                                         gpointer data);
+GSList const *      <a class="link" href="goffice-06-gog-plot.html#gog-plot-get-series" title="gog_plot_get_series ()">gog_plot_get_series</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> const *plot);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *            <a class="link" href="goffice-06-gog-plot.html#gog-plot-get-axis-bounds" title="gog_plot_get_axis_bounds ()">gog_plot_get_axis_bounds</a>            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot,
+                                                         GogAxisType axis,
+                                                         <a class="link" href="goffice-06-gog-plot.html#GogPlotBoundInfo" title="GogPlotBoundInfo">GogPlotBoundInfo</a> *bounds);
+gboolean            <a class="link" href="goffice-06-gog-plot.html#gog-plot-supports-vary-style-by-element" title="gog_plot_supports_vary_style_by_element ()">gog_plot_supports_vary_style_by_element</a>
+                                                        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> const *plot);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> *         <a class="link" href="goffice-06-gog-plot.html#gog-plot-new-series" title="gog_plot_new_series ()">gog_plot_new_series</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot);
+GogPlotDesc const * <a class="link" href="goffice-06-gog-plot.html#gog-plot-description" title="gog_plot_description ()">gog_plot_description</a>                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> const *plot);
+GogAxisSet          <a class="link" href="goffice-06-gog-plot.html#gog-plot-axis-set-pref" title="gog_plot_axis_set_pref ()">gog_plot_axis_set_pref</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> const *plot);
+gboolean            <a class="link" href="goffice-06-gog-plot.html#gog-plot-axis-set-is-valid" title="gog_plot_axis_set_is_valid ()">gog_plot_axis_set_is_valid</a>          (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> const *plot,
+                                                         GogAxisSet type);
+gboolean            <a class="link" href="goffice-06-gog-plot.html#gog-plot-axis-set-assign" title="gog_plot_axis_set_assign ()">gog_plot_axis_set_assign</a>            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot,
+                                                         GogAxisSet type);
+void                <a class="link" href="goffice-06-gog-plot.html#gog-plot-axis-clear" title="gog_plot_axis_clear ()">gog_plot_axis_clear</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot,
+                                                         GogAxisSet filter);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *           <a class="link" href="goffice-06-gog-plot.html#gog-plot-get-axis" title="gog_plot_get_axis ()">gog_plot_get_axis</a>                   (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> const *plot,
+                                                         GogAxisType type);
+void                <a class="link" href="goffice-06-gog-plot.html#gog-plot-set-axis" title="gog_plot_set_axis ()">gog_plot_set_axis</a>                   (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis);
+void                <a class="link" href="goffice-06-gog-plot.html#gog-plot-update-3d" title="gog_plot_update_3d ()">gog_plot_update_3d</a>                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot);
+void                <a class="link" href="goffice-06-gog-plot.html#gog-plot-guru-helper" title="gog_plot_guru_helper ()">gog_plot_guru_helper</a>                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-plot.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-plot.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GogPlotBoundInfo"></a><h3>GogPlotBoundInfo</h3>
+<pre class="programlisting">typedef struct {
+	struct {
+		double minima, maxima;
+	} val, logical;
+	gboolean is_discrete;
+	gboolean center_on_ticks;
+	GOFormat *fmt;
+} GogPlotBoundInfo;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-PLOT-TYPE:CAPS"></a><h3>GOG_PLOT_TYPE</h3>
+<pre class="programlisting">#define GOG_PLOT_TYPE	(gog_plot_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-PLOT:CAPS"></a><h3>GOG_PLOT()</h3>
+<pre class="programlisting">#define GOG_PLOT(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GOG_PLOT_TYPE, GogPlot))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-PLOT:CAPS"></a><h3>IS_GOG_PLOT()</h3>
+<pre class="programlisting">#define IS_GOG_PLOT(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GOG_PLOT_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-get-type"></a><h3>gog_plot_get_type ()</h3>
+<pre class="programlisting">GType               gog_plot_get_type                   (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-new-by-type"></a><h3>gog_plot_new_by_type ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *           gog_plot_new_by_type                (<a class="link" href="goffice-06-gog-plot-engine.html#GogPlotType" title="GogPlotType">GogPlotType</a> const *type);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-new-by-name"></a><h3>gog_plot_new_by_name ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *           gog_plot_new_by_name                (char const *id);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-make-similar"></a><h3>gog_plot_make_similar ()</h3>
+<pre class="programlisting">gboolean            gog_plot_make_similar               (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *dst,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> const *src);</pre>
+<p>
+As much as possible have <em class="parameter"><code>dst</code></em> use similar formatting and data allocation to
+<em class="parameter"><code>src</code></em>.
+</p>
+<p>
+return TRUE on failue</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-request-cardinality-update"></a><h3>gog_plot_request_cardinality_update ()</h3>
+<pre class="programlisting">void                gog_plot_request_cardinality_update (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-update-cardinality"></a><h3>gog_plot_update_cardinality ()</h3>
+<pre class="programlisting">void                gog_plot_update_cardinality         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot,
+                                                         int index_num);</pre>
+<p>
+Update cardinality and cache result. See <em class="parameter"><code>gog_chart_get_cardinality</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+><span class="type">GogPlot</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>index_num</code></em> :</span></p></td>
+<td> index offset for this plot
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-get-cardinality"></a><h3>gog_plot_get_cardinality ()</h3>
+<pre class="programlisting">void                gog_plot_get_cardinality            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot,
+                                                         unsigned *full,
+                                                         unsigned *visible);</pre>
+<p>
+Return the number of logical elements in the plot.
+See <em class="parameter"><code>gog_chart_get_cardinality</code></em>.
+</p>
+<p>
+<em class="parameter"><code>full</code></em> and <em class="parameter"><code>visible</code></em> may be NULL.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+><span class="type">GogPlot</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>full</code></em> :</span></p></td>
+<td> placeholder for full cardinality
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>visible</code></em> :</span></p></td>
+<td> placeholder for visible cardinality
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-foreach-elem"></a><h3>gog_plot_foreach_elem ()</h3>
+<pre class="programlisting">void                gog_plot_foreach_elem               (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot,
+                                                         gboolean only_visible,
+                                                         GogEnumFunc handler,
+                                                         gpointer data);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>only_visible</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>handler</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-get-series"></a><h3>gog_plot_get_series ()</h3>
+<pre class="programlisting">GSList const *      gog_plot_get_series                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> const *plot);</pre>
+<p>
+A list of the series in <em class="parameter"><code>plot</code></em>.  Do not modify or free the list.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+><span class="type">GogPlot</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-get-axis-bounds"></a><h3>gog_plot_get_axis_bounds ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *            gog_plot_get_axis_bounds            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot,
+                                                         GogAxisType axis,
+                                                         <a class="link" href="goffice-06-gog-plot.html#GogPlotBoundInfo" title="GogPlotBoundInfo">GogPlotBoundInfo</a> *bounds);</pre>
+<p>
+Queries <em class="parameter"><code>plot</code></em> for its axis preferences for <em class="parameter"><code>axis</code></em> and stores the results in
+<em class="parameter"><code>bounds</code></em>.  All elements of <em class="parameter"><code>bounds</code></em> are initialized to sane values before the
+query _ACCEPT_ ::fmt.  The caller is responsible for initializing it.  This
+is done so that once on plot has selected a format the others need not do
+the lookup too if so desired.
+</p>
+<p>
+Caller is responsible for unrefing ::fmt.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+><span class="type">GogPlot</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> <span class="type">GogAxisType</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bounds</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-gog-plot.html#GogPlotBoundInfo" title="GogPlotBoundInfo"><span class="type">GogPlotBoundInfo</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-supports-vary-style-by-element"></a><h3>gog_plot_supports_vary_style_by_element ()</h3>
+<pre class="programlisting">gboolean            gog_plot_supports_vary_style_by_element
+                                                        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> const *plot);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-new-series"></a><h3>gog_plot_new_series ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogSeries.html"
+>GogSeries</a> *         gog_plot_new_series                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-description"></a><h3>gog_plot_description ()</h3>
+<pre class="programlisting">GogPlotDesc const * gog_plot_description                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> const *plot);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-axis-set-pref"></a><h3>gog_plot_axis_set_pref ()</h3>
+<pre class="programlisting">GogAxisSet          gog_plot_axis_set_pref              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> const *plot);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-axis-set-is-valid"></a><h3>gog_plot_axis_set_is_valid ()</h3>
+<pre class="programlisting">gboolean            gog_plot_axis_set_is_valid          (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> const *plot,
+                                                         GogAxisSet type);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-axis-set-assign"></a><h3>gog_plot_axis_set_assign ()</h3>
+<pre class="programlisting">gboolean            gog_plot_axis_set_assign            (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot,
+                                                         GogAxisSet type);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-axis-clear"></a><h3>gog_plot_axis_clear ()</h3>
+<pre class="programlisting">void                gog_plot_axis_clear                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot,
+                                                         GogAxisSet filter);</pre>
+<p>
+A utility method to clear all existing axis associations flagged by <em class="parameter"><code>filter</code></em></p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+><span class="type">GogPlot</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filter</code></em> :</span></p></td>
+<td> <span class="type">GogAxisSet</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-get-axis"></a><h3>gog_plot_get_axis ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *           gog_plot_get_axis                   (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> const *plot,
+                                                         GogAxisType type);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-set-axis"></a><h3>gog_plot_set_axis ()</h3>
+<pre class="programlisting">void                gog_plot_set_axis                   (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+>GogAxis</a> *axis);</pre>
+<p>
+Connect <em class="parameter"><code>axis</code></em> and <em class="parameter"><code>plot</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+><span class="type">GogPlot</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>axis</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogAxis.html"
+><span class="type">GogAxis</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-update-3d"></a><h3>gog_plot_update_3d ()</h3>
+<pre class="programlisting">void                gog_plot_update_3d                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-plot-guru-helper"></a><h3>gog_plot_guru_helper ()</h3>
+<pre class="programlisting">void                gog_plot_guru_helper                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogPlot.html"
+>GogPlot</a> *plot);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>plot</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

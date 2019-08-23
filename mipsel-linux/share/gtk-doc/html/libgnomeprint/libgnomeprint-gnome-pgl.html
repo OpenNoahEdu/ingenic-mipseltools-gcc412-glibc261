@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>gnome-pgl</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="GNOME Print Reference Manual">
+<link rel="up" href="libgnomeprintunsorted.html" title="Part&#160;II.&#160;API Reference">
+<link rel="prev" href="libgnomeprint-gnome-glyphlist.html" title="gnome-glyphlist">
+<link rel="next" href="libgnomeprint-gnome-print-config.html" title="gnome-print-config">
+<meta name="generator" content="GTK-Doc V1.8 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="libgnomeprint.html" title="Part&#160;I.&#160;GNOME Print Overview">
+<link rel="part" href="libgnomeprintunsorted.html" title="Part&#160;II.&#160;API Reference">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libgnomeprint-gnome-glyphlist.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="libgnomeprintunsorted.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GNOME Print Reference Manual</th>
+<td><a accesskey="n" href="libgnomeprint-gnome-print-config.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2972676" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2972983" class="shortcut">Description</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="libgnomeprint-gnome-pgl"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2972676"></a><span class="refentrytitle">gnome-pgl</span>
+</h2>
+<p>gnome-pgl</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<pre class="synopsis">
+
+
+
+                    <a href="libgnomeprint-gnome-pgl.html#GnomePosGlyphList">GnomePosGlyphList</a>;
+<a href="libgnomeprint-gnome-pgl.html#GnomePosGlyphList">GnomePosGlyphList</a>*  <a href="libgnomeprint-gnome-pgl.html#gnome-pgl-from-gl">gnome_pgl_from_gl</a>                   (const <a href="libgnomeprint-gnome-glyphlist.html#GnomeGlyphList">GnomeGlyphList</a> *gl,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> *transform,
+                                                         <a
+href="../glib/glib-Basic-Types.html#guint"
+>guint</a> flags);
+void                <a href="libgnomeprint-gnome-pgl.html#gnome-pgl-destroy">gnome_pgl_destroy</a>                   (<a href="libgnomeprint-gnome-pgl.html#GnomePosGlyphList">GnomePosGlyphList</a> *pgl);
+ArtDRect*           <a href="libgnomeprint-gnome-pgl.html#gnome-pgl-bbox">gnome_pgl_bbox</a>                      (const <a href="libgnomeprint-gnome-pgl.html#GnomePosGlyphList">GnomePosGlyphList</a> *pgl,
+                                                         ArtDRect *bbox);
+<a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a href="libgnomeprint-gnome-pgl.html#gnome-pgl-test-point">gnome_pgl_test_point</a>                (const <a href="libgnomeprint-gnome-pgl.html#GnomePosGlyphList">GnomePosGlyphList</a> *pgl,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y);
+void                <a href="libgnomeprint-gnome-pgl.html#gnome-pgl-render-rgba8">gnome_pgl_render_rgba8</a>              (const <a href="libgnomeprint-gnome-pgl.html#GnomePosGlyphList">GnomePosGlyphList</a> *pgl,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y,
+                                                         <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *buf,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> width,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> height,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> rowstride,
+                                                         <a
+href="../glib/glib-Basic-Types.html#guint"
+>guint</a> flags);
+void                <a href="libgnomeprint-gnome-pgl.html#gnome-pgl-render-rgb8">gnome_pgl_render_rgb8</a>               (const <a href="libgnomeprint-gnome-pgl.html#GnomePosGlyphList">GnomePosGlyphList</a> *pgl,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y,
+                                                         <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *buf,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> width,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> height,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> rowstride,
+                                                         <a
+href="../glib/glib-Basic-Types.html#guint"
+>guint</a> flags);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2972983"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2972998"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2973008"></a><h3>
+<a name="GnomePosGlyphList"></a>GnomePosGlyphList</h3>
+<a class="indexterm" name="id2973020"></a><pre class="programlisting">typedef struct _GnomePosGlyphList GnomePosGlyphList;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2973036"></a><h3>
+<a name="gnome-pgl-from-gl"></a>gnome_pgl_from_gl ()</h3>
+<a class="indexterm" name="id2973049"></a><pre class="programlisting"><a href="libgnomeprint-gnome-pgl.html#GnomePosGlyphList">GnomePosGlyphList</a>*  gnome_pgl_from_gl                   (const <a href="libgnomeprint-gnome-glyphlist.html#GnomeGlyphList">GnomeGlyphList</a> *gl,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> *transform,
+                                                         <a
+href="../glib/glib-Basic-Types.html#guint"
+>guint</a> flags);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>gl</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>transform</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>flags</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2973148"></a><h3>
+<a name="gnome-pgl-destroy"></a>gnome_pgl_destroy ()</h3>
+<a class="indexterm" name="id2973162"></a><pre class="programlisting">void                gnome_pgl_destroy                   (<a href="libgnomeprint-gnome-pgl.html#GnomePosGlyphList">GnomePosGlyphList</a> *pgl);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><span class="term"><em class="parameter"><code>pgl</code></em>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2973208"></a><h3>
+<a name="gnome-pgl-bbox"></a>gnome_pgl_bbox ()</h3>
+<a class="indexterm" name="id2973220"></a><pre class="programlisting">ArtDRect*           gnome_pgl_bbox                      (const <a href="libgnomeprint-gnome-pgl.html#GnomePosGlyphList">GnomePosGlyphList</a> *pgl,
+                                                         ArtDRect *bbox);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pgl</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>bbox</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2973298"></a><h3>
+<a name="gnome-pgl-test-point"></a>gnome_pgl_test_point ()</h3>
+<a class="indexterm" name="id2973311"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            gnome_pgl_test_point                (const <a href="libgnomeprint-gnome-pgl.html#GnomePosGlyphList">GnomePosGlyphList</a> *pgl,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pgl</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>x</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>y</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2973410"></a><h3>
+<a name="gnome-pgl-render-rgba8"></a>gnome_pgl_render_rgba8 ()</h3>
+<a class="indexterm" name="id2973423"></a><pre class="programlisting">void                gnome_pgl_render_rgba8              (const <a href="libgnomeprint-gnome-pgl.html#GnomePosGlyphList">GnomePosGlyphList</a> *pgl,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y,
+                                                         <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *buf,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> width,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> height,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> rowstride,
+                                                         <a
+href="../glib/glib-Basic-Types.html#guint"
+>guint</a> flags);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pgl</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>x</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>y</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>buf</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>width</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>height</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>rowstride</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>flags</code></em>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2973618"></a><h3>
+<a name="gnome-pgl-render-rgb8"></a>gnome_pgl_render_rgb8 ()</h3>
+<a class="indexterm" name="id2973631"></a><pre class="programlisting">void                gnome_pgl_render_rgb8               (const <a href="libgnomeprint-gnome-pgl.html#GnomePosGlyphList">GnomePosGlyphList</a> *pgl,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> x,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> y,
+                                                         <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *buf,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> width,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> height,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> rowstride,
+                                                         <a
+href="../glib/glib-Basic-Types.html#guint"
+>guint</a> flags);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>pgl</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>x</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>y</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>buf</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>width</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>height</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>rowstride</code></em>&#160;:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>flags</code></em>&#160;:</span></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+prefix=/opt/mipseltools/mipsel-linux
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: wvWare
+Description: Word Document Filter library and utilities
+Version: 1.2.4
+Libs: -L${libdir} -lwv  -L/opt/mipseltools-gcc412-glibc261/mipsel-linux/lib -lxml2   -L/opt/mipseltools-gcc412-glibc261/mipsel-linux/lib -lglib-2.0   -L/opt/mipseltools/mipsel-linux/lib -L/opt/mipseltools-gcc412-glibc261/mipsel-linux/lib -lgsf-1 -lgobject-2.0 -lxml2 -lglib-2.0   -lpng -lz  -lm
+Cflags: -I${includedir}/wv -I/opt/mipseltools/mipsel-linux/include/libgsf-1 -I/opt/mipseltools-gcc412-glibc261/mipsel-linux/include/glib-2.0 -I/opt/mipseltools-gcc412-glibc261/mipsel-linux/lib/glib-2.0/include -I/opt/mipseltools-gcc412-glibc261/mipsel-linux/include/libxml2  

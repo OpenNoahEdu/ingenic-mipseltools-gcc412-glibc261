@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogTheme</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch03.html" title="Utilities">
+<link rel="prev" href="goffice-06-gog-style.html" title="GogStyle">
+<link rel="next" href="goffice-06-gog-chart-map.html" title="GogChartMap">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-gog-style.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-gog-chart-map.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-gog-theme.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-gog-theme.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-gog-theme"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-gog-theme.top_of_page"></a>GogTheme</span></h2>
+<p>GogTheme — Graph theme management</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-gog-theme.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="goffice-06-gog-theme.html#GOG-THEME-TYPE:CAPS" title="GOG_THEME_TYPE">GOG_THEME_TYPE</a>
+#define             <a class="link" href="goffice-06-gog-theme.html#GOG-THEME:CAPS" title="GOG_THEME()">GOG_THEME</a>                           (o)
+#define             <a class="link" href="goffice-06-gog-theme.html#IS-GOG-THEME:CAPS" title="IS_GOG_THEME()">IS_GOG_THEME</a>                        (o)
+GType               <a class="link" href="goffice-06-gog-theme.html#gog-theme-get-type" title="gog_theme_get_type ()">gog_theme_get_type</a>                  (void);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> *          <a class="link" href="goffice-06-gog-theme.html#gog-theme-new" title="gog_theme_new ()">gog_theme_new</a>                       (char const *name);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> *          <a class="link" href="goffice-06-gog-theme.html#gog-theme-new-from-file" title="gog_theme_new_from_file ()">gog_theme_new_from_file</a>             (char const *name,
+                                                         char const *file);
+char const *        <a class="link" href="goffice-06-gog-theme.html#gog-theme-get-name" title="gog_theme_get_name ()">gog_theme_get_name</a>                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> const *theme);
+void                <a class="link" href="goffice-06-gog-theme.html#gog-theme-fillin-style" title="gog_theme_fillin_style ()">gog_theme_fillin_style</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> const *theme,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         int ind,
+                                                         gboolean complete_overwrite);
+void                <a class="link" href="goffice-06-gog-theme.html#gog-theme-registry-add" title="gog_theme_registry_add ()">gog_theme_registry_add</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> *theme,
+                                                         gboolean is_default);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> *          <a class="link" href="goffice-06-gog-theme.html#gog-theme-registry-lookup" title="gog_theme_registry_lookup ()">gog_theme_registry_lookup</a>           (char const *name);
+GSList *            <a class="link" href="goffice-06-gog-theme.html#gog-theme-registry-get-theme-names" title="gog_theme_registry_get_theme_names ()">gog_theme_registry_get_theme_names</a>  (void);
+void                <a class="link" href="goffice-06-gog-theme.html#gog-themes-init" title="gog_themes_init ()">gog_themes_init</a>                     (void);
+void                <a class="link" href="goffice-06-gog-theme.html#gog-themes-shutdown" title="gog_themes_shutdown ()">gog_themes_shutdown</a>                 (void);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-theme.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-theme.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOG-THEME-TYPE:CAPS"></a><h3>GOG_THEME_TYPE</h3>
+<pre class="programlisting">#define GOG_THEME_TYPE	(gog_theme_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-THEME:CAPS"></a><h3>GOG_THEME()</h3>
+<pre class="programlisting">#define GOG_THEME(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GOG_THEME_TYPE, GogTheme))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-THEME:CAPS"></a><h3>IS_GOG_THEME()</h3>
+<pre class="programlisting">#define IS_GOG_THEME(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GOG_THEME_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-theme-get-type"></a><h3>gog_theme_get_type ()</h3>
+<pre class="programlisting">GType               gog_theme_get_type                  (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-theme-new"></a><h3>gog_theme_new ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> *          gog_theme_new                       (char const *name);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-theme-new-from-file"></a><h3>gog_theme_new_from_file ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> *          gog_theme_new_from_file             (char const *name,
+                                                         char const *file);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>file</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-theme-get-name"></a><h3>gog_theme_get_name ()</h3>
+<pre class="programlisting">char const *        gog_theme_get_name                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> const *theme);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theme</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-theme-fillin-style"></a><h3>gog_theme_fillin_style ()</h3>
+<pre class="programlisting">void                gog_theme_fillin_style              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> const *theme,
+                                                         <a class="link" href="goffice-06-gog-style.html#GogStyle">GogStyle</a> *style,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> const *obj,
+                                                         int ind,
+                                                         gboolean complete_overwrite);</pre>
+<p>
+Fill in the auto aspects of <em class="parameter"><code>style</code></em> based on <em class="parameter"><code>theme</code></em> 's element for objects of
+type/role similar to <em class="parameter"><code>obj</code></em> with index <em class="parameter"><code>ind</code></em>.  If <em class="parameter"><code>complete_overwrite</code></em> is used,
+fillin the entire style, not just the auto portions.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theme</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+><span class="type">GogTheme</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>style</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-gog-style.html#GogStyle"><span class="type">GogStyle</span></a> to initialize
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td> <a class="link" href="GogObject.html" title="GogObject"><span class="type">GogObject</span></a> The object associated with <em class="parameter"><code>style</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ind</code></em> :</span></p></td>
+<td> an optional index
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>complete_overwrite</code></em> :</span></p></td>
+<td> boolean
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-theme-registry-add"></a><h3>gog_theme_registry_add ()</h3>
+<pre class="programlisting">void                gog_theme_registry_add              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> *theme,
+                                                         gboolean is_default);</pre>
+<p>
+Keep a pointer to <em class="parameter"><code>theme</code></em> in graph theme registry. 
+This function does not add a reference to <em class="parameter"><code>theme</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theme</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+><span class="type">GogTheme</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>is_default</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-theme-registry-lookup"></a><h3>gog_theme_registry_lookup ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> *          gog_theme_registry_lookup           (char const *name);</pre>
+<p>
+Retrieves a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+><span class="type">GogTheme</span></a> from theme registry.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td> a theme name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-theme-registry-get-theme-names"></a><h3>gog_theme_registry_get_theme_names ()</h3>
+<pre class="programlisting">GSList *            gog_theme_registry_get_theme_names  (void);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a newly allocated theme name list from theme registry.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-themes-init"></a><h3>gog_themes_init ()</h3>
+<pre class="programlisting">void                gog_themes_init                     (void);</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-themes-shutdown"></a><h3>gog_themes_shutdown ()</h3>
+<pre class="programlisting">void                gog_themes_shutdown                 (void);</pre>
+<p>
+
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

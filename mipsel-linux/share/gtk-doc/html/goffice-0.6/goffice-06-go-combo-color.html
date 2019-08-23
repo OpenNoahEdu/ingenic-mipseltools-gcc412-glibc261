@@ -1,0 +1,501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-combo-color</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch05.html" title="Selectors">
+<link rel="prev" href="ch05.html" title="Selectors">
+<link rel="next" href="goffice-06-go-combo-text.html" title="go-combo-text">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch05.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch05.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-go-combo-text.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-combo-color.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-combo-color.description" class="shortcut">Description</a>
+                 | 
+                <a href="#goffice-06-go-combo-color.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                 | 
+                <a href="#goffice-06-go-combo-color.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                 | 
+                <a href="#goffice-06-go-combo-color.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-combo-color"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-combo-color.top_of_page"></a>go-combo-color</span></h2>
+<p>go-combo-color</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-combo-color.synopsis"></a><h2>Synopsis</h2>
+<a name="GOComboColor"></a><pre class="synopsis">
+#define             <a class="link" href="goffice-06-go-combo-color.html#GO-COMBO-COLOR-TYPE:CAPS" title="GO_COMBO_COLOR_TYPE">GO_COMBO_COLOR_TYPE</a>
+#define             <a class="link" href="goffice-06-go-combo-color.html#GO-COMBO-COLOR:CAPS" title="GO_COMBO_COLOR()">GO_COMBO_COLOR</a>                      (o)
+#define             <a class="link" href="goffice-06-go-combo-color.html#IS-GO-COMBO-COLOR:CAPS" title="IS_GO_COMBO_COLOR()">IS_GO_COMBO_COLOR</a>                   (o)
+#define             <a class="link" href="goffice-06-go-combo-color.html#GO-COMBO-COLOR-CLASS:CAPS" title="GO_COMBO_COLOR_CLASS()">GO_COMBO_COLOR_CLASS</a>                (k)
+                    <a class="link" href="goffice-06-go-combo-color.html#GOComboColor-struct" title="GOComboColor">GOComboColor</a>;
+GType               <a class="link" href="goffice-06-go-combo-color.html#go-combo-color-get-type" title="go_combo_color_get_type ()">go_combo_color_get_type</a>             (void);
+GtkWidget *         <a class="link" href="goffice-06-go-combo-color.html#go-combo-color-new" title="go_combo_color_new ()">go_combo_color_new</a>                  (<a class="link" href="goffice-06-gog-renderer.html#GdkPixbuf">GdkPixbuf</a> *icon,
+                                                         char const *no_color_label,
+                                                         GOColor default_color,
+                                                         GOColorGroup *color_group);
+GOColor             <a class="link" href="goffice-06-go-combo-color.html#go-combo-color-get-color" title="go_combo_color_get_color ()">go_combo_color_get_color</a>            (<a class="link" href="goffice-06-go-combo-color.html#GOComboColor">GOComboColor</a> *cc,
+                                                         gboolean *is_default);
+void                <a class="link" href="goffice-06-go-combo-color.html#go-combo-color-set-color" title="go_combo_color_set_color ()">go_combo_color_set_color</a>            (<a class="link" href="goffice-06-go-combo-color.html#GOComboColor">GOComboColor</a> *cc,
+                                                         GOColor color);
+void                <a class="link" href="goffice-06-go-combo-color.html#go-combo-color-set-color-to-default" title="go_combo_color_set_color_to_default ()">go_combo_color_set_color_to_default</a> (<a class="link" href="goffice-06-go-combo-color.html#GOComboColor">GOComboColor</a> *cc);
+void                <a class="link" href="goffice-06-go-combo-color.html#go-combo-color-set-color-gdk" title="go_combo_color_set_color_gdk ()">go_combo_color_set_color_gdk</a>        (<a class="link" href="goffice-06-go-combo-color.html#GOComboColor">GOComboColor</a> *cc,
+                                                         GdkColor *color);
+void                <a class="link" href="goffice-06-go-combo-color.html#go-combo-color-set-allow-alpha" title="go_combo_color_set_allow_alpha ()">go_combo_color_set_allow_alpha</a>      (<a class="link" href="goffice-06-go-combo-color.html#GOComboColor">GOComboColor</a> *cc,
+                                                         gboolean allow_alpha);
+void                <a class="link" href="goffice-06-go-combo-color.html#go-combo-color-set-instant-apply" title="go_combo_color_set_instant_apply ()">go_combo_color_set_instant_apply</a>    (<a class="link" href="goffice-06-go-combo-color.html#GOComboColor">GOComboColor</a> *cc,
+                                                         gboolean active);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-combo-color.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkObject
+               +----GtkWidget
+                     +----GtkContainer
+                           +----GtkBox
+                                 +----GtkHBox
+                                       +----<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a>
+                                             +----GOComboColor
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-combo-color.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GOComboColor implements
+ AtkImplementorIface and  GtkBuildable.</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-combo-color.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="goffice-06-go-combo-color.html#GOComboColor-color-changed" title='The "color-changed" signal'>color-changed</a>"                                  : Run Last
+  "<a class="link" href="goffice-06-go-combo-color.html#GOComboColor-display-custom-dialog" title='The "display-custom-dialog" signal'>display-custom-dialog</a>"                          : Run Last
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-combo-color.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-combo-color.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GO-COMBO-COLOR-TYPE:CAPS"></a><h3>GO_COMBO_COLOR_TYPE</h3>
+<pre class="programlisting">#define GO_COMBO_COLOR_TYPE	(go_combo_color_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-COMBO-COLOR:CAPS"></a><h3>GO_COMBO_COLOR()</h3>
+<pre class="programlisting">#define GO_COMBO_COLOR(o)	(G_TYPE_CHECK_INSTANCE_CAST((o), GO_COMBO_COLOR_TYPE, GOComboColor))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-COMBO-COLOR:CAPS"></a><h3>IS_GO_COMBO_COLOR()</h3>
+<pre class="programlisting">#define IS_GO_COMBO_COLOR(o)	(G_TYPE_CHECK_INSTANCE_TYPE((o), GO_COMBO_COLOR_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-COMBO-COLOR-CLASS:CAPS"></a><h3>GO_COMBO_COLOR_CLASS()</h3>
+<pre class="programlisting">#define GO_COMBO_COLOR_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST(k), GO_COMBO_COLOR_TYPE)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>k</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOComboColor-struct"></a><h3>GOComboColor</h3>
+<pre class="programlisting">typedef struct _GOComboColor GOComboColor;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-color-get-type"></a><h3>go_combo_color_get_type ()</h3>
+<pre class="programlisting">GType               go_combo_color_get_type             (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-color-new"></a><h3>go_combo_color_new ()</h3>
+<pre class="programlisting">GtkWidget *         go_combo_color_new                  (<a class="link" href="goffice-06-gog-renderer.html#GdkPixbuf">GdkPixbuf</a> *icon,
+                                                         char const *no_color_label,
+                                                         GOColor default_color,
+                                                         GOColorGroup *color_group);</pre>
+<p>
+Default constructor. Pass an optional icon and an optional label for the
+no/auto color button.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>icon</code></em> :</span></p></td>
+<td> optionally NULL.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>no_color_label</code></em> :</span></p></td>
+<td> FIXME
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>default_color</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>color_group</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-color-get-color"></a><h3>go_combo_color_get_color ()</h3>
+<pre class="programlisting">GOColor             go_combo_color_get_color            (<a class="link" href="goffice-06-go-combo-color.html#GOComboColor">GOComboColor</a> *cc,
+                                                         gboolean *is_default);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>is_default</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-color-set-color"></a><h3>go_combo_color_set_color ()</h3>
+<pre class="programlisting">void                go_combo_color_set_color            (<a class="link" href="goffice-06-go-combo-color.html#GOComboColor">GOComboColor</a> *cc,
+                                                         GOColor color);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cc</code></em> :</span></p></td>
+<td> a <a class="link" href="goffice-06-go-combo-color.html#GOComboColor"><span class="type">GOComboColor</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
+<td> a <span class="type">GOColor</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-color-set-color-to-default"></a><h3>go_combo_color_set_color_to_default ()</h3>
+<pre class="programlisting">void                go_combo_color_set_color_to_default (<a class="link" href="goffice-06-go-combo-color.html#GOComboColor">GOComboColor</a> *cc);</pre>
+<p>
+Set the color of the combo to the default color. Causes the color_changed
+signal to be emitted.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>cc</code></em> :</span></p></td>
+<td>  The combo
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-color-set-color-gdk"></a><h3>go_combo_color_set_color_gdk ()</h3>
+<pre class="programlisting">void                go_combo_color_set_color_gdk        (<a class="link" href="goffice-06-go-combo-color.html#GOComboColor">GOComboColor</a> *cc,
+                                                         GdkColor *color);</pre>
+<p>
+Set the color of the combo to the given color. Causes the color_changed
+signal to be emitted.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cc</code></em> :</span></p></td>
+<td>    The combo
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
+<td> The color
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-color-set-allow-alpha"></a><h3>go_combo_color_set_allow_alpha ()</h3>
+<pre class="programlisting">void                go_combo_color_set_allow_alpha      (<a class="link" href="goffice-06-go-combo-color.html#GOComboColor">GOComboColor</a> *cc,
+                                                         gboolean allow_alpha);</pre>
+<p>
+Should the custom colour selector allow the use of opacity.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cc</code></em> :</span></p></td>
+<td> <a class="link" href="goffice-06-go-combo-color.html#GOComboColor"><span class="type">GOComboColor</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>allow_alpha</code></em> :</span></p></td>
+<td> 
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-color-set-instant-apply"></a><h3>go_combo_color_set_instant_apply ()</h3>
+<pre class="programlisting">void                go_combo_color_set_instant_apply    (<a class="link" href="goffice-06-go-combo-color.html#GOComboColor">GOComboColor</a> *cc,
+                                                         gboolean active);</pre>
+<p>
+Turn instant apply behaviour on or off. Instant apply means that pressing
+the button applies the current color. When off, pressing the button opens
+the combo.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cc</code></em> :</span></p></td>
+<td>     The combo
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>active</code></em> :</span></p></td>
+<td> Whether instant apply should be active or not
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-combo-color.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOComboColor-color-changed"></a><h3>The <code class="literal">"color-changed"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="goffice-06-go-combo-color.html#GOComboColor">GOComboColor</a> *gocombocolor,
+                                                        gpointer      arg1,
+                                                        gboolean      arg2,
+                                                        gboolean      arg3,
+                                                        gboolean      arg4,
+                                                        gpointer      user_data)         : Run Last</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gocombocolor</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg2</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg3</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg4</code></em> :</span></p></td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOComboColor-display-custom-dialog"></a><h3>The <code class="literal">"display-custom-dialog"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="goffice-06-go-combo-color.html#GOComboColor">GOComboColor</a> *gocombocolor,
+                                                        GObject      *arg1,
+                                                        gpointer      user_data)         : Run Last</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gocombocolor</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg1</code></em> :</span></p></td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

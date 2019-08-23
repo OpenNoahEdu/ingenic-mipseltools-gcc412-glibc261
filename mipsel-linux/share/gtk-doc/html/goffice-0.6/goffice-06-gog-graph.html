@@ -1,0 +1,879 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogGraph</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch01.html" title="Objects">
+<link rel="prev" href="ch01.html" title="Objects">
+<link rel="next" href="goffice-06-gog-chart.html" title="GogChart">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch01.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-gog-chart.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-gog-graph.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-gog-graph.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-gog-graph"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-gog-graph.top_of_page"></a>GogGraph</span></h2>
+<p>GogGraph — A collection of charts</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-gog-graph.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="goffice-06-gog-graph.html#GOG-GRAPH-TYPE:CAPS" title="GOG_GRAPH_TYPE">GOG_GRAPH_TYPE</a>
+#define             <a class="link" href="goffice-06-gog-graph.html#GOG-GRAPH:CAPS" title="GOG_GRAPH()">GOG_GRAPH</a>                           (o)
+#define             <a class="link" href="goffice-06-gog-graph.html#IS-GOG-GRAPH:CAPS" title="IS_GOG_GRAPH()">IS_GOG_GRAPH</a>                        (o)
+GType               <a class="link" href="goffice-06-gog-graph.html#gog-graph-get-type" title="gog_graph_get_type ()">gog_graph_get_type</a>                  (void);
+gboolean            <a class="link" href="goffice-06-gog-graph.html#gog-graph-validate-chart-layout" title="gog_graph_validate_chart_layout ()">gog_graph_validate_chart_layout</a>     (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph);
+unsigned            <a class="link" href="goffice-06-gog-graph.html#gog-graph-num-cols" title="gog_graph_num_cols ()">gog_graph_num_cols</a>                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> const *graph);
+unsigned            <a class="link" href="goffice-06-gog-graph.html#gog-graph-num-rows" title="gog_graph_num_rows ()">gog_graph_num_rows</a>                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> const *graph);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *          <a class="link" href="goffice-06-gog-graph.html#gog-graph-dup" title="gog_graph_dup ()">gog_graph_dup</a>                       (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> const *graph);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> *          <a class="link" href="goffice-06-gog-graph.html#gog-graph-get-theme" title="gog_graph_get_theme ()">gog_graph_get_theme</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> const *graph);
+void                <a class="link" href="goffice-06-gog-graph.html#gog-graph-set-theme" title="gog_graph_set_theme ()">gog_graph_set_theme</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> *theme);
+GSList *            <a class="link" href="goffice-06-gog-graph.html#gog-graph-get-data" title="gog_graph_get_data ()">gog_graph_get_data</a>                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> const *graph);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *            <a class="link" href="goffice-06-gog-graph.html#gog-graph-ref-data" title="gog_graph_ref_data ()">gog_graph_ref_data</a>                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *dat);
+void                <a class="link" href="goffice-06-gog-graph.html#gog-graph-unref-data" title="gog_graph_unref_data ()">gog_graph_unref_data</a>                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *dat);
+void                <a class="link" href="goffice-06-gog-graph.html#gog-graph-get-size" title="gog_graph_get_size ()">gog_graph_get_size</a>                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph,
+                                                         double *width,
+                                                         double *height);
+void                <a class="link" href="goffice-06-gog-graph.html#gog-graph-set-size" title="gog_graph_set_size ()">gog_graph_set_size</a>                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph,
+                                                         double width,
+                                                         double height);
+#define             <a class="link" href="goffice-06-gog-graph.html#GOG-GRAPH-VIEW-TYPE:CAPS" title="GOG_GRAPH_VIEW_TYPE">GOG_GRAPH_VIEW_TYPE</a>
+#define             <a class="link" href="goffice-06-gog-graph.html#GOG-GRAPH-VIEW:CAPS" title="GOG_GRAPH_VIEW()">GOG_GRAPH_VIEW</a>                      (o)
+#define             <a class="link" href="goffice-06-gog-graph.html#IS-GOG-GRAPH-VIEW:CAPS" title="IS_GOG_GRAPH_VIEW()">IS_GOG_GRAPH_VIEW</a>                   (o)
+GType               <a class="link" href="goffice-06-gog-graph.html#gog-graph-view-get-type" title="gog_graph_view_get_type ()">gog_graph_view_get_type</a>             (void);
+<a class="link" href="GogView.html" title="GogView">GogView</a> *           <a class="link" href="goffice-06-gog-graph.html#gog-graph-view-get-selection" title="gog_graph_view_get_selection ()">gog_graph_view_get_selection</a>        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html#GogGraphView"
+>GogGraphView</a> *gview);
+void                <a class="link" href="goffice-06-gog-graph.html#gog-graph-view-set-selection" title="gog_graph_view_set_selection ()">gog_graph_view_set_selection</a>        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html#GogGraphView"
+>GogGraphView</a> *gview,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> *gobj);
+GSList *            <a class="link" href="goffice-06-gog-graph.html#gog-graph-get-supported-image-formats" title="gog_graph_get_supported_image_formats ()">gog_graph_get_supported_image_formats</a>
+                                                        (void);
+gboolean            <a class="link" href="goffice-06-gog-graph.html#gog-graph-export-image" title="gog_graph_export_image ()">gog_graph_export_image</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph,
+                                                         GOImageFormat format,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/gsf/gsf-Output-to-unstructured-files.html#GsfOutput"
+>GsfOutput</a> *output,
+                                                         double x_dpi,
+                                                         double y_dpi);
+void                <a class="link" href="goffice-06-gog-graph.html#gog-graph-view-handle-event" title="gog_graph_view_handle_event ()">gog_graph_view_handle_event</a>         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html#GogGraphView"
+>GogGraphView</a> *gview,
+                                                         GdkEvent *event,
+                                                         double x_offset,
+                                                         double y_offset);
+void                <a class="link" href="goffice-06-gog-graph.html#gog-graph-render-to-cairo" title="gog_graph_render_to_cairo ()">gog_graph_render_to_cairo</a>           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph,
+                                                         cairo_t *cairo,
+                                                         double w,
+                                                         double h);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-graph.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-graph.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOG-GRAPH-TYPE:CAPS"></a><h3>GOG_GRAPH_TYPE</h3>
+<pre class="programlisting">#define GOG_GRAPH_TYPE	(gog_graph_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-GRAPH:CAPS"></a><h3>GOG_GRAPH()</h3>
+<pre class="programlisting">#define GOG_GRAPH(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GOG_GRAPH_TYPE, GogGraph))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-GRAPH:CAPS"></a><h3>IS_GOG_GRAPH()</h3>
+<pre class="programlisting">#define IS_GOG_GRAPH(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GOG_GRAPH_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-get-type"></a><h3>gog_graph_get_type ()</h3>
+<pre class="programlisting">GType               gog_graph_get_type                  (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-validate-chart-layout"></a><h3>gog_graph_validate_chart_layout ()</h3>
+<pre class="programlisting">gboolean            gog_graph_validate_chart_layout     (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph);</pre>
+<p>
+Check the layout of the chart grid and ensure that there are no empty
+cols or rows, and resize as necessary</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>graph</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+><span class="type">GogGraph</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-num-cols"></a><h3>gog_graph_num_cols ()</h3>
+<pre class="programlisting">unsigned            gog_graph_num_cols                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> const *graph);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>graph</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-num-rows"></a><h3>gog_graph_num_rows ()</h3>
+<pre class="programlisting">unsigned            gog_graph_num_rows                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> const *graph);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>graph</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-dup"></a><h3>gog_graph_dup ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *          gog_graph_dup                       (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> const *graph);</pre>
+<p>
+A convenience wrapper to make a deep copy of <em class="parameter"><code>graph</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>graph</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+><span class="type">GogGraph</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-get-theme"></a><h3>gog_graph_get_theme ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> *          gog_graph_get_theme                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> const *graph);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>graph</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-set-theme"></a><h3>gog_graph_set_theme ()</h3>
+<pre class="programlisting">void                gog_graph_set_theme                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogTheme.html"
+>GogTheme</a> *theme);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>graph</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theme</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-get-data"></a><h3>gog_graph_get_data ()</h3>
+<pre class="programlisting">GSList *            gog_graph_get_data                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> const *graph);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>graph</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+><span class="type">GogGraph</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a list of the GOData objects that are data to the graph.
+The caller should _not_ modify or free the list.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-ref-data"></a><h3>gog_graph_ref_data ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *            gog_graph_ref_data                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *dat);</pre>
+<p>
+If <em class="parameter"><code>dat</code></em> or something equivalent to it already exists in the graph use that.
+Otherwaise use <em class="parameter"><code>dat</code></em>.  Adds a gobject ref to the target and increments a
+count of the number of refs made from this <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+><span class="type">GogGraph</span></a>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>graph</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+><span class="type">GogGraph</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dat</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+><span class="type">GOData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-unref-data"></a><h3>gog_graph_unref_data ()</h3>
+<pre class="programlisting">void                gog_graph_unref_data                (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+>GOData</a> *dat);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>graph</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+><span class="type">GogGraph</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dat</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GOData.html"
+><span class="type">GOData</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-get-size"></a><h3>gog_graph_get_size ()</h3>
+<pre class="programlisting">void                gog_graph_get_size                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph,
+                                                         double *width,
+                                                         double *height);</pre>
+<p>
+FIXME Returns the logical size of graph, in points.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>graph</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+><span class="type">GogGraph</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
+<td> logical width in pts
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
+<td> logical height in pts
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-set-size"></a><h3>gog_graph_set_size ()</h3>
+<pre class="programlisting">void                gog_graph_set_size                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph,
+                                                         double width,
+                                                         double height);</pre>
+<p>
+Sets the logical size of graph, given in points.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>graph</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+><span class="type">GogGraph</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
+<td> logical width in pts
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
+<td> logical height in pts
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-GRAPH-VIEW-TYPE:CAPS"></a><h3>GOG_GRAPH_VIEW_TYPE</h3>
+<pre class="programlisting">#define GOG_GRAPH_VIEW_TYPE	(gog_graph_view_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-GRAPH-VIEW:CAPS"></a><h3>GOG_GRAPH_VIEW()</h3>
+<pre class="programlisting">#define GOG_GRAPH_VIEW(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GOG_GRAPH_VIEW_TYPE, GogGraphView))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-GRAPH-VIEW:CAPS"></a><h3>IS_GOG_GRAPH_VIEW()</h3>
+<pre class="programlisting">#define IS_GOG_GRAPH_VIEW(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GOG_GRAPH_VIEW_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-view-get-type"></a><h3>gog_graph_view_get_type ()</h3>
+<pre class="programlisting">GType               gog_graph_view_get_type             (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-view-get-selection"></a><h3>gog_graph_view_get_selection ()</h3>
+<pre class="programlisting"><a class="link" href="GogView.html" title="GogView">GogView</a> *           gog_graph_view_get_selection        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html#GogGraphView"
+>GogGraphView</a> *gview);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gview</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html#GogGraphView"
+><span class="type">GogGraphView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> current selected view.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-view-set-selection"></a><h3>gog_graph_view_set_selection ()</h3>
+<pre class="programlisting">void                gog_graph_view_set_selection        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html#GogGraphView"
+>GogGraphView</a> *gview,
+                                                         <a class="link" href="GogObject.html" title="GogObject">GogObject</a> *gobj);</pre>
+<p>
+Sets <em class="parameter"><code>gobj</code></em> as current selection. If <em class="parameter"><code>gobj</code></em> is different from previously 
+selected object, a selection-changed signal is emitted.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gview</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html#GogGraphView"
+><span class="type">GogGraphView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gobj</code></em> :</span></p></td>
+<td> new selected object
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-get-supported-image-formats"></a><h3>gog_graph_get_supported_image_formats ()</h3>
+<pre class="programlisting">GSList *            gog_graph_get_supported_image_formats
+                                                        (void);</pre>
+<p>
+Builds a list of supported formats for image export.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a <span class="type">GSList</span> of <span class="type">GOImageFormat</span>.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-export-image"></a><h3>gog_graph_export_image ()</h3>
+<pre class="programlisting">gboolean            gog_graph_export_image              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph,
+                                                         GOImageFormat format,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/gsf/gsf-Output-to-unstructured-files.html#GsfOutput"
+>GsfOutput</a> *output,
+                                                         double x_dpi,
+                                                         double y_dpi);</pre>
+<p>
+Exports an image of <em class="parameter"><code>graph</code></em> in given <em class="parameter"><code>format</code></em>, writing results in a <a
+href="/local/gnome/test/share/gtk-doc/html/gsf/gsf-Output-to-unstructured-files.html#GsfOutput"
+><span class="type">GsfOutput</span></a> stream.
+If export format type is a bitmap one, it computes image size with x_dpi, y_dpi and 
+<em class="parameter"><code>graph</code></em> size (see @<a class="link" href="goffice-06-gog-graph.html#gog-graph-get-size" title="gog_graph_get_size ()"><code class="function">gog_graph_get_size()</code></a>).</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>graph</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+><span class="type">GogGraph</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>format</code></em> :</span></p></td>
+<td> image format for export
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/gsf/gsf-Output-to-unstructured-files.html#GsfOutput"
+><span class="type">GsfOutput</span></a> stream
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x_dpi</code></em> :</span></p></td>
+<td> x resolution of exported graph
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y_dpi</code></em> :</span></p></td>
+<td> y resolution of exported graph
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <code class="literal">TRUE</code> if export succeed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-view-handle-event"></a><h3>gog_graph_view_handle_event ()</h3>
+<pre class="programlisting">void                gog_graph_view_handle_event         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html#GogGraphView"
+>GogGraphView</a> *gview,
+                                                         GdkEvent *event,
+                                                         double x_offset,
+                                                         double y_offset);</pre>
+<p>
+Handle events.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gview</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html#GogGraphView"
+><span class="type">GogGraphView</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>event</code></em> :</span></p></td>
+<td> <span class="type">GdkEvent</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x_offset</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y_offset</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-graph-render-to-cairo"></a><h3>gog_graph_render_to_cairo ()</h3>
+<pre class="programlisting">void                gog_graph_render_to_cairo           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+>GogGraph</a> *graph,
+                                                         cairo_t *cairo,
+                                                         double w,
+                                                         double h);</pre>
+<p>
+Renders a graph using <em class="parameter"><code>cairo</code></em>. <em class="parameter"><code>w</code></em> and <em class="parameter"><code>h</code></em> are the requested width an height of the rendered graph, in the current <em class="parameter"><code>cairo</code></em> coordinate space. This function is not suited for multiple rendering of the same graph. gog_renderer_render_to cairo or gog_renderer_update/gog_renderer_get_cairo_surface should be used instead.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>graph</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGraph.html"
+><span class="type">GogGraph</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cairo</code></em> :</span></p></td>
+<td> a cairo context
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>w</code></em> :</span></p></td>
+<td> width
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>h</code></em> :</span></p></td>
+<td> height
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

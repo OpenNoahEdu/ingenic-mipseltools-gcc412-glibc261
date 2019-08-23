@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogAxisLine</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch01.html" title="Objects">
+<link rel="prev" href="goffice-06-gog-axis.html" title="GogAxis">
+<link rel="next" href="goffice-06-gog-grid-line.html" title="GogGridLine">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-gog-axis.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-gog-grid-line.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-gog-axis-line.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-gog-axis-line.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-gog-axis-line"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-gog-axis-line.top_of_page"></a>GogAxisLine</span></h2>
+<p>GogAxisLine — Slave axes</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-gog-axis-line.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+enum                <a class="link" href="goffice-06-gog-axis-line.html#GogAxisPosition" title="enum GogAxisPosition">GogAxisPosition</a>;
+enum                <a class="link" href="goffice-06-gog-axis-line.html#GogAxisTickTypes" title="enum GogAxisTickTypes">GogAxisTickTypes</a>;
+#define             <a class="link" href="goffice-06-gog-axis-line.html#GOG-AXIS-LINE-TYPE:CAPS" title="GOG_AXIS_LINE_TYPE">GOG_AXIS_LINE_TYPE</a>
+#define             <a class="link" href="goffice-06-gog-axis-line.html#GOG-AXIS-LINE:CAPS" title="GOG_AXIS_LINE()">GOG_AXIS_LINE</a>                       (o)
+#define             <a class="link" href="goffice-06-gog-axis-line.html#IS-GOG-AXIS-LINE:CAPS" title="IS_GOG_AXIS_LINE()">IS_GOG_AXIS_LINE</a>                    (o)
+GType               <a class="link" href="goffice-06-gog-axis-line.html#gog-axis-line-get-type" title="gog_axis_line_get_type ()">gog_axis_line_get_type</a>              (void);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-axis-line.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-axis-line.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GogAxisPosition"></a><h3>enum GogAxisPosition</h3>
+<pre class="programlisting">typedef enum {
+	GOG_AXIS_AT_LOW,
+	GOG_AXIS_CROSS,
+	GOG_AXIS_AT_HIGH,
+	GOG_AXIS_AUTO
+} GogAxisPosition;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GogAxisTickTypes"></a><h3>enum GogAxisTickTypes</h3>
+<pre class="programlisting">typedef enum {
+	GOG_AXIS_TICK_NONE,
+	GOG_AXIS_TICK_MAJOR,
+	GOG_AXIS_TICK_MINOR
+} GogAxisTickTypes;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-AXIS-LINE-TYPE:CAPS"></a><h3>GOG_AXIS_LINE_TYPE</h3>
+<pre class="programlisting">#define GOG_AXIS_LINE_TYPE	(gog_axis_line_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-AXIS-LINE:CAPS"></a><h3>GOG_AXIS_LINE()</h3>
+<pre class="programlisting">#define GOG_AXIS_LINE(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GOG_AXIS_LINE_TYPE, GogAxisLine))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-AXIS-LINE:CAPS"></a><h3>IS_GOG_AXIS_LINE()</h3>
+<pre class="programlisting">#define IS_GOG_AXIS_LINE(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GOG_AXIS_LINE_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-axis-line-get-type"></a><h3>gog_axis_line_get_type ()</h3>
+<pre class="programlisting">GType               gog_axis_line_get_type              (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

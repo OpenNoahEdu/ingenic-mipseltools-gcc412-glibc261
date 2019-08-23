@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Part I. Graphs</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="index.html" title="Goffice Reference Manual">
+<link rel="prev" href="index.html" title="Goffice Reference Manual">
+<link rel="next" href="ch01.html" title="Objects">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2"><tr valign="middle">
+<td><a accesskey="p" href="index.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td> </td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="ch01.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="part" lang="en">
+<div class="titlepage"><div><div><h1 class="title">
+<a name="id2640998"></a>Part I. Graphs</h1></div></div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl>
+<dt><span class="chapter"><a href="ch01.html">Objects</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-graph.html">GogGraph</a></span><span class="refpurpose"> — A collection of charts</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-chart.html">GogChart</a></span><span class="refpurpose"> — A set of axes and a collection of plots</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-legend.html">GogLegend</a></span><span class="refpurpose"> — Chart legend</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-grid.html">GogGrid</a></span><span class="refpurpose"> — Chart backplane</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-axis.html">GogAxis</a></span><span class="refpurpose"> — Master axes</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-axis-line.html">GogAxisLine</a></span><span class="refpurpose"> — Slave axes</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-grid-line.html">GogGridLine</a></span><span class="refpurpose"> — Grid lines</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-error-bar.html">GogErrorBar</a></span><span class="refpurpose"> — Error bars</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-label.html">GogLabel</a></span><span class="refpurpose"> — Titles &amp; axis labels</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-series-lines.html">GogSeriesLines</a></span><span class="refpurpose"> — Droplines</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch02.html">Abstract Base Classes</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GogObject.html">GogObject</a></span><span class="refpurpose"> — Base class for all objects of graph model</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GogStyledObject.html">GogStyledObject</a></span><span class="refpurpose"> — Base class for all styled objects of graph model</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GogOutlinedView.html">GogOutlinedView</a></span><span class="refpurpose"> — Base class for all objects displayed in a frame</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-plot.html">GogPlot</a></span><span class="refpurpose"> — Base class for plots</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-series.html">GogSeries</a></span><span class="refpurpose"> — Base class for series</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-trend-line.html">GogTrendLine</a></span><span class="refpurpose"> — Base class for smoothed and regression curves</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GogSmoothedCurve.html">GogSmoothedCurve</a></span><span class="refpurpose"> — Base class for smoothed curves</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GogRegCurve.html">GogRegCurve</a></span><span class="refpurpose"> — Base class for regression curves</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GogView.html">GogView</a></span><span class="refpurpose"> — Base class for object views</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GogDataAllocator.html">GogDataAllocator</a></span><span class="refpurpose"> — A data allocation interface</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GogDataset.html">GogDataset</a></span><span class="refpurpose"> — A data set interface</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch03.html">Utilities</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-renderer.html">GogRenderer</a></span><span class="refpurpose"> — Rendering engine</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-control-foocanvas.html">GogControlFooCanvas</a></span><span class="refpurpose"> — Graph in a foocanvas item</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-guru.html">GogGuru</a></span><span class="refpurpose"> — Graph creation guru and property editor</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-plot-engine.html">GogPlotEngine</a></span><span class="refpurpose"> — Plot and regression curve plugin management</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-style.html">GogStyle</a></span><span class="refpurpose"> — Style of graph objects</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-theme.html">GogTheme</a></span><span class="refpurpose"> — Graph theme management</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="goffice-06-gog-chart-map.html">GogChartMap</a></span><span class="refpurpose"> — 2D data to canvas coordinate conversion</span>
+</dt>
+</dl></dd>
+</dl>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

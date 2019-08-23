@@ -1,0 +1,1013 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-plugin</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch11.html" title="Application">
+<link rel="prev" href="goffice-06-go-doc.html" title="go-doc">
+<link rel="next" href="GOPluginLoader.html" title="GOPluginLoader">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-doc.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch11.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="GOPluginLoader.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-plugin.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-plugin.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-plugin"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-plugin.top_of_page"></a>go-plugin</span></h2>
+<p>go-plugin</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-plugin.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="goffice-06-go-plugin.html#GO-PLUGIN-TYPE:CAPS" title="GO_PLUGIN_TYPE">GO_PLUGIN_TYPE</a>
+#define             <a class="link" href="goffice-06-go-plugin.html#GO-PLUGIN:CAPS" title="GO_PLUGIN()">GO_PLUGIN</a>                           (o)
+#define             <a class="link" href="goffice-06-go-plugin.html#IS-GO-PLUGIN:CAPS" title="IS_GO_PLUGIN()">IS_GO_PLUGIN</a>                        (o)
+GType               <a class="link" href="goffice-06-go-plugin.html#go-plugin-get-type" title="go_plugin_get_type ()">go_plugin_get_type</a>                  (void);
+void                <a class="link" href="goffice-06-go-plugin.html#go-plugin-activate" title="go_plugin_activate ()">go_plugin_activate</a>                  (GOPlugin *plugin,
+                                                         ErrorInfo **ret_error);
+void                <a class="link" href="goffice-06-go-plugin.html#go-plugin-deactivate" title="go_plugin_deactivate ()">go_plugin_deactivate</a>                (GOPlugin *plugin,
+                                                         ErrorInfo **ret_error);
+gboolean            <a class="link" href="goffice-06-go-plugin.html#go-plugin-is-active" title="go_plugin_is_active ()">go_plugin_is_active</a>                 (GOPlugin *plugin);
+gboolean            <a class="link" href="goffice-06-go-plugin.html#go-plugin-can-deactivate" title="go_plugin_can_deactivate ()">go_plugin_can_deactivate</a>            (GOPlugin *plugin);
+void                <a class="link" href="goffice-06-go-plugin.html#go-plugin-load-service" title="go_plugin_load_service ()">go_plugin_load_service</a>              (GOPlugin *plugin,
+                                                         GOPluginService *service,
+                                                         ErrorInfo **ret_error);
+void                <a class="link" href="goffice-06-go-plugin.html#go-plugin-unload-service" title="go_plugin_unload_service ()">go_plugin_unload_service</a>            (GOPlugin *plugin,
+                                                         GOPluginService *service,
+                                                         ErrorInfo **ret_error);
+gboolean            <a class="link" href="goffice-06-go-plugin.html#go-plugin-is-loaded" title="go_plugin_is_loaded ()">go_plugin_is_loaded</a>                 (GOPlugin *plugin);
+void                <a class="link" href="goffice-06-go-plugin.html#go-plugin-use-ref" title="go_plugin_use_ref ()">go_plugin_use_ref</a>                   (GOPlugin *plugin);
+void                <a class="link" href="goffice-06-go-plugin.html#go-plugin-use-unref" title="go_plugin_use_unref ()">go_plugin_use_unref</a>                 (GOPlugin *plugin);
+GTypeModule *       <a class="link" href="goffice-06-go-plugin.html#go-plugin-get-type-module" title="go_plugin_get_type_module ()">go_plugin_get_type_module</a>           (GOPlugin *plugin);
+char const  *       <a class="link" href="goffice-06-go-plugin.html#go-plugin-get-dir-name" title="go_plugin_get_dir_name ()">go_plugin_get_dir_name</a>              (GOPlugin *plugin);
+char const  *       <a class="link" href="goffice-06-go-plugin.html#go-plugin-get-id" title="go_plugin_get_id ()">go_plugin_get_id</a>                    (GOPlugin *plugin);
+char const  *       <a class="link" href="goffice-06-go-plugin.html#go-plugin-get-name" title="go_plugin_get_name ()">go_plugin_get_name</a>                  (GOPlugin *plugin);
+char const  *       <a class="link" href="goffice-06-go-plugin.html#go-plugin-get-description" title="go_plugin_get_description ()">go_plugin_get_description</a>           (GOPlugin *plugin);
+char const  *       <a class="link" href="goffice-06-go-plugin.html#go-plugin-get-textdomain" title="go_plugin_get_textdomain ()">go_plugin_get_textdomain</a>            (GOPlugin *plugin);
+GSList *            <a class="link" href="goffice-06-go-plugin.html#go-plugin-get-services" title="go_plugin_get_services ()">go_plugin_get_services</a>              (GOPlugin *plugin);
+GSList *            <a class="link" href="goffice-06-go-plugin.html#go-plugin-get-dependencies-ids" title="go_plugin_get_dependencies_ids ()">go_plugin_get_dependencies_ids</a>      (GOPlugin *plugin);
+void                <a class="link" href="goffice-06-go-plugin.html#go-plugins-init" title="go_plugins_init ()">go_plugins_init</a>                     (GOCmdContext *context,
+                                                         GSList const *known_states,
+                                                         GSList const *active_plugins,
+                                                         GSList *plugin_dirs,
+                                                         gboolean activate_new_plugins,
+                                                         GType default_loader_type);
+GSList *            <a class="link" href="goffice-06-go-plugin.html#go-plugins-shutdown" title="go_plugins_shutdown ()">go_plugins_shutdown</a>                 (void);
+void                <a class="link" href="goffice-06-go-plugin.html#go-plugins-add" title="go_plugins_add ()">go_plugins_add</a>                      (GOCmdContext *context,
+                                                         GSList const *known_states,
+                                                         GSList const *active_plugins,
+                                                         GSList *plugin_dirs,
+                                                         GType default_loader_type);
+void                <a class="link" href="goffice-06-go-plugin.html#go-plugins-register-loader" title="go_plugins_register_loader ()">go_plugins_register_loader</a>          (const gchar *id_str,
+                                                         GOPluginService *service);
+void                <a class="link" href="goffice-06-go-plugin.html#go-plugins-unregister-loader" title="go_plugins_unregister_loader ()">go_plugins_unregister_loader</a>        (const gchar *id_str);
+GOPlugin *          <a class="link" href="goffice-06-go-plugin.html#go-plugins-get-plugin-by-id" title="go_plugins_get_plugin_by_id ()">go_plugins_get_plugin_by_id</a>         (const gchar *plugin_id);
+GSList *            <a class="link" href="goffice-06-go-plugin.html#go-plugins-get-available-plugins" title="go_plugins_get_available_plugins ()">go_plugins_get_available_plugins</a>    (void);
+GSList *            <a class="link" href="goffice-06-go-plugin.html#go-plugins-get-active-plugins" title="go_plugins_get_active_plugins ()">go_plugins_get_active_plugins</a>       (void);
+void                <a class="link" href="goffice-06-go-plugin.html#go-plugins-rescan" title="go_plugins_rescan ()">go_plugins_rescan</a>                   (ErrorInfo **ret_error,
+                                                         GSList **ret_new_plugins);
+char *              <a class="link" href="goffice-06-go-plugin.html#go-plugins-get-plugin-dir" title="go_plugins_get_plugin_dir ()">go_plugins_get_plugin_dir</a>           (void);
+void                <a class="link" href="goffice-06-go-plugin.html#go-plugin-db-mark-plugin-for-deactivation" title="go_plugin_db_mark_plugin_for_deactivation ()">go_plugin_db_mark_plugin_for_deactivation</a>
+                                                        (GOPlugin *plugin,
+                                                         gboolean mark);
+gboolean            <a class="link" href="goffice-06-go-plugin.html#go-plugin-db-is-plugin-marked-for-deactivation" title="go_plugin_db_is_plugin_marked_for_deactivation ()">go_plugin_db_is_plugin_marked_for_deactivation</a>
+                                                        (GOPlugin *plugin);
+void                <a class="link" href="goffice-06-go-plugin.html#go-plugin-db-activate-plugin-list" title="go_plugin_db_activate_plugin_list ()">go_plugin_db_activate_plugin_list</a>   (GSList *plugins,
+                                                         ErrorInfo **ret_error);
+void                <a class="link" href="goffice-06-go-plugin.html#go-plugin-db-deactivate-plugin-list" title="go_plugin_db_deactivate_plugin_list ()">go_plugin_db_deactivate_plugin_list</a> (GSList *plugins,
+                                                         ErrorInfo **ret_error);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-plugin.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-plugin.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN-TYPE:CAPS"></a><h3>GO_PLUGIN_TYPE</h3>
+<pre class="programlisting">#define GO_PLUGIN_TYPE	(go_plugin_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-PLUGIN:CAPS"></a><h3>GO_PLUGIN()</h3>
+<pre class="programlisting">#define GO_PLUGIN(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GO_PLUGIN_TYPE, GOPlugin))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-PLUGIN:CAPS"></a><h3>IS_GO_PLUGIN()</h3>
+<pre class="programlisting">#define IS_GO_PLUGIN(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GO_PLUGIN_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-get-type"></a><h3>go_plugin_get_type ()</h3>
+<pre class="programlisting">GType               go_plugin_get_type                  (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-activate"></a><h3>go_plugin_activate ()</h3>
+<pre class="programlisting">void                go_plugin_activate                  (GOPlugin *plugin,
+                                                         ErrorInfo **ret_error);</pre>
+<p>
+Activates <em class="parameter"><code>plugin</code></em> together with all its dependencies.
+In case of error the plugin won't be activated and detailed error
+information will be returned using <em class="parameter"><code>ret_error</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret_error</code></em> :</span></p></td>
+<td> Pointer used to report errors
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-deactivate"></a><h3>go_plugin_deactivate ()</h3>
+<pre class="programlisting">void                go_plugin_deactivate                (GOPlugin *plugin,
+                                                         ErrorInfo **ret_error);</pre>
+<p>
+Dectivates <em class="parameter"><code>plugin</code></em>. Its dependencies will NOT be automatically
+deactivated.
+In case of error the plugin won't be deactivated and detailed error
+information will be returned using <em class="parameter"><code>ret_error</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret_error</code></em> :</span></p></td>
+<td> Pointer used to report errors
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-is-active"></a><h3>go_plugin_is_active ()</h3>
+<pre class="programlisting">gboolean            go_plugin_is_active                 (GOPlugin *plugin);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if <em class="parameter"><code>plugin</code></em> is active and FALSE otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-can-deactivate"></a><h3>go_plugin_can_deactivate ()</h3>
+<pre class="programlisting">gboolean            go_plugin_can_deactivate            (GOPlugin *plugin);</pre>
+<p>
+Tells if the plugin can be deactivated using go_plugin_deactivate.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if <em class="parameter"><code>plugin</code></em> can be deactivated and FALSE otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-load-service"></a><h3>go_plugin_load_service ()</h3>
+<pre class="programlisting">void                go_plugin_load_service              (GOPlugin *plugin,
+                                                         GOPluginService *service,
+                                                         ErrorInfo **ret_error);</pre>
+<p>
+Loads base part of the plugin if is not loaded and then loads given
+plugin service (prepares necessary part of the plugin for direct use).
+This function is intended for use by GOPluginService objects.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td> Plugin service
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret_error</code></em> :</span></p></td>
+<td> Pointer used to report errors
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-unload-service"></a><h3>go_plugin_unload_service ()</h3>
+<pre class="programlisting">void                go_plugin_unload_service            (GOPlugin *plugin,
+                                                         GOPluginService *service,
+                                                         ErrorInfo **ret_error);</pre>
+<p>
+...
+This function is intended for use by GOPluginService objects.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td> Plugin service
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret_error</code></em> :</span></p></td>
+<td> Pointer used to report errors
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-is-loaded"></a><h3>go_plugin_is_loaded ()</h3>
+<pre class="programlisting">gboolean            go_plugin_is_loaded                 (GOPlugin *plugin);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if <em class="parameter"><code>plugin</code></em> is loaded and FALSE otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-use-ref"></a><h3>go_plugin_use_ref ()</h3>
+<pre class="programlisting">void                go_plugin_use_ref                   (GOPlugin *plugin);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-use-unref"></a><h3>go_plugin_use_unref ()</h3>
+<pre class="programlisting">void                go_plugin_use_unref                 (GOPlugin *plugin);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-get-type-module"></a><h3>go_plugin_get_type_module ()</h3>
+<pre class="programlisting">GTypeModule *       go_plugin_get_type_module           (GOPlugin *plugin);</pre>
+<p>
+Return the GTypeModule associated with the plugin creating it if necessary.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-get-dir-name"></a><h3>go_plugin_get_dir_name ()</h3>
+<pre class="programlisting">char const  *       go_plugin_get_dir_name              (GOPlugin *plugin);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the name of the directory in which <em class="parameter"><code>plugin</code></em> is located.
+	Returned string is != NULL and stays valid during <em class="parameter"><code>plugin</code></em>'s lifetime.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-get-id"></a><h3>go_plugin_get_id ()</h3>
+<pre class="programlisting">char const  *       go_plugin_get_id                    (GOPlugin *plugin);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the ID of <em class="parameter"><code>plugin</code></em> (unique string used for idenfification of
+	plugin).  Returned string is != NULL and stays valid during <em class="parameter"><code>plugin</code></em>'s
+	lifetime.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-get-name"></a><h3>go_plugin_get_name ()</h3>
+<pre class="programlisting">char const  *       go_plugin_get_name                  (GOPlugin *plugin);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> textual name of <em class="parameter"><code>plugin</code></em>. If the real name is not available
+	for some reason, automatically generated string will be returned.
+	Returned string is != NULL and stays valid during <em class="parameter"><code>plugin</code></em>'s lifetime.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-get-description"></a><h3>go_plugin_get_description ()</h3>
+<pre class="programlisting">char const  *       go_plugin_get_description           (GOPlugin *plugin);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> textual description of <em class="parameter"><code>plugin</code></em> or NULL if description is not
+	available.  Returned string stays valid during <em class="parameter"><code>plugin</code></em>'s lifetime.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-get-textdomain"></a><h3>go_plugin_get_textdomain ()</h3>
+<pre class="programlisting">char const  *       go_plugin_get_textdomain            (GOPlugin *plugin);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> plugin's textdomain for use with textdomain(3) and d*gettext(3)
+	functions.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-get-services"></a><h3>go_plugin_get_services ()</h3>
+<pre class="programlisting">GSList *            go_plugin_get_services              (GOPlugin *plugin);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A list of services.  The list must not be freed or changed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-get-dependencies-ids"></a><h3>go_plugin_get_dependencies_ids ()</h3>
+<pre class="programlisting">GSList *            go_plugin_get_dependencies_ids      (GOPlugin *plugin);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td> <span class="type">GOPlugin</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the list of identifiers of plugins that <em class="parameter"><code>plugin</code></em> depends on.
+	All these plugins will be automatically activated before activating the
+	<em class="parameter"><code>plugin</code></em> itself.  The caller must free the returned list together with
+	the strings it points to (use go_slist_free_custom (list, g_free) to do
+	this).
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugins-init"></a><h3>go_plugins_init ()</h3>
+<pre class="programlisting">void                go_plugins_init                     (GOCmdContext *context,
+                                                         GSList const *known_states,
+                                                         GSList const *active_plugins,
+                                                         GSList *plugin_dirs,
+                                                         gboolean activate_new_plugins,
+                                                         GType default_loader_type);</pre>
+<p>
+Initializes the plugin subsystem. Don't call this function more than
+once.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td> <span class="type">GOCmdContext</span> used to report errors
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>known_states</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>active_plugins</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin_dirs</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>activate_new_plugins</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>default_loader_type</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugins-shutdown"></a><h3>go_plugins_shutdown ()</h3>
+<pre class="programlisting">GSList *            go_plugins_shutdown                 (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugins-add"></a><h3>go_plugins_add ()</h3>
+<pre class="programlisting">void                go_plugins_add                      (GOCmdContext *context,
+                                                         GSList const *known_states,
+                                                         GSList const *active_plugins,
+                                                         GSList *plugin_dirs,
+                                                         GType default_loader_type);</pre>
+<p>
+Adds new plugins to currently used plugins.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td> <span class="type">GOCmdContext</span> used to report errors
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>known_states</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>active_plugins</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin_dirs</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>default_loader_type</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugins-register-loader"></a><h3>go_plugins_register_loader ()</h3>
+<pre class="programlisting">void                go_plugins_register_loader          (const gchar *id_str,
+                                                         GOPluginService *service);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id_str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugins-unregister-loader"></a><h3>go_plugins_unregister_loader ()</h3>
+<pre class="programlisting">void                go_plugins_unregister_loader        (const gchar *id_str);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>id_str</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugins-get-plugin-by-id"></a><h3>go_plugins_get_plugin_by_id ()</h3>
+<pre class="programlisting">GOPlugin *          go_plugins_get_plugin_by_id         (const gchar *plugin_id);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin_id</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugins-get-available-plugins"></a><h3>go_plugins_get_available_plugins ()</h3>
+<pre class="programlisting">GSList *            go_plugins_get_available_plugins    (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugins-get-active-plugins"></a><h3>go_plugins_get_active_plugins ()</h3>
+<pre class="programlisting">GSList *            go_plugins_get_active_plugins       (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugins-rescan"></a><h3>go_plugins_rescan ()</h3>
+<pre class="programlisting">void                go_plugins_rescan                   (ErrorInfo **ret_error,
+                                                         GSList **ret_new_plugins);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret_error</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret_new_plugins</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugins-get-plugin-dir"></a><h3>go_plugins_get_plugin_dir ()</h3>
+<pre class="programlisting">char *              go_plugins_get_plugin_dir           (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-db-mark-plugin-for-deactivation"></a><h3>go_plugin_db_mark_plugin_for_deactivation ()</h3>
+<pre class="programlisting">void                go_plugin_db_mark_plugin_for_deactivation
+                                                        (GOPlugin *plugin,
+                                                         gboolean mark);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mark</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-db-is-plugin-marked-for-deactivation"></a><h3>go_plugin_db_is_plugin_marked_for_deactivation ()</h3>
+<pre class="programlisting">gboolean            go_plugin_db_is_plugin_marked_for_deactivation
+                                                        (GOPlugin *plugin);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-db-activate-plugin-list"></a><h3>go_plugin_db_activate_plugin_list ()</h3>
+<pre class="programlisting">void                go_plugin_db_activate_plugin_list   (GSList *plugins,
+                                                         ErrorInfo **ret_error);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugins</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret_error</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-plugin-db-deactivate-plugin-list"></a><h3>go_plugin_db_deactivate_plugin_list ()</h3>
+<pre class="programlisting">void                go_plugin_db_deactivate_plugin_list (GSList *plugins,
+                                                         ErrorInfo **ret_error);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugins</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret_error</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

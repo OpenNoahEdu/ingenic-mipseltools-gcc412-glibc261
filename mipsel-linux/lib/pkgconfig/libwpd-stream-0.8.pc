@@ -1,0 +1,11 @@
+prefix=/opt/mipseltools/mipsel-linux
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+                                                                       
+Name: libwpd-stream-0.8
+Description: Input stream implementations for libwpd, a library for reading and writing Corel WordPerfect(tm) documents
+Version: 0.8.14
+Requires: glib-2.0 libgsf-1 libwpd-0.8
+Libs: -L${libdir} -lwpd-stream-0.8
+Cflags: -I${includedir}/libwpd-0.8

@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>GsfClipData</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="GSF Reference Manual">
+<link rel="up" href="parsers.html" title="Stream Parsers">
+<link rel="prev" href="gsf-blobs.html" title="GsfBlob">
+<link rel="next" href="misc.html" title="Miscellaneous">
+<meta name="generator" content="GTK-Doc V1.9 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="intro.html" title="Part&#160;I.&#160;GSF: Introduction">
+<link rel="part" href="history.html" title="Part&#160;II.&#160;GSF: History">
+<link rel="part" href="dependencies.html" title="Part&#160;III.&#160;GSF: Dependencies">
+<link rel="part" href="gsf-users.html" title="Part&#160;IV.&#160;Projects using GSF">
+<link rel="part" href="api.html" title="Part&#160;V.&#160;API Reference">
+<link rel="chapter" href="io.html" title="Basic Input/Output">
+<link rel="chapter" href="sources.html" title="Stream Sources">
+<link rel="chapter" href="parsers.html" title="Stream Parsers">
+<link rel="chapter" href="misc.html" title="Miscellaneous">
+<link rel="index" href="gsf-index.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gsf-blobs.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="parsers.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GSF Reference Manual</th>
+<td><a accesskey="n" href="misc.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2630522" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2630742" class="shortcut">Description</a>
+                  &#160;|&#160;
+                  <a href="#id2630718" class="shortcut">Object Hierarchy</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="GsfClipData"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2630522"></a><span class="refentrytitle">GsfClipData</span>
+</h2>
+<p>GsfClipData</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<pre class="synopsis">
+
+
+
+enum                <a class="link" href="GsfClipData.html#GsfClipFormat">GsfClipFormat</a>;
+enum                <a class="link" href="GsfClipData.html#GsfClipFormatWindows">GsfClipFormatWindows</a>;
+                    <a class="link" href="GsfClipData.html#GsfClipData-struct">GsfClipData</a>;
+                    <a class="link" href="GsfClipData.html#GsfClipDataClass">GsfClipDataClass</a>;
+<a class="link" href="GsfClipData.html" title="GsfClipData">GsfClipData</a>*        <a class="link" href="GsfClipData.html#gsf-clip-data-new">gsf_clip_data_new</a>                   (<a class="link" href="GsfClipData.html#GsfClipFormat">GsfClipFormat</a> format,
+                                                         <a class="link" href="gsf-blobs.html#GsfBlob">GsfBlob</a> *data_blob);
+<a class="link" href="GsfClipData.html#GsfClipFormat">GsfClipFormat</a>       <a class="link" href="GsfClipData.html#gsf-clip-data-get-format">gsf_clip_data_get_format</a>            (<a class="link" href="GsfClipData.html" title="GsfClipData">GsfClipData</a> *clip_data);
+<a class="link" href="gsf-blobs.html#GsfBlob">GsfBlob</a>*            <a class="link" href="GsfClipData.html#gsf-clip-data-get-data-blob">gsf_clip_data_get_data_blob</a>         (<a class="link" href="GsfClipData.html" title="GsfClipData">GsfClipData</a> *clip_data);
+<a class="link" href="GsfClipData.html#GsfClipFormatWindows">GsfClipFormatWindows</a> <a class="link" href="GsfClipData.html#gsf-clip-data-get-windows-clipboard-format">gsf_clip_data_get_windows_clipboard_format</a>
+                                                        (<a class="link" href="GsfClipData.html" title="GsfClipData">GsfClipData</a> *clip_data,
+                                                         GError **error);
+gconstpointer       <a class="link" href="GsfClipData.html#gsf-clip-data-peek-real-data">gsf_clip_data_peek_real_data</a>        (<a class="link" href="GsfClipData.html" title="GsfClipData">GsfClipData</a> *clip_data,
+                                                         gsize *ret_size,
+                                                         GError **error);
+
+
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2630718"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+
+  GObject
+   +----GsfClipData
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2630742"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2630756"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2630767"></a><h3>
+<a name="GsfClipFormat"></a>enum GsfClipFormat</h3>
+<a class="indexterm" name="id2630780"></a><pre class="programlisting">typedef enum {
+	GSF_CLIP_FORMAT_WINDOWS_CLIPBOARD = -1,
+	GSF_CLIP_FORMAT_MACINTOSH_CLIPBOARD = -2,
+	GSF_CLIP_FORMAT_GUID = -3,
+	GSF_CLIP_FORMAT_NO_DATA = 0,
+	GSF_CLIP_FORMAT_CLIPBOARD_FORMAT_NAME = 1, /* in the file it's actually any positive integer */
+	GSF_CLIP_FORMAT_UNKNOWN /* this is our own value for unknown types or invalid data */
+} GsfClipFormat;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2630800"></a><h3>
+<a name="GsfClipFormatWindows"></a>enum GsfClipFormatWindows</h3>
+<a class="indexterm" name="id2630813"></a><pre class="programlisting">typedef enum {
+	GSF_CLIP_FORMAT_WINDOWS_ERROR = -1,		/* our own value */
+	GSF_CLIP_FORMAT_WINDOWS_UNKNOWN = -2,		/* our own value */
+	GSF_CLIP_FORMAT_WINDOWS_METAFILE = 3,		/* CF_METAFILEPICT */
+	GSF_CLIP_FORMAT_WINDOWS_DIB = 8,		/* CF_DIB */
+	GSF_CLIP_FORMAT_WINDOWS_ENHANCED_METAFILE = 14	/* CF_ENHMETAFILE */
+} GsfClipFormatWindows;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2630834"></a><h3>
+<a name="GsfClipData-struct"></a>GsfClipData</h3>
+<a class="indexterm" name="id2630847"></a><pre class="programlisting">typedef struct _GsfClipData GsfClipData;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2630862"></a><h3>
+<a name="GsfClipDataClass"></a>GsfClipDataClass</h3>
+<a class="indexterm" name="id2630874"></a><pre class="programlisting">typedef struct {
+	GObjectClass parent_class;
+} GsfClipDataClass;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2630890"></a><h3>
+<a name="gsf-clip-data-new"></a>gsf_clip_data_new ()</h3>
+<a class="indexterm" name="id2630904"></a><pre class="programlisting"><a class="link" href="GsfClipData.html" title="GsfClipData">GsfClipData</a>*        gsf_clip_data_new                   (<a class="link" href="GsfClipData.html#GsfClipFormat">GsfClipFormat</a> format,
+                                                         <a class="link" href="gsf-blobs.html#GsfBlob">GsfBlob</a> *data_blob);</pre>
+<p>
+Creates a new <a class="link" href="GsfClipData.html" title="GsfClipData"><span class="type">GsfClipData</span></a> object.  This function acquires a reference to the
+<em class="parameter"><code>data_blob</code></em>, so you should unref the blob on your own if you no longer need it
+directly.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>format</code></em>&#160;:</span></p></td>
+<td> Format for the data inside the <em class="parameter"><code>data_blob</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data_blob</code></em>&#160;:</span></p></td>
+<td> Object which holds the binary contents for the <a class="link" href="GsfClipData.html" title="GsfClipData"><span class="type">GsfClipData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> A newly-created <a class="link" href="GsfClipData.html" title="GsfClipData"><span class="type">GsfClipData</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2631024"></a><h3>
+<a name="gsf-clip-data-get-format"></a>gsf_clip_data_get_format ()</h3>
+<a class="indexterm" name="id2631037"></a><pre class="programlisting"><a class="link" href="GsfClipData.html#GsfClipFormat">GsfClipFormat</a>       gsf_clip_data_get_format            (<a class="link" href="GsfClipData.html" title="GsfClipData">GsfClipData</a> *clip_data);</pre>
+<p>
+Queries the clipboard data format of a <a class="link" href="GsfClipData.html" title="GsfClipData"><span class="type">GsfClipData</span></a>.  The format refers to the data
+blob inside the <em class="parameter"><code>clip_data</code></em>; use <a class="link" href="GsfClipData.html#gsf-clip-data-get-data-blob"><code class="function">gsf_clip_data_get_data_blob()</code></a> to get that data blob.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>clip_data</code></em>&#160;:</span></p></td>
+<td> A <a class="link" href="GsfClipData.html" title="GsfClipData"><span class="type">GsfClipData</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> The format in which the <a class="link" href="GsfClipData.html" title="GsfClipData"><span class="type">GsfClipData</span></a>'s data blob is stored.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2631141"></a><h3>
+<a name="gsf-clip-data-get-data-blob"></a>gsf_clip_data_get_data_blob ()</h3>
+<a class="indexterm" name="id2631155"></a><pre class="programlisting"><a class="link" href="gsf-blobs.html#GsfBlob">GsfBlob</a>*            gsf_clip_data_get_data_blob         (<a class="link" href="GsfClipData.html" title="GsfClipData">GsfClipData</a> *clip_data);</pre>
+<p>
+Queries the data blob that actually stores a <a class="link" href="GsfClipData.html" title="GsfClipData"><span class="type">GsfClipData</span></a>'s binary data.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>clip_data</code></em>&#160;:</span></p></td>
+<td> A <a class="link" href="GsfClipData.html" title="GsfClipData"><span class="type">GsfClipData</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> A new reference to the <a class="link" href="gsf-blobs.html#GsfBlob"><span class="type">GsfBlob</span></a> that stores this <em class="parameter"><code>clip_data</code></em>'s
+binary data.  You must use <code class="function">g_object_unref()</code> to dispose of that data blob when
+you are done with it.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2631259"></a><h3>
+<a name="gsf-clip-data-get-windows-clipboard-format"></a>gsf_clip_data_get_windows_clipboard_format ()</h3>
+<a class="indexterm" name="id2631274"></a><pre class="programlisting"><a class="link" href="GsfClipData.html#GsfClipFormatWindows">GsfClipFormatWindows</a> gsf_clip_data_get_windows_clipboard_format
+                                                        (<a class="link" href="GsfClipData.html" title="GsfClipData">GsfClipData</a> *clip_data,
+                                                         GError **error);</pre>
+<p>
+Queries the Windows clipboard data format for a <a class="link" href="GsfClipData.html" title="GsfClipData"><span class="type">GsfClipData</span></a>.  The <em class="parameter"><code>clip_data</code></em> must
+have been created with <span class="type">GSF_CLIP_FORMAT_WINDOWS_CLIPBOARD</span>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>clip_data</code></em>&#160;:</span></p></td>
+<td> A <a class="link" href="GsfClipData.html" title="GsfClipData"><span class="type">GsfClipData</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em>&#160;:</span></p></td>
+<td> Location to store error, or <code class="literal">NULL</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> A <a class="link" href="GsfClipData.html#GsfClipFormatWindows"><span class="type">GsfClipFormatWindows</span></a> value.
+
+Possible errors: <span class="type">GSF_ERROR_INVALID_DATA</span> if the data blob in the <em class="parameter"><code>clip_data</code></em> is
+smaller than it should be; in this case GSF_CLIP_FORMAT_WINDOWS_ERROR will be returned.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2631428"></a><h3>
+<a name="gsf-clip-data-peek-real-data"></a>gsf_clip_data_peek_real_data ()</h3>
+<a class="indexterm" name="id2631442"></a><pre class="programlisting">gconstpointer       gsf_clip_data_peek_real_data        (<a class="link" href="GsfClipData.html" title="GsfClipData">GsfClipData</a> *clip_data,
+                                                         gsize *ret_size,
+                                                         GError **error);</pre>
+<p>
+Queries a pointer directly to the clipboard data of a <a class="link" href="GsfClipData.html" title="GsfClipData"><span class="type">GsfClipData</span></a>.  The
+resulting pointer is not necessarily the same data pointer that was passed to
+<a class="link" href="gsf-blobs.html#gsf-blob-new"><code class="function">gsf_blob_new()</code></a> prior to creating the <em class="parameter"><code>clip_data</code></em>.  For example, if the data is
+in <span class="type">GSF_CLIP_FORMAT_WINDOWS_CLIPBOARD</span> format, then it will have extra header
+bytes in front of the actual metafile data.  This function will skip over
+those header bytes if necessary and return a pointer to the "real" data.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>clip_data</code></em>&#160;:</span></p></td>
+<td> A <a class="link" href="GsfClipData.html" title="GsfClipData"><span class="type">GsfClipData</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret_size</code></em>&#160;:</span></p></td>
+<td> Location to return the size of the returned data buffer.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em>&#160;:</span></p></td>
+<td> Location to store error, or <code class="literal">NULL</code>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> Pointer to the real clipboard data.  The size in bytes of this
+buffer is returned in the <em class="parameter"><code>ret_size</code></em> argument.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2631613"></a><div class="refsect2" lang="en"><a name="id2631614"></a></div>
+<hr>
+<div class="refsect2" lang="en"><a name="id2631615"></a></div>
+</div>
+</div>
+</body>
+</html>

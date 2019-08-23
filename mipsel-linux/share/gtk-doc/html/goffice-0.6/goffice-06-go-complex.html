@@ -1,0 +1,1490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GoComplex</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch09.html" title="Mathematical functions">
+<link rel="prev" href="goffice-06-go-math.html" title="go-math">
+<link rel="next" href="goffice-06-go-fft.html" title="GoFft">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-math.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch09.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-go-fft.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-complex.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-complex.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-complex"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-complex.top_of_page"></a>GoComplex</span></h2>
+<p>GoComplex</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-complex.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a>;
+                    <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a>;
+char *              <a class="link" href="goffice-06-go-complex.html#go-complex-to-string" title="go_complex_to_string ()">go_complex_to_string</a>                (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src,
+                                                         char const *reformat,
+                                                         char const *imformat,
+                                                         char imunit);
+int                 <a class="link" href="goffice-06-go-complex.html#go-complex-from-string" title="go_complex_from_string ()">go_complex_from_string</a>              (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         char const *src,
+                                                         char *imunit);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-to-polar" title="go_complex_to_polar ()">go_complex_to_polar</a>                 (double *mod,
+                                                         double *angle,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-from-polar" title="go_complex_from_polar ()">go_complex_from_polar</a>               (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         double mod,
+                                                         double angle);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-mul" title="go_complex_mul ()">go_complex_mul</a>                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *b);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-div" title="go_complex_div ()">go_complex_div</a>                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *b);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-pow" title="go_complex_pow ()">go_complex_pow</a>                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *b);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-sqrt" title="go_complex_sqrt ()">go_complex_sqrt</a>                     (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-init" title="go_complex_init ()">go_complex_init</a>                     (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         double re,
+                                                         double im);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-real" title="go_complex_real ()">go_complex_real</a>                     (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         double re);
+int                 <a class="link" href="goffice-06-go-complex.html#go-complex-real-p" title="go_complex_real_p ()">go_complex_real_p</a>                   (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);
+int                 <a class="link" href="goffice-06-go-complex.html#go-complex-zero-p" title="go_complex_zero_p ()">go_complex_zero_p</a>                   (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);
+double              <a class="link" href="goffice-06-go-complex.html#go-complex-mod" title="go_complex_mod ()">go_complex_mod</a>                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);
+double              <a class="link" href="goffice-06-go-complex.html#go-complex-angle" title="go_complex_angle ()">go_complex_angle</a>                    (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-conj" title="go_complex_conj ()">go_complex_conj</a>                     (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-scale-real" title="go_complex_scale_real ()">go_complex_scale_real</a>               (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         double f);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-add" title="go_complex_add ()">go_complex_add</a>                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *b);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-sub" title="go_complex_sub ()">go_complex_sub</a>                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *b);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-exp" title="go_complex_exp ()">go_complex_exp</a>                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-ln" title="go_complex_ln ()">go_complex_ln</a>                       (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-sin" title="go_complex_sin ()">go_complex_sin</a>                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-cos" title="go_complex_cos ()">go_complex_cos</a>                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-tan" title="go_complex_tan ()">go_complex_tan</a>                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);
+char *              <a class="link" href="goffice-06-go-complex.html#go-complex-to-stringl" title="go_complex_to_stringl ()">go_complex_to_stringl</a>               (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src,
+                                                         char const *reformat,
+                                                         char const *imformat,
+                                                         char imunit);
+int                 <a class="link" href="goffice-06-go-complex.html#go-complex-from-stringl" title="go_complex_from_stringl ()">go_complex_from_stringl</a>             (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         char const *src,
+                                                         char *imunit);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-to-polarl" title="go_complex_to_polarl ()">go_complex_to_polarl</a>                (long double *mod,
+                                                         long double *angle,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-from-polarl" title="go_complex_from_polarl ()">go_complex_from_polarl</a>              (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         long double mod,
+                                                         long double angle);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-mull" title="go_complex_mull ()">go_complex_mull</a>                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *b);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-divl" title="go_complex_divl ()">go_complex_divl</a>                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *b);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-powl" title="go_complex_powl ()">go_complex_powl</a>                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *b);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-sqrtl" title="go_complex_sqrtl ()">go_complex_sqrtl</a>                    (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-initl" title="go_complex_initl ()">go_complex_initl</a>                    (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         long double re,
+                                                         long double im);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-reall" title="go_complex_reall ()">go_complex_reall</a>                    (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         long double re);
+int                 <a class="link" href="goffice-06-go-complex.html#go-complex-real-pl" title="go_complex_real_pl ()">go_complex_real_pl</a>                  (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);
+int                 <a class="link" href="goffice-06-go-complex.html#go-complex-zero-pl" title="go_complex_zero_pl ()">go_complex_zero_pl</a>                  (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-conjl" title="go_complex_conjl ()">go_complex_conjl</a>                    (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-scale-reall" title="go_complex_scale_reall ()">go_complex_scale_reall</a>              (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         long double f);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-addl" title="go_complex_addl ()">go_complex_addl</a>                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *b);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-subl" title="go_complex_subl ()">go_complex_subl</a>                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *b);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-expl" title="go_complex_expl ()">go_complex_expl</a>                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-lnl" title="go_complex_lnl ()">go_complex_lnl</a>                      (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-sinl" title="go_complex_sinl ()">go_complex_sinl</a>                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-cosl" title="go_complex_cosl ()">go_complex_cosl</a>                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);
+void                <a class="link" href="goffice-06-go-complex.html#go-complex-tanl" title="go_complex_tanl ()">go_complex_tanl</a>                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-complex.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-complex.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="go-complex"></a><h3>go_complex</h3>
+<pre class="programlisting">typedef struct {
+	double re, im;
+} go_complex;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complexl"></a><h3>go_complexl</h3>
+<pre class="programlisting">typedef struct {
+	long double re, im;
+} go_complexl;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-to-string"></a><h3>go_complex_to_string ()</h3>
+<pre class="programlisting">char *              go_complex_to_string                (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src,
+                                                         char const *reformat,
+                                                         char const *imformat,
+                                                         char imunit);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>reformat</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>imformat</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>imunit</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-from-string"></a><h3>go_complex_from_string ()</h3>
+<pre class="programlisting">int                 go_complex_from_string              (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         char const *src,
+                                                         char *imunit);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>imunit</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-to-polar"></a><h3>go_complex_to_polar ()</h3>
+<pre class="programlisting">void                go_complex_to_polar                 (double *mod,
+                                                         double *angle,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mod</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>angle</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-from-polar"></a><h3>go_complex_from_polar ()</h3>
+<pre class="programlisting">void                go_complex_from_polar               (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         double mod,
+                                                         double angle);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mod</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>angle</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-mul"></a><h3>go_complex_mul ()</h3>
+<pre class="programlisting">void                go_complex_mul                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *b);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-div"></a><h3>go_complex_div ()</h3>
+<pre class="programlisting">void                go_complex_div                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *b);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-pow"></a><h3>go_complex_pow ()</h3>
+<pre class="programlisting">void                go_complex_pow                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *b);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-sqrt"></a><h3>go_complex_sqrt ()</h3>
+<pre class="programlisting">void                go_complex_sqrt                     (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-init"></a><h3>go_complex_init ()</h3>
+<pre class="programlisting">void                go_complex_init                     (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         double re,
+                                                         double im);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>re</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>im</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-real"></a><h3>go_complex_real ()</h3>
+<pre class="programlisting">void                go_complex_real                     (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         double re);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>re</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-real-p"></a><h3>go_complex_real_p ()</h3>
+<pre class="programlisting">int                 go_complex_real_p                   (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-zero-p"></a><h3>go_complex_zero_p ()</h3>
+<pre class="programlisting">int                 go_complex_zero_p                   (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-mod"></a><h3>go_complex_mod ()</h3>
+<pre class="programlisting">double              go_complex_mod                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-angle"></a><h3>go_complex_angle ()</h3>
+<pre class="programlisting">double              go_complex_angle                    (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-conj"></a><h3>go_complex_conj ()</h3>
+<pre class="programlisting">void                go_complex_conj                     (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-scale-real"></a><h3>go_complex_scale_real ()</h3>
+<pre class="programlisting">void                go_complex_scale_real               (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         double f);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>f</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-add"></a><h3>go_complex_add ()</h3>
+<pre class="programlisting">void                go_complex_add                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *b);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-sub"></a><h3>go_complex_sub ()</h3>
+<pre class="programlisting">void                go_complex_sub                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *b);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-exp"></a><h3>go_complex_exp ()</h3>
+<pre class="programlisting">void                go_complex_exp                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-ln"></a><h3>go_complex_ln ()</h3>
+<pre class="programlisting">void                go_complex_ln                       (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-sin"></a><h3>go_complex_sin ()</h3>
+<pre class="programlisting">void                go_complex_sin                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-cos"></a><h3>go_complex_cos ()</h3>
+<pre class="programlisting">void                go_complex_cos                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-tan"></a><h3>go_complex_tan ()</h3>
+<pre class="programlisting">void                go_complex_tan                      (<a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complex" title="go_complex">go_complex</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-to-stringl"></a><h3>go_complex_to_stringl ()</h3>
+<pre class="programlisting">char *              go_complex_to_stringl               (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src,
+                                                         char const *reformat,
+                                                         char const *imformat,
+                                                         char imunit);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>reformat</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>imformat</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>imunit</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-from-stringl"></a><h3>go_complex_from_stringl ()</h3>
+<pre class="programlisting">int                 go_complex_from_stringl             (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         char const *src,
+                                                         char *imunit);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>imunit</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-to-polarl"></a><h3>go_complex_to_polarl ()</h3>
+<pre class="programlisting">void                go_complex_to_polarl                (long double *mod,
+                                                         long double *angle,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mod</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>angle</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-from-polarl"></a><h3>go_complex_from_polarl ()</h3>
+<pre class="programlisting">void                go_complex_from_polarl              (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         long double mod,
+                                                         long double angle);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mod</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>angle</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-mull"></a><h3>go_complex_mull ()</h3>
+<pre class="programlisting">void                go_complex_mull                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *b);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-divl"></a><h3>go_complex_divl ()</h3>
+<pre class="programlisting">void                go_complex_divl                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *b);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-powl"></a><h3>go_complex_powl ()</h3>
+<pre class="programlisting">void                go_complex_powl                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *b);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-sqrtl"></a><h3>go_complex_sqrtl ()</h3>
+<pre class="programlisting">void                go_complex_sqrtl                    (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-initl"></a><h3>go_complex_initl ()</h3>
+<pre class="programlisting">void                go_complex_initl                    (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         long double re,
+                                                         long double im);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>re</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>im</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-reall"></a><h3>go_complex_reall ()</h3>
+<pre class="programlisting">void                go_complex_reall                    (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         long double re);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>re</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-real-pl"></a><h3>go_complex_real_pl ()</h3>
+<pre class="programlisting">int                 go_complex_real_pl                  (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-zero-pl"></a><h3>go_complex_zero_pl ()</h3>
+<pre class="programlisting">int                 go_complex_zero_pl                  (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-conjl"></a><h3>go_complex_conjl ()</h3>
+<pre class="programlisting">void                go_complex_conjl                    (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-scale-reall"></a><h3>go_complex_scale_reall ()</h3>
+<pre class="programlisting">void                go_complex_scale_reall              (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         long double f);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>f</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-addl"></a><h3>go_complex_addl ()</h3>
+<pre class="programlisting">void                go_complex_addl                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *b);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-subl"></a><h3>go_complex_subl ()</h3>
+<pre class="programlisting">void                go_complex_subl                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *a,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *b);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-expl"></a><h3>go_complex_expl ()</h3>
+<pre class="programlisting">void                go_complex_expl                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-lnl"></a><h3>go_complex_lnl ()</h3>
+<pre class="programlisting">void                go_complex_lnl                      (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-sinl"></a><h3>go_complex_sinl ()</h3>
+<pre class="programlisting">void                go_complex_sinl                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-cosl"></a><h3>go_complex_cosl ()</h3>
+<pre class="programlisting">void                go_complex_cosl                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-complex-tanl"></a><h3>go_complex_tanl ()</h3>
+<pre class="programlisting">void                go_complex_tanl                     (<a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> *dst,
+                                                         <a class="link" href="goffice-06-go-complex.html#go-complexl" title="go_complexl">go_complexl</a> const *src);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

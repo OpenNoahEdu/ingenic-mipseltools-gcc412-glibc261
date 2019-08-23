@@ -1,0 +1,70 @@
+.TH WATCHGNUPG 1 2008-12-03 "GnuPG 2.0.9" "GNU Privacy Guard"
+.SH NAME
+.B watchgnupg
+\- Read and print logs from a socket
+.SH SYNOPSIS
+.B  watchgnupg
+.RB [ \-\-force ]
+.RB [ \-\-verbose ]
+.I socketname
+
+.SH DESCRIPTION
+Most of the main utilities are able to write there log files to a
+Unix Domain socket if configured that way.  \fBwatchgnupg\fR is a simple
+listener for such a socket.  It ameliorates the output with a time
+stamp and makes sure that long lines are not interspersed with log
+output from other utilities.
+
+
+\fBwatchgnupg\fR is commonly invoked as
+
+.RS 2
+.nf
+watchgnupg --force ~/.gnupg/S.log
+
+.SH OPTIONS
+
+\fBwatchgnupg\fR understands these options:
+
+
+.TP
+.B  --force 
+Delete an already existing socket file.
+
+.TP
+.B  --verbose
+Enable extra informational output.
+
+.TP
+.B  --version
+print version of the program and exit
+
+.TP
+.B  --help
+Display a brief help page and exit
+
+
+.SH SEE ALSO
+\fBgpg\fR(1), 
+\fBgpgsm\fR(1), 
+\fBgpg-agent\fR(1), 
+\fBscdaemon\fR(1)
+
+The full documentation for this tool is maintained as a Texinfo manual.
+If GnuPG and the info program are properly installed at your site, the
+command
+
+.RS 2
+.nf
+info gnupg
+.fi
+.RE
+
+should give you access to the complete manual including a menu structure
+and an index.
+
+
+
+
+
+

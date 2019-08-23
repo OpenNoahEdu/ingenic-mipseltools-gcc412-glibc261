@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GoSelector</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch04.html" title="Base widgets">
+<link rel="prev" href="GOPalette.html" title="GoPalette">
+<link rel="next" href="ch05.html" title="Selectors">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="GOPalette.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch04.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="ch05.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GOSelector.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#GOSelector.description" class="shortcut">Description</a>
+                 | 
+                <a href="#GOSelector.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                 | 
+                <a href="#GOSelector.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                 | 
+                <a href="#GOSelector.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="GOSelector"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GOSelector.top_of_page"></a>GoSelector</span></h2>
+<p>GoSelector — Generic property editor with a dropdown palette</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GOSelector.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="GOSelector.html#GOSelectorPrivate" title="GOSelectorPrivate">GOSelectorPrivate</a>;
+                    <a class="link" href="GOSelector.html#GOSelector-struct" title="GOSelector">GOSelector</a>;
+GtkWidget *         <a class="link" href="GOSelector.html#go-selector-new" title="go_selector_new ()">go_selector_new</a>                     (<a class="link" href="GOPalette.html" title="GoPalette">GOPalette</a> *palette);
+int                 <a class="link" href="GOSelector.html#go-selector-get-active" title="go_selector_get_active ()">go_selector_get_active</a>              (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector,
+                                                         gboolean *is_auto);
+gboolean            <a class="link" href="GOSelector.html#go-selector-set-active" title="go_selector_set_active ()">go_selector_set_active</a>              (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector,
+                                                         int index);
+void                <a class="link" href="GOSelector.html#go-selector-update-swatch" title="go_selector_update_swatch ()">go_selector_update_swatch</a>           (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector);
+void                <a class="link" href="GOSelector.html#go-selector-activate" title="go_selector_activate ()">go_selector_activate</a>                (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector);
+gpointer            <a class="link" href="GOSelector.html#go-selector-get-user-data" title="go_selector_get_user_data ()">go_selector_get_user_data</a>           (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector);
+void                (<a class="link" href="GOSelector.html#GOSelectorDndDataReceived" title="GOSelectorDndDataReceived ()">*GOSelectorDndDataReceived</a>)        (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector,
+                                                         gpointer data);
+gpointer            (<a class="link" href="GOSelector.html#GOSelectorDndDataGet" title="GOSelectorDndDataGet ()">*GOSelectorDndDataGet</a>)             (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector);
+void                (<a class="link" href="GOSelector.html#GOSelectorDndFillIcon" title="GOSelectorDndFillIcon ()">*GOSelectorDndFillIcon</a>)            (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector,
+                                                         <a class="link" href="goffice-06-gog-renderer.html#GdkPixbuf">GdkPixbuf</a> *pixbuf);
+void                <a class="link" href="GOSelector.html#go-selector-setup-dnd" title="go_selector_setup_dnd ()">go_selector_setup_dnd</a>               (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector,
+                                                         char const *dnd_target,
+                                                         int dnd_length,
+                                                         <a class="link" href="GOSelector.html#GOSelectorDndDataGet" title="GOSelectorDndDataGet ()">GOSelectorDndDataGet</a> data_get,
+                                                         <a class="link" href="GOSelector.html#GOSelectorDndDataReceived" title="GOSelectorDndDataReceived ()">GOSelectorDndDataReceived</a> data_received,
+                                                         <a class="link" href="GOSelector.html#GOSelectorDndFillIcon" title="GOSelectorDndFillIcon ()">GOSelectorDndFillIcon</a> fill_icon);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOSelector.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkObject
+               +----GtkWidget
+                     +----GtkContainer
+                           +----GtkBox
+                                 +----GtkHBox
+                                       +----GOSelector
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOSelector.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GOSelector implements
+ AtkImplementorIface and  GtkBuildable.</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOSelector.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="GOSelector.html#GOSelector-activate" title='The "activate" signal'>activate</a>"                                       : Run Last
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOSelector.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOSelector.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOSelectorPrivate"></a><h3>GOSelectorPrivate</h3>
+<pre class="programlisting">typedef struct _GOSelectorPrivate GOSelectorPrivate;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOSelector-struct"></a><h3>GOSelector</h3>
+<pre class="programlisting">typedef struct _GOSelector GOSelector;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-selector-new"></a><h3>go_selector_new ()</h3>
+<pre class="programlisting">GtkWidget *         go_selector_new                     (<a class="link" href="GOPalette.html" title="GoPalette">GOPalette</a> *palette);</pre>
+<p>
+Creates a new selector, using <em class="parameter"><code>palette</code></em>. Selector button swatch will use
+swatch render function of <em class="parameter"><code>palette</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>palette</code></em> :</span></p></td>
+<td> a <a class="link" href="GOPalette.html" title="GoPalette"><span class="type">GOPalette</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new <span class="type">GtkWidget</span>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-selector-get-active"></a><h3>go_selector_get_active ()</h3>
+<pre class="programlisting">int                 go_selector_get_active              (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector,
+                                                         gboolean *is_auto);</pre>
+<p>
+Retrieves current selection index, and set <em class="parameter"><code>is_auto</code></em> to TRUE if
+current selection was set by clicking on automatic palette item.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selector</code></em> :</span></p></td>
+<td> a <a class="link" href="GOSelector.html" title="GoSelector"><span class="type">GOSelector</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>is_auto</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> current index.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-selector-set-active"></a><h3>go_selector_set_active ()</h3>
+<pre class="programlisting">gboolean            go_selector_set_active              (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector,
+                                                         int index);</pre>
+<p>
+Sets current selection index, and emits "activate" signal if
+selection is actually changed.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selector</code></em> :</span></p></td>
+<td> a <a class="link" href="GOSelector.html" title="GoSelector"><span class="type">GOSelector</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>index</code></em> :</span></p></td>
+<td> new index
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if selection is actually changed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-selector-update-swatch"></a><h3>go_selector_update_swatch ()</h3>
+<pre class="programlisting">void                go_selector_update_swatch           (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector);</pre>
+<p>
+Requests a swatch update.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>selector</code></em> :</span></p></td>
+<td> a <a class="link" href="GOSelector.html" title="GoSelector"><span class="type">GOSelector</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-selector-activate"></a><h3>go_selector_activate ()</h3>
+<pre class="programlisting">void                go_selector_activate                (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector);</pre>
+<p>
+Updates slector swatch and emits an "activate" signal.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>selector</code></em> :</span></p></td>
+<td> a <a class="link" href="GOSelector.html" title="GoSelector"><span class="type">GOSelector</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-selector-get-user-data"></a><h3>go_selector_get_user_data ()</h3>
+<pre class="programlisting">gpointer            go_selector_get_user_data           (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector);</pre>
+<p>
+A convenience function to access user_data of selector palette.
+(See <em class="parameter"><code>go_palette_get_user_data</code></em>).</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selector</code></em> :</span></p></td>
+<td> a <a class="link" href="GOSelector.html" title="GoSelector"><span class="type">GOSelector</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a pointer to palette user_data.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOSelectorDndDataReceived"></a><h3>GOSelectorDndDataReceived ()</h3>
+<pre class="programlisting">void                (*GOSelectorDndDataReceived)        (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector,
+                                                         gpointer data);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selector</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOSelectorDndDataGet"></a><h3>GOSelectorDndDataGet ()</h3>
+<pre class="programlisting">gpointer            (*GOSelectorDndDataGet)             (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selector</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOSelectorDndFillIcon"></a><h3>GOSelectorDndFillIcon ()</h3>
+<pre class="programlisting">void                (*GOSelectorDndFillIcon)            (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector,
+                                                         <a class="link" href="goffice-06-gog-renderer.html#GdkPixbuf">GdkPixbuf</a> *pixbuf);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selector</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pixbuf</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-selector-setup-dnd"></a><h3>go_selector_setup_dnd ()</h3>
+<pre class="programlisting">void                go_selector_setup_dnd               (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *selector,
+                                                         char const *dnd_target,
+                                                         int dnd_length,
+                                                         <a class="link" href="GOSelector.html#GOSelectorDndDataGet" title="GOSelectorDndDataGet ()">GOSelectorDndDataGet</a> data_get,
+                                                         <a class="link" href="GOSelector.html#GOSelectorDndDataReceived" title="GOSelectorDndDataReceived ()">GOSelectorDndDataReceived</a> data_received,
+                                                         <a class="link" href="GOSelector.html#GOSelectorDndFillIcon" title="GOSelectorDndFillIcon ()">GOSelectorDndFillIcon</a> fill_icon);</pre>
+<p>
+Setups drag and drop for <em class="parameter"><code>selector</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selector</code></em> :</span></p></td>
+<td> a <a class="link" href="GOSelector.html" title="GoSelector"><span class="type">GOSelector</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dnd_target</code></em> :</span></p></td>
+<td> drag and drop target type
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dnd_length</code></em> :</span></p></td>
+<td> length of data transfered on drop
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data_get</code></em> :</span></p></td>
+<td> a user provided data_get method
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data_received</code></em> :</span></p></td>
+<td> a user provided data_received method
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fill_icon</code></em> :</span></p></td>
+<td> a user function for dnd icon creation
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="GOSelector.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" lang="en">
+<a name="GOSelector-activate"></a><h3>The <code class="literal">"activate"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="GOSelector.html" title="GoSelector">GOSelector</a> *goselector,
+                                                        gpointer    user_data)       : Run Last</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>goselector</code></em> :</span></p></td>
+<td>the object which received the signal.
+
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

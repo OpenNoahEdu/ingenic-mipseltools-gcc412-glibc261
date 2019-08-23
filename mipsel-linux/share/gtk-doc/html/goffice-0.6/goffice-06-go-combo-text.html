@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>go-combo-text</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch05.html" title="Selectors">
+<link rel="prev" href="goffice-06-go-combo-color.html" title="go-combo-color">
+<link rel="next" href="goffice-06-go-charmap-sel.html" title="go-charmap-sel">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-go-combo-color.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch05.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-go-charmap-sel.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-go-combo-text.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-go-combo-text.description" class="shortcut">Description</a>
+                 | 
+                <a href="#goffice-06-go-combo-text.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                 | 
+                <a href="#goffice-06-go-combo-text.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                 | 
+                <a href="#goffice-06-go-combo-text.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-go-combo-text"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-go-combo-text.top_of_page"></a>go-combo-text</span></h2>
+<p>go-combo-text</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-go-combo-text.synopsis"></a><h2>Synopsis</h2>
+<a name="GoComboText"></a><pre class="synopsis">
+#define             <a class="link" href="goffice-06-go-combo-text.html#GO-TYPE-COMBO-TEXT:CAPS" title="GO_TYPE_COMBO_TEXT">GO_TYPE_COMBO_TEXT</a>
+#define             <a class="link" href="goffice-06-go-combo-text.html#GO-COMBO-TEXT:CAPS" title="GO_COMBO_TEXT()">GO_COMBO_TEXT</a>                       (obj)
+#define             <a class="link" href="goffice-06-go-combo-text.html#IS-GO-COMBO-TEXT:CAPS" title="IS_GO_COMBO_TEXT()">IS_GO_COMBO_TEXT</a>                    (obj)
+                    <a class="link" href="goffice-06-go-combo-text.html#GoComboText-struct" title="GoComboText">GoComboText</a>;
+enum                <a class="link" href="goffice-06-go-combo-text.html#GoComboTextSearch" title="enum GoComboTextSearch">GoComboTextSearch</a>;
+GType               <a class="link" href="goffice-06-go-combo-text.html#go-combo-text-get-type" title="go_combo_text_get_type ()">go_combo_text_get_type</a>              (void);
+GtkWidget *         <a class="link" href="goffice-06-go-combo-text.html#go-combo-text-new" title="go_combo_text_new ()">go_combo_text_new</a>                   (GCompareFunc cmp_func);
+GtkWidget *         <a class="link" href="goffice-06-go-combo-text.html#go-combo-text-glade-new" title="go_combo_text_glade_new ()">go_combo_text_glade_new</a>             (void);
+GtkWidget *         <a class="link" href="goffice-06-go-combo-text.html#go-combo-text-get-entry" title="go_combo_text_get_entry ()">go_combo_text_get_entry</a>             (<a class="link" href="goffice-06-go-combo-text.html#GoComboText">GoComboText</a> *ct);
+gboolean            <a class="link" href="goffice-06-go-combo-text.html#go-combo-text-set-text" title="go_combo_text_set_text ()">go_combo_text_set_text</a>              (<a class="link" href="goffice-06-go-combo-text.html#GoComboText">GoComboText</a> *ct,
+                                                         const gchar *text,
+                                                         <a class="link" href="goffice-06-go-combo-text.html#GoComboTextSearch" title="enum GoComboTextSearch">GoComboTextSearch</a> start);
+void                <a class="link" href="goffice-06-go-combo-text.html#go-combo-text-add-item" title="go_combo_text_add_item ()">go_combo_text_add_item</a>              (<a class="link" href="goffice-06-go-combo-text.html#GoComboText">GoComboText</a> *ct,
+                                                         const gchar *label);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-combo-text.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkObject
+               +----GtkWidget
+                     +----GtkContainer
+                           +----GtkBox
+                                 +----GtkHBox
+                                       +----<a class="link" href="GOComboBox.html" title="GOComboBox">GOComboBox</a>
+                                             +----GoComboText
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-combo-text.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GoComboText implements
+ AtkImplementorIface and  GtkBuildable.</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-combo-text.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="goffice-06-go-combo-text.html#GoComboText-entry-changed" title='The "entry-changed" signal'>entry-changed</a>"                                  : Run Last
+  "<a class="link" href="goffice-06-go-combo-text.html#GoComboText-selection-changed" title='The "selection-changed" signal'>selection-changed</a>"                              : Run Last
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-combo-text.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-combo-text.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GO-TYPE-COMBO-TEXT:CAPS"></a><h3>GO_TYPE_COMBO_TEXT</h3>
+<pre class="programlisting">#define GO_TYPE_COMBO_TEXT	(go_combo_text_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GO-COMBO-TEXT:CAPS"></a><h3>GO_COMBO_TEXT()</h3>
+<pre class="programlisting">#define GO_COMBO_TEXT(obj)	(G_TYPE_CHECK_INSTANCE_CAST (obj, GO_TYPE_COMBO_TEXT, GoComboText))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GO-COMBO-TEXT:CAPS"></a><h3>IS_GO_COMBO_TEXT()</h3>
+<pre class="programlisting">#define IS_GO_COMBO_TEXT(obj)	(G_TYPE_CHECK_INSTANCE_TYPE (obj, GO_TYPE_COMBO_TEXT))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GoComboText-struct"></a><h3>GoComboText</h3>
+<pre class="programlisting">typedef struct _GoComboText GoComboText;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GoComboTextSearch"></a><h3>enum GoComboTextSearch</h3>
+<pre class="programlisting">typedef enum {		/* begin the search from : */
+	GO_COMBO_TEXT_FROM_TOP,	/* the top of the list */
+	GO_COMBO_TEXT_CURRENT,		/* the current selection */
+	GO_COMBO_TEXT_NEXT		/* the next element after current */
+} GoComboTextSearch;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-text-get-type"></a><h3>go_combo_text_get_type ()</h3>
+<pre class="programlisting">GType               go_combo_text_get_type              (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-text-new"></a><h3>go_combo_text_new ()</h3>
+<pre class="programlisting">GtkWidget *         go_combo_text_new                   (GCompareFunc cmp_func);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cmp_func</code></em> :</span></p></td>
+<td> an optional comparison routine.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-text-glade-new"></a><h3>go_combo_text_glade_new ()</h3>
+<pre class="programlisting">GtkWidget *         go_combo_text_glade_new             (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-text-get-entry"></a><h3>go_combo_text_get_entry ()</h3>
+<pre class="programlisting">GtkWidget *         go_combo_text_get_entry             (<a class="link" href="goffice-06-go-combo-text.html#GoComboText">GoComboText</a> *ct);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ct</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-text-set-text"></a><h3>go_combo_text_set_text ()</h3>
+<pre class="programlisting">gboolean            go_combo_text_set_text              (<a class="link" href="goffice-06-go-combo-text.html#GoComboText">GoComboText</a> *ct,
+                                                         const gchar *text,
+                                                         <a class="link" href="goffice-06-go-combo-text.html#GoComboTextSearch" title="enum GoComboTextSearch">GoComboTextSearch</a> start);</pre>
+<p>
+return TRUE if the item is found in the list.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ct</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td> the label for the new item
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>start</code></em> :</span></p></td>
+<td> where to begin the search in the list.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="go-combo-text-add-item"></a><h3>go_combo_text_add_item ()</h3>
+<pre class="programlisting">void                go_combo_text_add_item              (<a class="link" href="goffice-06-go-combo-text.html#GoComboText">GoComboText</a> *ct,
+                                                         const gchar *label);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ct</code></em> :</span></p></td>
+<td> The text combo that will get the new element.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>label</code></em> :</span></p></td>
+<td> the user visible label for the new item
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-go-combo-text.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" lang="en">
+<a name="GoComboText-entry-changed"></a><h3>The <code class="literal">"entry-changed"</code> signal</h3>
+<pre class="programlisting">gboolean            user_function                      (<a class="link" href="goffice-06-go-combo-text.html#GoComboText">GoComboText</a> *gocombotext,
+                                                        gpointer     arg1,
+                                                        gpointer     user_data)        : Run Last</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gocombotext</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GoComboText-selection-changed"></a><h3>The <code class="literal">"selection-changed"</code> signal</h3>
+<pre class="programlisting">gboolean            user_function                      (<a class="link" href="goffice-06-go-combo-text.html#GoComboText">GoComboText</a> *gocombotext,
+                                                        gpointer     arg1,
+                                                        gpointer     user_data)        : Run Last</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gocombotext</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

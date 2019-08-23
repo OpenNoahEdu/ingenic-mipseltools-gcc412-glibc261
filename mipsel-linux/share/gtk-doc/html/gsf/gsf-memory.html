@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>memory</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="GSF Reference Manual">
+<link rel="up" href="sources.html" title="Stream Sources">
+<link rel="prev" href="gsf-Reading-and-Writing-from-local-files-and-directories.html" title="Reading and Writing from local files and directories">
+<link rel="next" href="gsf-GIOChannel.html" title="GIOChannel">
+<meta name="generator" content="GTK-Doc V1.9 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="intro.html" title="Part&#160;I.&#160;GSF: Introduction">
+<link rel="part" href="history.html" title="Part&#160;II.&#160;GSF: History">
+<link rel="part" href="dependencies.html" title="Part&#160;III.&#160;GSF: Dependencies">
+<link rel="part" href="gsf-users.html" title="Part&#160;IV.&#160;Projects using GSF">
+<link rel="part" href="api.html" title="Part&#160;V.&#160;API Reference">
+<link rel="chapter" href="io.html" title="Basic Input/Output">
+<link rel="chapter" href="sources.html" title="Stream Sources">
+<link rel="chapter" href="parsers.html" title="Stream Parsers">
+<link rel="chapter" href="misc.html" title="Miscellaneous">
+<link rel="index" href="gsf-index.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gsf-Reading-and-Writing-from-local-files-and-directories.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="sources.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GSF Reference Manual</th>
+<td><a accesskey="n" href="gsf-GIOChannel.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2587051" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2587327" class="shortcut">Description</a>
+                  &#160;|&#160;
+                  <a href="#id2587276" class="shortcut">Object Hierarchy</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="gsf-memory"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2587051"></a><span class="refentrytitle">memory</span>
+</h2>
+<p>memory</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<a name="GsfInputMemory"></a><a name="GsfOutputMemory"></a><pre class="synopsis">
+
+
+
+                    <a class="link" href="gsf-memory.html#GsfInputMemory-struct">GsfInputMemory</a>;
+<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>*           <a class="link" href="gsf-memory.html#gsf-input-mmap-new">gsf_input_mmap_new</a>                  (char const *filename,
+                                                         GError **err);
+<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>*           <a class="link" href="gsf-memory.html#gsf-input-memory-new">gsf_input_memory_new</a>                (guint8 const *buf,
+                                                         <a class="link" href="gsf-utils.html#gsf-off-t">gsf_off_t</a> length,
+                                                         gboolean needs_free);
+<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>*           <a class="link" href="gsf-memory.html#gsf-input-memory-new-clone">gsf_input_memory_new_clone</a>          (guint8 const *buf,
+                                                         <a class="link" href="gsf-utils.html#gsf-off-t">gsf_off_t</a> length);
+<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>*           <a class="link" href="gsf-memory.html#gsf-input-memory-new-from-iochannel">gsf_input_memory_new_from_iochannel</a> (GIOChannel *channel,
+                                                         GError **error);
+                    <a class="link" href="gsf-memory.html#GsfOutputMemory-struct">GsfOutputMemory</a>;
+const guint8*       <a class="link" href="gsf-memory.html#gsf-output-memory-get-bytes">gsf_output_memory_get_bytes</a>         (<a class="link" href="gsf-memory.html#GsfOutputMemory">GsfOutputMemory</a> *mem);
+GType               <a class="link" href="gsf-memory.html#gsf-output-memory-get-type">gsf_output_memory_get_type</a>          (void);
+<a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput">GsfOutput</a>*          <a class="link" href="gsf-memory.html#gsf-output-memory-new">gsf_output_memory_new</a>               (void);
+
+
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2587276"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+
+  GObject
+   +----<a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>
+         +----GsfInputMemory
+</pre>
+<pre class="synopsis">
+
+  GObject
+   +----<a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput">GsfOutput</a>
+         +----GsfOutputMemory
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2587327"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2587342"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2587352"></a><h3>
+<a name="GsfInputMemory-struct"></a>GsfInputMemory</h3>
+<a class="indexterm" name="id2587366"></a><pre class="programlisting">typedef struct _GsfInputMemory GsfInputMemory;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2587381"></a><h3>
+<a name="gsf-input-mmap-new"></a>gsf_input_mmap_new ()</h3>
+<a class="indexterm" name="id2587394"></a><pre class="programlisting"><a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>*           gsf_input_mmap_new                  (char const *filename,
+                                                         GError **err);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filename</code></em>&#160;:</span></p></td>
+<td> The file on disk that you want to mmap
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em>&#160;:</span></p></td>
+<td> A <span class="type">GError</span>, or optionally <code class="literal">null</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> A new <a class="link" href="gsf-memory.html#GsfInputMemory"><span class="type">GsfInputMemory</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2587501"></a><h3>
+<a name="gsf-input-memory-new"></a>gsf_input_memory_new ()</h3>
+<a class="indexterm" name="id2587514"></a><pre class="programlisting"><a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>*           gsf_input_memory_new                (guint8 const *buf,
+                                                         <a class="link" href="gsf-utils.html#gsf-off-t">gsf_off_t</a> length,
+                                                         gboolean needs_free);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>buf</code></em>&#160;:</span></p></td>
+<td> The input bytes
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>length</code></em>&#160;:</span></p></td>
+<td> The length of <em class="parameter"><code>buf</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>needs_free</code></em>&#160;:</span></p></td>
+<td> Whether you want this memory to be free'd at object destruction
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> A new <a class="link" href="gsf-memory.html#GsfInputMemory"><span class="type">GsfInputMemory</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2587632"></a><h3>
+<a name="gsf-input-memory-new-clone"></a>gsf_input_memory_new_clone ()</h3>
+<a class="indexterm" name="id2587646"></a><pre class="programlisting"><a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>*           gsf_input_memory_new_clone          (guint8 const *buf,
+                                                         <a class="link" href="gsf-utils.html#gsf-off-t">gsf_off_t</a> length);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>buf</code></em>&#160;:</span></p></td>
+<td> The input bytes
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>length</code></em>&#160;:</span></p></td>
+<td> The length of <em class="parameter"><code>buf</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> A new <a class="link" href="gsf-memory.html#GsfInputMemory"><span class="type">GsfInputMemory</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2587741"></a><h3>
+<a name="gsf-input-memory-new-from-iochannel"></a>gsf_input_memory_new_from_iochannel ()</h3>
+<a class="indexterm" name="id2587755"></a><pre class="programlisting"><a class="link" href="gsf-Input-from-unstructured-files.html#GsfInput">GsfInput</a>*           gsf_input_memory_new_from_iochannel (GIOChannel *channel,
+                                                         GError **error);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>channel</code></em>&#160;:</span></p></td>
+<td> a <span class="type">GIOChannel</span>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em>&#160;:</span></p></td>
+<td> a <span class="type">GError</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> a new <a class="link" href="gsf-memory.html#GsfInputMemory"><span class="type">GsfInputMemory</span></a> or NULL.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2587860"></a><h3>
+<a name="GsfOutputMemory-struct"></a>GsfOutputMemory</h3>
+<a class="indexterm" name="id2587873"></a><pre class="programlisting">typedef struct _GsfOutputMemory GsfOutputMemory;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2587888"></a><h3>
+<a name="gsf-output-memory-get-bytes"></a>gsf_output_memory_get_bytes ()</h3>
+<a class="indexterm" name="id2587901"></a><pre class="programlisting">const guint8*       gsf_output_memory_get_bytes         (<a class="link" href="gsf-memory.html#GsfOutputMemory">GsfOutputMemory</a> *mem);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mem</code></em>&#160;:</span></p></td>
+<td> the output device.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> The data that has been written to <em class="parameter"><code>mem</code></em>, or <code class="literal">null</code>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2587979"></a><h3>
+<a name="gsf-output-memory-get-type"></a>gsf_output_memory_get_type ()</h3>
+<a class="indexterm" name="id2587993"></a><pre class="programlisting">GType               gsf_output_memory_get_type          (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2588028"></a><h3>
+<a name="gsf-output-memory-new"></a>gsf_output_memory_new ()</h3>
+<a class="indexterm" name="id2588041"></a><pre class="programlisting"><a class="link" href="gsf-Output-to-unstructured-files.html#GsfOutput">GsfOutput</a>*          gsf_output_memory_new               (void);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> a new file or <code class="literal">NULL</code>.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2588092"></a><div class="refsect2" lang="en"><a name="id2588093"></a></div>
+<hr>
+<div class="refsect2" lang="en"><a name="id2588094"></a></div>
+</div>
+</div>
+</body>
+</html>

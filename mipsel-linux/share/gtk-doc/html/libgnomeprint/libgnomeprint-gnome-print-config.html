@@ -1,0 +1,1134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>gnome-print-config</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="GNOME Print Reference Manual">
+<link rel="up" href="libgnomeprintunsorted.html" title="Part&#160;II.&#160;API Reference">
+<link rel="prev" href="libgnomeprint-gnome-pgl.html" title="gnome-pgl">
+<link rel="next" href="libgnomeprint-gnome-print-job.html" title="gnome-print-job">
+<meta name="generator" content="GTK-Doc V1.8 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="libgnomeprint.html" title="Part&#160;I.&#160;GNOME Print Overview">
+<link rel="part" href="libgnomeprintunsorted.html" title="Part&#160;II.&#160;API Reference">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libgnomeprint-gnome-pgl.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="libgnomeprintunsorted.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GNOME Print Reference Manual</th>
+<td><a accesskey="n" href="libgnomeprint-gnome-print-job.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2975024" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2975824" class="shortcut">Description</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="libgnomeprint-gnome-print-config"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2975024"></a><span class="refentrytitle">gnome-print-config</span>
+</h2>
+<p>gnome-print-config</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<pre class="synopsis">
+
+
+
+                    <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a>;
+<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a>*   <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-default">gnome_print_config_default</a>          (void);
+<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a>*   <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-ref">gnome_print_config_ref</a>              (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config);
+<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a>*   <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-unref">gnome_print_config_unref</a>            (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config);
+<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a>*   <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-dup">gnome_print_config_dup</a>              (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config);
+<a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a>*             <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-get">gnome_print_config_get</a>              (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key);
+<a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-set">gnome_print_config_set</a>              (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *value);
+<a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-get-boolean">gnome_print_config_get_boolean</a>      (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a> *val);
+<a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-get-int">gnome_print_config_get_int</a>          (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> *val);
+<a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-get-double">gnome_print_config_get_double</a>       (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> *val);
+<a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-get-length">gnome_print_config_get_length</a>       (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> *val,
+                                                         const <a href="libgnomeprint-gnome-print-unit.html#GnomePrintUnit">GnomePrintUnit</a> **unit);
+<a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-set-boolean">gnome_print_config_set_boolean</a>      (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a> val);
+<a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-set-int">gnome_print_config_set_int</a>          (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> val);
+<a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-set-double">gnome_print_config_set_double</a>       (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> val);
+<a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-set-length">gnome_print_config_set_length</a>       (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> val,
+                                                         const <a href="libgnomeprint-gnome-print-unit.html#GnomePrintUnit">GnomePrintUnit</a> *unit);
+void                <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-dump">gnome_print_config_dump</a>             (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *gpc);
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PAPER-SIZE:CAPS">GNOME_PRINT_KEY_PAPER_SIZE</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PAPER-WIDTH:CAPS">GNOME_PRINT_KEY_PAPER_WIDTH</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PAPER-HEIGHT:CAPS">GNOME_PRINT_KEY_PAPER_HEIGHT</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PAPER-ORIENTATION:CAPS">GNOME_PRINT_KEY_PAPER_ORIENTATION</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PAPER-ORIENTATION-MATRIX:CAPS">GNOME_PRINT_KEY_PAPER_ORIENTATION_MATRIX</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PAGE-ORIENTATION:CAPS">GNOME_PRINT_KEY_PAGE_ORIENTATION</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PAGE-ORIENTATION-MATRIX:CAPS">GNOME_PRINT_KEY_PAGE_ORIENTATION_MATRIX</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-ORIENTATION:CAPS">GNOME_PRINT_KEY_ORIENTATION</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-LAYOUT:CAPS">GNOME_PRINT_KEY_LAYOUT</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-LAYOUT-WIDTH:CAPS">GNOME_PRINT_KEY_LAYOUT_WIDTH</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-LAYOUT-HEIGHT:CAPS">GNOME_PRINT_KEY_LAYOUT_HEIGHT</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-RESOLUTION:CAPS">GNOME_PRINT_KEY_RESOLUTION</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-RESOLUTION-DPI:CAPS">GNOME_PRINT_KEY_RESOLUTION_DPI</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-RESOLUTION-DPI-X:CAPS">GNOME_PRINT_KEY_RESOLUTION_DPI_X</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-RESOLUTION-DPI-Y:CAPS">GNOME_PRINT_KEY_RESOLUTION_DPI_Y</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-NUM-COPIES:CAPS">GNOME_PRINT_KEY_NUM_COPIES</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-COLLATE:CAPS">GNOME_PRINT_KEY_COLLATE</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PAGE-MARGIN-LEFT:CAPS">GNOME_PRINT_KEY_PAGE_MARGIN_LEFT</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PAGE-MARGIN-RIGHT:CAPS">GNOME_PRINT_KEY_PAGE_MARGIN_RIGHT</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PAGE-MARGIN-TOP:CAPS">GNOME_PRINT_KEY_PAGE_MARGIN_TOP</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PAGE-MARGIN-BOTTOM:CAPS">GNOME_PRINT_KEY_PAGE_MARGIN_BOTTOM</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PAPER-MARGIN-LEFT:CAPS">GNOME_PRINT_KEY_PAPER_MARGIN_LEFT</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PAPER-MARGIN-RIGHT:CAPS">GNOME_PRINT_KEY_PAPER_MARGIN_RIGHT</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PAPER-MARGIN-TOP:CAPS">GNOME_PRINT_KEY_PAPER_MARGIN_TOP</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PAPER-MARGIN-BOTTOM:CAPS">GNOME_PRINT_KEY_PAPER_MARGIN_BOTTOM</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-OUTPUT-FILENAME:CAPS">GNOME_PRINT_KEY_OUTPUT_FILENAME</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-DOCUMENT-NAME:CAPS">GNOME_PRINT_KEY_DOCUMENT_NAME</a>
+#define             <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PREFERED-UNIT:CAPS">GNOME_PRINT_KEY_PREFERED_UNIT</a>
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2975824"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2975838"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2975848"></a><h3>
+<a name="GnomePrintConfig"></a>GnomePrintConfig</h3>
+<a class="indexterm" name="id2975861"></a><pre class="programlisting">typedef struct _GnomePrintConfig GnomePrintConfig;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2975877"></a><h3>
+<a name="gnome-print-config-default"></a>gnome_print_config_default ()</h3>
+<a class="indexterm" name="id2975890"></a><pre class="programlisting"><a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a>*   gnome_print_config_default          (void);</pre>
+<p>
+Creates a <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object with the default printer and settings.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> A pointer to a <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object with the default settings
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2975948"></a><h3>
+<a name="gnome-print-config-ref"></a>gnome_print_config_ref ()</h3>
+<a class="indexterm" name="id2975960"></a><pre class="programlisting"><a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a>*   gnome_print_config_ref              (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config);</pre>
+<p>
+Increase the reference count on the <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object by one.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>config</code></em>&#160;:</span></td>
+<td> The <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object to have its reference count increased
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> A pointer to the <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object or <a
+href="../liboil/liboil-liboiljunk.html#NULL:CAPS"
+><code class="literal">NULL</code></a> on failure
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2976058"></a><h3>
+<a name="gnome-print-config-unref"></a>gnome_print_config_unref ()</h3>
+<a class="indexterm" name="id2976070"></a><pre class="programlisting"><a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a>*   gnome_print_config_unref            (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config);</pre>
+<p>
+Decrease the reference count on the <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object by one.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>config</code></em>&#160;:</span></td>
+<td> The <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object to have its reference count decreased
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> A pointer to the <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object or <a
+href="../liboil/liboil-liboiljunk.html#NULL:CAPS"
+><code class="literal">NULL</code></a> on failure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2976168"></a><h3>
+<a name="gnome-print-config-dup"></a>gnome_print_config_dup ()</h3>
+<a class="indexterm" name="id2976181"></a><pre class="programlisting"><a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a>*   gnome_print_config_dup              (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config);</pre>
+<p>
+Does a deep copy of the config <em class="parameter"><code>config</code></em>.  You should unref the returned 
+<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> using <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-unref"><span class="type">gnome_print_config_unref</span></a> when you are finished
+using it.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>config</code></em>&#160;:</span></td>
+<td> The config to be copied
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> A copy of config
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2976267"></a><h3>
+<a name="gnome-print-config-get"></a>gnome_print_config_get ()</h3>
+<a class="indexterm" name="id2976280"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a>*             gnome_print_config_get              (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key);</pre>
+<p>
+Gets the value of string <em class="parameter"><code>key</code></em> from the <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object.  The returned string
+should be freed with <a
+href="../glib/glib-Memory-Allocation.html#g-free"
+><span class="type">g_free</span></a> when you are finished with it.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>config</code></em>&#160;:</span></td>
+<td> Pointer to a <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>key</code></em>&#160;:</span></td>
+<td> String containing the path of key whose value is to be obtained
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> The value of the key, <a
+href="../liboil/liboil-liboiljunk.html#NULL:CAPS"
+><code class="literal">NULL</code></a> indicates failure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2976407"></a><h3>
+<a name="gnome-print-config-set"></a>gnome_print_config_set ()</h3>
+<a class="indexterm" name="id2976420"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            gnome_print_config_set              (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *value);</pre>
+<p>
+Sets the value of string <em class="parameter"><code>key</code></em> in the <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object to value <em class="parameter"><code>value</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>config</code></em>&#160;:</span></td>
+<td> Pointer to a <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>key</code></em>&#160;:</span></td>
+<td> String containing the path of key whose value is to be set
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>value</code></em>&#160;:</span></td>
+<td> String containing the value to set
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <a
+href="../glib/glib-Standard-Macros.html#TRUE:CAPS"
+><code class="literal">TRUE</code></a> on success, <a
+href="../glib/glib-Standard-Macros.html#FALSE:CAPS"
+><code class="literal">FALSE</code></a> on failure
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2976577"></a><h3>
+<a name="gnome-print-config-get-boolean"></a>gnome_print_config_get_boolean ()</h3>
+<a class="indexterm" name="id2976591"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            gnome_print_config_get_boolean      (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a> *val);</pre>
+<p>
+Gets the value of key <em class="parameter"><code>key</code></em> from the <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object.  Converts values such
+as "true", "y", "yes", and their opposites, to their boolean equivalent.  The
+boolean value will be stored in the variable <em class="parameter"><code>val</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>config</code></em>&#160;:</span></td>
+<td> Pointer to a <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>key</code></em>&#160;:</span></td>
+<td> String containing the path of key whose value is to be obtained
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>val</code></em>&#160;:</span></td>
+<td> Pointer to a boolean variable to store the value in.  Should initially be <a
+href="../liboil/liboil-liboiljunk.html#NULL:CAPS"
+><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <a
+href="../glib/glib-Standard-Macros.html#TRUE:CAPS"
+><span class="type">TRUE</span></a> if a value was retrieved, <a
+href="../glib/glib-Standard-Macros.html#FALSE:CAPS"
+><span class="type">FALSE</span></a> on failure
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2976754"></a><h3>
+<a name="gnome-print-config-get-int"></a>gnome_print_config_get_int ()</h3>
+<a class="indexterm" name="id2976767"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            gnome_print_config_get_int          (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> *val);</pre>
+<p>
+Gets the value of key <em class="parameter"><code>key</code></em> from the <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object.  Converts values
+to their integer equivalent.  The integer value will be stored in the variable 
+<em class="parameter"><code>val</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>config</code></em>&#160;:</span></td>
+<td> Pointer to a <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>key</code></em>&#160;:</span></td>
+<td> String containing the path of key whose value is to be obtained
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>val</code></em>&#160;:</span></td>
+<td> Pointer to a integer variable to store the value in.  Should initially be <a
+href="../liboil/liboil-liboiljunk.html#NULL:CAPS"
+><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <a
+href="../glib/glib-Standard-Macros.html#TRUE:CAPS"
+><span class="type">TRUE</span></a> if a value was retrieved, <a
+href="../glib/glib-Standard-Macros.html#FALSE:CAPS"
+><span class="type">FALSE</span></a> on failure
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2976928"></a><h3>
+<a name="gnome-print-config-get-double"></a>gnome_print_config_get_double ()</h3>
+<a class="indexterm" name="id2976942"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            gnome_print_config_get_double       (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> *val);</pre>
+<p>
+Gets the value of key <em class="parameter"><code>key</code></em> from the <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object.  Converts values
+to their double equivalent.  The double value will be stored in the variable 
+<em class="parameter"><code>val</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>config</code></em>&#160;:</span></td>
+<td> Pointer to a <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>key</code></em>&#160;:</span></td>
+<td> String containing the path of key whose value is to be obtained
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>val</code></em>&#160;:</span></td>
+<td> Pointer to a double variable to store the value in.  Should initially be <a
+href="../liboil/liboil-liboiljunk.html#NULL:CAPS"
+><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <a
+href="../glib/glib-Standard-Macros.html#TRUE:CAPS"
+><span class="type">TRUE</span></a> if a value was retrieved, <a
+href="../glib/glib-Standard-Macros.html#FALSE:CAPS"
+><span class="type">FALSE</span></a> on failure
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2977104"></a><h3>
+<a name="gnome-print-config-get-length"></a>gnome_print_config_get_length ()</h3>
+<a class="indexterm" name="id2977117"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            gnome_print_config_get_length       (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> *val,
+                                                         const <a href="libgnomeprint-gnome-print-unit.html#GnomePrintUnit">GnomePrintUnit</a> **unit);</pre>
+<p>
+Gets the value of key <em class="parameter"><code>key</code></em> from the <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object.  Converts values
+to their double equivalent.  The double value will be stored in the variable 
+<em class="parameter"><code>val</code></em> and the units will be stored in <em class="parameter"><code>unit</code></em>.  You should allocate the storage 
+for <em class="parameter"><code>unit</code></em> before calling this function.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>config</code></em>&#160;:</span></td>
+<td> Pointer to a <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>key</code></em>&#160;:</span></td>
+<td> String containing the path of key whose value is to be obtained
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>val</code></em>&#160;:</span></td>
+<td> Pointer to a double variable to store the value in.  Should initially be <a
+href="../liboil/liboil-liboiljunk.html#NULL:CAPS"
+><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>unit</code></em>&#160;:</span></td>
+<td> Pointer to an already allocated <a href="libgnomeprint-gnome-print-unit.html#GnomePrintUnit"><span class="type">GnomePrintUnit</span></a> struct
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <a
+href="../glib/glib-Standard-Macros.html#TRUE:CAPS"
+><span class="type">TRUE</span></a> if a value was retrieved, <a
+href="../glib/glib-Standard-Macros.html#FALSE:CAPS"
+><span class="type">FALSE</span></a> on failure
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2977323"></a><h3>
+<a name="gnome-print-config-set-boolean"></a>gnome_print_config_set_boolean ()</h3>
+<a class="indexterm" name="id2977337"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            gnome_print_config_set_boolean      (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a> val);</pre>
+<p>
+Set a <em class="parameter"><code>boolean</code></em> value in the <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>config</code></em>&#160;:</span></td>
+<td> Pointer to a <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>key</code></em>&#160;:</span></td>
+<td> String containing the path of key whose value is to be set
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>val</code></em>&#160;:</span></td>
+<td> Boolean containing the value to set
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <a
+href="../glib/glib-Standard-Macros.html#TRUE:CAPS"
+><code class="literal">TRUE</code></a> on success, <a
+href="../glib/glib-Standard-Macros.html#FALSE:CAPS"
+><code class="literal">FALSE</code></a> on failure
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2977486"></a><h3>
+<a name="gnome-print-config-set-int"></a>gnome_print_config_set_int ()</h3>
+<a class="indexterm" name="id2977499"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            gnome_print_config_set_int          (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gint"
+>gint</a> val);</pre>
+<p>
+Set an <em class="parameter"><code>integer</code></em> value in the <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>config</code></em>&#160;:</span></td>
+<td> Pointer to a <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>key</code></em>&#160;:</span></td>
+<td> String containing the path of key whose value is to be set
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>val</code></em>&#160;:</span></td>
+<td> Integer containing the value to set
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <a
+href="../glib/glib-Standard-Macros.html#TRUE:CAPS"
+><code class="literal">TRUE</code></a> on success, <a
+href="../glib/glib-Standard-Macros.html#FALSE:CAPS"
+><code class="literal">FALSE</code></a> on failure
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2977647"></a><h3>
+<a name="gnome-print-config-set-double"></a>gnome_print_config_set_double ()</h3>
+<a class="indexterm" name="id2977660"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            gnome_print_config_set_double       (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> val);</pre>
+<p>
+Set a <em class="parameter"><code>double</code></em> value in the <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>config</code></em>&#160;:</span></td>
+<td> Pointer to a <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>key</code></em>&#160;:</span></td>
+<td> String containing the path of key whose value is to be set
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>val</code></em>&#160;:</span></td>
+<td> Double containing the value to set
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <a
+href="../glib/glib-Standard-Macros.html#TRUE:CAPS"
+><code class="literal">TRUE</code></a> on success, <a
+href="../glib/glib-Standard-Macros.html#FALSE:CAPS"
+><code class="literal">FALSE</code></a> on failure
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2977809"></a><h3>
+<a name="gnome-print-config-set-length"></a>gnome_print_config_set_length ()</h3>
+<a class="indexterm" name="id2977822"></a><pre class="programlisting"><a
+href="../glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            gnome_print_config_set_length       (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *config,
+                                                         const <a
+href="../glib/glib-Basic-Types.html#guchar"
+>guchar</a> *key,
+                                                         <a
+href="../glib/glib-Basic-Types.html#gdouble"
+>gdouble</a> val,
+                                                         const <a href="libgnomeprint-gnome-print-unit.html#GnomePrintUnit">GnomePrintUnit</a> *unit);</pre>
+<p>
+Sets a double value and the units it is using.  This should be used in 
+conjunction with <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-get-length"><span class="type">gnome_print_config_get_length</span></a>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><span class="term"><em class="parameter"><code>config</code></em>&#160;:</span></td>
+<td> Pointer to a <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> object
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>key</code></em>&#160;:</span></td>
+<td> String containing the path of key whose value is to be set
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>val</code></em>&#160;:</span></td>
+<td> Double containing the value to set
+</td>
+</tr>
+<tr>
+<td><span class="term"><em class="parameter"><code>unit</code></em>&#160;:</span></td>
+<td> Units to use when setting value
+</td>
+</tr>
+<tr>
+<td><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></td>
+<td> <a
+href="../glib/glib-Standard-Macros.html#TRUE:CAPS"
+><code class="literal">TRUE</code></a> on success, <a
+href="../glib/glib-Standard-Macros.html#FALSE:CAPS"
+><code class="literal">FALSE</code></a> on failure
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2977989"></a><h3>
+<a name="gnome-print-config-dump"></a>gnome_print_config_dump ()</h3>
+<a class="indexterm" name="id2978002"></a><pre class="programlisting">void                gnome_print_config_dump             (<a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig">GnomePrintConfig</a> *gpc);</pre>
+<p>
+Print out the tree structure representing the GnomePrintConfig.  Output
+is to <code class="literal">STDOUT</code> and is limited to a depth of 20.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><span class="term"><em class="parameter"><code>gpc</code></em>&#160;:</span></td>
+<td> The <a href="libgnomeprint-gnome-print-config.html#GnomePrintConfig"><span class="type">GnomePrintConfig</span></a> to output
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978074"></a><h3>
+<a name="GNOME-PRINT-KEY-PAPER-SIZE:CAPS"></a>GNOME_PRINT_KEY_PAPER_SIZE</h3>
+<a class="indexterm" name="id2978088"></a><pre class="programlisting">#define GNOME_PRINT_KEY_PAPER_SIZE               "Settings.Output.Media.PhysicalSize" /* Paper name, such as A4 or Letter */
+</pre>
+<p>
+Convenience macro for key that contains the paper size, eg: A4, Letter.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978106"></a><h3>
+<a name="GNOME-PRINT-KEY-PAPER-WIDTH:CAPS"></a>GNOME_PRINT_KEY_PAPER_WIDTH</h3>
+<a class="indexterm" name="id2978120"></a><pre class="programlisting">#define GNOME_PRINT_KEY_PAPER_WIDTH              "Settings.Output.Media.PhysicalSize.Width" /* Arbitrary units - use conversion */
+</pre>
+<p>
+Convenience macro for key that contains the width of the paper.  Units are
+arbitrary so use <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-get-length"><span class="type">gnome_print_config_get_length</span></a> and <span class="type">gnome_print_set_length</span>.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978156"></a><h3>
+<a name="GNOME-PRINT-KEY-PAPER-HEIGHT:CAPS"></a>GNOME_PRINT_KEY_PAPER_HEIGHT</h3>
+<a class="indexterm" name="id2978170"></a><pre class="programlisting">#define GNOME_PRINT_KEY_PAPER_HEIGHT             "Settings.Output.Media.PhysicalSize.Height" /* Arbitrary units - use conversion */
+</pre>
+<p>
+Convenience macro for key that contains the height of the paper.  Units are
+arbitrary so use <a href="libgnomeprint-gnome-print-config.html#gnome-print-config-get-length"><span class="type">gnome_print_config_get_length</span></a> and <span class="type">gnome_print_set_length</span>.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978206"></a><h3>
+<a name="GNOME-PRINT-KEY-PAPER-ORIENTATION:CAPS"></a>GNOME_PRINT_KEY_PAPER_ORIENTATION</h3>
+<a class="indexterm" name="id2978221"></a><pre class="programlisting">#define GNOME_PRINT_KEY_PAPER_ORIENTATION        "Settings.Output.Media.PhysicalOrientation" /* R0, R90, R180, R270 */
+</pre>
+<p>
+Convenience macro for key that contains the orientation of the paper in terms 
+of degrees of rotation, eg: R0, R90, R180, and R270.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978241"></a><h3>
+<a name="GNOME-PRINT-KEY-PAPER-ORIENTATION-MATRIX:CAPS"></a>GNOME_PRINT_KEY_PAPER_ORIENTATION_MATRIX</h3>
+<a class="indexterm" name="id2978254"></a><pre class="programlisting">#define GNOME_PRINT_KEY_PAPER_ORIENTATION_MATRIX "Settings.Output.Media.PhysicalOrientation.Paper2PrinterTransform" /* 3x2 abstract matrix */
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978272"></a><h3>
+<a name="GNOME-PRINT-KEY-PAGE-ORIENTATION:CAPS"></a>GNOME_PRINT_KEY_PAGE_ORIENTATION</h3>
+<a class="indexterm" name="id2978286"></a><pre class="programlisting">#define GNOME_PRINT_KEY_PAGE_ORIENTATION        "Settings.Document.Page.LogicalOrientation" /* R0, R90, R180, R270 */
+</pre>
+<p>
+Convenience macro for the key that contains the orientation of the logical 
+page in terms of degrees of rotation, eg: R0, R90, R180, and R270.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978306"></a><h3>
+<a name="GNOME-PRINT-KEY-PAGE-ORIENTATION-MATRIX:CAPS"></a>GNOME_PRINT_KEY_PAGE_ORIENTATION_MATRIX</h3>
+<a class="indexterm" name="id2978319"></a><pre class="programlisting">#define GNOME_PRINT_KEY_PAGE_ORIENTATION_MATRIX "Settings.Document.Page.LogicalOrientation.Page2LayoutTransform" /* 3x2 abstract matrix */
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978336"></a><h3>
+<a name="GNOME-PRINT-KEY-ORIENTATION:CAPS"></a>GNOME_PRINT_KEY_ORIENTATION</h3>
+<a class="indexterm" name="id2978350"></a><pre class="programlisting">#define GNOME_PRINT_KEY_ORIENTATION GNOME_PRINT_KEY_PAGE_ORIENTATION
+</pre>
+<p>
+See <a href="libgnomeprint-gnome-print-config.html#GNOME-PRINT-KEY-PAGE-ORIENTATION:CAPS"><span class="type">GNOME_PRINT_KEY_PAGE_ORIENTATION</span></a>.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978376"></a><h3>
+<a name="GNOME-PRINT-KEY-LAYOUT:CAPS"></a>GNOME_PRINT_KEY_LAYOUT</h3>
+<a class="indexterm" name="id2978389"></a><pre class="programlisting">#define GNOME_PRINT_KEY_LAYOUT        "Settings.Document.Page.Layout"        /* Id of layout ('Plain' is always no-special-layout) */
+</pre>
+<p>
+Convenience macro for key that contains the name for the logical layout
+being used, eg: Plain.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978408"></a><h3>
+<a name="GNOME-PRINT-KEY-LAYOUT-WIDTH:CAPS"></a>GNOME_PRINT_KEY_LAYOUT_WIDTH</h3>
+<a class="indexterm" name="id2978421"></a><pre class="programlisting">#define GNOME_PRINT_KEY_LAYOUT_WIDTH  "Settings.Document.Page.Layout.Width"  /* Double value */
+</pre>
+<p>
+Convenience macro for key that contains the logical width of the page
+as used by the application.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978440"></a><h3>
+<a name="GNOME-PRINT-KEY-LAYOUT-HEIGHT:CAPS"></a>GNOME_PRINT_KEY_LAYOUT_HEIGHT</h3>
+<a class="indexterm" name="id2978453"></a><pre class="programlisting">#define GNOME_PRINT_KEY_LAYOUT_HEIGHT "Settings.Document.Page.Layout.Height" /* Double value */
+</pre>
+<p>
+Convenience macro for key that contains the logical height of the page
+as used by the application.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978472"></a><h3>
+<a name="GNOME-PRINT-KEY-RESOLUTION:CAPS"></a>GNOME_PRINT_KEY_RESOLUTION</h3>
+<a class="indexterm" name="id2978486"></a><pre class="programlisting">#define GNOME_PRINT_KEY_RESOLUTION       "Settings.Output.Resolution"       /* String value, like 300x300 or 300dpi */
+</pre>
+<p>
+Convenience macro for key that contains a string representing the 
+resolution of the printer, eg: 300x300 or 300dpi. 
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978505"></a><h3>
+<a name="GNOME-PRINT-KEY-RESOLUTION-DPI:CAPS"></a>GNOME_PRINT_KEY_RESOLUTION_DPI</h3>
+<a class="indexterm" name="id2978518"></a><pre class="programlisting">#define GNOME_PRINT_KEY_RESOLUTION_DPI   "Settings.Output.Resolution.DPI"   /* Numeric value, like 300, if meaningful */
+</pre>
+<p>
+Convenience macro for key that contains a numeric representation of
+the resolution, eg: 300.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978536"></a><h3>
+<a name="GNOME-PRINT-KEY-RESOLUTION-DPI-X:CAPS"></a>GNOME_PRINT_KEY_RESOLUTION_DPI_X</h3>
+<a class="indexterm" name="id2978550"></a><pre class="programlisting">#define GNOME_PRINT_KEY_RESOLUTION_DPI_X "Settings.Output.Resolution.DPI.X" /* Numeric value */
+</pre>
+<p>
+Convenience macro for key that contains a numeric representation of
+the X resolution, eg: 300.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978568"></a><h3>
+<a name="GNOME-PRINT-KEY-RESOLUTION-DPI-Y:CAPS"></a>GNOME_PRINT_KEY_RESOLUTION_DPI_Y</h3>
+<a class="indexterm" name="id2978582"></a><pre class="programlisting">#define GNOME_PRINT_KEY_RESOLUTION_DPI_Y "Settings.Output.Resolution.DPI.Y" /* Numeric value */
+</pre>
+<p>
+Convenience macro for key that contains a numeric representation of
+the Y resolution, eg: 300.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978601"></a><h3>
+<a name="GNOME-PRINT-KEY-NUM-COPIES:CAPS"></a>GNOME_PRINT_KEY_NUM_COPIES</h3>
+<a class="indexterm" name="id2978614"></a><pre class="programlisting">#define GNOME_PRINT_KEY_NUM_COPIES "Settings.Output.Job.NumCopies" /* Number of copies */
+</pre>
+<p>
+Convenience macro for key that contains the number of copies to
+output. 
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978632"></a><h3>
+<a name="GNOME-PRINT-KEY-COLLATE:CAPS"></a>GNOME_PRINT_KEY_COLLATE</h3>
+<a class="indexterm" name="id2978645"></a><pre class="programlisting">#define GNOME_PRINT_KEY_COLLATE    "Settings.Output.Job.Collate"   /* Boolean (true|yes|1 false|no|0) */
+</pre>
+<p>
+Convenience macro for key that contains a boolean value indicating whether
+to collate the copies as they are output.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978664"></a><h3>
+<a name="GNOME-PRINT-KEY-PAGE-MARGIN-LEFT:CAPS"></a>GNOME_PRINT_KEY_PAGE_MARGIN_LEFT</h3>
+<a class="indexterm" name="id2978677"></a><pre class="programlisting">#define GNOME_PRINT_KEY_PAGE_MARGIN_LEFT   "Settings.Document.Page.Margins.Left"   /* Length, i.e. use conversion */
+</pre>
+<p>
+Ignored by libgnomeprint, but used by libgnomeprintui when populating 
+margin symbols.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978696"></a><h3>
+<a name="GNOME-PRINT-KEY-PAGE-MARGIN-RIGHT:CAPS"></a>GNOME_PRINT_KEY_PAGE_MARGIN_RIGHT</h3>
+<a class="indexterm" name="id2978710"></a><pre class="programlisting">#define GNOME_PRINT_KEY_PAGE_MARGIN_RIGHT  "Settings.Document.Page.Margins.Right"  /* Length, i.e. use conversion */
+</pre>
+<p>
+Ignored by libgnomeprint, but used by libgnomeprintui when populating 
+margin symbols.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978728"></a><h3>
+<a name="GNOME-PRINT-KEY-PAGE-MARGIN-TOP:CAPS"></a>GNOME_PRINT_KEY_PAGE_MARGIN_TOP</h3>
+<a class="indexterm" name="id2978742"></a><pre class="programlisting">#define GNOME_PRINT_KEY_PAGE_MARGIN_TOP    "Settings.Document.Page.Margins.Top"    /* Length, i.e. use conversion */
+</pre>
+<p>
+Ignored by libgnomeprint, but used by libgnomeprintui when populating 
+margin symbols.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978760"></a><h3>
+<a name="GNOME-PRINT-KEY-PAGE-MARGIN-BOTTOM:CAPS"></a>GNOME_PRINT_KEY_PAGE_MARGIN_BOTTOM</h3>
+<a class="indexterm" name="id2978774"></a><pre class="programlisting">#define GNOME_PRINT_KEY_PAGE_MARGIN_BOTTOM "Settings.Document.Page.Margins.Bottom" /* Length, i.e. use conversion */
+</pre>
+<p>
+Ignored by libgnomeprint, but used by libgnomeprintui when populating 
+margin symbols.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978793"></a><h3>
+<a name="GNOME-PRINT-KEY-PAPER-MARGIN-LEFT:CAPS"></a>GNOME_PRINT_KEY_PAPER_MARGIN_LEFT</h3>
+<a class="indexterm" name="id2978807"></a><pre class="programlisting">#define GNOME_PRINT_KEY_PAPER_MARGIN_LEFT   "Settings.Output.Media.Margins.Left"   /* Length, i.e. use conversion */
+</pre>
+<p>
+Ignored by libgnomeprint, but used by libgnomeprintui when populating 
+margin symbols.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978826"></a><h3>
+<a name="GNOME-PRINT-KEY-PAPER-MARGIN-RIGHT:CAPS"></a>GNOME_PRINT_KEY_PAPER_MARGIN_RIGHT</h3>
+<a class="indexterm" name="id2978840"></a><pre class="programlisting">#define GNOME_PRINT_KEY_PAPER_MARGIN_RIGHT  "Settings.Output.Media.Margins.Right"  /* Length, i.e. use conversion */
+</pre>
+<p>
+Ignored by libgnomeprint, but used by libgnomeprintui when populating 
+margin symbols.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978858"></a><h3>
+<a name="GNOME-PRINT-KEY-PAPER-MARGIN-TOP:CAPS"></a>GNOME_PRINT_KEY_PAPER_MARGIN_TOP</h3>
+<a class="indexterm" name="id2978872"></a><pre class="programlisting">#define GNOME_PRINT_KEY_PAPER_MARGIN_TOP    "Settings.Output.Media.Margins.Top"    /* Length, i.e. use conversion */
+</pre>
+<p>
+Ignored by libgnomeprint, but used by libgnomeprintui when populating 
+margin symbols.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978891"></a><h3>
+<a name="GNOME-PRINT-KEY-PAPER-MARGIN-BOTTOM:CAPS"></a>GNOME_PRINT_KEY_PAPER_MARGIN_BOTTOM</h3>
+<a class="indexterm" name="id2978904"></a><pre class="programlisting">#define GNOME_PRINT_KEY_PAPER_MARGIN_BOTTOM "Settings.Output.Media.Margins.Bottom" /* Length, i.e. use conversion */
+</pre>
+<p>
+Ignored by libgnomeprint, but used by libgnomeprintui when populating 
+margin symbols.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978923"></a><h3>
+<a name="GNOME-PRINT-KEY-OUTPUT-FILENAME:CAPS"></a>GNOME_PRINT_KEY_OUTPUT_FILENAME</h3>
+<a class="indexterm" name="id2978937"></a><pre class="programlisting">#define GNOME_PRINT_KEY_OUTPUT_FILENAME "Settings.Output.Job.FileName"          /* Filename used when printing to file. */
+</pre>
+<p>
+Convenience macro for the key that contains the name of the file
+being used when printing to a file.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978956"></a><h3>
+<a name="GNOME-PRINT-KEY-DOCUMENT-NAME:CAPS"></a>GNOME_PRINT_KEY_DOCUMENT_NAME</h3>
+<a class="indexterm" name="id2978969"></a><pre class="programlisting">#define GNOME_PRINT_KEY_DOCUMENT_NAME   "Settings.Document.Name"                /* The name of the document 'Cash flow 2002', `Grandma cookie recipies' */
+</pre>
+<p>
+Convenience macro for the key that contains the name of the document
+being printed. 
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2978988"></a><h3>
+<a name="GNOME-PRINT-KEY-PREFERED-UNIT:CAPS"></a>GNOME_PRINT_KEY_PREFERED_UNIT</h3>
+<a class="indexterm" name="id2979002"></a><pre class="programlisting">#define GNOME_PRINT_KEY_PREFERED_UNIT   "Settings.Document.PreferedUnit"        /* Abbreviation for the preferred unit cm, in,... */
+</pre>
+<p>
+Convenience macro for the key that contains the abbreviation for the units
+used, eg: cm, in.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

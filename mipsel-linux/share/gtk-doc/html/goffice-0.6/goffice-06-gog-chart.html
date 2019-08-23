@@ -1,0 +1,731 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GogChart</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Goffice Reference Manual">
+<link rel="up" href="ch01.html" title="Objects">
+<link rel="prev" href="goffice-06-gog-graph.html" title="GogGraph">
+<link rel="next" href="goffice-06-gog-legend.html" title="GogLegend">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="part" href="pt01.html" title="Part I. Graphs">
+<link rel="chapter" href="ch01.html" title="Objects">
+<link rel="chapter" href="ch02.html" title="Abstract Base Classes">
+<link rel="chapter" href="ch03.html" title="Utilities">
+<link rel="part" href="pt02.html" title="Part II. Widgets">
+<link rel="chapter" href="ch04.html" title="Base widgets">
+<link rel="chapter" href="ch05.html" title="Selectors">
+<link rel="part" href="pt03.html" title="Part III. Utilities">
+<link rel="chapter" href="ch06.html" title="Graphic object properties">
+<link rel="chapter" href="ch07.html" title="Rendering utilities">
+<link rel="chapter" href="ch08.html" title="Data">
+<link rel="chapter" href="ch09.html" title="Mathematical functions">
+<link rel="chapter" href="ch10.html" title="File utilities">
+<link rel="chapter" href="ch11.html" title="Application">
+<link rel="chapter" href="ch12.html" title="Components">
+<link rel="chapter" href="ch13.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="goffice-06-gog-graph.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Goffice Reference Manual</th>
+<td><a accesskey="n" href="goffice-06-gog-legend.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#goffice-06-gog-chart.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#goffice-06-gog-chart.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="goffice-06-gog-chart"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="goffice-06-gog-chart.top_of_page"></a>GogChart</span></h2>
+<p>GogChart — A set of axes and a collection of plots</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="goffice-06-gog-chart.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+GogAxisSet          <a class="link" href="goffice-06-gog-chart.html#gog-axis-set-from-str" title="gog_axis_set_from_str ()">gog_axis_set_from_str</a>               (char const *str);
+#define             <a class="link" href="goffice-06-gog-chart.html#GOG-CHART-TYPE:CAPS" title="GOG_CHART_TYPE">GOG_CHART_TYPE</a>
+#define             <a class="link" href="goffice-06-gog-chart.html#GOG-CHART:CAPS" title="GOG_CHART()">GOG_CHART</a>                           (o)
+#define             <a class="link" href="goffice-06-gog-chart.html#IS-GOG-CHART:CAPS" title="IS_GOG_CHART()">IS_GOG_CHART</a>                        (o)
+GType               <a class="link" href="goffice-06-gog-chart.html#gog-chart-get-type" title="gog_chart_get_type ()">gog_chart_get_type</a>                  (void);
+gboolean            <a class="link" href="goffice-06-gog-chart.html#gog-chart-get-position" title="gog_chart_get_position ()">gog_chart_get_position</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> const *chart,
+                                                         unsigned *x,
+                                                         unsigned *y,
+                                                         unsigned *cols,
+                                                         unsigned *rows);
+void                <a class="link" href="goffice-06-gog-chart.html#gog-chart-set-position" title="gog_chart_set_position ()">gog_chart_set_position</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> *chart,
+                                                         unsigned int x,
+                                                         unsigned int y,
+                                                         unsigned int cols,
+                                                         unsigned int rows);
+gboolean            <a class="link" href="goffice-06-gog-chart.html#gog-chart-get-plot-area" title="gog_chart_get_plot_area ()">gog_chart_get_plot_area</a>             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> *chart,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> *plot_area);
+void                <a class="link" href="goffice-06-gog-chart.html#gog-chart-set-plot-area" title="gog_chart_set_plot_area ()">gog_chart_set_plot_area</a>             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> *chart,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *plot_area);
+void                <a class="link" href="goffice-06-gog-chart.html#gog-chart-request-cardinality-update" title="gog_chart_request_cardinality_update ()">gog_chart_request_cardinality_update</a>
+                                                        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> *chart);
+void                <a class="link" href="goffice-06-gog-chart.html#gog-chart-get-cardinality" title="gog_chart_get_cardinality ()">gog_chart_get_cardinality</a>           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> *chart,
+                                                         unsigned *full,
+                                                         unsigned *visible);
+void                <a class="link" href="goffice-06-gog-chart.html#gog-chart-foreach-elem" title="gog_chart_foreach_elem ()">gog_chart_foreach_elem</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> *chart,
+                                                         gboolean only_visible,
+                                                         GogEnumFunc handler,
+                                                         gpointer data);
+GSList *            <a class="link" href="goffice-06-gog-chart.html#gog-chart-get-plots" title="gog_chart_get_plots ()">gog_chart_get_plots</a>                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> const *chart);
+GogAxisSet          <a class="link" href="goffice-06-gog-chart.html#gog-chart-get-axis-set" title="gog_chart_get_axis_set ()">gog_chart_get_axis_set</a>              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> const *chart);
+gboolean            <a class="link" href="goffice-06-gog-chart.html#gog-chart-axis-set-is-valid" title="gog_chart_axis_set_is_valid ()">gog_chart_axis_set_is_valid</a>         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> const *chart,
+                                                         GogAxisSet type);
+gboolean            <a class="link" href="goffice-06-gog-chart.html#gog-chart-axis-set-assign" title="gog_chart_axis_set_assign ()">gog_chart_axis_set_assign</a>           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> *chart,
+                                                         GogAxisSet type);
+GSList *            <a class="link" href="goffice-06-gog-chart.html#gog-chart-get-axes" title="gog_chart_get_axes ()">gog_chart_get_axes</a>                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> const *chart,
+                                                         GogAxisType target);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGrid.html"
+>GogGrid</a> *           <a class="link" href="goffice-06-gog-chart.html#gog-chart-get-grid" title="gog_chart_get_grid ()">gog_chart_get_grid</a>                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> const *chart);
+<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const * <a class="link" href="goffice-06-gog-chart.html#gog-chart-view-get-plot-area" title="gog_chart_view_get_plot_area ()">gog_chart_view_get_plot_area</a>  (<a class="link" href="GogView.html" title="GogView">GogView</a> const *view);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-chart.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="goffice-06-gog-chart.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="gog-axis-set-from-str"></a><h3>gog_axis_set_from_str ()</h3>
+<pre class="programlisting">GogAxisSet          gog_axis_set_from_str               (char const *str);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-CHART-TYPE:CAPS"></a><h3>GOG_CHART_TYPE</h3>
+<pre class="programlisting">#define GOG_CHART_TYPE	(gog_chart_get_type ())
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GOG-CHART:CAPS"></a><h3>GOG_CHART()</h3>
+<pre class="programlisting">#define GOG_CHART(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GOG_CHART_TYPE, GogChart))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="IS-GOG-CHART:CAPS"></a><h3>IS_GOG_CHART()</h3>
+<pre class="programlisting">#define IS_GOG_CHART(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GOG_CHART_TYPE))
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>o</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-get-type"></a><h3>gog_chart_get_type ()</h3>
+<pre class="programlisting">GType               gog_chart_get_type                  (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-get-position"></a><h3>gog_chart_get_position ()</h3>
+<pre class="programlisting">gboolean            gog_chart_get_position              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> const *chart,
+                                                         unsigned *x,
+                                                         unsigned *y,
+                                                         unsigned *cols,
+                                                         unsigned *rows);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chart</code></em> :</span></p></td>
+<td> const <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+><span class="type">GogChart</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cols</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rows</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> TRUE if the chart has been positioned.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-set-position"></a><h3>gog_chart_set_position ()</h3>
+<pre class="programlisting">void                gog_chart_set_position              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> *chart,
+                                                         unsigned int x,
+                                                         unsigned int y,
+                                                         unsigned int cols,
+                                                         unsigned int rows);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chart</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+><span class="type">GogChart</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cols</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rows</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-get-plot-area"></a><h3>gog_chart_get_plot_area ()</h3>
+<pre class="programlisting">gboolean            gog_chart_get_plot_area             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> *chart,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> *plot_area);</pre>
+<p>
+Stores plot area in plot_area, in fraction of chart size, and returns
+TRUE if plot area position is manual.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chart</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+><span class="type">GogChart</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot_area</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+><span class="type">GogViewAllocation</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-set-plot-area"></a><h3>gog_chart_set_plot_area ()</h3>
+<pre class="programlisting">void                gog_chart_set_plot_area             (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> *chart,
+                                                         <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const *plot_area);</pre>
+<p>
+If plot_area != NULL, sets plot area size and location, in fraction
+of chart size, and sets GogChart::is_plot_area_manual flag to TRUE.
+If plot_area == NULL, sets GogChart::is_plot_area_manual to FALSE.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chart</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+><span class="type">GogChart</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plot_area</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+><span class="type">GogViewAllocation</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-request-cardinality-update"></a><h3>gog_chart_request_cardinality_update ()</h3>
+<pre class="programlisting">void                gog_chart_request_cardinality_update
+                                                        (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> *chart);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>chart</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-get-cardinality"></a><h3>gog_chart_get_cardinality ()</h3>
+<pre class="programlisting">void                gog_chart_get_cardinality           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> *chart,
+                                                         unsigned *full,
+                                                         unsigned *visible);</pre>
+<p>
+Update and cache cardinality values if required, and returns
+full and visible cardinality. Full cardinality is the number of 
+chart elements that require a different style. Visible cardinality is
+the number of chart elements shown in chart legend.
+</p>
+<p>
+<em class="parameter"><code>full</code></em> and <em class="parameter"><code>visible</code></em> may be NULL.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chart</code></em> :</span></p></td>
+<td> a <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+><span class="type">GogChart</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>full</code></em> :</span></p></td>
+<td> placeholder for full cardinality
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>visible</code></em> :</span></p></td>
+<td> placeholder for visible cardinality
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-foreach-elem"></a><h3>gog_chart_foreach_elem ()</h3>
+<pre class="programlisting">void                gog_chart_foreach_elem              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> *chart,
+                                                         gboolean only_visible,
+                                                         GogEnumFunc handler,
+                                                         gpointer data);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chart</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>only_visible</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>handler</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-get-plots"></a><h3>gog_chart_get_plots ()</h3>
+<pre class="programlisting">GSList *            gog_chart_get_plots                 (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> const *chart);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chart</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-get-axis-set"></a><h3>gog_chart_get_axis_set ()</h3>
+<pre class="programlisting">GogAxisSet          gog_chart_get_axis_set              (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> const *chart);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chart</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-axis-set-is-valid"></a><h3>gog_chart_axis_set_is_valid ()</h3>
+<pre class="programlisting">gboolean            gog_chart_axis_set_is_valid         (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> const *chart,
+                                                         GogAxisSet type);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chart</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-axis-set-assign"></a><h3>gog_chart_axis_set_assign ()</h3>
+<pre class="programlisting">gboolean            gog_chart_axis_set_assign           (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> *chart,
+                                                         GogAxisSet type);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chart</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-get-axes"></a><h3>gog_chart_get_axes ()</h3>
+<pre class="programlisting">GSList *            gog_chart_get_axes                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> const *chart,
+                                                         GogAxisType target);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chart</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+><span class="type">GogChart</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>target</code></em> :</span></p></td>
+<td> <span class="type">GogAxisType</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a list which the caller must free of all axis of type <em class="parameter"><code>target</code></em>
+associated with <em class="parameter"><code>chart</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-get-grid"></a><h3>gog_chart_get_grid ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogGrid.html"
+>GogGrid</a> *           gog_chart_get_grid                  (<a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+>GogChart</a> const *chart);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chart</code></em> :</span></p></td>
+<td> <a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogChart.html"
+><span class="type">GogChart</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the grid associated with <em class="parameter"><code>chart</code></em> if one exists
+otherwise NULL.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gog-chart-view-get-plot-area"></a><h3>gog_chart_view_get_plot_area ()</h3>
+<pre class="programlisting"><a
+href="/local/gnome/test/share/gtk-doc/html/goffice/GogView.html#GogViewAllocation"
+>GogViewAllocation</a> const * gog_chart_view_get_plot_area  (<a class="link" href="GogView.html" title="GogView">GogView</a> const *view);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>view</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>
